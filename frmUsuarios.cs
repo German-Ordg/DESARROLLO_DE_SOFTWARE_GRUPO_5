@@ -378,6 +378,7 @@ namespace Pantallas_proyecto
             conect.CargarDatosUsuario(dataGridView1);
             conect.CargaDeNombreUsuarios(cmbEmpleado);
             dataGridView1.ForeColor = Color.Black;
+            conect.cerrar();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
