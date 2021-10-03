@@ -46,7 +46,7 @@ namespace Pantallas_proyecto
             poc = dataGridView1.CurrentRow.Index;
 
             textBox1.Text = dataGridView1[0, poc].Value.ToString();
-            textBox2.Text = dataGridView1[1, poc].Value.ToString();
+           // textBox2.Text = dataGridView1[1, poc].Value.ToString();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -63,14 +63,50 @@ namespace Pantallas_proyecto
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            var aux = new MetodoBuscarCodigo();
-            aux.filtrar1(dataGridView1, this.textBox1.Text.Trim());
+            int selection = comboBox1.SelectedIndex;
+            if (selection == 0)
+            {
+                var aux = new MetodoBuscarCodigo();
+                aux.filtrar1(dataGridView1, this.textBox1.Text.Trim());
+            }
+            else
+            {
+                var aux = new MetodoBucasrProducto();
+                aux.filtrar(dataGridView1, this.textBox1.Text.Trim());
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            var aux = new MetodoBucasrProducto();
-            aux.filtrar(dataGridView1, this.textBox2.Text.Trim());
+            /*var aux = new MetodoBucasrProducto();
+            aux.filtrar(dataGridView1, this.textBox2.Text.Trim());*/
+        }
+        private void comboBox1_events()
+        {
+            int selection = comboBox1.SelectedIndex;
+            if (selection == -1)
+            {
+                textBox1.Enabled = false;
+                ///textBox2.Enabled = false;
+            }
+            else
+            {
+                if (selection == 0)
+                {
+                    textBox1.Enabled = true;
+                    //   textBox2.Enabled = false;
+                    textBox1.Clear();
+                    //  textBox2.Clear();
+                }
+                else
+                {
+                    textBox1.Enabled = true;
+                    // textBox2.Enabled = true;
+                    textBox1.Clear();
+                    //textBox2.Clear();
+
+                }
+            }
         }
     }
 }
