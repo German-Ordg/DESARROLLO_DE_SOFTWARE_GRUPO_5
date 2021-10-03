@@ -33,6 +33,7 @@ namespace Pantallas_proyecto
         private bool letra7 = false;
         private bool letra8 = false;
         private bool letra9 = false;
+        private bool letra10 = false;
 
         private const int CP_NOCLOSE_BUTTON = 0x200;
         protected override CreateParams CreateParams
@@ -104,10 +105,14 @@ namespace Pantallas_proyecto
             }
 
 
-            if (validacion.Espacio_Blanco(errorProvider1, txtusuario))
+            if (validacion.Espacio_Blanco(errorProvider1, txtusuario) || txtusuario.TextLength < 8)
             {
                 if (validacion.Espacio_Blanco(errorProvider1, txtusuario))
                     errorProvider1.SetError(txtusuario, "no se puede dejar en blanco");
+                if (txtusuario.TextLength < 8 )
+                {
+                    errorProvider1.SetError(txtusuario, "el usuario debe ser mayor a 7 caracteres");
+                }
             }
             else
             {
@@ -137,10 +142,14 @@ namespace Pantallas_proyecto
             }
 
 
-            if (validacion.Espacio_Blanco(errorProvider2, txtcontra))
+            if (validacion.Espacio_Blanco(errorProvider2, txtcontra)  || txtcontra.TextLength < 8)
             {
                 if (validacion.Espacio_Blanco(errorProvider2, txtcontra))
                     errorProvider2.SetError(txtcontra, "no se puede dejar en blanco");
+                if (txtcontra.TextLength < 8)
+                {
+                    errorProvider2.SetError(txtcontra, "el correo debe ser mayor a 7 caracteres");
+                }
             }
             else
             {
@@ -241,11 +250,14 @@ namespace Pantallas_proyecto
                     MessageBox.Show("Error al ingresar datos", "ERROR", MessageBoxButtons.OK,
                                         MessageBoxIcon.Error);
                 }
+                btnModificar.Enabled = false;
             }
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            
             conect.abrir();
             int indice;
             String cod;
@@ -257,7 +269,8 @@ namespace Pantallas_proyecto
             letra4 = false;
             letra5 = true;
             letra6 = false;
-
+            letra9 = false;
+            letra10 = false;
             if (validacion.Espacio_Blanco(errorProvider1, txtcodemp) || validacion.Solo_Numeros(errorProvider1, txtcodemp))
             {
                 if (validacion.Espacio_Blanco(errorProvider1, txtcodemp))
@@ -270,10 +283,14 @@ namespace Pantallas_proyecto
             {
                 letra = true;
             }
-            if (validacion.Espacio_Blanco(errorProvider1, txtusuario))
+            if (validacion.Espacio_Blanco(errorProvider1, txtusuario) || txtusuario.TextLength < 8)
             {
                 if (validacion.Espacio_Blanco(errorProvider1, txtusuario))
                     errorProvider1.SetError(txtusuario, "no se puede dejar en blanco");
+                if (txtusuario.TextLength < 8)
+                {
+                    errorProvider1.SetError(txtusuario, "el usuario debe ser mayor a 7 caracteres");
+                }
             }
             else
             {
@@ -315,9 +332,38 @@ namespace Pantallas_proyecto
             {
                 errorProvider2.SetError(txtcorreo, "Direccion de Correo invalida");
             }
+            conect.cerrar();
+            conect.abrir();
+            SqlCommand comando1 = new SqlCommand("select count(*) from Usuarios where  correo_electronico= '" + txtcorreo.Text +"'", conect.conexion);
+            int consulta1 = Convert.ToInt32(comando1.ExecuteScalar());
+            if (consulta1 == 1)
+            {
+                if (txtcorreo2.Text == txtcorreo.Text)
+                {
+                    letra9 = true;
+                }
+                else
+                {
+                    letra9 = false;
+                    errorProvider2.SetError(txtcorreo, "Correo ya Registrado");
+                }
+            }
+            else
+            {
+     
+                    letra9 = true;
+   
+            }
 
 
-            if (letra && letra2 && letra3 && letra4 && letra6)
+            conect.cerrar();
+
+
+            
+
+
+            conect.abrir();
+            if (letra && letra2 && letra3 && letra4 && letra6 && letra9  )
             {
 
                 try
@@ -339,23 +385,44 @@ namespace Pantallas_proyecto
                     contra = Encrypt.GetSHA256(txtcontra.Text);
                     if (txtcontra.Text=="")
                     {
-                        scd = new SqlCommand("Update Usuarios set codigo_empleado = " + txtcodemp.Text + ",   correo_electronico = '" + txtcorreo.Text + "',   nombre_usuario= '" + txtusuario.Text + "', Estado = '" + cmbtipousr.Text + "' where nombre_usuario='" + txtusuario2.Text + "'", conect.conexion);
+                        scd = new SqlCommand("Update Usuarios set codigo_empleado = " + txtcodemp.Text + ",   correo_electronico = '" + txtcorreo.Text + "',   nombre_usuario= '" + txtusuario2.Text + "', Estado = '" + cmbtipousr.Text + "' where nombre_usuario='" + txtusuario2.Text + "'", conect.conexion);
+                        scd.ExecuteNonQuery();
+                        MessageBox.Show("Registro Modificado!", "AVISO", MessageBoxButtons.OK);
+                        txtcodemp.Clear();
+                        txtusuario.Clear();
+                        txtusuario2.Clear();
+                        txtcorreo.Clear();
+                        txtcorreo2.Clear();
+                        txtcontra.Clear();
+                        cmbtipousr.SelectedIndex = -1;
+                        conect.CargarDatosUsuario(dataGridView1);
+                        btnModificar.Enabled = false;
+                        errorProvider1.Clear();
                     }
                     else
                     {
-                        scd = new SqlCommand("Update Usuarios set codigo_empleado = " + txtcodemp.Text + ",   correo_electronico = '" + txtcorreo.Text + "',   nombre_usuario= '" + txtusuario.Text + "',  contrasena = '" + contra + "', Estado = '" + cmbtipousr.Text + "' where nombre_usuario='" + txtusuario.Text + "'", conect.conexion);
+                        if (txtcontra.TextLength < 8)
+                        {
+                            errorProvider1.SetError(txtcontra, "la contraseña debe ser mayor a 7 caracteres");
+                        }
+                        else
+                        {
+                            scd = new SqlCommand("Update Usuarios set codigo_empleado = " + txtcodemp.Text + ",   correo_electronico = '" + txtcorreo.Text + "',   nombre_usuario= '" + txtusuario2.Text + "',  contrasena = '" + contra + "', Estado = '" + cmbtipousr.Text + "' where nombre_usuario='" + txtusuario2.Text + "'", conect.conexion);
+                            scd.ExecuteNonQuery();
+                            MessageBox.Show("Registro Modificado!", "AVISO", MessageBoxButtons.OK);
+                            txtcodemp.Clear();
+                            txtusuario.Clear();
+                            txtusuario2.Clear();
+                            txtcorreo.Clear();
+                            txtcorreo2.Clear();
+                            txtcontra.Clear();
+                            cmbtipousr.SelectedIndex = -1;
+                            conect.CargarDatosUsuario(dataGridView1);
+                            btnModificar.Enabled = false;
+                            errorProvider1.Clear();
+                        }
                     }
-                    scd.ExecuteNonQuery();
-
-                    MessageBox.Show("Registro Modificado!", "AVISO", MessageBoxButtons.OK);
-                    txtcodemp.Clear();
-                    txtusuario.Clear();
-                    txtusuario2.Clear();
-                    txtcorreo.Clear();
-                    txtcontra.Clear();
-                    cmbtipousr.SelectedIndex = -1;
-                    conect.CargarDatosUsuario(dataGridView1);
-
+                    
 
                 }
                 catch (Exception ex)
@@ -363,13 +430,17 @@ namespace Pantallas_proyecto
                     MessageBox.Show("Error al modificar datos", "ERROR", MessageBoxButtons.OK,
                                         MessageBoxIcon.Error);
                 }
+                
             }
             conect.cerrar();
+
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
+            btnModificar.Enabled = false;
             txtusuario2.Visible = false;
+            txtcorreo2.Visible = false;
             timer1.Enabled = true;
             toolStrip1.ForeColor = Color.Black;
             toolStripLabel1.ForeColor = Color.Black;
@@ -393,7 +464,7 @@ namespace Pantallas_proyecto
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            
+            btnModificar.Enabled = true;
             int poc;
 
             poc = dataGridView1.CurrentRow.Index;
@@ -425,7 +496,8 @@ namespace Pantallas_proyecto
             txtusuario.Text = dataGridView1[1, poc].Value.ToString();
             txtusuario2.Text = dataGridView1[1, poc].Value.ToString();
             txtcorreo.Text = dataGridView1[3, poc].Value.ToString();
-            
+            txtcorreo2.Text = dataGridView1[3, poc].Value.ToString();
+
             txtcontra.Text = "";
             cmbtipousr.Text = dataGridView1[4, poc].Value.ToString();
         }

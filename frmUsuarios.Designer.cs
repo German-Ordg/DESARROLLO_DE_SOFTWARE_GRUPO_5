@@ -55,6 +55,7 @@ namespace Pantallas_proyecto
             this.cmbEmpleado = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtusuario2 = new System.Windows.Forms.TextBox();
+            this.txtcorreo2 = new System.Windows.Forms.TextBox();
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -119,14 +120,15 @@ namespace Pantallas_proyecto
             this.label5.Location = new System.Drawing.Point(63, 469);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 25);
+            this.label5.Size = new System.Drawing.Size(79, 25);
             this.label5.TabIndex = 16;
-            this.label5.Text = "Tipo Usuario:";
+            this.label5.Text = "Estado:";
             // 
             // txtusuario
             // 
             this.txtusuario.Location = new System.Drawing.Point(297, 247);
             this.txtusuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtusuario.MaxLength = 20;
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(211, 22);
             this.txtusuario.TabIndex = 18;
@@ -135,6 +137,7 @@ namespace Pantallas_proyecto
             // 
             this.txtcorreo.Location = new System.Drawing.Point(297, 315);
             this.txtcorreo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcorreo.MaxLength = 320;
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(211, 22);
             this.txtcorreo.TabIndex = 19;
@@ -143,6 +146,7 @@ namespace Pantallas_proyecto
             // 
             this.txtcontra.Location = new System.Drawing.Point(297, 393);
             this.txtcontra.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcontra.MaxLength = 20;
             this.txtcontra.Name = "txtcontra";
             this.txtcontra.Size = new System.Drawing.Size(211, 22);
             this.txtcontra.TabIndex = 20;
@@ -225,7 +229,7 @@ namespace Pantallas_proyecto
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(174, 25);
             this.label7.TabIndex = 28;
-            this.label7.Text = "Codigo Empleado:";
+            this.label7.Text = "Código Empleado:";
             // 
             // toolStrip1
             // 
@@ -305,12 +309,21 @@ namespace Pantallas_proyecto
             this.txtusuario2.Size = new System.Drawing.Size(211, 22);
             this.txtusuario2.TabIndex = 32;
             // 
+            // txtcorreo2
+            // 
+            this.txtcorreo2.Location = new System.Drawing.Point(297, 285);
+            this.txtcorreo2.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcorreo2.Name = "txtcorreo2";
+            this.txtcorreo2.Size = new System.Drawing.Size(211, 22);
+            this.txtcorreo2.TabIndex = 35;
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1368, 725);
+            this.Controls.Add(this.txtcorreo2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbEmpleado);
             this.Controls.Add(this.txtusuario2);
@@ -377,5 +390,6 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.ComboBox cmbEmpleado;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtusuario2;
+        private System.Windows.Forms.TextBox txtcorreo2;
     }
 }
