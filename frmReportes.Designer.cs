@@ -132,7 +132,6 @@ namespace Pantallas_proyecto
             this.vCategoriasTableAdapter3 = new Pantallas_proyecto.db_a75e9e_bderickmoncadaDataSetINVENTARIOTableAdapters.VCategoriasTableAdapter();
             this.Compra_FechaTableAdapter = new Pantallas_proyecto.DataSetCompra_FechaTableAdapters.Compra_FechaTableAdapter();
             this.reporteComprasTableAdapter2 = new Pantallas_proyecto.db_a75e9e_bderickmoncadaDataSetrotacionTableAdapters.ReporteComprasTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblmensaje = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.impresion1BindingSource)).BeginInit();
@@ -371,6 +370,7 @@ namespace Pantallas_proyecto
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(225, 22);
             this.dateTimePicker1.TabIndex = 67;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // CBtipo
             // 
@@ -935,21 +935,6 @@ namespace Pantallas_proyecto
             // 
             this.reporteComprasTableAdapter2.ClearBeforeFill = true;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Maroon;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1002, 533);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(221, 53);
-            this.button1.TabIndex = 76;
-            this.button1.Text = "Calculadora";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // ErrorProvider
             // 
             this.ErrorProvider.ContainerControl = this;
@@ -972,7 +957,6 @@ namespace Pantallas_proyecto
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1255, 629);
             this.Controls.Add(this.lblmensaje);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dateTimePicker2);
@@ -1147,7 +1131,6 @@ namespace Pantallas_proyecto
         private db_a75e9e_bderickmoncadaDataSetrotacion db_a75e9e_bderickmoncadaDataSetrotacion;
         private System.Windows.Forms.BindingSource reporteComprasBindingSource2;
         private db_a75e9e_bderickmoncadaDataSetrotacionTableAdapters.ReporteComprasTableAdapter reporteComprasTableAdapter2;
-        private System.Windows.Forms.Button button1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer8;
         private System.Windows.Forms.DataGridView dgvcompra;
         private System.Windows.Forms.ErrorProvider ErrorProvider;

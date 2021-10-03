@@ -48,6 +48,7 @@ namespace Pantallas_proyecto
         //prueba
         private void frmReportes_Load(object sender, EventArgs e)
         {
+            txtcodigo.Enabled = false;
             lblmensaje.Text = "";
             conect.abrir();
             conect.cargarDatosreporte1(dgvcompra);
@@ -89,7 +90,10 @@ namespace Pantallas_proyecto
             this.ProductosTableAdapter.Fill(this.db_a75e9e_bderickmoncadaDataSet2.Productos);
             // TODO: esta línea de código carga datos en la tabla 'db_a75e9e_bderickmoncadaDataSet.Categoria_Producto' Puede moverla o quitarla según sea necesario.
             this.categoria_ProductoTableAdapter.Fill(this.db_a75e9e_bderickmoncadaDataSet.Categoria_Producto);
-
+            CBcategoria.SelectedIndex = -1;
+            CBcategoria.Enabled = false;
+            dateTimePicker1.Enabled = false;
+            dateTimePicker2.Enabled = false;
 
         }
 
@@ -115,6 +119,12 @@ namespace Pantallas_proyecto
                 switch (CBtipo.Text)
                 {
                     case "Categoria":
+                        dateTimePicker1.Enabled = false;
+                        dateTimePicker2.Enabled = false;
+                        CBcategoria.Enabled = true;
+                        txtcodigo.Clear();
+                        txtcodigo.Enabled = false;
+                        ErrorProvider.Clear();
                         lblmensaje.Text = "Seleccione una categoria";
                         List<impresion1> impresion9 = new List<impresion1>();
 
@@ -144,6 +154,13 @@ namespace Pantallas_proyecto
                 
                 break;
                     case "Ventas":
+                        dateTimePicker1.Enabled = false;
+                        dateTimePicker2.Enabled = false;
+                        txtcodigo.Clear();
+                        txtcodigo.Enabled = false;
+                        CBcategoria.Enabled = false;
+                        CBcategoria.SelectedIndex=-1;
+                        ErrorProvider.Clear();
                         lblmensaje.Text = "";
                         List<impresion_ventas> impresion5 = new List<impresion_ventas>();
 
@@ -170,6 +187,13 @@ namespace Pantallas_proyecto
                         this.reportViewer2.RefreshReport();
                         break;
                     case "Productos a Punto de Acabarse":
+                        dateTimePicker1.Enabled = false;
+                        dateTimePicker2.Enabled = false;
+                        CBcategoria.Enabled = false;
+                        CBcategoria.SelectedIndex = -1;
+                        txtcodigo.Clear();
+                        txtcodigo.Enabled = false;
+                        ErrorProvider.Clear();
                         lblmensaje.Text = "";
                         List<impresion_ventas> impresion12 = new List<impresion_ventas>();
 
@@ -193,6 +217,13 @@ namespace Pantallas_proyecto
                         this.reportViewer3.RefreshReport();
                         break;
                     case "Rotacion del Inventario":
+                        dateTimePicker1.Enabled = false;
+                        dateTimePicker2.Enabled = false;
+                        CBcategoria.Enabled = false;
+                        CBcategoria.SelectedIndex = -1;
+                        txtcodigo.Clear();
+                        txtcodigo.Enabled = false;
+                        ErrorProvider.Clear();
                         lblmensaje.Text = "";
                         List<impresion1> impresion4 = new List<impresion1>();
 
@@ -217,6 +248,13 @@ namespace Pantallas_proyecto
                         this.reportViewer5.RefreshReport();
                         break;
                     case "Inventario":
+                        dateTimePicker1.Enabled = false;
+                        dateTimePicker2.Enabled = false;
+                        CBcategoria.Enabled = false;
+                        CBcategoria.SelectedIndex = -1;
+                        txtcodigo.Clear();
+                        txtcodigo.Enabled = false;
+                        ErrorProvider.Clear();
                         lblmensaje.Text = "";
                         List<impresion1> impresion22 = new List<impresion1>();
 
@@ -240,6 +278,13 @@ namespace Pantallas_proyecto
                         this.reportViewer6.RefreshReport();
                         break;
                     case "Compras":
+                        dateTimePicker1.Enabled = false;
+                        dateTimePicker2.Enabled = false;
+                        CBcategoria.Enabled = false;
+                        CBcategoria.SelectedIndex = -1;
+                        txtcodigo.Clear();
+                        txtcodigo.Enabled = false;
+                        ErrorProvider.Clear();
                         lblmensaje.Text = "";
                         List<impresion1> impresion = new List<impresion1>();
 
@@ -264,6 +309,11 @@ namespace Pantallas_proyecto
                         this.reportViewer8.RefreshReport();
                         break;
                     case "Compras por Codigo":
+                        dateTimePicker1.Enabled = false;
+                        dateTimePicker2.Enabled = false;
+                        CBcategoria.Enabled = false;
+                        CBcategoria.SelectedIndex = -1;
+                        txtcodigo.Enabled = true;
                         lblmensaje.Text = "Debe ingresar un codigo de compra";
                         if (validacion.Espacio_Blanco(ErrorProvider, txtcodigo) || validacion.Solo_Numeros(ErrorProvider, txtcodigo))
                         {
@@ -309,6 +359,13 @@ namespace Pantallas_proyecto
                             break;
                         
                     case "Compras con Fecha":
+                        dateTimePicker1.Enabled = true;
+                        dateTimePicker2.Enabled = true;
+                        CBcategoria.Enabled = false;
+                        CBcategoria.SelectedIndex = -1;
+                        txtcodigo.Clear();
+                        txtcodigo.Enabled = false;
+                        ErrorProvider.Clear();
                         lblmensaje.Text = "Ingrese una 'Fecha desde' y una 'Fecha hasta'";
                         List<impresion1> impresion3 = new List<impresion1>();
 
@@ -339,6 +396,13 @@ namespace Pantallas_proyecto
                         this.reportViewer9.RefreshReport();
                         break;
                     case "Lo mas Vendido":
+                        dateTimePicker1.Enabled = true;
+                        dateTimePicker2.Enabled = true;
+                        CBcategoria.Enabled = false;
+                        CBcategoria.SelectedIndex = -1;
+                        txtcodigo.Clear();
+                        txtcodigo.Enabled = false;
+                        ErrorProvider.Clear();
                         lblmensaje.Text = "Ingrese una 'Fecha desde' y una 'Fecha hasta'";
 
                         DateTime Fecha11 = dateTimePicker1.Value;
@@ -410,14 +474,20 @@ namespace Pantallas_proyecto
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            TxtResultBox gerente = new TxtResultBox();
-            gerente.Show();
+
             
         }
 
         private void lblmensaje_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fecha1 = dateTimePicker1.Value;
+            dateTimePicker2.MinDate = DateTime.Now.AddYears(-18);
+            dtpFechaIngreso.MaxDate = DateTime.Now.AddMonths(3);
         }
     }
     public class impresion1
