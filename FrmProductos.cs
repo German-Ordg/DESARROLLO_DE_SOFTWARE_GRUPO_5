@@ -60,7 +60,7 @@ namespace Pantallas_proyecto
         {
             try
             {
-                da = new SqlDataAdapter("Select codigo_producto Codigo,Categoria_Producto.descripcion_categoria Categoria, descripcion_producto Descripcion, cantidad_existente Cantidad,precio_actual Precio , descuento_producto Descuento , talla  " +
+                da = new SqlDataAdapter("Select codigo_producto Codigo,Categoria_Producto.descripcion_categoria Categoria, descripcion_producto Descripción, cantidad_existente Cantidad,precio_actual Precio , descuento_producto Descuento , talla  " +
                     "From " + nombreTabla + ", Categoria_Producto Where Categoria_Producto.codigo_categoria = Productos.codigo_categoria ", conect2.conexion);
                 dt = new DataTable();
                 da.Fill(dt);
@@ -348,8 +348,8 @@ namespace Pantallas_proyecto
 
         private void FrmProductos_Load(object sender, EventArgs e)
         {
-            textBox1.Enabled = false;
-            textBox2.Enabled = false;
+            txtDescripcion.Enabled = false;
+            txtCodigo.Enabled = false;
             timer1.Enabled = true;
 
             cargarDatosProductos(dgvProductos, "Productos");
@@ -506,24 +506,29 @@ namespace Pantallas_proyecto
             int selection = comboBox2.SelectedIndex;
             if (selection == -1)
             {
-                textBox1.Enabled = false;
-                textBox2.Enabled = false;
+                txtDescripcion.Enabled = false;
+                txtCodigo.Enabled = false;
+
             }
             else
             {
                 if (selection == 0)
                 {
-                    textBox1.Enabled = true;
-                    textBox2.Enabled = false;
-                    textBox1.Clear();
-                    textBox2.Clear();
+                    txtDescripcion.Enabled = true;
+                    txtDescripcion.Visible = true;
+                    txtCodigo.Visible = false;
+                    txtCodigo.Enabled = false;
+                    txtDescripcion.Clear();
+                    txtCodigo.Clear();
                 }
                 else
                 {
-                    textBox1.Enabled = false;
-                    textBox2.Enabled = true;
-                    textBox1.Clear();
-                    textBox2.Clear();
+                    txtDescripcion.Visible = false;
+                    txtCodigo.Visible = true;
+                    txtDescripcion.Enabled = false;
+                    txtCodigo.Enabled = true;
+                    txtDescripcion.Clear();
+                    txtCodigo.Clear();
 
                 }
             }
@@ -533,13 +538,13 @@ namespace Pantallas_proyecto
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             var aux = new Buscar_CodigoFrmProductos();
-            aux.filtrar1(dgvProductos, this.textBox2.Text.Trim());
+            aux.filtrar1(dgvProductos, this.txtCodigo.Text.Trim());
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             var aux = new MetodoBuscarDescripcion();
-            aux.filtrar(dgvProductos, this.textBox1.Text.Trim());
+            aux.filtrar(dgvProductos, this.txtDescripcion.Text.Trim());
         }
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -665,6 +670,24 @@ namespace Pantallas_proyecto
             codigoProducto.Enabled = true;
             talla.Enabled = true;
             btnquitar.Visible = false;
+        }
+
+        private void codigoProducto_TextChanged(object sender, EventArgs e)
+        {
+            if (codigoProducto.Text.Substring(0) == "0") {
+                codigoProducto.Text = "";
+            }
+            
+        }
+
+        private void codigoProducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+
         }
     }
 }

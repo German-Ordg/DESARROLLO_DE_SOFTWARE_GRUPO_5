@@ -53,6 +53,7 @@ namespace Pantallas_proyecto
             this.descripcionProducto = new System.Windows.Forms.TextBox();
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnquitar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -66,9 +67,8 @@ namespace Pantallas_proyecto
             this.Cantidaddgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descuentodgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -89,7 +89,6 @@ namespace Pantallas_proyecto
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnquitar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -201,13 +200,17 @@ namespace Pantallas_proyecto
             // codigoProducto
             // 
             this.codigoProducto.Location = new System.Drawing.Point(143, 27);
+            this.codigoProducto.MaxLength = 10;
             this.codigoProducto.Name = "codigoProducto";
             this.codigoProducto.Size = new System.Drawing.Size(134, 20);
             this.codigoProducto.TabIndex = 144;
+            this.codigoProducto.TextChanged += new System.EventHandler(this.codigoProducto_TextChanged);
+            this.codigoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codigoProducto_KeyPress);
             // 
             // talla
             // 
             this.talla.Location = new System.Drawing.Point(118, 193);
+            this.talla.MaxLength = 50;
             this.talla.Name = "talla";
             this.talla.Size = new System.Drawing.Size(159, 20);
             this.talla.TabIndex = 150;
@@ -237,6 +240,7 @@ namespace Pantallas_proyecto
             // cantidad
             // 
             this.cantidad.Location = new System.Drawing.Point(448, 134);
+            this.cantidad.MaxLength = 10;
             this.cantidad.Name = "cantidad";
             this.cantidad.Size = new System.Drawing.Size(159, 20);
             this.cantidad.TabIndex = 142;
@@ -246,6 +250,7 @@ namespace Pantallas_proyecto
             // descuento
             // 
             this.descuento.Location = new System.Drawing.Point(448, 196);
+            this.descuento.MaxLength = 10;
             this.descuento.Name = "descuento";
             this.descuento.Size = new System.Drawing.Size(159, 20);
             this.descuento.TabIndex = 152;
@@ -265,6 +270,7 @@ namespace Pantallas_proyecto
             // precioActual
             // 
             this.precioActual.Location = new System.Drawing.Point(448, 79);
+            this.precioActual.MaxLength = 10;
             this.precioActual.Name = "precioActual";
             this.precioActual.Size = new System.Drawing.Size(159, 20);
             this.precioActual.TabIndex = 140;
@@ -284,6 +290,7 @@ namespace Pantallas_proyecto
             // precioCompra
             // 
             this.precioCompra.Location = new System.Drawing.Point(448, 25);
+            this.precioCompra.MaxLength = 10;
             this.precioCompra.Name = "precioCompra";
             this.precioCompra.Size = new System.Drawing.Size(159, 20);
             this.precioCompra.TabIndex = 138;
@@ -304,6 +311,7 @@ namespace Pantallas_proyecto
             // descripcionProducto
             // 
             this.descripcionProducto.Location = new System.Drawing.Point(118, 65);
+            this.descripcionProducto.MaxLength = 100;
             this.descripcionProducto.Multiline = true;
             this.descripcionProducto.Name = "descripcionProducto";
             this.descripcionProducto.Size = new System.Drawing.Size(159, 63);
@@ -343,6 +351,23 @@ namespace Pantallas_proyecto
             this.groupBox4.Size = new System.Drawing.Size(629, 260);
             this.groupBox4.TabIndex = 172;
             this.groupBox4.TabStop = false;
+            // 
+            // btnquitar
+            // 
+            this.btnquitar.BackColor = System.Drawing.Color.Maroon;
+            this.btnquitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnquitar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnquitar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnquitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnquitar.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnquitar.Location = new System.Drawing.Point(352, 222);
+            this.btnquitar.Name = "btnquitar";
+            this.btnquitar.Size = new System.Drawing.Size(137, 32);
+            this.btnquitar.TabIndex = 187;
+            this.btnquitar.Text = "quitar seleccion";
+            this.btnquitar.UseVisualStyleBackColor = false;
+            this.btnquitar.Visible = false;
+            this.btnquitar.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -469,37 +494,26 @@ namespace Pantallas_proyecto
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(294, 110);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(87, 18);
+            this.label12.Size = new System.Drawing.Size(59, 18);
             this.label12.TabIndex = 176;
-            this.label12.Text = "Descripción";
+            this.label12.Text = "Buscar:";
             // 
-            // textBox1
+            // txtDescripcion
             // 
-            this.textBox1.Location = new System.Drawing.Point(391, 111);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(118, 20);
-            this.textBox1.TabIndex = 177;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtDescripcion.Location = new System.Drawing.Point(359, 111);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(114, 20);
+            this.txtDescripcion.TabIndex = 177;
+            this.txtDescripcion.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // label13
+            // txtCodigo
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(532, 109);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(56, 18);
-            this.label13.TabIndex = 178;
-            this.label13.Text = "Código";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(594, 110);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(114, 20);
-            this.textBox2.TabIndex = 179;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.txtCodigo.Location = new System.Drawing.Point(359, 111);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(114, 20);
+            this.txtCodigo.TabIndex = 179;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label15
             // 
@@ -517,9 +531,9 @@ namespace Pantallas_proyecto
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "Descripcion ",
-            "Codigo"});
-            this.comboBox2.Location = new System.Drawing.Point(145, 109);
+            "Descripción ",
+            "Código"});
+            this.comboBox2.Location = new System.Drawing.Point(145, 111);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 181;
@@ -533,7 +547,7 @@ namespace Pantallas_proyecto
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.Location = new System.Drawing.Point(714, 104);
+            this.button3.Location = new System.Drawing.Point(496, 100);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(112, 32);
             this.button3.TabIndex = 182;
@@ -717,23 +731,6 @@ namespace Pantallas_proyecto
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // btnquitar
-            // 
-            this.btnquitar.BackColor = System.Drawing.Color.Maroon;
-            this.btnquitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnquitar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnquitar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnquitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnquitar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnquitar.Location = new System.Drawing.Point(352, 222);
-            this.btnquitar.Name = "btnquitar";
-            this.btnquitar.Size = new System.Drawing.Size(137, 32);
-            this.btnquitar.TabIndex = 187;
-            this.btnquitar.Text = "quitar seleccion";
-            this.btnquitar.UseVisualStyleBackColor = false;
-            this.btnquitar.Visible = false;
-            this.btnquitar.Click += new System.EventHandler(this.button1_Click);
-            // 
             // FrmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -747,9 +744,8 @@ namespace Pantallas_proyecto
             this.Controls.Add(this.button3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
@@ -810,9 +806,8 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgvProductosCompra;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button3;

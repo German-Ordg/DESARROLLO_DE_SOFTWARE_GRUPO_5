@@ -297,5 +297,11 @@ namespace Pantallas_proyecto
         {
 
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            FrmProductos productos = new FrmProductos();
+            productos.Show();
+        }
     }
 }
