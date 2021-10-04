@@ -359,6 +359,7 @@ namespace Pantallas_proyecto
             // 
             this.txtcodigo.Location = new System.Drawing.Point(1002, 170);
             this.txtcodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtcodigo.MaxLength = 20;
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(132, 22);
             this.txtcodigo.TabIndex = 66;
@@ -801,6 +802,7 @@ namespace Pantallas_proyecto
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(225, 22);
             this.dateTimePicker2.TabIndex = 73;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // toolStrip1
             // 

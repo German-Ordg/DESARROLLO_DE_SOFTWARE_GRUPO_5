@@ -326,11 +326,12 @@ namespace Pantallas_proyecto
             if (email_bien_escrito(txtcorreo.Text))
             {
                 letra6 = true;
-
+                errorProvider2.Clear();
             }
             else
             {
                 errorProvider2.SetError(txtcorreo, "Direccion de Correo invalida");
+                errorProvider3.Clear();
             }
             conect.cerrar();
             conect.abrir();
@@ -398,12 +399,18 @@ namespace Pantallas_proyecto
                         conect.CargarDatosUsuario(dataGridView1);
                         btnModificar.Enabled = false;
                         errorProvider1.Clear();
+                        btnCrear.Enabled = true;
+                        cmbEmpleado.Enabled = true;
+                        txtusuario.Enabled = true;
+                        errorProvider2.Clear();
+                        errorProvider1.Clear();
+                        errorProvider3.Clear();
                     }
                     else
                     {
                         if (txtcontra.TextLength < 8)
                         {
-                            errorProvider1.SetError(txtcontra, "la contraseña debe ser mayor a 7 caracteres");
+                            errorProvider3.SetError(txtcontra, "la contraseña debe ser mayor a 7 caracteres");
                         }
                         else
                         {
@@ -420,6 +427,12 @@ namespace Pantallas_proyecto
                             conect.CargarDatosUsuario(dataGridView1);
                             btnModificar.Enabled = false;
                             errorProvider1.Clear();
+                            btnCrear.Enabled = true;
+                            cmbEmpleado.Enabled = true;
+                            txtusuario.Enabled = true;
+                            errorProvider2.Clear();
+                            errorProvider1.Clear();
+                            errorProvider3.Clear();
                         }
                     }
                     
@@ -432,6 +445,7 @@ namespace Pantallas_proyecto
                 }
                 
             }
+            
             conect.cerrar();
 
         }
@@ -465,6 +479,9 @@ namespace Pantallas_proyecto
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             btnModificar.Enabled = true;
+            btnCrear.Enabled = false;
+            cmbEmpleado.Enabled = false;
+            txtusuario.Enabled = false;
             int poc;
 
             poc = dataGridView1.CurrentRow.Index;

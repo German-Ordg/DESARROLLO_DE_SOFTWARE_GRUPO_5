@@ -56,12 +56,14 @@ namespace Pantallas_proyecto
             this.label4 = new System.Windows.Forms.Label();
             this.txtusuario2 = new System.Windows.Forms.TextBox();
             this.txtcorreo2 = new System.Windows.Forms.TextBox();
+            this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -238,22 +240,22 @@ namespace Pantallas_proyecto
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 694);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 700);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1368, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1368, 25);
             this.toolStrip1.TabIndex = 30;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(111, 28);
+            this.toolStripLabel1.Size = new System.Drawing.Size(111, 22);
             this.toolStripLabel1.Text = "toolStripLabel1";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(111, 28);
+            this.toolStripLabel2.Size = new System.Drawing.Size(111, 22);
             this.toolStripLabel2.Text = "toolStripLabel2";
             // 
             // timer1
@@ -317,6 +319,10 @@ namespace Pantallas_proyecto
             this.txtcorreo2.Size = new System.Drawing.Size(211, 22);
             this.txtcorreo2.TabIndex = 35;
             // 
+            // errorProvider3
+            // 
+            this.errorProvider3.ContainerControl = this;
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -360,6 +366,7 @@ namespace Pantallas_proyecto
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,5 +398,6 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtusuario2;
         private System.Windows.Forms.TextBox txtcorreo2;
+        private System.Windows.Forms.ErrorProvider errorProvider3;
     }
 }

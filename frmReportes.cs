@@ -68,7 +68,8 @@ namespace Pantallas_proyecto
             dgvmasvendido.ForeColor = Color.Black;
             dgvcategorias.ForeColor = Color.Black;
             dgvacabarse.ForeColor = Color.Black;
-
+            DateTime fecha1 = dateTimePicker1.Value;
+            dateTimePicker2.MinDate = fecha1.Date.AddDays(1);
             // TODO: esta línea de código carga datos en la tabla 'db_a75e9e_bderickmoncadaDataSetrotacion.ReporteCompras' Puede moverla o quitarla según sea necesario.
             // this.reporteComprasTableAdapter2.Fill(this.db_a75e9e_bderickmoncadaDataSetrotacion.ReporteCompras);
             // TODO: esta línea de código carga datos en la tabla 'DataSetCompra_Fecha.Compra_Fecha' Puede moverla o quitarla según sea necesario.
@@ -485,9 +486,19 @@ namespace Pantallas_proyecto
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            //int  fecha1 = DateTime.Now.Year - dateTimePicker1.Value.Year;
+            //dateTimePicker2.MinDate = DateTime.Now.AddYears(-fecha1+18);
             DateTime fecha1 = dateTimePicker1.Value;
-            dateTimePicker2.MinDate = DateTime.Now.AddYears(-18);
-            dtpFechaIngreso.MaxDate = DateTime.Now.AddMonths(3);
+            dateTimePicker2.MinDate = fecha1.Date.AddDays(1);
+            //int fecha2 = DateTime.Now.Year - dateTimePicker1.Value.Year;
+            //dateTimePicker2.MinDate = DateTime.Now.AddDays(-fecha2 +fecha2);
+            //int fecha3 = DateTime.Now.Month - dateTimePicker1.Value.Month;
+            //dateTimePicker2.MinDate = DateTime.Now.AddDays(-fecha3 + fecha3);
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
     public class impresion1
