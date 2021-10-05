@@ -110,7 +110,7 @@ namespace Pantallas_proyecto
             this.btnEndCompra.Location = new System.Drawing.Point(607, 622);
             this.btnEndCompra.Name = "btnEndCompra";
             this.btnEndCompra.Size = new System.Drawing.Size(153, 43);
-            this.btnEndCompra.TabIndex = 166;
+            this.btnEndCompra.TabIndex = 12;
             this.btnEndCompra.Text = "Terminar compra ";
             this.btnEndCompra.UseVisualStyleBackColor = false;
             this.btnEndCompra.Click += new System.EventHandler(this.btnRegresar_Click);
@@ -126,7 +126,7 @@ namespace Pantallas_proyecto
             this.button2.Location = new System.Drawing.Point(495, 222);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 32);
-            this.button2.TabIndex = 167;
+            this.button2.TabIndex = 11;
             this.button2.Text = "Agregar";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -203,7 +203,7 @@ namespace Pantallas_proyecto
             this.codigoProducto.MaxLength = 10;
             this.codigoProducto.Name = "codigoProducto";
             this.codigoProducto.Size = new System.Drawing.Size(134, 20);
-            this.codigoProducto.TabIndex = 144;
+            this.codigoProducto.TabIndex = 3;
             this.codigoProducto.TextChanged += new System.EventHandler(this.codigoProducto_TextChanged);
             this.codigoProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codigoProducto_KeyPress);
             // 
@@ -213,7 +213,7 @@ namespace Pantallas_proyecto
             this.talla.MaxLength = 50;
             this.talla.Name = "talla";
             this.talla.Size = new System.Drawing.Size(159, 20);
-            this.talla.TabIndex = 150;
+            this.talla.TabIndex = 6;
             // 
             // label7
             // 
@@ -243,7 +243,7 @@ namespace Pantallas_proyecto
             this.cantidad.MaxLength = 10;
             this.cantidad.Name = "cantidad";
             this.cantidad.Size = new System.Drawing.Size(159, 20);
-            this.cantidad.TabIndex = 142;
+            this.cantidad.TabIndex = 9;
             this.cantidad.TextChanged += new System.EventHandler(this.cantidad_TextChanged);
             this.cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cantidad_KeyPress);
             // 
@@ -253,7 +253,7 @@ namespace Pantallas_proyecto
             this.descuento.MaxLength = 10;
             this.descuento.Name = "descuento";
             this.descuento.Size = new System.Drawing.Size(159, 20);
-            this.descuento.TabIndex = 152;
+            this.descuento.TabIndex = 10;
             this.descuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.descuento_KeyPress);
             // 
             // label6
@@ -273,7 +273,7 @@ namespace Pantallas_proyecto
             this.precioActual.MaxLength = 10;
             this.precioActual.Name = "precioActual";
             this.precioActual.Size = new System.Drawing.Size(159, 20);
-            this.precioActual.TabIndex = 140;
+            this.precioActual.TabIndex = 8;
             this.precioActual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precioActual_KeyPress);
             // 
             // label1
@@ -293,7 +293,7 @@ namespace Pantallas_proyecto
             this.precioCompra.MaxLength = 10;
             this.precioCompra.Name = "precioCompra";
             this.precioCompra.Size = new System.Drawing.Size(159, 20);
-            this.precioCompra.TabIndex = 138;
+            this.precioCompra.TabIndex = 7;
             this.precioCompra.TextChanged += new System.EventHandler(this.precioCompra_TextChanged);
             this.precioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precioCompra_KeyPress);
             // 
@@ -315,7 +315,7 @@ namespace Pantallas_proyecto
             this.descripcionProducto.Multiline = true;
             this.descripcionProducto.Name = "descripcionProducto";
             this.descripcionProducto.Size = new System.Drawing.Size(159, 63);
-            this.descripcionProducto.TabIndex = 148;
+            this.descripcionProducto.TabIndex = 4;
             // 
             // cmbCategoria
             // 
@@ -324,7 +324,7 @@ namespace Pantallas_proyecto
             this.cmbCategoria.Location = new System.Drawing.Point(118, 147);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(159, 21);
-            this.cmbCategoria.TabIndex = 153;
+            this.cmbCategoria.TabIndex = 5;
             // 
             // groupBox4
             // 
@@ -511,7 +511,7 @@ namespace Pantallas_proyecto
             this.txtCodigo.Location = new System.Drawing.Point(359, 111);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(114, 20);
-            this.txtCodigo.TabIndex = 179;
+            this.txtCodigo.TabIndex = 2;
             this.txtCodigo.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
@@ -536,7 +536,7 @@ namespace Pantallas_proyecto
             this.comboBox2.Location = new System.Drawing.Point(145, 111);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 181;
+            this.comboBox2.TabIndex = 1;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button3
@@ -689,7 +689,7 @@ namespace Pantallas_proyecto
             this.button4.Location = new System.Drawing.Point(1317, 609);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(94, 56);
-            this.button4.TabIndex = 185;
+            this.button4.TabIndex = 13;
             this.button4.Text = "Cancelar Compra";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
