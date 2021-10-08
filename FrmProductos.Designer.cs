@@ -58,14 +58,6 @@ namespace Pantallas_proyecto
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvProductosCompra = new System.Windows.Forms.DataGridView();
-            this.CodProductodgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripciondgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriadgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.talladgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioCompradgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioVentadgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidaddgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descuentodgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -89,6 +81,14 @@ namespace Pantallas_proyecto
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.CodProductodgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripciondgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriadgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.talladgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioCompradgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioVentadgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidaddgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descuentodgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -123,7 +123,7 @@ namespace Pantallas_proyecto
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(495, 222);
+            this.button2.Location = new System.Drawing.Point(495, 213);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 32);
             this.button2.TabIndex = 11;
@@ -180,7 +180,7 @@ namespace Pantallas_proyecto
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(18, 88);
+            this.label5.Location = new System.Drawing.Point(18, 65);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 18);
             this.label5.TabIndex = 145;
@@ -231,7 +231,7 @@ namespace Pantallas_proyecto
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(292, 195);
+            this.label9.Location = new System.Drawing.Point(292, 181);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 18);
             this.label9.TabIndex = 151;
@@ -249,7 +249,7 @@ namespace Pantallas_proyecto
             // 
             // descuento
             // 
-            this.descuento.Location = new System.Drawing.Point(448, 196);
+            this.descuento.Location = new System.Drawing.Point(448, 182);
             this.descuento.MaxLength = 10;
             this.descuento.Name = "descuento";
             this.descuento.Size = new System.Drawing.Size(159, 20);
@@ -360,11 +360,11 @@ namespace Pantallas_proyecto
             this.btnquitar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnquitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnquitar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnquitar.Location = new System.Drawing.Point(352, 222);
+            this.btnquitar.Location = new System.Drawing.Point(352, 214);
             this.btnquitar.Name = "btnquitar";
             this.btnquitar.Size = new System.Drawing.Size(137, 32);
             this.btnquitar.TabIndex = 187;
-            this.btnquitar.Text = "quitar seleccion";
+            this.btnquitar.Text = "Quitar seleccion";
             this.btnquitar.UseVisualStyleBackColor = false;
             this.btnquitar.Visible = false;
             this.btnquitar.Click += new System.EventHandler(this.button1_Click);
@@ -387,7 +387,7 @@ namespace Pantallas_proyecto
             this.groupBox1.Controls.Add(this.dgvProductosCompra);
             this.groupBox1.Location = new System.Drawing.Point(690, 150);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(721, 243);
+            this.groupBox1.Size = new System.Drawing.Size(710, 243);
             this.groupBox1.TabIndex = 173;
             this.groupBox1.TabStop = false;
             // 
@@ -405,6 +405,7 @@ namespace Pantallas_proyecto
             // dgvProductosCompra
             // 
             this.dgvProductosCompra.AllowUserToDeleteRows = false;
+            this.dgvProductosCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductosCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductosCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodProductodgv,
@@ -420,72 +421,8 @@ namespace Pantallas_proyecto
             this.dgvProductosCompra.Name = "dgvProductosCompra";
             this.dgvProductosCompra.ReadOnly = true;
             this.dgvProductosCompra.RowHeadersWidth = 51;
-            this.dgvProductosCompra.Size = new System.Drawing.Size(715, 224);
+            this.dgvProductosCompra.Size = new System.Drawing.Size(704, 224);
             this.dgvProductosCompra.TabIndex = 92;
-            // 
-            // CodProductodgv
-            // 
-            this.CodProductodgv.HeaderText = "Cod. Producto";
-            this.CodProductodgv.MinimumWidth = 6;
-            this.CodProductodgv.Name = "CodProductodgv";
-            this.CodProductodgv.ReadOnly = true;
-            this.CodProductodgv.Width = 125;
-            // 
-            // descripciondgv
-            // 
-            this.descripciondgv.HeaderText = "Descripcion";
-            this.descripciondgv.MinimumWidth = 6;
-            this.descripciondgv.Name = "descripciondgv";
-            this.descripciondgv.ReadOnly = true;
-            this.descripciondgv.Width = 125;
-            // 
-            // categoriadgv
-            // 
-            this.categoriadgv.HeaderText = "Categoria";
-            this.categoriadgv.MinimumWidth = 6;
-            this.categoriadgv.Name = "categoriadgv";
-            this.categoriadgv.ReadOnly = true;
-            this.categoriadgv.Width = 125;
-            // 
-            // talladgv
-            // 
-            this.talladgv.HeaderText = "Talla";
-            this.talladgv.MinimumWidth = 6;
-            this.talladgv.Name = "talladgv";
-            this.talladgv.ReadOnly = true;
-            this.talladgv.Width = 125;
-            // 
-            // PrecioCompradgv
-            // 
-            this.PrecioCompradgv.HeaderText = "Precio Compra";
-            this.PrecioCompradgv.MinimumWidth = 6;
-            this.PrecioCompradgv.Name = "PrecioCompradgv";
-            this.PrecioCompradgv.ReadOnly = true;
-            this.PrecioCompradgv.Width = 125;
-            // 
-            // PrecioVentadgv
-            // 
-            this.PrecioVentadgv.HeaderText = "Precio Venta";
-            this.PrecioVentadgv.MinimumWidth = 6;
-            this.PrecioVentadgv.Name = "PrecioVentadgv";
-            this.PrecioVentadgv.ReadOnly = true;
-            this.PrecioVentadgv.Width = 125;
-            // 
-            // Cantidaddgv
-            // 
-            this.Cantidaddgv.HeaderText = "Cantidad";
-            this.Cantidaddgv.MinimumWidth = 6;
-            this.Cantidaddgv.Name = "Cantidaddgv";
-            this.Cantidaddgv.ReadOnly = true;
-            this.Cantidaddgv.Width = 125;
-            // 
-            // descuentodgv
-            // 
-            this.descuentodgv.HeaderText = "Descuento";
-            this.descuentodgv.MinimumWidth = 6;
-            this.descuentodgv.Name = "descuentodgv";
-            this.descuentodgv.ReadOnly = true;
-            this.descuentodgv.Width = 125;
             // 
             // label12
             // 
@@ -522,9 +459,9 @@ namespace Pantallas_proyecto
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(39, 110);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(100, 18);
+            this.label15.Size = new System.Drawing.Size(104, 18);
             this.label15.TabIndex = 180;
-            this.label15.Text = "Busqueda por";
+            this.label15.Text = "Busqueda por:";
             // 
             // comboBox2
             // 
@@ -686,7 +623,7 @@ namespace Pantallas_proyecto
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button4.Location = new System.Drawing.Point(1317, 609);
+            this.button4.Location = new System.Drawing.Point(1306, 609);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(94, 56);
             this.button4.TabIndex = 13;
@@ -730,6 +667,62 @@ namespace Pantallas_proyecto
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // CodProductodgv
+            // 
+            this.CodProductodgv.HeaderText = "Código de Producto";
+            this.CodProductodgv.MinimumWidth = 6;
+            this.CodProductodgv.Name = "CodProductodgv";
+            this.CodProductodgv.ReadOnly = true;
+            // 
+            // descripciondgv
+            // 
+            this.descripciondgv.HeaderText = "Descripción";
+            this.descripciondgv.MinimumWidth = 6;
+            this.descripciondgv.Name = "descripciondgv";
+            this.descripciondgv.ReadOnly = true;
+            // 
+            // categoriadgv
+            // 
+            this.categoriadgv.HeaderText = "Categoría";
+            this.categoriadgv.MinimumWidth = 6;
+            this.categoriadgv.Name = "categoriadgv";
+            this.categoriadgv.ReadOnly = true;
+            // 
+            // talladgv
+            // 
+            this.talladgv.HeaderText = "Talla";
+            this.talladgv.MinimumWidth = 6;
+            this.talladgv.Name = "talladgv";
+            this.talladgv.ReadOnly = true;
+            // 
+            // PrecioCompradgv
+            // 
+            this.PrecioCompradgv.HeaderText = "Precio de Compra";
+            this.PrecioCompradgv.MinimumWidth = 6;
+            this.PrecioCompradgv.Name = "PrecioCompradgv";
+            this.PrecioCompradgv.ReadOnly = true;
+            // 
+            // PrecioVentadgv
+            // 
+            this.PrecioVentadgv.HeaderText = "Precio de Venta";
+            this.PrecioVentadgv.MinimumWidth = 6;
+            this.PrecioVentadgv.Name = "PrecioVentadgv";
+            this.PrecioVentadgv.ReadOnly = true;
+            // 
+            // Cantidaddgv
+            // 
+            this.Cantidaddgv.HeaderText = "Cantidad";
+            this.Cantidaddgv.MinimumWidth = 6;
+            this.Cantidaddgv.Name = "Cantidaddgv";
+            this.Cantidaddgv.ReadOnly = true;
+            // 
+            // descuentodgv
+            // 
+            this.descuentodgv.HeaderText = "Descuento";
+            this.descuentodgv.MinimumWidth = 6;
+            this.descuentodgv.Name = "descuentodgv";
+            this.descuentodgv.ReadOnly = true;
             // 
             // FrmProductos
             // 
@@ -822,6 +815,13 @@ namespace Pantallas_proyecto
         public System.Windows.Forms.Label pago;
         public System.Windows.Forms.Label proveedor;
         public System.Windows.Forms.Label compra;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnquitar;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodProductodgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripciondgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoriadgv;
@@ -830,12 +830,5 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVentadgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidaddgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn descuentodgv;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Button btnquitar;
     }
 }
