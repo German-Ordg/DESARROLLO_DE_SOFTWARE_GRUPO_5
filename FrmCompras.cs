@@ -78,7 +78,18 @@ namespace Pantallas_proyecto
             cargarDatosCompras(dgvProveedores, "Compras");
 
 
-
+            try
+            {
+                da = new SqlDataAdapter("SELECT nombre_proveedor as 'Nombre del Proveedor' FROM Proveedores", conect2.conexion);
+                dt = new DataTable();
+                da.Fill(dt);
+                dtgprov.DataSource = dt;
+                conect2.cerrar();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos de los proveedores", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             try
             {
@@ -97,9 +108,8 @@ namespace Pantallas_proyecto
                 MessageBox.Show("Error al cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
-            //metodo para cargar datos en combobox proveedores 
-            try
+                        //metodo para cargar datos en combobox proveedores 
+          /*  try
             {
                 SqlCommand comando = new SqlCommand("SELECT nombre_proveedor FROM Proveedores", conect2.conexion);
                 conect2.abrir();
@@ -114,7 +124,7 @@ namespace Pantallas_proyecto
             catch (Exception ex)
             {
                 MessageBox.Show("Error al cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            } */
 
         }
 
@@ -180,10 +190,10 @@ namespace Pantallas_proyecto
             }
 
 
-            if (validacion.Espacio_Blanco_CB(errorProvider1, comboProveedor))
+           if (validacion.Espacio_Blanco(errorProvider1, textProveedor))
             {
-                if (validacion.Espacio_Blanco_CB(errorProvider1, comboProveedor))
-                    errorProvider1.SetError(comboProveedor, "no se puede dejar en blanco");
+                if (validacion.Espacio_Blanco(errorProvider1, textProveedor))
+                    errorProvider1.SetError(textProveedor, "no se puede dejar en blanco");
             }
             else
             {
@@ -209,8 +219,8 @@ namespace Pantallas_proyecto
                 //Compras
                 try
             {
-                if (codigoCompra.Text == string.Empty || comboProveedor.Text == string.Empty || comboPago.Text == string.Empty || dateFecha.Text == string.Empty)
-                    MessageBox.Show("Porfavor llene todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (codigoCompra.Text == string.Empty || textProveedor.Text==string.Empty||comboPago.Text == string.Empty || dateFecha.Text == string.Empty)
+                    MessageBox.Show("Porfavor llene o seleccione todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
                 else
@@ -237,7 +247,7 @@ namespace Pantallas_proyecto
                         FrmProductos produc = new FrmProductos();
                         produc.compra.Text = codigoCompra.Text;
                         produc.fecha.Text = dateFecha.Value.ToString("yyyy/MM/dd");
-                        produc.proveedor.Text = comboProveedor.SelectedItem.ToString();
+                        produc.proveedor.Text = proveedorSeleccionado;
                         produc.pago.Text = comboPago.SelectedItem.ToString();
 
                         produc.Show();
@@ -315,6 +325,38 @@ namespace Pantallas_proyecto
         private void comboProveedor_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        string proveedorSeleccionado;
+        int poc1;
+
+        private void dtgprov_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //poc1 = -1;
+            poc1 = dtgprov.CurrentRow.Index;
+            proveedorSeleccionado = dtgprov[0, poc1].Value.ToString();
+            textProveedor.Text = dtgprov[0, poc1].Value.ToString();
+        }
+
+        private void dtgprov_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            poc1 = dtgprov.CurrentRow.Index;
+            proveedorSeleccionado = dtgprov[0, poc1].Value.ToString();
+            textProveedor.Text = dtgprov[0, poc1].Value.ToString();
+        }
+
+        private void dtgprov_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            poc1 = dtgprov.CurrentRow.Index;
+            proveedorSeleccionado = dtgprov[0, poc1].Value.ToString();
+            textProveedor.Text = dtgprov[0, poc1].Value.ToString();
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            textProveedor.Text = "";
+            codigoCompra.Text = "";
+            comboPago.SelectedIndex = -1;
         }
     }
 
