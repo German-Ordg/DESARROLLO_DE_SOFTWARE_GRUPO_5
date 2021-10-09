@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\obj\\Debug"
   ],
-  "SelectedNode": "\\FrmEmpleados.resx",
+  "SelectedNode": "\\FrmImpresionFactura.Designer.cs",
   "PreviewInSolutionExplorer": false
 }
