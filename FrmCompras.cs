@@ -336,6 +336,7 @@ namespace Pantallas_proyecto
             poc1 = dtgprov.CurrentRow.Index;
             proveedorSeleccionado = dtgprov[0, poc1].Value.ToString();
             textProveedor.Text = dtgprov[0, poc1].Value.ToString();
+            textProveedor.Enabled = false;
         }
 
         private void dtgprov_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -343,6 +344,7 @@ namespace Pantallas_proyecto
             poc1 = dtgprov.CurrentRow.Index;
             proveedorSeleccionado = dtgprov[0, poc1].Value.ToString();
             textProveedor.Text = dtgprov[0, poc1].Value.ToString();
+            textProveedor.Enabled = false;
         }
 
         private void dtgprov_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -350,6 +352,7 @@ namespace Pantallas_proyecto
             poc1 = dtgprov.CurrentRow.Index;
             proveedorSeleccionado = dtgprov[0, poc1].Value.ToString();
             textProveedor.Text = dtgprov[0, poc1].Value.ToString();
+            textProveedor.Enabled = false;
         }
 
         private void button1_Click_3(object sender, EventArgs e)
@@ -357,6 +360,13 @@ namespace Pantallas_proyecto
             textProveedor.Text = "";
             codigoCompra.Text = "";
             comboPago.SelectedIndex = -1;
+            textProveedor.Enabled = true;
+        }
+
+        private void textProveedor_TextChanged(object sender, EventArgs e)
+        {
+            var aux = new MetodoBuscarProveedor();
+            aux.filtrar(dtgprov, this.textProveedor.Text.Trim());
         }
     }
 
