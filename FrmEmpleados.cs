@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using System.Text.RegularExpressions;
 
 namespace Pantallas_proyecto
 {
@@ -73,6 +73,8 @@ namespace Pantallas_proyecto
             dtpFechaIngreso.MaxDate = DateTime.Now.AddMonths(3);
             dtpFechaIngreso.MinDate = DateTime.Now.AddYears(-200);
             dtpFechaNacimiento.MinDate = DateTime.Now.AddYears(-90);
+            int fecha1 = DateTime.Now.Year - dtpFechaNacimiento.Value.Year;
+            dtpFechaIngreso.MinDate = DateTime.Now.AddYears(-fecha1 + 18);
             conect.abrir();
             conect.cargarDatosEmpleados(dgvEmpleados);
             conect.CargaDePuestos(cmbPuesto);
@@ -121,13 +123,18 @@ namespace Pantallas_proyecto
                 letra2 = true;
             }
 
-            if (validacion.Espacio_Blanco(ErrorProvider1, txtIdentidad) || validacion.Solo_Numeros(ErrorProvider1, txtIdentidad))
+            if (validacion.Espacio_Blanco(ErrorProvider1, txtIdentidad) || validacion.Solo_Numeros(ErrorProvider1, txtIdentidad) || !Regex.IsMatch(txtIdentidad.Text, "^((0[1-9]|1[0-8])+([0-9]{2}))+((19[0-9]{2}|20[0-9]{2})+(([0-9]){5}))$"))
             {
                 if (validacion.Espacio_Blanco(ErrorProvider1, txtIdentidad))
                     ErrorProvider1.SetError(txtIdentidad, "no se puede dejar en blanco");
                 else
                 if (validacion.Solo_Numeros(ErrorProvider1, txtIdentidad))
                     ErrorProvider1.SetError(txtIdentidad, "Solo se permite numeros");
+                else
+                    if (!Regex.IsMatch(txtIdentidad.Text, "^((0[1-9]|1[0-8])+([0-9]{2}))+((19[0-9]{2}|20[0-9]{2})+(([0-9]){5}))$"))
+                {
+                    ErrorProvider1.SetError(txtIdentidad, "Escriba un Formato de Identidad Valido");
+                }
             }
             else
             {
@@ -142,14 +149,19 @@ namespace Pantallas_proyecto
                 }
             }
 
-                if (validacion.Espacio_Blanco(ErrorProvider1, txtNumeroTel) || validacion.Solo_Numeros(ErrorProvider1, txtNumeroTel))
+                if (validacion.Espacio_Blanco(ErrorProvider1, txtNumeroTel) || validacion.Solo_Numeros(ErrorProvider1, txtNumeroTel) || !Regex.IsMatch(txtNumeroTel.Text, "^(3|2|8|9){1}[0-9]{7}$"))
                 {
                     if (validacion.Espacio_Blanco(ErrorProvider1, txtNumeroTel))
                         ErrorProvider1.SetError(txtNumeroTel, "No se puede dejar en blanco");
                     else
                     if (validacion.Solo_Numeros(ErrorProvider1, txtNumeroTel))
                         ErrorProvider1.SetError(txtNumeroTel, "Solo se permite numeros");
+                    else
+                    if (!Regex.IsMatch(txtNumeroTel.Text, "^(3|2|8|9){1}[0-9]{7}$"))
+                {
+                    ErrorProvider1.SetError(txtNumeroTel, "Formato de Numero de Telefono no valido. Debe Comenzar con uno de los numeros: 3, 2, 8, 9.");
                 }
+            }
                 else
                 {
 
@@ -303,13 +315,18 @@ namespace Pantallas_proyecto
                 letra2 = true;
             }
 
-            if (validacion.Espacio_Blanco(ErrorProvider1, txtIdentidad) || validacion.Solo_Numeros(ErrorProvider1, txtIdentidad))
+            if (validacion.Espacio_Blanco(ErrorProvider1, txtIdentidad) || validacion.Solo_Numeros(ErrorProvider1, txtIdentidad) ||!Regex.IsMatch(txtIdentidad.Text, "^((0[1-9]|1[0-8])+([0-9]{2}))+((19[0-9]{2}|20[0-9]{2})+(([0-9]){5}))$"))
             {
                 if (validacion.Espacio_Blanco(ErrorProvider1, txtIdentidad))
                     ErrorProvider1.SetError(txtIdentidad, "no se puede dejar en blanco");
                 else
                 if (validacion.Solo_Numeros(ErrorProvider1, txtIdentidad))
                     ErrorProvider1.SetError(txtIdentidad, "Solo se permite numeros");
+                else 
+                    if (!Regex.IsMatch(txtIdentidad.Text, "^((0[1-9]|1[0-8])+([0-9]{2}))+((19[0-9]{2}|20[0-9]{2})+(([0-9]){5}))$"))
+                {
+                    ErrorProvider1.SetError(txtIdentidad, "Escriba un Formato de Identidad Valido");
+                }
             }
             else
             {
@@ -324,13 +341,19 @@ namespace Pantallas_proyecto
                 }
 
 
-                if (validacion.Espacio_Blanco(ErrorProvider1, txtNumeroTel) || validacion.Solo_Numeros(ErrorProvider1, txtNumeroTel))
+                if (validacion.Espacio_Blanco(ErrorProvider1, txtNumeroTel) || validacion.Solo_Numeros(ErrorProvider1, txtNumeroTel) || !Regex.IsMatch(txtNumeroTel.Text, "^(3|2|8|9){1}[0-9]{7}$"))
                 {
                     if (validacion.Espacio_Blanco(ErrorProvider1, txtNumeroTel))
                         ErrorProvider1.SetError(txtNumeroTel, "No se puede dejar en blanco");
                     else
                     if (validacion.Solo_Numeros(ErrorProvider1, txtNumeroTel))
                         ErrorProvider1.SetError(txtNumeroTel, "Solo se permite numeros");
+
+                else
+                if(!Regex.IsMatch(txtNumeroTel.Text, "^(3|2|8|9){1}[0-9]{7}$") )
+                    {
+                        ErrorProvider1.SetError(txtNumeroTel, "Formato de Numero de Telefono no valido. Debe Comenzar con uno de los numeros: 3, 2, 8, 9.");
+                    }
                 }
 
                 if (txtNumeroTel.Text.Length != 8)
@@ -443,7 +466,8 @@ namespace Pantallas_proyecto
 
         private void dtpFechaNacimiento_ValueChanged(object sender, EventArgs e)
         {
-
+            int fecha1 = DateTime.Now.Year - dtpFechaNacimiento.Value.Year;
+            dtpFechaIngreso.MinDate = DateTime.Now.AddYears(-fecha1 + 18);
         }
 
         private void txtNumeroTel_TextChanged(object sender, EventArgs e)
@@ -469,6 +493,23 @@ namespace Pantallas_proyecto
                 errorProvider3.SetError(txtIdentidad, "No se permiten espacios en blanco");
                 e.Handled = true;
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            txtNombre.Clear();
+            txtIdentidad.Clear();
+            txtApellido.Clear();
+            txtNumeroTel.Clear();
+            cmbGenero.SelectedIndex = -1;
+            cmbPuesto.SelectedIndex = -1;
+            
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
