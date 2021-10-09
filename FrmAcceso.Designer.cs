@@ -79,6 +79,7 @@ namespace Pantallas_proyecto
             this.txtUsuario.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtUsuario.Location = new System.Drawing.Point(152, 102);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsuario.MaxLength = 50;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(127, 25);
             this.txtUsuario.TabIndex = 1;
@@ -95,6 +96,7 @@ namespace Pantallas_proyecto
             this.txtContrasena.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtContrasena.Location = new System.Drawing.Point(152, 159);
             this.txtContrasena.Margin = new System.Windows.Forms.Padding(4);
+            this.txtContrasena.MaxLength = 50;
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(127, 25);
             this.txtContrasena.TabIndex = 2;
