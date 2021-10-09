@@ -593,9 +593,7 @@ namespace Pantallas_proyecto
                                     }
                                     else
                                     {
-                                        if (txtNombreCliente.TextLength == 0
-                                            
-                                            )
+                                        if (txtNombreCliente.TextLength == 0)
                                         {
                                             MessageBox.Show("Ingrese el nombre del cliente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         }
