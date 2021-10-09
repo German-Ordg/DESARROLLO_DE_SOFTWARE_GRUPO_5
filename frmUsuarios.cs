@@ -109,6 +109,7 @@ namespace Pantallas_proyecto
             {
                 if (validacion.Espacio_Blanco(errorProvider1, txtusuario))
                     errorProvider1.SetError(txtusuario, "no se puede dejar en blanco");
+                else
                 if (txtusuario.TextLength < 8 )
                 {
                     errorProvider1.SetError(txtusuario, "el usuario debe ser mayor a 7 caracteres");
@@ -146,6 +147,7 @@ namespace Pantallas_proyecto
             {
                 if (validacion.Espacio_Blanco(errorProvider2, txtcontra))
                     errorProvider2.SetError(txtcontra, "no se puede dejar en blanco");
+                else
                 if (txtcontra.TextLength < 8)
                 {
                     errorProvider2.SetError(txtcontra, "el correo debe ser mayor a 7 caracteres");
@@ -240,7 +242,10 @@ namespace Pantallas_proyecto
                         txtusuario.Clear();
                         txtcorreo.Clear();
                     txtcontra.Clear();
-                        cmbtipousr.SelectedIndex = -1;
+                    txtusuario2.Clear();
+                    txtcorreo2.Clear();
+                    cmbEmpleado.SelectedIndex = -1;
+                    cmbtipousr.SelectedIndex = -1;
 
                     
                     conect.cerrar();
@@ -287,6 +292,7 @@ namespace Pantallas_proyecto
             {
                 if (validacion.Espacio_Blanco(errorProvider1, txtusuario))
                     errorProvider1.SetError(txtusuario, "no se puede dejar en blanco");
+                else
                 if (txtusuario.TextLength < 8)
                 {
                     errorProvider1.SetError(txtusuario, "el usuario debe ser mayor a 7 caracteres");
@@ -396,6 +402,7 @@ namespace Pantallas_proyecto
                         txtcorreo2.Clear();
                         txtcontra.Clear();
                         cmbtipousr.SelectedIndex = -1;
+                        cmbEmpleado.SelectedIndex = -1;
                         conect.CargarDatosUsuario(dataGridView1);
                         btnModificar.Enabled = false;
                         errorProvider1.Clear();
@@ -423,6 +430,7 @@ namespace Pantallas_proyecto
                             txtcorreo.Clear();
                             txtcorreo2.Clear();
                             txtcontra.Clear();
+                            cmbEmpleado.SelectedIndex = -1;
                             cmbtipousr.SelectedIndex = -1;
                             conect.CargarDatosUsuario(dataGridView1);
                             btnModificar.Enabled = false;
@@ -550,6 +558,27 @@ namespace Pantallas_proyecto
                 //errorProvider1.SetError(cmbEmpleado, "Codigo no encontrado, Intente de nuevo");
             }
             
+        }
+
+        private void btnlimpiar_Click(object sender, EventArgs e)
+        {
+            txtcodemp.Clear();
+            txtusuario.Clear();
+            txtusuario2.Clear();
+            txtcorreo.Clear();
+            txtcorreo2.Clear();
+            txtcontra.Clear();
+            cmbtipousr.SelectedIndex = -1;
+            cmbEmpleado.SelectedIndex = -1;
+            conect.CargarDatosUsuario(dataGridView1);
+            btnModificar.Enabled = false;
+            errorProvider1.Clear();
+            btnCrear.Enabled = true;
+            cmbEmpleado.Enabled = true;
+            txtusuario.Enabled = true;
+            errorProvider2.Clear();
+            errorProvider1.Clear();
+            errorProvider3.Clear();
         }
     }
 }

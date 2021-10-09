@@ -57,6 +57,7 @@ namespace Pantallas_proyecto
             this.txtusuario2 = new System.Windows.Forms.TextBox();
             this.txtcorreo2 = new System.Windows.Forms.TextBox();
             this.errorProvider3 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnlimpiar = new System.Windows.Forms.Button();
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -160,7 +161,7 @@ namespace Pantallas_proyecto
             this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrear.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCrear.Location = new System.Drawing.Point(287, 549);
+            this.btnCrear.Location = new System.Drawing.Point(116, 549);
             this.btnCrear.Margin = new System.Windows.Forms.Padding(4);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(165, 50);
@@ -204,7 +205,7 @@ namespace Pantallas_proyecto
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnModificar.Location = new System.Drawing.Point(896, 549);
+            this.btnModificar.Location = new System.Drawing.Point(532, 549);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(203, 50);
@@ -323,12 +324,29 @@ namespace Pantallas_proyecto
             // 
             this.errorProvider3.ContainerControl = this;
             // 
+            // btnlimpiar
+            // 
+            this.btnlimpiar.BackColor = System.Drawing.Color.Maroon;
+            this.btnlimpiar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnlimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlimpiar.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnlimpiar.Location = new System.Drawing.Point(918, 549);
+            this.btnlimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnlimpiar.Name = "btnlimpiar";
+            this.btnlimpiar.Size = new System.Drawing.Size(203, 50);
+            this.btnlimpiar.TabIndex = 36;
+            this.btnlimpiar.Text = "limpiar criterios";
+            this.btnlimpiar.UseVisualStyleBackColor = false;
+            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1368, 725);
+            this.Controls.Add(this.btnlimpiar);
             this.Controls.Add(this.txtcorreo2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbEmpleado);
@@ -399,5 +417,6 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.TextBox txtusuario2;
         private System.Windows.Forms.TextBox txtcorreo2;
         private System.Windows.Forms.ErrorProvider errorProvider3;
+        private System.Windows.Forms.Button btnlimpiar;
     }
 }
