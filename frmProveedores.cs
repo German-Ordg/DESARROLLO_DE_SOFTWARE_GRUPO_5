@@ -86,6 +86,7 @@ namespace Pantallas_proyecto
             {
                 letra3 = true;
             }
+
             if (txtTelefono.Text.Length < 8 || txtTelefono.Text.Length > 8)
             {
                 ErrorProvider.SetError(txtTelefono, "Numero invalido");
@@ -292,6 +293,10 @@ namespace Pantallas_proyecto
         private void txtNombreProovedor_TextChanged(object sender, EventArgs e)
         {
 
+            if (txtNombreProovedor.Text.Length >= 50)
+            {
+                ErrorProvider.SetError(txtNombreProovedor, "No se pueden ingresar nombres mayor a 50 caracteres");
+            }
         }
 
         private void txtNombreProovedor_KeyPress(object sender, KeyPressEventArgs e)
@@ -309,6 +314,21 @@ namespace Pantallas_proyecto
             txtTelefono.Text = dgvProovedores[2, poc].Value.ToString();
             txtDescripcion.Text = dgvProovedores[3, poc].Value.ToString();
            
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+            txtNombreProovedor.Clear();
+            txtDescripcion.Clear();
+            txtNombreProovedor.Clear();
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+            if (txtDescripcion.Text.Length >= 150)
+            {
+                ErrorProvider.SetError(txtNombreProovedor, "Numero invalido");
+            }
         }
     }
     }

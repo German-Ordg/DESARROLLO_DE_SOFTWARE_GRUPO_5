@@ -49,6 +49,7 @@ namespace Pantallas_proyecto
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btneliminar = new System.Windows.Forms.Button();
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProovedores)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -84,14 +85,17 @@ namespace Pantallas_proyecto
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(158, 187);
+            this.txtDescripcion.MaxLength = 150;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(289, 62);
             this.txtDescripcion.TabIndex = 50;
+            this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
             // txtNombreProovedor
             // 
             this.txtNombreProovedor.Location = new System.Drawing.Point(158, 91);
+            this.txtNombreProovedor.MaxLength = 50;
             this.txtNombreProovedor.Name = "txtNombreProovedor";
             this.txtNombreProovedor.Size = new System.Drawing.Size(289, 20);
             this.txtNombreProovedor.TabIndex = 49;
@@ -144,7 +148,7 @@ namespace Pantallas_proyecto
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProovedores.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProovedores.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvProovedores.Location = new System.Drawing.Point(81, 277);
+            this.dgvProovedores.Location = new System.Drawing.Point(91, 279);
             this.dgvProovedores.Name = "dgvProovedores";
             this.dgvProovedores.ReadOnly = true;
             this.dgvProovedores.RowHeadersWidth = 51;
@@ -165,11 +169,12 @@ namespace Pantallas_proyecto
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btneliminar);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Location = new System.Drawing.Point(528, 117);
+            this.groupBox1.Location = new System.Drawing.Point(531, 88);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(140, 102);
+            this.groupBox1.Size = new System.Drawing.Size(140, 146);
             this.groupBox1.TabIndex = 56;
             this.groupBox1.TabStop = false;
             // 
@@ -234,6 +239,20 @@ namespace Pantallas_proyecto
             // 
             this.ErrorProvider.ContainerControl = this;
             // 
+            // btneliminar
+            // 
+            this.btneliminar.BackColor = System.Drawing.Color.Maroon;
+            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminar.ForeColor = System.Drawing.Color.White;
+            this.btneliminar.Location = new System.Drawing.Point(17, 100);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(112, 26);
+            this.btneliminar.TabIndex = 55;
+            this.btneliminar.Text = "Eliminar";
+            this.btneliminar.UseVisualStyleBackColor = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
+            // 
             // frmProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,5 +308,6 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ErrorProvider ErrorProvider;
+        private System.Windows.Forms.Button btneliminar;
     }
 }

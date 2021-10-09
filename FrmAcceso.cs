@@ -135,6 +135,7 @@ namespace Pantallas_proyecto
 
         private void txtContrasena_TextChanged(object sender, EventArgs e)
         {
+           
             lblError.Visible = false;
             picError.Visible = false;
         }
