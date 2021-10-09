@@ -121,7 +121,7 @@ namespace Pantallas_proyecto
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(60, 439);
+            this.button2.Location = new System.Drawing.Point(70, 442);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(268, 41);
             this.button2.TabIndex = 159;
@@ -259,7 +259,7 @@ namespace Pantallas_proyecto
             // dtgprov
             // 
             this.dtgprov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgprov.Location = new System.Drawing.Point(398, 39);
+            this.dtgprov.Location = new System.Drawing.Point(396, 39);
             this.dtgprov.Name = "dtgprov";
             this.dtgprov.ReadOnly = true;
             this.dtgprov.Size = new System.Drawing.Size(160, 92);
@@ -270,11 +270,11 @@ namespace Pantallas_proyecto
             // 
             // textProveedor
             // 
-            this.textProveedor.Enabled = false;
             this.textProveedor.Location = new System.Drawing.Point(427, 13);
             this.textProveedor.Name = "textProveedor";
             this.textProveedor.Size = new System.Drawing.Size(171, 20);
             this.textProveedor.TabIndex = 167;
+            this.textProveedor.TextChanged += new System.EventHandler(this.textProveedor_TextChanged);
             // 
             // button1
             // 
@@ -284,7 +284,7 @@ namespace Pantallas_proyecto
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Location = new System.Drawing.Point(347, 439);
+            this.button1.Location = new System.Drawing.Point(347, 442);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(268, 41);
             this.button1.TabIndex = 167;
