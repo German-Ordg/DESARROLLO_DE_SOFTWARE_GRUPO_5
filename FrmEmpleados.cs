@@ -123,7 +123,7 @@ namespace Pantallas_proyecto
                 letra2 = true;
             }
 
-            if (validacion.Espacio_Blanco(ErrorProvider1, txtIdentidad) || validacion.Solo_Numeros(ErrorProvider1, txtIdentidad) || !Regex.IsMatch(txtIdentidad.Text, "^((0[1-9]|1[0-8])+([0-9]{2}))+((19[0-9]{2}|20[0-9]{2})+(([0-9]){5}))$"))
+            if (validacion.Espacio_Blanco(ErrorProvider1, txtIdentidad) || validacion.Solo_Numeros(ErrorProvider1, txtIdentidad) || !Regex.IsMatch(txtIdentidad.Text, "^((010[1-8]|020[1-9]|0210|030[1-9]|031[0-9]|032[0-1]|040[1-9]|041[0-9]|042[0-3]|050[1-9]|051[0-2]|060[1-9]|061[0-6]|070[1-9]|071[0-9]|080[1-9]|081[0-9]|082[-8]|090[1-6]|100[1-9]|101[0-7]|110[1-4]|120[1-9]|121[0-9]|130[1-9]|131[0-9]|132[0-8]|140[1-9]|141[0-6]|150[1-9]|151[0-9]|152[0-3]|160[1-9]|161[0-9]|162[0-8]|170[1-9]|180[1-9]|181[0-1]))+((19[0-9]{2}|20[0-9]{2})+(([0-9]){5}))$"))
             {
                 if (validacion.Espacio_Blanco(ErrorProvider1, txtIdentidad))
                     ErrorProvider1.SetError(txtIdentidad, "no se puede dejar en blanco");
@@ -131,9 +131,9 @@ namespace Pantallas_proyecto
                 if (validacion.Solo_Numeros(ErrorProvider1, txtIdentidad))
                     ErrorProvider1.SetError(txtIdentidad, "Solo se permite numeros");
                 else
-                    if (!Regex.IsMatch(txtIdentidad.Text, "^((0[1-9]|1[0-8])+([0-9]{2}))+((19[0-9]{2}|20[0-9]{2})+(([0-9]){5}))$"))
+                 if (!Regex.IsMatch(txtIdentidad.Text, "^((010[1-8]|020[1-9]|0210|030[1-9]|031[0-9]|032[0-1]|040[1-9]|041[0-9]|042[0-3]|050[1-9]|051[0-2]|060[1-9]|061[0-6]|070[1-9]|071[0-9]|080[1-9]|081[0-9]|082[-8]|090[1-6]|100[1-9]|101[0-7]|110[1-4]|120[1-9]|121[0-9]|130[1-9]|131[0-9]|132[0-8]|140[1-9]|141[0-6]|150[1-9]|151[0-9]|152[0-3]|160[1-9]|161[0-9]|162[0-8]|170[1-9]|180[1-9]|181[0-1]))+((19[0-9]{2}|20[0-9]{2})+(([0-9]){5}))$"))
                 {
-                    ErrorProvider1.SetError(txtIdentidad, "Escriba un Formato de Identidad Valido");
+                    ErrorProvider1.SetError(txtIdentidad, " Escriba un Formato de Identidad Valido");
                 }
             }
             else
@@ -315,17 +315,17 @@ namespace Pantallas_proyecto
                 letra2 = true;
             }
 
-            if (validacion.Espacio_Blanco(ErrorProvider1, txtIdentidad) || validacion.Solo_Numeros(ErrorProvider1, txtIdentidad) ||!Regex.IsMatch(txtIdentidad.Text, "^((0[1-9]|1[0-8])+([0-9]{2}))+((19[0-9]{2}|20[0-9]{2})+(([0-9]){5}))$"))
+            if (validacion.Espacio_Blanco(ErrorProvider1, txtIdentidad) || validacion.Solo_Numeros(ErrorProvider1, txtIdentidad) || !Regex.IsMatch(txtIdentidad.Text, "^((010[1-8]|020[1-9]|0210|030[1-9]|031[0-9]|032[0-1]|040[1-9]|041[0-9]|042[0-3]|050[1-9]|051[0-2]|060[1-9]|061[0-6]|070[1-9]|071[0-9]|080[1-9]|081[0-9]|082[-8]|090[1-6]|100[1-9]|101[0-7]|110[1-4]|120[1-9]|121[0-9]|130[1-9]|131[0-9]|132[0-8]|140[1-9]|141[0-6]|150[1-9]|151[0-9]|152[0-3]|160[1-9]|161[0-9]|162[0-8]|170[1-9]|180[1-9]|181[0-1]))+((19[0-9]{2}|20[0-9]{2})+(([0-9]){5}))$"))
             {
                 if (validacion.Espacio_Blanco(ErrorProvider1, txtIdentidad))
                     ErrorProvider1.SetError(txtIdentidad, "no se puede dejar en blanco");
                 else
                 if (validacion.Solo_Numeros(ErrorProvider1, txtIdentidad))
                     ErrorProvider1.SetError(txtIdentidad, "Solo se permite numeros");
-                else 
-                    if (!Regex.IsMatch(txtIdentidad.Text, "^((0[1-9]|1[0-8])+([0-9]{2}))+((19[0-9]{2}|20[0-9]{2})+(([0-9]){5}))$"))
+                else
+                if (!Regex.IsMatch(txtIdentidad.Text, "^((010[1-8]|020[1-9]|0210|030[1-9]|031[0-9]|032[0-1]|040[1-9]|041[0-9]|042[0-3]|050[1-9]|051[0-2]|060[1-9]|061[0-6]|070[1-9]|071[0-9]|080[1-9]|081[0-9]|082[-8]|090[1-6]|100[1-9]|101[0-7]|110[1-4]|120[1-9]|121[0-9]|130[1-9]|131[0-9]|132[0-8]|140[1-9]|141[0-6]|150[1-9]|151[0-9]|152[0-3]|160[1-9]|161[0-9]|162[0-8]|170[1-9]|180[1-9]|181[0-1]))+((19[0-9]{2}|20[0-9]{2})+(([0-9]){5}))$"))
                 {
-                    ErrorProvider1.SetError(txtIdentidad, "Escriba un Formato de Identidad Valido");
+                    ErrorProvider1.SetError(txtIdentidad, " Escriba un Formato de Identidad Valido");
                 }
             }
             else
