@@ -74,6 +74,45 @@ namespace Pantallas_proyecto
             con.cerrar();
         }
 
+        public static void validarSoloNumeros(KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Sólo se admiten números");
+            }
+        }
+
+        public static void validarSoloLetras(KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Sólo se admiten letras");
+            }
+
+        }
+
 
 
         public string DescripcionProducto { get => descripcionProducto; set => descripcionProducto = value; }

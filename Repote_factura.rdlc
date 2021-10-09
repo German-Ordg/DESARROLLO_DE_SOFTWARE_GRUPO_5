@@ -88,7 +88,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>cod producto</Value>
+                                  <Value>Cód producto</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -117,7 +117,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>cantidad</Value>
+                                  <Value>Cantidad</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -146,7 +146,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>descripcion</Value>
+                                  <Value>Descripción</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -175,7 +175,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>precio</Value>
+                                  <Value>Precio</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -204,7 +204,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>descuento</Value>
+                                  <Value>Descuento</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -233,7 +233,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>total</Value>
+                                  <Value>Total</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -813,7 +813,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>FECHA:</Value>
+                      <Value>Fecha:</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -843,7 +843,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>CLIENTE:</Value>
+                      <Value>Cliente:</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -903,7 +903,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>PROP: EVELIN ESMERALDA COMEZ SALGADO</Value>
+                      <Value>Propietaria: Evelin Esmeralda Gómez Salgado</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -972,7 +972,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>DIRECCION ENVIO:</Value>
+                      <Value>Dirección envío:</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -1092,7 +1092,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>TIPO PAGO:</Value>
+                      <Value>Tipo pago:</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -1122,7 +1122,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>VENDEDOR:</Value>
+                      <Value>Vendedor:</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -1152,7 +1152,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>TEL: 2772-2047</Value>
+                      <Value>Tel: 2772-2047</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>
@@ -1182,7 +1182,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>CEL: 3334-9543</Value>
+                      <Value>Cel: 3334-9543</Value>
                       <Style />
                     </TextRun>
                   </TextRuns>

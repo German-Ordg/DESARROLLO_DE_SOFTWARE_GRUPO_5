@@ -78,8 +78,6 @@ namespace Pantallas_proyecto
             this.label16 = new System.Windows.Forms.Label();
             this.cmbTipoPago = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.dtFecha = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -416,7 +414,7 @@ namespace Pantallas_proyecto
             // 
             // CodProducto
             // 
-            this.CodProducto.HeaderText = "Codigo Producto";
+            this.CodProducto.HeaderText = "Código Producto";
             this.CodProducto.MinimumWidth = 100;
             this.CodProducto.Name = "CodProducto";
             this.CodProducto.ReadOnly = true;
@@ -514,6 +512,7 @@ namespace Pantallas_proyecto
             // 
             this.txtDireccion.Location = new System.Drawing.Point(435, 32);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDireccion.MaxLength = 250;
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(185, 69);
@@ -533,9 +532,11 @@ namespace Pantallas_proyecto
             // 
             this.txtNombreCliente.Location = new System.Drawing.Point(229, 79);
             this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreCliente.MaxLength = 100;
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(172, 22);
             this.txtNombreCliente.TabIndex = 10;
+            this.txtNombreCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreCliente_KeyPress);
             // 
             // lblNombre
             // 
@@ -551,14 +552,14 @@ namespace Pantallas_proyecto
             // 
             this.groupBox4.Controls.Add(this.rbConNombre);
             this.groupBox4.Controls.Add(this.rbSinNombre);
-            this.groupBox4.Location = new System.Drawing.Point(7, 17);
+            this.groupBox4.Location = new System.Drawing.Point(11, 18);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox4.Size = new System.Drawing.Size(200, 100);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
+            this.groupBox4.Text = "Tipo Factura";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // rbConNombre
@@ -615,14 +616,12 @@ namespace Pantallas_proyecto
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.cmbTipoPago);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.dtFecha);
-            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(17, 17);
+            this.groupBox2.Location = new System.Drawing.Point(284, 21);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(628, 89);
+            this.groupBox2.Size = new System.Drawing.Size(353, 89);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Factura";
@@ -632,7 +631,7 @@ namespace Pantallas_proyecto
             this.cmbVendedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbVendedor.FormattingEnabled = true;
-            this.cmbVendedor.Location = new System.Drawing.Point(400, 54);
+            this.cmbVendedor.Location = new System.Drawing.Point(127, 47);
             this.cmbVendedor.Margin = new System.Windows.Forms.Padding(4);
             this.cmbVendedor.Name = "cmbVendedor";
             this.cmbVendedor.Size = new System.Drawing.Size(209, 24);
@@ -641,7 +640,7 @@ namespace Pantallas_proyecto
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(325, 58);
+            this.label16.Location = new System.Drawing.Point(52, 51);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(74, 17);
@@ -653,7 +652,7 @@ namespace Pantallas_proyecto
             this.cmbTipoPago.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTipoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoPago.FormattingEnabled = true;
-            this.cmbTipoPago.Location = new System.Drawing.Point(400, 21);
+            this.cmbTipoPago.Location = new System.Drawing.Point(127, 14);
             this.cmbTipoPago.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoPago.Name = "cmbTipoPago";
             this.cmbTipoPago.Size = new System.Drawing.Size(209, 24);
@@ -662,32 +661,12 @@ namespace Pantallas_proyecto
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(325, 25);
+            this.label12.Location = new System.Drawing.Point(52, 18);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 17);
             this.label12.TabIndex = 2;
             this.label12.Text = "Tipo Pago:";
-            // 
-            // dtFecha
-            // 
-            this.dtFecha.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtFecha.Location = new System.Drawing.Point(67, 33);
-            this.dtFecha.Margin = new System.Windows.Forms.Padding(4);
-            this.dtFecha.Name = "dtFecha";
-            this.dtFecha.Size = new System.Drawing.Size(245, 22);
-            this.dtFecha.TabIndex = 1;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(8, 34);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 17);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Fecha:";
             // 
             // groupBox1
             // 
@@ -860,6 +839,7 @@ namespace Pantallas_proyecto
             // 
             this.txtCodProducto.Location = new System.Drawing.Point(132, 26);
             this.txtCodProducto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodProducto.MaxLength = 12;
             this.txtCodProducto.Name = "txtCodProducto";
             this.txtCodProducto.Size = new System.Drawing.Size(135, 24);
             this.txtCodProducto.TabIndex = 1;
@@ -1117,8 +1097,6 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cmbTipoPago;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dtFecha;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDescripcion;
