@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using Microsoft.Reporting.WinForms;
-
+using System.Text.RegularExpressions;
 
 namespace Pantallas_proyecto
 {
@@ -598,8 +598,9 @@ namespace Pantallas_proyecto
                                             MessageBox.Show("Ingrese el nombre del cliente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         }
                                         else
-                                        { 
-                                            if(txtRTN.TextLength!=14)
+                                        {
+                                           
+                                            if (!Regex.IsMatch(txtRTN.Text, "^((010[1-8]|020[1-9]|0210|030[1-9]|031[0-9]|032[0-1]|040[1-9]|041[0-9]|042[0-3]|050[1-9]|051[0-2]|060[1-9]|061[0-6]|070[1-9]|071[0-9]|080[1-9]|081[0-9]|082[-8]|090[1-6]|100[1-9]|101[0-7]|110[1-4]|120[1-9]|121[0-9]|130[1-9]|131[0-9]|132[0-8]|140[1-9]|141[0-6]|150[1-9]|151[0-9]|152[0-3]|160[1-9]|161[0-9]|162[0-8]|170[1-9]|180[1-9]|181[0-1]))+((19[0-9]{2}|20[0-9]{2})+(([0-9]){6}))$"))
                                             {
                                                 MessageBox.Show("El RTN no es válido. Por favor ingréselo sin guiones ni espacios", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             }
@@ -706,7 +707,7 @@ namespace Pantallas_proyecto
                 cmd.Parameters.Add("@codigoPago", SqlDbType.Int).Value = Int32.Parse(codigoPago);
                 cmd.Parameters.Add("@nombreCliente", SqlDbType.NVarChar).Value = txtNombreCliente.Text;
                 cmd.Parameters.Add("@rtn", SqlDbType.NVarChar).Value = txtRTN.Text;
-                cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = dtFecha.Value.ToString();
+                cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = DateTime.Now.ToString();
                 cmd.Parameters.Add("@direccionEnvio", SqlDbType.NVarChar).Value = txtDireccion.Text;
                 cmd.Parameters.Add("@isv15", SqlDbType.Money).Value = txtISV15.Text;
                 cmd.Parameters.Add("@totalPagar", SqlDbType.Money).Value = txtTotalPagar.Text;
@@ -775,7 +776,7 @@ namespace Pantallas_proyecto
             string importe = txtImporteAgrabado15.Text.Trim();
             string subtotal = txtSubTotal.Text;
             string total = txtTotalPagar.Text;
-            string fecha = dtFecha.Text;
+            string fecha = DateTime.Now.ToString();
             string rtn = txtRTN.Text;
             string cliente = txtNombreCliente.Text;
             string vendedor = cmbVendedor.SelectedItem.ToString();
