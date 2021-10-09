@@ -1703,3 +1703,282 @@ C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.appl
 C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.csproj.CopyComplete
 C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.exe
 C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.pdb
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Pantallas_proyecto.exe.config
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Pantallas_proyecto.exe.manifest
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Pantallas_proyecto.application
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Pantallas_proyecto.exe
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Pantallas_proyecto.pdb
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\CircularProgressBar.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\WinFormAnimation.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\EnvDTE.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\stdole.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\Microsoft.MSXML.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\CircularProgressBar.xml
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.csproj.AssemblyReference.cache
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.FrmAcceso.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.TxtResultBox.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.FrmCategorias.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.FrmCompras.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.FrmEmpleados.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.FrmImpresionFactura.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.FrmInventario.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.frmInventarioParaEmpleado.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.FrmInventario_Gerente.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.FrmMenuCRUD.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.FrmMenuPrincipal.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.FrmMenuPrincipalGerente.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.FrmMetodosdePago.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.frmPantallaFacturacion.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.FrmProductos.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.frmPuestosTrabajo.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.FrmRecuperaContra.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.frmReportes.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.frmUsuarios.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.Properties.Resources.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.frmProveedores.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.FormBienvenido.resources
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.csproj.GenerateResource.cache
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.csproj.CoreCompileInputs.cache
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.exe.manifest
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.application
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.csproj.CopyComplete
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.exe
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.pdb
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Pantallas_proyecto.exe.config
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Pantallas_proyecto.exe.manifest
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Pantallas_proyecto.application
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Pantallas_proyecto.exe
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Pantallas_proyecto.pdb
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\CircularProgressBar.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\WinFormAnimation.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\EnvDTE.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\stdole.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\Microsoft.MSXML.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\CircularProgressBar.xml
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.csproj.AssemblyReference.cache
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmAcceso.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.TxtResultBox.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmCategorias.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmCompras.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmEmpleados.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmImpresionFactura.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmInventario.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.frmInventarioParaEmpleado.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmInventario_Gerente.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmMenuCRUD.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmMenuPrincipal.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmMenuPrincipalGerente.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmMetodosdePago.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.frmPantallaFacturacion.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmProductos.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.frmPuestosTrabajo.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmRecuperaContra.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.frmReportes.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.frmUsuarios.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.Properties.Resources.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.frmProveedores.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FormBienvenido.resources
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.csproj.GenerateResource.cache
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.csproj.CoreCompileInputs.cache
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.exe.manifest
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.application
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.csproj.CopyComplete
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.exe
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.pdb
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Pantallas_proyecto.exe.config
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Pantallas_proyecto.exe.manifest
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Pantallas_proyecto.application
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Pantallas_proyecto.exe
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Pantallas_proyecto.pdb
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\CircularProgressBar.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Microsoft.ReportViewer.Design.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Microsoft.ReportViewer.WebForms.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\WinFormAnimation.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\EnvDTE.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\stdole.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\Microsoft.MSXML.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\CircularProgressBar.xml
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.csproj.AssemblyReference.cache
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.FrmAcceso.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.TxtResultBox.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.FrmCategorias.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.FrmCompras.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.FrmEmpleados.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.FrmImpresionFactura.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.FrmInventario.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.frmInventarioParaEmpleado.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.FrmInventario_Gerente.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.FrmMenuCRUD.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.FrmMenuPrincipal.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.FrmMenuPrincipalGerente.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.FrmMetodosdePago.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.frmPantallaFacturacion.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.FrmProductos.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.frmPuestosTrabajo.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.FrmRecuperaContra.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.frmReportes.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.frmUsuarios.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.Properties.Resources.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.frmProveedores.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.FormBienvenido.resources
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.csproj.GenerateResource.cache
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\RdlCompile.cache
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\RdlCompile.compiled
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.csproj.CoreCompileInputs.cache
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.exe.manifest
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.application
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.csproj.CopyComplete
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.exe
+C:\Users\VIMAS\source\repos\Nuevo Repo\obj\Debug\Pantallas_proyecto.pdb
