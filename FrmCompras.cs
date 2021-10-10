@@ -212,6 +212,17 @@ namespace Pantallas_proyecto
                 letra3 = true;
             }
 
+            if (textProveedor.Enabled==true)
+            {
+                
+                    errorProvider1.SetError(textProveedor, "Seleccione una opcion de abajo");
+                    letra3 = false;
+            }
+            else
+            {
+                letra3 = true;
+            }
+
 
             if (letra && letra2 && letra3)
             {
@@ -367,6 +378,7 @@ namespace Pantallas_proyecto
         {
             var aux = new MetodoBuscarProveedor();
             aux.filtrar(dtgprov, this.textProveedor.Text.Trim());
+            errorProvider1.Clear();
         }
     }
 

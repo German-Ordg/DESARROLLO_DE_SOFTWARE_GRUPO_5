@@ -38,30 +38,30 @@ namespace Pantallas_proyecto
             this.btnRegresar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textProveedor = new System.Windows.Forms.TextBox();
+            this.dtgprov = new System.Windows.Forms.DataGridView();
             this.comboPago = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.dateFecha = new System.Windows.Forms.DateTimePicker();
             this.codigoCompra = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dtgprov = new System.Windows.Forms.DataGridView();
-            this.textProveedor = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgprov)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgprov)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,6 +88,7 @@ namespace Pantallas_proyecto
             // 
             // dgvProveedores
             // 
+            this.dgvProveedores.AllowUserToAddRows = false;
             this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProveedores.Location = new System.Drawing.Point(3, 16);
@@ -146,6 +147,27 @@ namespace Pantallas_proyecto
             this.groupBox2.TabIndex = 161;
             this.groupBox2.TabStop = false;
             // 
+            // textProveedor
+            // 
+            this.textProveedor.Location = new System.Drawing.Point(427, 13);
+            this.textProveedor.Name = "textProveedor";
+            this.textProveedor.Size = new System.Drawing.Size(171, 20);
+            this.textProveedor.TabIndex = 167;
+            this.textProveedor.TextChanged += new System.EventHandler(this.textProveedor_TextChanged);
+            // 
+            // dtgprov
+            // 
+            this.dtgprov.AllowUserToAddRows = false;
+            this.dtgprov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgprov.Location = new System.Drawing.Point(396, 39);
+            this.dtgprov.Name = "dtgprov";
+            this.dtgprov.ReadOnly = true;
+            this.dtgprov.Size = new System.Drawing.Size(160, 92);
+            this.dtgprov.TabIndex = 167;
+            this.dtgprov.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgprov_CellClick);
+            this.dtgprov.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgprov_CellContentClick);
+            this.dtgprov.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgprov_CellDoubleClick);
+            // 
             // comboPago
             // 
             this.comboPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -177,6 +199,7 @@ namespace Pantallas_proyecto
             // codigoCompra
             // 
             this.codigoCompra.Location = new System.Drawing.Point(145, 22);
+            this.codigoCompra.MaxLength = 9;
             this.codigoCompra.Name = "codigoCompra";
             this.codigoCompra.Size = new System.Drawing.Size(159, 20);
             this.codigoCompra.TabIndex = 88;
@@ -194,17 +217,6 @@ namespace Pantallas_proyecto
             this.label12.TabIndex = 87;
             this.label12.Text = "Numero Factura";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(332, 12);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 18);
-            this.label10.TabIndex = 83;
-            this.label10.Text = "Proveedor";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -215,6 +227,17 @@ namespace Pantallas_proyecto
             this.label11.Size = new System.Drawing.Size(104, 18);
             this.label11.TabIndex = 85;
             this.label11.Text = "Fecha compra";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(332, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 18);
+            this.label10.TabIndex = 83;
+            this.label10.Text = "Proveedor";
             // 
             // toolStrip1
             // 
@@ -255,26 +278,6 @@ namespace Pantallas_proyecto
             // errorProvider2
             // 
             this.errorProvider2.ContainerControl = this;
-            // 
-            // dtgprov
-            // 
-            this.dtgprov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgprov.Location = new System.Drawing.Point(396, 39);
-            this.dtgprov.Name = "dtgprov";
-            this.dtgprov.ReadOnly = true;
-            this.dtgprov.Size = new System.Drawing.Size(160, 92);
-            this.dtgprov.TabIndex = 167;
-            this.dtgprov.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgprov_CellClick);
-            this.dtgprov.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgprov_CellContentClick);
-            this.dtgprov.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgprov_CellDoubleClick);
-            // 
-            // textProveedor
-            // 
-            this.textProveedor.Location = new System.Drawing.Point(427, 13);
-            this.textProveedor.Name = "textProveedor";
-            this.textProveedor.Size = new System.Drawing.Size(171, 20);
-            this.textProveedor.TabIndex = 167;
-            this.textProveedor.TextChanged += new System.EventHandler(this.textProveedor_TextChanged);
             // 
             // button1
             // 
@@ -328,11 +331,11 @@ namespace Pantallas_proyecto
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgprov)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgprov)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

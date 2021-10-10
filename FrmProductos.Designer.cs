@@ -58,6 +58,14 @@ namespace Pantallas_proyecto
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvProductosCompra = new System.Windows.Forms.DataGridView();
+            this.CodProductodgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripciondgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriadgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.talladgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioCompradgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioVentadgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidaddgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descuentodgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
@@ -81,14 +89,6 @@ namespace Pantallas_proyecto
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.CodProductodgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripciondgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoriadgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.talladgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioCompradgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioVentadgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidaddgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descuentodgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -133,6 +133,7 @@ namespace Pantallas_proyecto
             // 
             // dgvProductos
             // 
+            this.dgvProductos.AllowUserToAddRows = false;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductos.Location = new System.Drawing.Point(3, 16);
@@ -404,6 +405,7 @@ namespace Pantallas_proyecto
             // 
             // dgvProductosCompra
             // 
+            this.dgvProductosCompra.AllowUserToAddRows = false;
             this.dgvProductosCompra.AllowUserToDeleteRows = false;
             this.dgvProductosCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProductosCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -423,6 +425,62 @@ namespace Pantallas_proyecto
             this.dgvProductosCompra.RowHeadersWidth = 51;
             this.dgvProductosCompra.Size = new System.Drawing.Size(704, 224);
             this.dgvProductosCompra.TabIndex = 92;
+            // 
+            // CodProductodgv
+            // 
+            this.CodProductodgv.HeaderText = "Código de Producto";
+            this.CodProductodgv.MinimumWidth = 6;
+            this.CodProductodgv.Name = "CodProductodgv";
+            this.CodProductodgv.ReadOnly = true;
+            // 
+            // descripciondgv
+            // 
+            this.descripciondgv.HeaderText = "Descripción";
+            this.descripciondgv.MinimumWidth = 6;
+            this.descripciondgv.Name = "descripciondgv";
+            this.descripciondgv.ReadOnly = true;
+            // 
+            // categoriadgv
+            // 
+            this.categoriadgv.HeaderText = "Categoría";
+            this.categoriadgv.MinimumWidth = 6;
+            this.categoriadgv.Name = "categoriadgv";
+            this.categoriadgv.ReadOnly = true;
+            // 
+            // talladgv
+            // 
+            this.talladgv.HeaderText = "Talla";
+            this.talladgv.MinimumWidth = 6;
+            this.talladgv.Name = "talladgv";
+            this.talladgv.ReadOnly = true;
+            // 
+            // PrecioCompradgv
+            // 
+            this.PrecioCompradgv.HeaderText = "Precio de Compra";
+            this.PrecioCompradgv.MinimumWidth = 6;
+            this.PrecioCompradgv.Name = "PrecioCompradgv";
+            this.PrecioCompradgv.ReadOnly = true;
+            // 
+            // PrecioVentadgv
+            // 
+            this.PrecioVentadgv.HeaderText = "Precio de Venta";
+            this.PrecioVentadgv.MinimumWidth = 6;
+            this.PrecioVentadgv.Name = "PrecioVentadgv";
+            this.PrecioVentadgv.ReadOnly = true;
+            // 
+            // Cantidaddgv
+            // 
+            this.Cantidaddgv.HeaderText = "Cantidad";
+            this.Cantidaddgv.MinimumWidth = 6;
+            this.Cantidaddgv.Name = "Cantidaddgv";
+            this.Cantidaddgv.ReadOnly = true;
+            // 
+            // descuentodgv
+            // 
+            this.descuentodgv.HeaderText = "Descuento";
+            this.descuentodgv.MinimumWidth = 6;
+            this.descuentodgv.Name = "descuentodgv";
+            this.descuentodgv.ReadOnly = true;
             // 
             // label12
             // 
@@ -667,62 +725,6 @@ namespace Pantallas_proyecto
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // CodProductodgv
-            // 
-            this.CodProductodgv.HeaderText = "Código de Producto";
-            this.CodProductodgv.MinimumWidth = 6;
-            this.CodProductodgv.Name = "CodProductodgv";
-            this.CodProductodgv.ReadOnly = true;
-            // 
-            // descripciondgv
-            // 
-            this.descripciondgv.HeaderText = "Descripción";
-            this.descripciondgv.MinimumWidth = 6;
-            this.descripciondgv.Name = "descripciondgv";
-            this.descripciondgv.ReadOnly = true;
-            // 
-            // categoriadgv
-            // 
-            this.categoriadgv.HeaderText = "Categoría";
-            this.categoriadgv.MinimumWidth = 6;
-            this.categoriadgv.Name = "categoriadgv";
-            this.categoriadgv.ReadOnly = true;
-            // 
-            // talladgv
-            // 
-            this.talladgv.HeaderText = "Talla";
-            this.talladgv.MinimumWidth = 6;
-            this.talladgv.Name = "talladgv";
-            this.talladgv.ReadOnly = true;
-            // 
-            // PrecioCompradgv
-            // 
-            this.PrecioCompradgv.HeaderText = "Precio de Compra";
-            this.PrecioCompradgv.MinimumWidth = 6;
-            this.PrecioCompradgv.Name = "PrecioCompradgv";
-            this.PrecioCompradgv.ReadOnly = true;
-            // 
-            // PrecioVentadgv
-            // 
-            this.PrecioVentadgv.HeaderText = "Precio de Venta";
-            this.PrecioVentadgv.MinimumWidth = 6;
-            this.PrecioVentadgv.Name = "PrecioVentadgv";
-            this.PrecioVentadgv.ReadOnly = true;
-            // 
-            // Cantidaddgv
-            // 
-            this.Cantidaddgv.HeaderText = "Cantidad";
-            this.Cantidaddgv.MinimumWidth = 6;
-            this.Cantidaddgv.Name = "Cantidaddgv";
-            this.Cantidaddgv.ReadOnly = true;
-            // 
-            // descuentodgv
-            // 
-            this.descuentodgv.HeaderText = "Descuento";
-            this.descuentodgv.MinimumWidth = 6;
-            this.descuentodgv.Name = "descuentodgv";
-            this.descuentodgv.ReadOnly = true;
             // 
             // FrmProductos
             // 
