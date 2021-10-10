@@ -39,5 +39,31 @@ namespace Pantallas_proyecto
             }
 
         }
+        public void filtrarCategoria(DataGridView data, string buscarnombre)
+        {
+
+
+            try
+            {
+                conect.cerrar();
+                conect.abrir();
+                SqlCommand sql = new SqlCommand("BusquedaCategoria", conect.conexion);
+                sql.CommandType = CommandType.StoredProcedure;
+                sql.Parameters.Add("@filtro", SqlDbType.VarChar, 200).Value = buscarnombre;
+
+                sql.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(sql);
+                da.Fill(dt);
+                data.DataSource = dt;
+                conect.cerrar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("error es: " + ex.ToString());
+            }
+
+        }
     }
 }

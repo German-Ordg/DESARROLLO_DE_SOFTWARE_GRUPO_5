@@ -89,11 +89,13 @@ namespace Pantallas_proyecto
             // dgvProveedores
             // 
             this.dgvProveedores.AllowUserToAddRows = false;
+            this.dgvProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProveedores.Location = new System.Drawing.Point(3, 16);
             this.dgvProveedores.Name = "dgvProveedores";
             this.dgvProveedores.ReadOnly = true;
+            this.dgvProveedores.RowHeadersVisible = false;
             this.dgvProveedores.RowHeadersWidth = 51;
             this.dgvProveedores.Size = new System.Drawing.Size(470, 169);
             this.dgvProveedores.TabIndex = 109;
@@ -158,10 +160,12 @@ namespace Pantallas_proyecto
             // dtgprov
             // 
             this.dtgprov.AllowUserToAddRows = false;
+            this.dtgprov.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgprov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgprov.Location = new System.Drawing.Point(396, 39);
             this.dtgprov.Name = "dtgprov";
             this.dtgprov.ReadOnly = true;
+            this.dtgprov.RowHeadersVisible = false;
             this.dtgprov.Size = new System.Drawing.Size(160, 92);
             this.dtgprov.TabIndex = 167;
             this.dtgprov.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgprov_CellClick);

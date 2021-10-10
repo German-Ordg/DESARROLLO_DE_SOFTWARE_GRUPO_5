@@ -92,7 +92,7 @@ namespace Pantallas_proyecto
 
             if (validacion.Espacio_Blanco(errorProvider1, descripcionProducto))
             {
-                if (validacion.Espacio_Blanco(errorProvider1, descripcionProducto))
+                
                     errorProvider1.SetError(descripcionProducto, "no se puede dejar en blanco");
                
             }
@@ -100,12 +100,14 @@ namespace Pantallas_proyecto
             {
                 letra = true;
             }
+               
 
-            if (validacion.Espacio_Blanco_CB(errorProvider1, cmbCategoria))
+            if (validacion.Espacio_Blanco(errorProvider1, txtcategoria))
             {
-                if (validacion.Espacio_Blanco_CB(errorProvider1, cmbCategoria))
-                    errorProvider1.SetError(cmbCategoria, "no se puede dejar en blanco");
-
+                
+                    errorProvider1.SetError(txtcategoria, "no se puede dejar en blanco");
+                           
+                
             }
             else
             {
@@ -170,8 +172,18 @@ namespace Pantallas_proyecto
             {
                 letra7 = true;
             }
+            if (txtcategoria.Enabled == true)
+            {
 
-          
+                errorProvider1.SetError(txtcategoria, "Seleccione una opcion de abajo");
+                letra3 = false;
+            }
+            else
+            {
+                letra3 = true;
+            }
+
+
 
 
             if (letra && letra2 && letra3 && letra4 && letra5 && letra6&& letra7 )
@@ -187,7 +199,7 @@ namespace Pantallas_proyecto
                 {
                     try
                     {
-                        if (codigoProducto.Text == string.Empty || descripcionProducto.Text == string.Empty || cmbCategoria.Text == string.Empty || precioCompra.Text == string.Empty || precioActual.Text == string.Empty || cantidad.Text == string.Empty || descuento.Text == string.Empty)
+                        if (codigoProducto.Text == string.Empty || descripcionProducto.Text == string.Empty || txtcategoria.Text == string.Empty || precioCompra.Text == string.Empty || precioActual.Text == string.Empty || cantidad.Text == string.Empty || descuento.Text == string.Empty)
                             MessageBox.Show("Porfavor llene todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
@@ -275,7 +287,7 @@ namespace Pantallas_proyecto
                                     
                                     productosArrays[contador, 0] = codigoProducto.Text;
                                     productosArrays[contador, 1] = descripcionProducto.Text;
-                                    productosArrays[contador, 2] = cmbCategoria.Text;
+                                    productosArrays[contador, 2] = txtcategoria.Text;
                                     productosArrays[contador, 3] = talla.Text;
                                     productosArrays[contador, 4] = precioCompra.Text;
                                     productosArrays[contador, 5] = precioActual.Text;
@@ -288,7 +300,7 @@ namespace Pantallas_proyecto
                                     dgvProductosCompra.Rows.Add(1);
                                     dgvProductosCompra.Rows[RowsEscribir].Cells[0].Value = codigoProducto.Text;
                                     dgvProductosCompra.Rows[RowsEscribir].Cells[1].Value = descripcionProducto.Text;
-                                    dgvProductosCompra.Rows[RowsEscribir].Cells[2].Value = cmbCategoria.Text;
+                                    dgvProductosCompra.Rows[RowsEscribir].Cells[2].Value = txtcategoria.Text;
                                     dgvProductosCompra.Rows[RowsEscribir].Cells[3].Value = talla.Text;
                                     dgvProductosCompra.Rows[RowsEscribir].Cells[4].Value = precioCompra.Text;
                                     dgvProductosCompra.Rows[RowsEscribir].Cells[5].Value = precioActual.Text;
@@ -308,15 +320,15 @@ namespace Pantallas_proyecto
                                     precioActual.Clear();
                                     descuento.Clear();
                                     talla.Clear();
-                                    cmbCategoria.Items.Clear();
+                                    txtcategoria.Clear();
                                     descripcionProducto.Clear();
                                     precioCompra.Clear();
-                                    cmbCategoria.Enabled = true;
+                                    txtcategoria.Enabled = true;
                                     descripcionProducto.Enabled = true;
                                     codigoProducto.Enabled = true;
                                     talla.Enabled = true;
                                     btnquitar.Visible = false;
-                                    categorias();
+                                    
                                 }
                                 // else
                                 // MessageBox.Show("Esta ingresando un producto que ya fue ingresado","Aviso",MessageBoxButtons.OK);
@@ -339,31 +351,21 @@ namespace Pantallas_proyecto
 
         }
 
-        private void categorias()
-        {
+
+        private void cargarCategorias() {
             try
             {
-                SqlCommand comando = new SqlCommand("SELECT codigo_categoria,descripcion_categoria FROM Categoria_Producto", conect2.conexion);
-
-                conect2.abrir();
-                SqlDataReader registro = comando.ExecuteReader();
-                while (registro.Read())
-
-
-                {
-                    cmbCategoria.Items.Add(registro["descripcion_categoria"].ToString());
-
-                }
+                da = new SqlDataAdapter("SELECT [descripcion_categoria] as 'Categoria' FROM Categoria_Producto", conect2.conexion);
+                dt = new DataTable();
+                da.Fill(dt);
+                dtgprov.DataSource = dt;
                 conect2.cerrar();
-
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al cargar los datos de los proveedores", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
-
         private void FrmProductos_Load(object sender, EventArgs e)
         {
             txtDescripcion.Enabled = false;
@@ -371,7 +373,9 @@ namespace Pantallas_proyecto
             timer1.Enabled = true;
 
             cargarDatosProductos(dgvProductos, "Productos");
-            categorias();
+            cargarCategorias();
+
+
 
         }
 
@@ -494,19 +498,20 @@ namespace Pantallas_proyecto
         private void button3_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
-            cmbCategoria.Enabled = false;
+            txtcategoria.Enabled = false;
             descripcionProducto.Enabled = false;
             codigoProducto.Enabled = false;
             talla.Enabled = false;
             btnquitar.Visible = true;
             precioCompra.Text = "";
             cantidad.Text = "";
-            cmbCategoria.Text = dgvProductos.CurrentRow.Cells[1].Value.ToString();
+            txtcategoria.Text = dgvProductos.CurrentRow.Cells[1].Value.ToString();
             codigoProducto.Text = dgvProductos.CurrentRow.Cells[0].Value.ToString();
             descripcionProducto.Text = dgvProductos.CurrentRow.Cells[2].Value.ToString();
             precioActual.Text = dgvProductos.CurrentRow.Cells[4].Value.ToString();
             descuento.Text = dgvProductos.CurrentRow.Cells[5].Value.ToString();
             talla.Text = dgvProductos.CurrentRow.Cells[6].Value.ToString();
+            dtgprov.Enabled = false;
 
 
         }
@@ -683,11 +688,12 @@ namespace Pantallas_proyecto
 
         private void button1_Click(object sender, EventArgs e)
         {
-            cmbCategoria.Enabled = true;
+            txtcategoria.Enabled = true;
             descripcionProducto.Enabled = true;
             codigoProducto.Enabled = true;
             talla.Enabled = true;
             btnquitar.Visible = false;
+            dtgprov.Enabled = true;
         }
 
         private void codigoProducto_TextChanged(object sender, EventArgs e)
@@ -706,6 +712,43 @@ namespace Pantallas_proyecto
             }
 
 
+        }
+        int poc1;
+        string categoriaSeleccionada;
+        private void dtgprov_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            poc1 = dtgprov.CurrentRow.Index;
+            categoriaSeleccionada = dtgprov[0, poc1].Value.ToString();
+            txtcategoria.Text = dtgprov[0, poc1].Value.ToString();
+            txtcategoria.Enabled = false;
+            btnreseleccionar.Visible = true;
+
+        }
+
+        private void dtgprov_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            poc1 = dtgprov.CurrentRow.Index;
+            categoriaSeleccionada = dtgprov[0, poc1].Value.ToString();
+            txtcategoria.Text = dtgprov[0, poc1].Value.ToString();
+            txtcategoria.Enabled = false;
+            btnreseleccionar.Visible = true;
+            
+        }
+
+        private void txtcategoria_TextChanged(object sender, EventArgs e)
+        {
+            
+                var aux = new MetodoBuscarProveedor();
+                aux.filtrarCategoria(dtgprov, this.txtcategoria.Text.Trim());
+                errorProvider1.Clear();
+            
+            
+        }
+
+        private void btnreseleccionar_Click(object sender, EventArgs e)
+        {
+            txtcategoria.Enabled = true;
+            btnreseleccionar.Visible = false;
         }
     }
 }

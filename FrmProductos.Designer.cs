@@ -51,7 +51,6 @@ namespace Pantallas_proyecto
             this.precioCompra = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.descripcionProducto = new System.Windows.Forms.TextBox();
-            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnquitar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -90,6 +89,9 @@ namespace Pantallas_proyecto
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.lbltotal = new System.Windows.Forms.Label();
+            this.txtcategoria = new System.Windows.Forms.TextBox();
+            this.dtgprov = new System.Windows.Forms.DataGridView();
+            this.btnreseleccionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -98,6 +100,7 @@ namespace Pantallas_proyecto
             this.groupBox2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgprov)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEndCompra
@@ -108,7 +111,7 @@ namespace Pantallas_proyecto
             this.btnEndCompra.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEndCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEndCompra.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnEndCompra.Location = new System.Drawing.Point(607, 622);
+            this.btnEndCompra.Location = new System.Drawing.Point(607, 732);
             this.btnEndCompra.Name = "btnEndCompra";
             this.btnEndCompra.Size = new System.Drawing.Size(153, 43);
             this.btnEndCompra.TabIndex = 12;
@@ -124,7 +127,7 @@ namespace Pantallas_proyecto
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(495, 213);
+            this.button2.Location = new System.Drawing.Point(495, 330);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 32);
             this.button2.TabIndex = 11;
@@ -193,7 +196,7 @@ namespace Pantallas_proyecto
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(18, 192);
+            this.label8.Location = new System.Drawing.Point(18, 330);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 18);
             this.label8.TabIndex = 149;
@@ -211,7 +214,7 @@ namespace Pantallas_proyecto
             // 
             // talla
             // 
-            this.talla.Location = new System.Drawing.Point(118, 193);
+            this.talla.Location = new System.Drawing.Point(118, 331);
             this.talla.MaxLength = 50;
             this.talla.Name = "talla";
             this.talla.Size = new System.Drawing.Size(159, 20);
@@ -233,7 +236,7 @@ namespace Pantallas_proyecto
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(292, 181);
+            this.label9.Location = new System.Drawing.Point(292, 198);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 18);
             this.label9.TabIndex = 151;
@@ -241,7 +244,7 @@ namespace Pantallas_proyecto
             // 
             // cantidad
             // 
-            this.cantidad.Location = new System.Drawing.Point(448, 134);
+            this.cantidad.Location = new System.Drawing.Point(448, 149);
             this.cantidad.MaxLength = 10;
             this.cantidad.Name = "cantidad";
             this.cantidad.Size = new System.Drawing.Size(159, 20);
@@ -251,7 +254,7 @@ namespace Pantallas_proyecto
             // 
             // descuento
             // 
-            this.descuento.Location = new System.Drawing.Point(448, 182);
+            this.descuento.Location = new System.Drawing.Point(448, 199);
             this.descuento.MaxLength = 10;
             this.descuento.Name = "descuento";
             this.descuento.Size = new System.Drawing.Size(159, 20);
@@ -263,7 +266,7 @@ namespace Pantallas_proyecto
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(292, 133);
+            this.label6.Location = new System.Drawing.Point(292, 148);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 18);
             this.label6.TabIndex = 141;
@@ -319,19 +322,12 @@ namespace Pantallas_proyecto
             this.descripcionProducto.Size = new System.Drawing.Size(159, 63);
             this.descripcionProducto.TabIndex = 4;
             // 
-            // cmbCategoria
-            // 
-            this.cmbCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(118, 147);
-            this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(159, 21);
-            this.cmbCategoria.TabIndex = 5;
-            // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnreseleccionar);
+            this.groupBox4.Controls.Add(this.dtgprov);
+            this.groupBox4.Controls.Add(this.txtcategoria);
             this.groupBox4.Controls.Add(this.btnquitar);
-            this.groupBox4.Controls.Add(this.cmbCategoria);
             this.groupBox4.Controls.Add(this.descripcionProducto);
             this.groupBox4.Controls.Add(this.label3);
             this.groupBox4.Controls.Add(this.precioCompra);
@@ -350,7 +346,7 @@ namespace Pantallas_proyecto
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Location = new System.Drawing.Point(39, 346);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(629, 260);
+            this.groupBox4.Size = new System.Drawing.Size(629, 380);
             this.groupBox4.TabIndex = 172;
             this.groupBox4.TabStop = false;
             // 
@@ -362,7 +358,7 @@ namespace Pantallas_proyecto
             this.btnquitar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnquitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnquitar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnquitar.Location = new System.Drawing.Point(352, 214);
+            this.btnquitar.Location = new System.Drawing.Point(352, 331);
             this.btnquitar.Name = "btnquitar";
             this.btnquitar.Size = new System.Drawing.Size(137, 32);
             this.btnquitar.TabIndex = 187;
@@ -423,6 +419,7 @@ namespace Pantallas_proyecto
             this.dgvProductosCompra.Location = new System.Drawing.Point(3, 16);
             this.dgvProductosCompra.Name = "dgvProductosCompra";
             this.dgvProductosCompra.ReadOnly = true;
+            this.dgvProductosCompra.RowHeadersVisible = false;
             this.dgvProductosCompra.RowHeadersWidth = 51;
             this.dgvProductosCompra.Size = new System.Drawing.Size(704, 224);
             this.dgvProductosCompra.TabIndex = 92;
@@ -682,7 +679,7 @@ namespace Pantallas_proyecto
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button4.Location = new System.Drawing.Point(1306, 609);
+            this.button4.Location = new System.Drawing.Point(1306, 719);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(94, 56);
             this.button4.TabIndex = 13;
@@ -697,7 +694,7 @@ namespace Pantallas_proyecto
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 673);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 786);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1412, 25);
             this.toolStrip1.TabIndex = 186;
@@ -737,12 +734,52 @@ namespace Pantallas_proyecto
             this.lbltotal.Size = new System.Drawing.Size(0, 18);
             this.lbltotal.TabIndex = 187;
             // 
+            // txtcategoria
+            // 
+            this.txtcategoria.Location = new System.Drawing.Point(118, 149);
+            this.txtcategoria.MaxLength = 50;
+            this.txtcategoria.Name = "txtcategoria";
+            this.txtcategoria.Size = new System.Drawing.Size(159, 20);
+            this.txtcategoria.TabIndex = 5;
+            this.txtcategoria.TextChanged += new System.EventHandler(this.txtcategoria_TextChanged);
+            // 
+            // dtgprov
+            // 
+            this.dtgprov.AllowUserToAddRows = false;
+            this.dtgprov.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgprov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgprov.Location = new System.Drawing.Point(21, 180);
+            this.dtgprov.Name = "dtgprov";
+            this.dtgprov.ReadOnly = true;
+            this.dtgprov.RowHeadersVisible = false;
+            this.dtgprov.Size = new System.Drawing.Size(257, 92);
+            this.dtgprov.TabIndex = 188;
+            this.dtgprov.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgprov_CellContentClick);
+            this.dtgprov.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgprov_CellContentDoubleClick);
+            // 
+            // btnreseleccionar
+            // 
+            this.btnreseleccionar.BackColor = System.Drawing.Color.Maroon;
+            this.btnreseleccionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnreseleccionar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnreseleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnreseleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreseleccionar.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnreseleccionar.Location = new System.Drawing.Point(21, 278);
+            this.btnreseleccionar.Name = "btnreseleccionar";
+            this.btnreseleccionar.Size = new System.Drawing.Size(99, 27);
+            this.btnreseleccionar.TabIndex = 189;
+            this.btnreseleccionar.Text = "Reseleccionar";
+            this.btnreseleccionar.UseVisualStyleBackColor = false;
+            this.btnreseleccionar.Visible = false;
+            this.btnreseleccionar.Click += new System.EventHandler(this.btnreseleccionar_Click);
+            // 
             // FrmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1412, 698);
+            this.ClientSize = new System.Drawing.Size(1412, 811);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.button4);
@@ -761,8 +798,8 @@ namespace Pantallas_proyecto
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1428, 737);
-            this.MinimumSize = new System.Drawing.Size(1428, 737);
+            this.MaximumSize = new System.Drawing.Size(1428, 850);
+            this.MinimumSize = new System.Drawing.Size(1428, 850);
             this.Name = "FrmProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Heaven Store -Productos de la Factura";
@@ -780,6 +817,7 @@ namespace Pantallas_proyecto
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgprov)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -806,7 +844,6 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.TextBox precioCompra;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox descripcionProducto;
-        private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -845,5 +882,8 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidaddgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn descuentodgv;
         public System.Windows.Forms.Label lbltotal;
+        private System.Windows.Forms.TextBox txtcategoria;
+        private System.Windows.Forms.DataGridView dtgprov;
+        private System.Windows.Forms.Button btnreseleccionar;
     }
 }
