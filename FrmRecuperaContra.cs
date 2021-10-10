@@ -43,60 +43,47 @@ namespace Pantallas_proyecto
 
         private void btnIngreso_Click(object sender, EventArgs e)
         {
-           
-            if (validacion.Espacio_Blanco_CB(ErrorProvider, cmbUsuariorequerido))
+
+            
+            conect.abrir();
+            cmd = new SqlCommand("select nombre_usuario from Usuarios where nombre_usuario = @Usuario", conect.conexion);
+            cmd.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
+            SqlDataReader usuario = cmd.ExecuteReader();
+            if (usuario.Read())
             {
-                if (!validacion.Espacio_Blanco_CB(ErrorProvider, cmbUsuariorequerido))
-                {
-                    ErrorProvider.SetError(cmbUsuariorequerido, "");
-                }
-                ErrorProvider.SetError(cmbUsuariorequerido, "Elija un usuario para recuperar contraseña");
-            }
-            else
-            {
+                
                 txtresultado.Visible = true;
                 var user = new Dominio.UserModel();
-                var result = user.recoverPassword(cmbUsuariorequerido.Text);
+                var result = user.recoverPassword(txtUsuario.Text);
                 txtresultado.Text = result;
 
                 txtcodigo.Visible = true;
                 lblcodigo.Visible = true;
                 btnverificar.Visible = true;
-                cmbUsuariorequerido.Enabled = false;
+                
             }
+            else
+            {
+                MessageBox.Show("Usuario no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            conect.cerrar();
+
+           
         }
 
         private void FrmRecuperaContra_Load(object sender, EventArgs e)
         {
-            txtresultado.Visible = false;
-            lblcorreo.Visible = false;
+            txtresultado.Visible = false;       
             chkMostrarContra.Visible = false;
             conect.abrir();
-            conect.CargaDeUsuarios(cmbUsuariorequerido);
+            
             conect.cerrar();
             
 
 
         }
 
-        private void cmbUsuariorequerido_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //conseguir Correo del usuario
-            conect.abrir();
-            cmd = new SqlCommand("select correo_electronico from Usuarios where nombre_usuario = @Usuario", conect.conexion);
-            cmd.Parameters.AddWithValue("@Usuario", cmbUsuariorequerido.Text);
-            SqlDataReader correo = cmd.ExecuteReader();
-            if (correo.Read())
-            {
-                lblcorreo.Text = correo["correo_electronico"].ToString();
-                lblcorreo.Visible = true;
-            }
-            else
-            {
-                MessageBox.Show("Error al buscar el Correo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            conect.cerrar();
-        }
+        
 
         private void btnverificar_Click(object sender, EventArgs e)
         {
@@ -145,7 +132,7 @@ namespace Pantallas_proyecto
                 string contra;
                 contra = Encrypt.GetSHA256(txtContrasena.Text);
 
-                scd = new SqlCommand("update Usuarios set contrasena='" + contra + "' where nombre_usuario = '" + cmbUsuariorequerido.Text + "'", conect.conexion);
+                scd = new SqlCommand("update Usuarios set contrasena='" + contra + "' where nombre_usuario = '" + txtUsuario.Text + "'", conect.conexion);
 
                 scd.ExecuteNonQuery();
 
@@ -156,9 +143,7 @@ namespace Pantallas_proyecto
                 txtContrasena.Visible = false;
                 txtresultado.Text = "";
                 txtresultado.Visible = false;
-                cmbUsuariorequerido.Text = "";
-                cmbUsuariorequerido.Enabled = true;
-                lblcorreo.Visible = false;
+                txtUsuario.Text = "";   
                 chkMostrarContra.Visible = false;
 
             }
@@ -185,7 +170,7 @@ namespace Pantallas_proyecto
                     string contra;
                     contra = Encrypt.GetSHA256(txtContrasena.Text);
 
-                    scd = new SqlCommand("update Usuarios set contrasena='" + contra + "' where nombre_usuario = '" + cmbUsuariorequerido.Text + "'", conect.conexion);
+                    scd = new SqlCommand("update Usuarios set contrasena='" + contra + "' where nombre_usuario = '" + txtUsuario.Text + "'", conect.conexion);
 
                     scd.ExecuteNonQuery();
 
@@ -196,9 +181,7 @@ namespace Pantallas_proyecto
                     txtContrasena.Visible = false;
                     txtresultado.Text = "";
                     txtresultado.Visible = false;
-                    cmbUsuariorequerido.Text = "";
-                    cmbUsuariorequerido.Enabled = true;
-                    lblcorreo.Visible = false;
+                    txtUsuario.Text = "";
 
                 }
                 catch (Exception)

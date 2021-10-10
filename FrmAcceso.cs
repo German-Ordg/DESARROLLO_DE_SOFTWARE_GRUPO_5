@@ -78,11 +78,15 @@ namespace Pantallas_proyecto
                                 menu.Show();
                                 menu.FormClosed += cerrarSesion;
                             }
-                            if (Cashe.UserCache.Position == "Gerente")
+                            else if (Cashe.UserCache.Position == "Gerente")
                             {
                                 FrmMenuPrincipalGerente menu = new FrmMenuPrincipalGerente();
                                 menu.Show();
                                 menu.FormClosed += cerrarSesion;
+                            }
+                            else {
+                                MessageBox.Show("Tu Puestio de Trabajo No opera con este sistema, Contacte al Gerente", "ACCESO RESTRINGIDO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                Application.Exit();
                             }
                         }                  
                         else

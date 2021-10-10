@@ -35,10 +35,7 @@ namespace Pantallas_proyecto
             this.btnIngreso = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtresultado = new System.Windows.Forms.TextBox();
-            this.cmbUsuariorequerido = new System.Windows.Forms.ComboBox();
-            this.lblcorreo = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -49,6 +46,7 @@ namespace Pantallas_proyecto
             this.txtcodigo = new System.Windows.Forms.TextBox();
             this.lblcodigo = new System.Windows.Forms.Label();
             this.chkMostrarContra = new System.Windows.Forms.CheckBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -85,11 +83,9 @@ namespace Pantallas_proyecto
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Controls.Add(this.txtresultado);
-            this.groupBox1.Controls.Add(this.cmbUsuariorequerido);
-            this.groupBox1.Controls.Add(this.lblcorreo);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(22, 22);
             this.groupBox1.Name = "groupBox1";
@@ -100,32 +96,11 @@ namespace Pantallas_proyecto
             // txtresultado
             // 
             this.txtresultado.Enabled = false;
-            this.txtresultado.Location = new System.Drawing.Point(37, 201);
+            this.txtresultado.Location = new System.Drawing.Point(37, 171);
             this.txtresultado.Multiline = true;
             this.txtresultado.Name = "txtresultado";
             this.txtresultado.Size = new System.Drawing.Size(279, 75);
             this.txtresultado.TabIndex = 5;
-            // 
-            // cmbUsuariorequerido
-            // 
-            this.cmbUsuariorequerido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUsuariorequerido.FormattingEnabled = true;
-            this.cmbUsuariorequerido.Location = new System.Drawing.Point(118, 109);
-            this.cmbUsuariorequerido.Name = "cmbUsuariorequerido";
-            this.cmbUsuariorequerido.Size = new System.Drawing.Size(170, 21);
-            this.cmbUsuariorequerido.TabIndex = 1;
-            this.cmbUsuariorequerido.SelectedIndexChanged += new System.EventHandler(this.cmbUsuariorequerido_SelectedIndexChanged);
-            // 
-            // lblcorreo
-            // 
-            this.lblcorreo.AutoSize = true;
-            this.lblcorreo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcorreo.ForeColor = System.Drawing.Color.White;
-            this.lblcorreo.Location = new System.Drawing.Point(137, 169);
-            this.lblcorreo.Name = "lblcorreo";
-            this.lblcorreo.Size = new System.Drawing.Size(124, 15);
-            this.lblcorreo.TabIndex = 3;
-            this.lblcorreo.Text = "Usuario@correo.com";
             // 
             // label6
             // 
@@ -137,17 +112,6 @@ namespace Pantallas_proyecto
             this.label6.Size = new System.Drawing.Size(54, 13);
             this.label6.TabIndex = 1;
             this.label6.Text = "Usuario:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(34, 169);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 13);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Correo:";
             // 
             // label4
             // 
@@ -198,7 +162,7 @@ namespace Pantallas_proyecto
             this.txtContrasena.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasena.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtContrasena.Location = new System.Drawing.Point(477, 360);
-            this.txtContrasena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContrasena.Margin = new System.Windows.Forms.Padding(4);
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(127, 25);
             this.txtContrasena.TabIndex = 5;
@@ -265,13 +229,20 @@ namespace Pantallas_proyecto
             this.chkMostrarContra.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkMostrarContra.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.chkMostrarContra.Location = new System.Drawing.Point(482, 394);
-            this.chkMostrarContra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkMostrarContra.Margin = new System.Windows.Forms.Padding(4);
             this.chkMostrarContra.Name = "chkMostrarContra";
             this.chkMostrarContra.Size = new System.Drawing.Size(141, 21);
             this.chkMostrarContra.TabIndex = 21;
             this.chkMostrarContra.Text = "Mostrar Contraseña";
             this.chkMostrarContra.UseVisualStyleBackColor = true;
             this.chkMostrarContra.CheckedChanged += new System.EventHandler(this.chkMostrarContra_CheckedChanged);
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(124, 109);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(192, 20);
+            this.txtUsuario.TabIndex = 22;
             // 
             // FrmRecuperaContra
             // 
@@ -311,10 +282,7 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnIngreso;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cmbUsuariorequerido;
-        private System.Windows.Forms.Label lblcorreo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtresultado;
@@ -326,5 +294,6 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.TextBox txtcodigo;
         private System.Windows.Forms.Label lblcodigo;
         private System.Windows.Forms.CheckBox chkMostrarContra;
+        private System.Windows.Forms.TextBox txtUsuario;
     }
 }
