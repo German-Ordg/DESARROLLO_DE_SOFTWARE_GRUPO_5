@@ -1763,7 +1763,6 @@ C:\Users\david\Desktop\proyecto implementacion\bin\Debug\pt\Microsoft.ReportView
 C:\Users\david\Desktop\proyecto implementacion\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\david\Desktop\proyecto implementacion\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\david\Desktop\proyecto implementacion\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.csproj.AssemblyReference.cache
 C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.FrmAcceso.resources
 C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.TxtResultBox.resources
 C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.FrmCategorias.resources
@@ -2356,3 +2355,4 @@ C:\Users\WILSON\Desktop\Implementación de Sistemas de Software\Trabajo\bin\Debu
 C:\Users\WILSON\Desktop\Implementación de Sistemas de Software\Trabajo\obj\Debug\Pantallas_proyecto.exe.manifest
 C:\Users\WILSON\Desktop\Implementación de Sistemas de Software\Trabajo\obj\Debug\Pantallas_proyecto.application
 C:\Users\WILSON\Desktop\Implementación de Sistemas de Software\Trabajo\obj\Debug\Pantallas_proyecto.csproj.CopyComplete
+C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.csproj.AssemblyReference.cache

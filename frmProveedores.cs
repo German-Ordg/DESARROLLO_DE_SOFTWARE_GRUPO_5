@@ -36,7 +36,10 @@ namespace Pantallas_proyecto
         private bool letra2 = false;
         private bool letra = false;
         private bool letra3 = false;
-
+        private bool letra9 = false;
+        private bool letra10 = false;
+        private string proveedor;
+        private string numero;
 
         private void button7_Click(object sender, EventArgs e)
         {
@@ -133,6 +136,8 @@ namespace Pantallas_proyecto
                             txtDescripcion.Text = "";
                             txtNombreProovedor.Text = "";
                             txtTelefono.Text = "";
+                            errorProvider2.Clear();
+                            ErrorProvider.Clear();
                         }
                     }
                     catch (Exception ex)
@@ -194,6 +199,8 @@ namespace Pantallas_proyecto
             letra2 = false;
             letra = false;
             letra3 = false;
+            letra9 = false;
+            letra10 = false;
             if (validacion.Espacio_Blanco(ErrorProvider, txtNombreProovedor) || validacion.Solo_Letras(ErrorProvider, txtNombreProovedor))
             {
                 if (validacion.Espacio_Blanco(ErrorProvider, txtNombreProovedor))
@@ -233,7 +240,63 @@ namespace Pantallas_proyecto
                 ErrorProvider.SetError(txtTelefono, "Numero invalido");
                 letra3 = false;
             }
-            if (letra && letra2 && letra3)
+
+
+            conect.cerrar();
+            conect.abrir();
+            SqlCommand comando2 = new SqlCommand("select count(*) from Proveedores where nombre_proveedor= '" + txtNombreProovedor.Text + "'", conect.conexion);
+            int consulta2 = Convert.ToInt32(comando2.ExecuteScalar());
+            if (consulta2 == 1)
+            {
+                if (proveedor == txtNombreProovedor.Text)
+                {
+                    letra9 = true;
+                }
+                else
+                {
+                    letra9 = false;
+                    errorProvider2.SetError(txtNombreProovedor, "Nombre de proveedor ya Registrado");
+                }
+            }
+            else
+            {
+
+                letra9 = true;
+
+            }
+
+
+            conect.cerrar();
+
+            conect.abrir();
+
+            SqlCommand comando3 = new SqlCommand("select count(*) from Proveedores where numero_contacto= '" + txtTelefono.Text + "'", conect.conexion);
+            int consulta3 = Convert.ToInt32(comando3.ExecuteScalar());
+            if (consulta3 == 1)
+            {
+                if (numero == txtTelefono.Text)
+                {
+                    letra10 = true;
+                }
+                else
+                {
+                    letra10 = false;
+                    errorProvider2.SetError(txtTelefono, "Nombre de proveedor ya Registrado");
+                }
+            }
+            else
+            {
+
+                letra10 = true;
+
+            }
+
+
+            conect.cerrar();
+
+            conect.abrir();
+
+            if (letra && letra2 && letra3 && letra9 && letra10)
             {
 
                 
@@ -259,8 +322,14 @@ namespace Pantallas_proyecto
                         txtDescripcion.Clear();
                         txtNombreProovedor.Focus();
                         conect.cerrar();
+                    button2.Enabled = true;
+                    button3.Enabled = false;
+                    proveedor = null;
+                    numero = null;
+                    errorProvider2.Clear();
+                    ErrorProvider.Clear();
 
-                    }
+                }
                     catch (Exception ex)
                     {
                         MessageBox.Show("El registro no pudo ser actualizado" , "INFO", MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -276,6 +345,8 @@ namespace Pantallas_proyecto
             conect.abrir();
             conect.cargarProveedores(dgvProovedores);
             dgvProovedores.ForeColor = Color.Black;
+            button2.Enabled = true;
+            button3.Enabled = false;
         }
 
        
@@ -313,14 +384,24 @@ namespace Pantallas_proyecto
             txtNombreProovedor.Text = dgvProovedores[1, poc].Value.ToString();
             txtTelefono.Text = dgvProovedores[2, poc].Value.ToString();
             txtDescripcion.Text = dgvProovedores[3, poc].Value.ToString();
-           
+            proveedor = dgvProovedores[1, poc].Value.ToString();
+            numero = dgvProovedores[2, poc].Value.ToString();
+            button2.Enabled = false;
+            button3.Enabled = true;
+
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
         {
             txtNombreProovedor.Clear();
             txtDescripcion.Clear();
-            txtNombreProovedor.Clear();
+            txtTelefono.Clear();
+            button2.Enabled = true;
+            button3.Enabled = false;
+            proveedor = null;
+            numero = null;
+            errorProvider2.Clear();
+            ErrorProvider.Clear();
         }
 
         private void txtDescripcion_TextChanged(object sender, EventArgs e)

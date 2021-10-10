@@ -18,12 +18,16 @@ namespace Pantallas_proyecto
         private bool letra1 = false;
         private bool letra2 = false;
         private bool letra4 = false;
+        private bool letra9 = false;
+        private bool letra10 = false;
         private bool numero1 = false;
         private bool numero2 = false;
         private bool numero3 = false;
         public int EmpleadoEdad;
+        private string identidad;
+        private string numero;
 
-        
+
 
         public FrmEmpleados()
         {
@@ -108,7 +112,7 @@ namespace Pantallas_proyecto
                 else
                 if (txtNombre.TextLength < 3)
                 {
-                    ErrorProvider1.SetError(txtNombre, "el usuario debe ser mayor a 2 caracteres");
+                    ErrorProvider1.SetError(txtNombre, "el nombre debe ser mayor a 2 caracteres");
                 }
             }
             else
@@ -126,7 +130,7 @@ namespace Pantallas_proyecto
                 else
                 if (txtApellido.TextLength < 3)
                 {
-                    ErrorProvider1.SetError(txtApellido, "el usuario debe ser mayor a 2 caracteres");
+                    ErrorProvider1.SetError(txtApellido, "el apellido debe ser mayor a 2 caracteres");
                 }
             }
             else
@@ -291,7 +295,7 @@ namespace Pantallas_proyecto
             int codigo;
             indice = dgvEmpleados.CurrentRow.Index;
 
-            letra1 = false; letra2 = false; letra4 = false; numero1 = false; numero2 = false; numero3 = false;
+            letra1 = false; letra2 = false; letra4 = false; numero1 = false; numero2 = false; numero3 = false; letra9 = false; letra10 = false;
 
             if (validacion.Espacio_Blanco_CB(ErrorProvider1, cmbGenero))
             {
@@ -312,20 +316,25 @@ namespace Pantallas_proyecto
                 numero3 = true;
             }
 
-            if (validacion.Espacio_Blanco(ErrorProvider1, txtNombre) || validacion.Solo_Letras(ErrorProvider1, txtNombre))
+            if (validacion.Espacio_Blanco(ErrorProvider1, txtNombre) || validacion.Solo_Letras(ErrorProvider1, txtNombre) || txtNombre.TextLength < 3)
             {
                 if (validacion.Espacio_Blanco(ErrorProvider1, txtNombre))
                     ErrorProvider1.SetError(txtNombre, "no se puede dejar en blanco");
                 else
                 if (validacion.Solo_Letras(ErrorProvider1, txtNombre))
                     ErrorProvider1.SetError(txtNombre, "Solo se permite letras");
+                else
+                if (txtNombre.TextLength < 3)
+                {
+                    ErrorProvider1.SetError(txtApellido, "el nombre debe ser mayor a 2 caracteres");
+                }
             }
             else
             {
                 letra1 = true;
             }
 
-            if (validacion.Espacio_Blanco(ErrorProvider1, txtApellido) || validacion.Solo_Letras(ErrorProvider1, txtApellido))
+            if (validacion.Espacio_Blanco(ErrorProvider1, txtApellido) || validacion.Solo_Letras(ErrorProvider1, txtApellido) || txtApellido.TextLength < 3)
             {
                 if (validacion.Espacio_Blanco(ErrorProvider1, txtApellido))
                     ErrorProvider1.SetError(txtApellido, "no se puede dejar en blanco");
@@ -335,7 +344,7 @@ namespace Pantallas_proyecto
                 else
                 if (txtApellido.TextLength < 3)
                 {
-                    ErrorProvider1.SetError(txtApellido, "el usuario debe ser mayor a 2 caracteres");
+                    ErrorProvider1.SetError(txtApellido, "el apellido debe ser mayor a 2 caracteres");
                 }
             }
             else
@@ -395,7 +404,66 @@ namespace Pantallas_proyecto
                     numero2 = true;
                 }
 
-                if (numero1 && letra1 && letra2 && numero2 && numero3 && letra4)
+                conect.cerrar();
+                conect.abrir();
+                SqlCommand comando2 = new SqlCommand("select count(*) from Empleados where  numero_identidad_empleado= '" + txtIdentidad.Text + "'", conect.conexion);
+                int consulta2 = Convert.ToInt32(comando2.ExecuteScalar());
+                if (consulta2 == 1)
+                {
+                    if (identidad == txtIdentidad.Text)
+                    {
+                        letra9 = true;
+                    }
+                    else
+                    {
+                        letra9 = false;
+                        errorProvider2.SetError(txtIdentidad, "identidad ya Registrado");
+                    }
+                }
+                else
+                {
+
+                    letra9 = true;
+
+                }
+
+
+                conect.cerrar();
+
+                conect.abrir();
+                SqlCommand comando3 = new SqlCommand("select count(*) from Empleados where  num_telefono= '" + txtNumeroTel.Text + "'", conect.conexion);
+                int consulta3 = Convert.ToInt32(comando3.ExecuteScalar());
+                if (consulta3 == 1)
+                {
+                    if ( numero == txtNumeroTel.Text)
+                    {
+                        letra10 = true;
+                    }
+                    else
+                    {
+                        letra10 = false;
+                        errorProvider2.SetError(txtNumeroTel, "Numero ya Registrado");
+                    }
+                }
+                else
+                {
+
+                    letra10 = true;
+
+                }
+
+
+                conect.cerrar();
+
+
+
+
+
+                conect.abrir();
+
+
+
+                if (numero1 && letra1 && letra2 && letra9 && letra10 && numero2 && numero3 && letra4)
                 {
 
                     try
@@ -445,6 +513,8 @@ namespace Pantallas_proyecto
                         errorProvider2.Clear();
                         ErrorProvider1.Clear();
                         errorProvider3.Clear();
+                        identidad = null;
+                        numero = null;
 
                     }
                     catch (Exception ex)
@@ -479,9 +549,11 @@ namespace Pantallas_proyecto
             txtNombre.Text = dgvEmpleados[2, poc].Value.ToString();
             txtApellido.Text = dgvEmpleados[3, poc].Value.ToString();
             txtIdentidad.Text = dgvEmpleados[4, poc].Value.ToString();
+            identidad= dgvEmpleados[4, poc].Value.ToString();
             dtpFechaNacimiento.Text = dgvEmpleados[5, poc].Value.ToString();
             dtpFechaIngreso.Text = dgvEmpleados[6, poc].Value.ToString();
             txtNumeroTel.Text = dgvEmpleados[7, poc].Value.ToString();
+            numero = dgvEmpleados[7, poc].Value.ToString();
             cmbGenero.Text = dgvEmpleados[8, poc].Value.ToString();
             btnAgregar.Enabled = false;
             btnModificar.Enabled = true ;
@@ -548,6 +620,8 @@ namespace Pantallas_proyecto
             errorProvider2.Clear();
             ErrorProvider1.Clear();
             errorProvider3.Clear();
+            identidad = null;
+            numero = null;
 
 
         }
