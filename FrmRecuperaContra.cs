@@ -36,8 +36,8 @@ namespace Pantallas_proyecto
         private bool letra2 = false;
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmAcceso acceso = new FrmAcceso();
-            acceso.Show();
+            //FrmAcceso acceso = new FrmAcceso();
+           // acceso.Show();
             this.Close();
         }
 

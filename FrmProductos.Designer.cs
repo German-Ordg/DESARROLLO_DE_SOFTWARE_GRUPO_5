@@ -89,6 +89,7 @@ namespace Pantallas_proyecto
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lbltotal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -726,12 +727,23 @@ namespace Pantallas_proyecto
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbltotal.Location = new System.Drawing.Point(1161, 410);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(0, 18);
+            this.lbltotal.TabIndex = 187;
+            // 
             // FrmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1412, 698);
+            this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label16);
@@ -832,5 +844,6 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioVentadgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidaddgv;
         private System.Windows.Forms.DataGridViewTextBoxColumn descuentodgv;
+        public System.Windows.Forms.Label lbltotal;
     }
 }

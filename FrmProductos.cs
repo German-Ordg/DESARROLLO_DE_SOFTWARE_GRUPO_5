@@ -29,6 +29,7 @@ namespace Pantallas_proyecto
         FrmCompras compras = new FrmCompras();
         validaciones validacion = new validaciones();
         ClsConexionBD conect = new ClsConexionBD();
+        double total = 0;
 
         string[,] productosArrays = new string[20, 8];
 
@@ -271,6 +272,7 @@ namespace Pantallas_proyecto
                                 }
                                 if (igual == false)
                                 {
+                                    
                                     productosArrays[contador, 0] = codigoProducto.Text;
                                     productosArrays[contador, 1] = descripcionProducto.Text;
                                     productosArrays[contador, 2] = cmbCategoria.Text;
@@ -282,7 +284,7 @@ namespace Pantallas_proyecto
                                     contador++;
 
                                     producto.Codigo_producto = Convert.ToInt32(codigoProducto.Text);
-                                    int RowsEscribir = dgvProductosCompra.Rows.Count - 1;
+                                    int RowsEscribir = dgvProductosCompra.Rows.Count ;
                                     dgvProductosCompra.Rows.Add(1);
                                     dgvProductosCompra.Rows[RowsEscribir].Cells[0].Value = codigoProducto.Text;
                                     dgvProductosCompra.Rows[RowsEscribir].Cells[1].Value = descripcionProducto.Text;
@@ -292,6 +294,13 @@ namespace Pantallas_proyecto
                                     dgvProductosCompra.Rows[RowsEscribir].Cells[5].Value = precioActual.Text;
                                     dgvProductosCompra.Rows[RowsEscribir].Cells[6].Value = cantidad.Text;
                                     dgvProductosCompra.Rows[RowsEscribir].Cells[7].Value = descuento.Text;
+
+
+                                    
+                                    double subcompra = Convert.ToDouble(precioCompra.Text);
+                                    double subcantidad= Convert.ToDouble(cantidad.Text);
+                                    total = total + (subcompra*subcantidad);
+                                    lbltotal.Text = "Total de la Compra: Lps." + Convert.ToString(total);
 
                                     codigoProducto.Clear();
                                     descripcionProducto.Clear();
