@@ -104,13 +104,13 @@ namespace Pantallas_proyecto
             {
                 FrmMenuPrincipal menu = new FrmMenuPrincipal();
                 menu.Show();
-                this.Close();
+                this.Hide();
             }
             if (Cashe.UserCache.Position == "Gerente")
             {
                 FrmMenuPrincipalGerente menu = new FrmMenuPrincipalGerente();
                 menu.Show();
-                this.Close();
+                this.Hide();
             }
             
         }

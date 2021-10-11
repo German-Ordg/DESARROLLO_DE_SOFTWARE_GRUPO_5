@@ -71,7 +71,7 @@ namespace Pantallas_proyecto
         {
             FrmAcceso acceso = new FrmAcceso();
             acceso.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)

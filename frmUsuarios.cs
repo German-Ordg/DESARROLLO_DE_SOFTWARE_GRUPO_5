@@ -150,7 +150,7 @@ namespace Pantallas_proyecto
                 else
                 if (txtcontra.TextLength < 8)
                 {
-                    errorProvider2.SetError(txtcontra, "el correo debe ser mayor a 7 caracteres");
+                    errorProvider2.SetError(txtcontra, "la contraseña debe ser mayor a 7 caracteres");
                 }
             }
             else

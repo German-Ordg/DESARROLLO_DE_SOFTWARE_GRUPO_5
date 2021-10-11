@@ -34,6 +34,7 @@ namespace Pantallas_proyecto
         SqlCommand cmd;
         SqlCommand scd;
         private bool letra2 = false;
+        private bool letra5 = false;
         private void button1_Click(object sender, EventArgs e)
         {
             //FrmAcceso acceso = new FrmAcceso();
@@ -126,32 +127,51 @@ namespace Pantallas_proyecto
 
         private void btncambiar_Click(object sender, EventArgs e)
         {
-            try
+
+            letra5 = false;
+            if (validacion.Espacio_Blanco(ErrorProvider, txtContrasena) || txtContrasena.TextLength < 8)
             {
-                conect.abrir();
-                string contra;
-                contra = Encrypt.GetSHA256(txtContrasena.Text);
-
-                scd = new SqlCommand("update Usuarios set contrasena='" + contra + "' where nombre_usuario = '" + txtUsuario.Text + "'", conect.conexion);
-
-                scd.ExecuteNonQuery();
-
-                MessageBox.Show("Contraseña actualizada!", "AVISO", MessageBoxButtons.OK);
-                conect.cerrar();
-                lblnueva.Visible = false;
-                btncambiar.Visible = false;
-                txtContrasena.Visible = false;
-                txtresultado.Text = "";
-                txtresultado.Visible = false;
-                txtUsuario.Text = "";   
-                chkMostrarContra.Visible = false;
-
+                if (validacion.Espacio_Blanco(ErrorProvider, txtContrasena))
+                    ErrorProvider.SetError(txtContrasena, "no se puede dejar en blanco");
+                else
+                if (txtContrasena.TextLength < 8)
+                {
+                    ErrorProvider.SetError(txtContrasena, "la contraseña debe ser mayor a 7 caracteres");
+                }
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Error al cambiar contraseña", "ERROR", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
+                letra5 = true;
+            }
+            if (letra5)
+            {
+                try
+                {
+                    conect.abrir();
+                    string contra;
+                    contra = Encrypt.GetSHA256(txtContrasena.Text);
 
+                    scd = new SqlCommand("update Usuarios set contrasena='" + contra + "' where nombre_usuario = '" + txtUsuario.Text + "'", conect.conexion);
+
+                    scd.ExecuteNonQuery();
+
+                    MessageBox.Show("Contraseña actualizada!", "AVISO", MessageBoxButtons.OK);
+                    conect.cerrar();
+                    lblnueva.Visible = false;
+                    btncambiar.Visible = false;
+                    txtContrasena.Visible = false;
+                    txtresultado.Text = "";
+                    txtresultado.Visible = false;
+                    txtUsuario.Text = "";
+                    chkMostrarContra.Visible = false;
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Error al cambiar contraseña", "ERROR", MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+
+                }
             }
         }
 

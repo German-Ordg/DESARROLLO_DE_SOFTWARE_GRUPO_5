@@ -295,7 +295,7 @@ namespace Pantallas_proyecto
             this.btnmostrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnmostrar.Name = "btnmostrar";
             this.btnmostrar.Size = new System.Drawing.Size(221, 53);
-            this.btnmostrar.TabIndex = 58;
+            this.btnmostrar.TabIndex = 1;
             this.btnmostrar.Text = "Mostrar en Pantalla";
             this.btnmostrar.UseVisualStyleBackColor = false;
             this.btnmostrar.Click += new System.EventHandler(this.button2_Click);
@@ -310,7 +310,7 @@ namespace Pantallas_proyecto
             this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(149, 32);
-            this.button7.TabIndex = 59;
+            this.button7.TabIndex = 6;
             this.button7.Text = "Regresar";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -362,7 +362,7 @@ namespace Pantallas_proyecto
             this.txtcodigo.MaxLength = 20;
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(132, 22);
-            this.txtcodigo.TabIndex = 66;
+            this.txtcodigo.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
@@ -370,7 +370,7 @@ namespace Pantallas_proyecto
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(225, 22);
-            this.dateTimePicker1.TabIndex = 67;
+            this.dateTimePicker1.TabIndex = 3;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // CBtipo
@@ -391,7 +391,7 @@ namespace Pantallas_proyecto
             this.CBtipo.Margin = new System.Windows.Forms.Padding(4);
             this.CBtipo.Name = "CBtipo";
             this.CBtipo.Size = new System.Drawing.Size(225, 24);
-            this.CBtipo.TabIndex = 68;
+            this.CBtipo.TabIndex = 0;
             this.CBtipo.SelectedIndexChanged += new System.EventHandler(this.CBtipo_SelectedIndexChanged);
             // 
             // label5
@@ -417,7 +417,7 @@ namespace Pantallas_proyecto
             this.CBcategoria.Location = new System.Drawing.Point(1002, 359);
             this.CBcategoria.Name = "CBcategoria";
             this.CBcategoria.Size = new System.Drawing.Size(225, 24);
-            this.CBcategoria.TabIndex = 72;
+            this.CBcategoria.TabIndex = 5;
             this.CBcategoria.ValueMember = "descripcion_categoria";
             this.CBcategoria.SelectedIndexChanged += new System.EventHandler(this.CBcategoria_SelectedIndexChanged);
             // 
@@ -594,7 +594,7 @@ namespace Pantallas_proyecto
             this.reportes.Name = "reportes";
             this.reportes.SelectedIndex = 0;
             this.reportes.Size = new System.Drawing.Size(850, 490);
-            this.reportes.TabIndex = 70;
+            this.reportes.TabIndex = 7;
             // 
             // tab1
             // 
@@ -616,7 +616,7 @@ namespace Pantallas_proyecto
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(836, 455);
-            this.reportViewer1.TabIndex = 1;
+            this.reportViewer1.TabIndex = 0;
             // 
             // dgvcategorias
             // 
@@ -801,7 +801,7 @@ namespace Pantallas_proyecto
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(225, 22);
-            this.dateTimePicker2.TabIndex = 73;
+            this.dateTimePicker2.TabIndex = 4;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // toolStrip1

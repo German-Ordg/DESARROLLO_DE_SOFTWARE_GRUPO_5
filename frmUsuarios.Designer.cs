@@ -89,7 +89,7 @@ namespace Pantallas_proyecto
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(156, 46);
-            this.button1.TabIndex = 11;
+            this.button1.TabIndex = 8;
             this.button1.Text = "Regresar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -134,7 +134,7 @@ namespace Pantallas_proyecto
             this.txtusuario.MaxLength = 20;
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(211, 22);
-            this.txtusuario.TabIndex = 18;
+            this.txtusuario.TabIndex = 1;
             // 
             // txtcorreo
             // 
@@ -143,7 +143,7 @@ namespace Pantallas_proyecto
             this.txtcorreo.MaxLength = 320;
             this.txtcorreo.Name = "txtcorreo";
             this.txtcorreo.Size = new System.Drawing.Size(211, 22);
-            this.txtcorreo.TabIndex = 19;
+            this.txtcorreo.TabIndex = 2;
             // 
             // txtcontra
             // 
@@ -152,7 +152,7 @@ namespace Pantallas_proyecto
             this.txtcontra.MaxLength = 20;
             this.txtcontra.Name = "txtcontra";
             this.txtcontra.Size = new System.Drawing.Size(211, 22);
-            this.txtcontra.TabIndex = 20;
+            this.txtcontra.TabIndex = 3;
             // 
             // btnCrear
             // 
@@ -165,7 +165,7 @@ namespace Pantallas_proyecto
             this.btnCrear.Margin = new System.Windows.Forms.Padding(4);
             this.btnCrear.Name = "btnCrear";
             this.btnCrear.Size = new System.Drawing.Size(165, 50);
-            this.btnCrear.TabIndex = 23;
+            this.btnCrear.TabIndex = 5;
             this.btnCrear.Text = "Crear Usuario";
             this.btnCrear.UseVisualStyleBackColor = false;
             this.btnCrear.Click += new System.EventHandler(this.button2_Click_1);
@@ -181,7 +181,7 @@ namespace Pantallas_proyecto
             this.cmbtipousr.Margin = new System.Windows.Forms.Padding(4);
             this.cmbtipousr.Name = "cmbtipousr";
             this.cmbtipousr.Size = new System.Drawing.Size(211, 24);
-            this.cmbtipousr.TabIndex = 24;
+            this.cmbtipousr.TabIndex = 4;
             this.cmbtipousr.SelectedIndexChanged += new System.EventHandler(this.cmbtipousr_SelectedIndexChanged);
             // 
             // dataGridView1
@@ -209,7 +209,7 @@ namespace Pantallas_proyecto
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(203, 50);
-            this.btnModificar.TabIndex = 27;
+            this.btnModificar.TabIndex = 6;
             this.btnModificar.Text = "Modifcar Usuario";
             this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -290,7 +290,7 @@ namespace Pantallas_proyecto
             this.cmbEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEmpleado.Name = "cmbEmpleado";
             this.cmbEmpleado.Size = new System.Drawing.Size(211, 24);
-            this.cmbEmpleado.TabIndex = 33;
+            this.cmbEmpleado.TabIndex = 0;
             this.cmbEmpleado.SelectedIndexChanged += new System.EventHandler(this.cmbEmpleado_SelectedIndexChanged);
             // 
             // label4
@@ -335,7 +335,7 @@ namespace Pantallas_proyecto
             this.btnlimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(203, 50);
-            this.btnlimpiar.TabIndex = 36;
+            this.btnlimpiar.TabIndex = 7;
             this.btnlimpiar.Text = "limpiar criterios";
             this.btnlimpiar.UseVisualStyleBackColor = false;
             this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
