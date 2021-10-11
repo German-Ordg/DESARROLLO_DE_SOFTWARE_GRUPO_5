@@ -252,6 +252,7 @@ namespace Pantallas_proyecto
                                     menu.Show();
                                     menu.FormClosed += cerrarSesion;
                                 }
+                                else
                                 if (Cashe.UserCache.Position == "Gerente")
                                 {
                                     FrmMenuPrincipalGerente menu = new FrmMenuPrincipalGerente();
