@@ -70,9 +70,10 @@ namespace Pantallas_proyecto
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(6, -5);
+            this.label13.Location = new System.Drawing.Point(8, -6);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(62, 18);
+            this.label13.Size = new System.Drawing.Size(77, 24);
             this.label13.TabIndex = 165;
             this.label13.Text = "Compra";
             // 
@@ -80,9 +81,11 @@ namespace Pantallas_proyecto
             // 
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.dgvProveedores);
-            this.groupBox1.Location = new System.Drawing.Point(99, 248);
+            this.groupBox1.Location = new System.Drawing.Point(132, 305);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(476, 188);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(635, 231);
             this.groupBox1.TabIndex = 162;
             this.groupBox1.TabStop = false;
             // 
@@ -92,12 +95,13 @@ namespace Pantallas_proyecto
             this.dgvProveedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProveedores.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProveedores.Location = new System.Drawing.Point(3, 16);
+            this.dgvProveedores.Location = new System.Drawing.Point(4, 19);
+            this.dgvProveedores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvProveedores.Name = "dgvProveedores";
             this.dgvProveedores.ReadOnly = true;
             this.dgvProveedores.RowHeadersVisible = false;
             this.dgvProveedores.RowHeadersWidth = 51;
-            this.dgvProveedores.Size = new System.Drawing.Size(470, 169);
+            this.dgvProveedores.Size = new System.Drawing.Size(627, 208);
             this.dgvProveedores.TabIndex = 109;
             // 
             // btnRegresar
@@ -108,9 +112,10 @@ namespace Pantallas_proyecto
             this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnRegresar.Location = new System.Drawing.Point(34, 40);
+            this.btnRegresar.Location = new System.Drawing.Point(45, 49);
+            this.btnRegresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(91, 35);
+            this.btnRegresar.Size = new System.Drawing.Size(121, 43);
             this.btnRegresar.TabIndex = 158;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
@@ -124,9 +129,10 @@ namespace Pantallas_proyecto
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(70, 442);
+            this.button2.Location = new System.Drawing.Point(93, 544);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(268, 41);
+            this.button2.Size = new System.Drawing.Size(357, 50);
             this.button2.TabIndex = 159;
             this.button2.Text = "Agregar producto a la compra";
             this.button2.UseVisualStyleBackColor = false;
@@ -143,17 +149,20 @@ namespace Pantallas_proyecto
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Location = new System.Drawing.Point(34, 92);
+            this.groupBox2.Location = new System.Drawing.Point(45, 113);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(617, 148);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(823, 182);
             this.groupBox2.TabIndex = 161;
             this.groupBox2.TabStop = false;
             // 
             // textProveedor
             // 
-            this.textProveedor.Location = new System.Drawing.Point(427, 13);
+            this.textProveedor.Location = new System.Drawing.Point(569, 16);
+            this.textProveedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textProveedor.Name = "textProveedor";
-            this.textProveedor.Size = new System.Drawing.Size(171, 20);
+            this.textProveedor.Size = new System.Drawing.Size(227, 22);
             this.textProveedor.TabIndex = 167;
             this.textProveedor.TextChanged += new System.EventHandler(this.textProveedor_TextChanged);
             // 
@@ -162,11 +171,13 @@ namespace Pantallas_proyecto
             this.dtgprov.AllowUserToAddRows = false;
             this.dtgprov.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgprov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgprov.Location = new System.Drawing.Point(396, 39);
+            this.dtgprov.Location = new System.Drawing.Point(528, 48);
+            this.dtgprov.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgprov.Name = "dtgprov";
             this.dtgprov.ReadOnly = true;
             this.dtgprov.RowHeadersVisible = false;
-            this.dtgprov.Size = new System.Drawing.Size(160, 92);
+            this.dtgprov.RowHeadersWidth = 51;
+            this.dtgprov.Size = new System.Drawing.Size(213, 113);
             this.dtgprov.TabIndex = 167;
             this.dtgprov.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgprov_CellClick);
             this.dtgprov.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgprov_CellContentClick);
@@ -176,9 +187,10 @@ namespace Pantallas_proyecto
             // 
             this.comboPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboPago.FormattingEnabled = true;
-            this.comboPago.Location = new System.Drawing.Point(145, 59);
+            this.comboPago.Location = new System.Drawing.Point(193, 73);
+            this.comboPago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboPago.Name = "comboPago";
-            this.comboPago.Size = new System.Drawing.Size(159, 21);
+            this.comboPago.Size = new System.Drawing.Size(211, 24);
             this.comboPago.TabIndex = 153;
             this.comboPago.SelectedIndexChanged += new System.EventHandler(this.comboPago_SelectedIndexChanged);
             // 
@@ -187,25 +199,28 @@ namespace Pantallas_proyecto
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(16, 58);
+            this.label15.Location = new System.Drawing.Point(21, 71);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(96, 18);
+            this.label15.Size = new System.Drawing.Size(122, 24);
             this.label15.TabIndex = 149;
             this.label15.Text = "Método pago";
             // 
             // dateFecha
             // 
-            this.dateFecha.Location = new System.Drawing.Point(145, 97);
+            this.dateFecha.Location = new System.Drawing.Point(193, 119);
+            this.dateFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateFecha.Name = "dateFecha";
-            this.dateFecha.Size = new System.Drawing.Size(159, 20);
+            this.dateFecha.Size = new System.Drawing.Size(211, 22);
             this.dateFecha.TabIndex = 89;
             // 
             // codigoCompra
             // 
-            this.codigoCompra.Location = new System.Drawing.Point(145, 22);
+            this.codigoCompra.Location = new System.Drawing.Point(193, 27);
+            this.codigoCompra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.codigoCompra.MaxLength = 9;
             this.codigoCompra.Name = "codigoCompra";
-            this.codigoCompra.Size = new System.Drawing.Size(159, 20);
+            this.codigoCompra.Size = new System.Drawing.Size(211, 22);
             this.codigoCompra.TabIndex = 88;
             this.codigoCompra.TextChanged += new System.EventHandler(this.codigoCompra_TextChanged);
             this.codigoCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codigoCompra_KeyPress);
@@ -215,9 +230,10 @@ namespace Pantallas_proyecto
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(16, 22);
+            this.label12.Location = new System.Drawing.Point(21, 27);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(116, 18);
+            this.label12.Size = new System.Drawing.Size(147, 24);
             this.label12.TabIndex = 87;
             this.label12.Text = "Numero Factura";
             // 
@@ -226,9 +242,10 @@ namespace Pantallas_proyecto
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(16, 97);
+            this.label11.Location = new System.Drawing.Point(21, 119);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(104, 18);
+            this.label11.Size = new System.Drawing.Size(133, 24);
             this.label11.TabIndex = 85;
             this.label11.Text = "Fecha compra";
             // 
@@ -237,9 +254,10 @@ namespace Pantallas_proyecto
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(332, 12);
+            this.label10.Location = new System.Drawing.Point(443, 15);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 18);
+            this.label10.Size = new System.Drawing.Size(98, 24);
             this.label10.TabIndex = 83;
             this.label10.Text = "Proveedor";
             // 
@@ -250,9 +268,9 @@ namespace Pantallas_proyecto
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 501);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 613);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(691, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(919, 25);
             this.toolStrip1.TabIndex = 166;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -260,7 +278,7 @@ namespace Pantallas_proyecto
             // 
             this.toolStripLabel1.ForeColor = System.Drawing.Color.Black;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabel1.Size = new System.Drawing.Size(111, 22);
             this.toolStripLabel1.Text = "toolStripLabel1";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
@@ -268,7 +286,7 @@ namespace Pantallas_proyecto
             // 
             this.toolStripLabel2.ForeColor = System.Drawing.Color.Black;
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabel2.Size = new System.Drawing.Size(111, 22);
             this.toolStripLabel2.Text = "toolStripLabel2";
             // 
             // timer1
@@ -291,9 +309,10 @@ namespace Pantallas_proyecto
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Location = new System.Drawing.Point(347, 442);
+            this.button1.Location = new System.Drawing.Point(463, 544);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(268, 41);
+            this.button1.Size = new System.Drawing.Size(357, 50);
             this.button1.TabIndex = 167;
             this.button1.Text = "Limpiar todos los datos";
             this.button1.UseVisualStyleBackColor = false;
@@ -302,19 +321,20 @@ namespace Pantallas_proyecto
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Pantallas_proyecto.Properties.Resources.Letras1;
-            this.pictureBox1.Location = new System.Drawing.Point(231, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(308, 32);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(229, 49);
+            this.pictureBox1.Size = new System.Drawing.Size(305, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 168;
             this.pictureBox1.TabStop = false;
             // 
             // FrmCompras
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(691, 526);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
+            this.ClientSize = new System.Drawing.Size(919, 638);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.toolStrip1);
@@ -323,9 +343,10 @@ namespace Pantallas_proyecto
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(707, 565);
-            this.MinimumSize = new System.Drawing.Size(707, 565);
+            this.MaximumSize = new System.Drawing.Size(937, 685);
+            this.MinimumSize = new System.Drawing.Size(937, 685);
             this.Name = "FrmCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Heaven Store - Compras";

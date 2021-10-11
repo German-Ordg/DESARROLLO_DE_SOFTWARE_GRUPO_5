@@ -59,7 +59,7 @@ namespace Pantallas_proyecto
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.button1.Location = new System.Drawing.Point(717, 261);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(131, 49);
             this.button1.TabIndex = 10;
@@ -75,7 +75,7 @@ namespace Pantallas_proyecto
             this.btnIngreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngreso.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnIngreso.Location = new System.Drawing.Point(717, 180);
-            this.btnIngreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIngreso.Margin = new System.Windows.Forms.Padding(4);
             this.btnIngreso.Name = "btnIngreso";
             this.btnIngreso.Size = new System.Drawing.Size(131, 49);
             this.btnIngreso.TabIndex = 2;
@@ -90,9 +90,9 @@ namespace Pantallas_proyecto
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(29, 27);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(472, 347);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
@@ -100,7 +100,7 @@ namespace Pantallas_proyecto
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(165, 134);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.MaxLength = 20;
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(255, 22);
@@ -110,7 +110,7 @@ namespace Pantallas_proyecto
             // 
             this.txtresultado.Enabled = false;
             this.txtresultado.Location = new System.Drawing.Point(49, 210);
-            this.txtresultado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtresultado.Margin = new System.Windows.Forms.Padding(4);
             this.txtresultado.Multiline = true;
             this.txtresultado.Name = "txtresultado";
             this.txtresultado.Size = new System.Drawing.Size(371, 91);
@@ -164,7 +164,7 @@ namespace Pantallas_proyecto
             this.btncambiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncambiar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btncambiar.Location = new System.Drawing.Point(831, 439);
-            this.btncambiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btncambiar.Margin = new System.Windows.Forms.Padding(4);
             this.btncambiar.Name = "btncambiar";
             this.btncambiar.Size = new System.Drawing.Size(112, 49);
             this.btncambiar.TabIndex = 6;
@@ -180,7 +180,7 @@ namespace Pantallas_proyecto
             this.txtContrasena.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasena.ForeColor = System.Drawing.SystemColors.GrayText;
             this.txtContrasena.Location = new System.Drawing.Point(636, 443);
-            this.txtContrasena.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.txtContrasena.Margin = new System.Windows.Forms.Padding(5);
             this.txtContrasena.MaxLength = 20;
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(169, 29);
@@ -200,7 +200,7 @@ namespace Pantallas_proyecto
             this.btnverificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnverificar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnverificar.Location = new System.Drawing.Point(791, 384);
-            this.btnverificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnverificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnverificar.Name = "btnverificar";
             this.btnverificar.Size = new System.Drawing.Size(79, 34);
             this.btnverificar.TabIndex = 4;
@@ -225,7 +225,7 @@ namespace Pantallas_proyecto
             // txtcodigo
             // 
             this.txtcodigo.Location = new System.Drawing.Point(635, 394);
-            this.txtcodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtcodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtcodigo.MaxLength = 10;
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(132, 22);
@@ -253,7 +253,7 @@ namespace Pantallas_proyecto
             this.chkMostrarContra.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkMostrarContra.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.chkMostrarContra.Location = new System.Drawing.Point(643, 485);
-            this.chkMostrarContra.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.chkMostrarContra.Margin = new System.Windows.Forms.Padding(5);
             this.chkMostrarContra.Name = "chkMostrarContra";
             this.chkMostrarContra.Size = new System.Drawing.Size(163, 24);
             this.chkMostrarContra.TabIndex = 21;
@@ -265,7 +265,7 @@ namespace Pantallas_proyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1047, 521);
             this.Controls.Add(this.chkMostrarContra);
             this.Controls.Add(this.btncambiar);
@@ -279,7 +279,7 @@ namespace Pantallas_proyecto
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1065, 568);
             this.MinimumSize = new System.Drawing.Size(1065, 568);

@@ -64,7 +64,7 @@ namespace Pantallas_proyecto
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(207, 129);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(220, 22);
             this.txtDescripcion.TabIndex = 2;
@@ -74,7 +74,7 @@ namespace Pantallas_proyecto
             this.dgvMetodosPago.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMetodosPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMetodosPago.Location = new System.Drawing.Point(21, 238);
-            this.dgvMetodosPago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvMetodosPago.Margin = new System.Windows.Forms.Padding(4);
             this.dgvMetodosPago.Name = "dgvMetodosPago";
             this.dgvMetodosPago.ReadOnly = true;
             this.dgvMetodosPago.RowHeadersWidth = 51;
@@ -91,7 +91,7 @@ namespace Pantallas_proyecto
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.button4.Location = new System.Drawing.Point(328, 44);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(123, 36);
             this.button4.TabIndex = 27;
@@ -108,7 +108,7 @@ namespace Pantallas_proyecto
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.button1.Location = new System.Drawing.Point(108, 183);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(123, 36);
             this.button1.TabIndex = 28;
@@ -125,7 +125,7 @@ namespace Pantallas_proyecto
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnModificar.Location = new System.Drawing.Point(284, 183);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(123, 36);
             this.btnModificar.TabIndex = 30;
@@ -173,7 +173,7 @@ namespace Pantallas_proyecto
             // 
             this.pictureBox1.Image = global::Pantallas_proyecto.Properties.Resources.Letras1;
             this.pictureBox1.Location = new System.Drawing.Point(21, 32);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(299, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -184,7 +184,7 @@ namespace Pantallas_proyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(475, 492);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.toolStrip1);
@@ -195,7 +195,7 @@ namespace Pantallas_proyecto
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(493, 539);
             this.MinimumSize = new System.Drawing.Size(493, 539);

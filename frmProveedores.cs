@@ -281,7 +281,7 @@ namespace Pantallas_proyecto
                 else
                 {
                     letra10 = false;
-                    errorProvider2.SetError(txtTelefono, "Nombre de proveedor ya Registrado");
+                    errorProvider2.SetError(txtTelefono, "telefono ya Registrado");
                 }
             }
             else

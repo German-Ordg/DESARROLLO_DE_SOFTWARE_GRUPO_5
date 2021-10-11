@@ -72,7 +72,7 @@ namespace Pantallas_proyecto
             this.btnregresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnregresar.ForeColor = System.Drawing.Color.White;
             this.btnregresar.Location = new System.Drawing.Point(733, 41);
-            this.btnregresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnregresar.Margin = new System.Windows.Forms.Padding(4);
             this.btnregresar.Name = "btnregresar";
             this.btnregresar.Size = new System.Drawing.Size(149, 32);
             this.btnregresar.TabIndex = 31;
@@ -83,7 +83,7 @@ namespace Pantallas_proyecto
             // txtcodigo
             // 
             this.txtcodigo.Location = new System.Drawing.Point(237, 92);
-            this.txtcodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtcodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(211, 22);
             this.txtcodigo.TabIndex = 37;
@@ -116,7 +116,7 @@ namespace Pantallas_proyecto
             this.cmbcategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbcategoria.FormattingEnabled = true;
             this.cmbcategoria.Location = new System.Drawing.Point(237, 149);
-            this.cmbcategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbcategoria.Margin = new System.Windows.Forms.Padding(4);
             this.cmbcategoria.Name = "cmbcategoria";
             this.cmbcategoria.Size = new System.Drawing.Size(211, 24);
             this.cmbcategoria.TabIndex = 42;
@@ -129,7 +129,7 @@ namespace Pantallas_proyecto
             this.btnaceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaceptar.ForeColor = System.Drawing.Color.White;
             this.btnaceptar.Location = new System.Drawing.Point(733, 450);
-            this.btnaceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnaceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnaceptar.Name = "btnaceptar";
             this.btnaceptar.Size = new System.Drawing.Size(149, 32);
             this.btnaceptar.TabIndex = 44;
@@ -189,7 +189,7 @@ namespace Pantallas_proyecto
             // txtdescripcion
             // 
             this.txtdescripcion.Location = new System.Drawing.Point(237, 210);
-            this.txtdescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtdescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtdescripcion.Multiline = true;
             this.txtdescripcion.Name = "txtdescripcion";
             this.txtdescripcion.Size = new System.Drawing.Size(617, 194);
@@ -202,7 +202,7 @@ namespace Pantallas_proyecto
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
             this.btnBuscar.Location = new System.Drawing.Point(503, 87);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(149, 32);
             this.btnBuscar.TabIndex = 61;
@@ -222,7 +222,7 @@ namespace Pantallas_proyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(912, 522);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtdescripcion);
@@ -237,7 +237,7 @@ namespace Pantallas_proyecto
             this.Controls.Add(this.btnregresar);
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(930, 569);
             this.MinimumSize = new System.Drawing.Size(930, 569);

@@ -197,6 +197,7 @@ namespace Pantallas_proyecto
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.AutoScroll = true;
+            this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.toolStripContainer1.ContentPanel.Controls.Add(this.pictureBox1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.txtCodigo);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.label2);

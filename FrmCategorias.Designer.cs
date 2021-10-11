@@ -186,6 +186,7 @@ namespace Pantallas_proyecto
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.AutoScroll = true;
+            this.toolStripContainer1.ContentPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.toolStripContainer1.ContentPanel.Controls.Add(this.pictureBox1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.txtCodigo);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.label2);
@@ -196,7 +197,7 @@ namespace Pantallas_proyecto
             this.toolStripContainer1.ContentPanel.Controls.Add(this.BtnRegresar);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.DgvCategoria);
             this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(545, 466);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(545, 472);
             this.toolStripContainer1.ContentPanel.Load += new System.EventHandler(this.toolStripContainer1_ContentPanel_Load);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;

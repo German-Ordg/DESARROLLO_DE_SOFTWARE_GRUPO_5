@@ -85,7 +85,7 @@ namespace Pantallas_proyecto
                                 menu.FormClosed += cerrarSesion;
                             }
                             else {
-                                MessageBox.Show("Tu Puestio de Trabajo No opera con este sistema, Contacte al Gerente", "ACCESO RESTRINGIDO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Tu Puesto de Trabajo No opera con este sistema, Contacte al Gerente", "ACCESO RESTRINGIDO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 Application.Exit();
                             }
                         }                  
@@ -257,6 +257,11 @@ namespace Pantallas_proyecto
                                     FrmMenuPrincipalGerente menu = new FrmMenuPrincipalGerente();
                                     menu.Show();
                                     menu.FormClosed += cerrarSesion;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Tu Puesto de Trabajo No opera con este sistema, Contacte al Gerente", "ACCESO RESTRINGIDO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    Application.Exit();
                                 }
                             }
                             else

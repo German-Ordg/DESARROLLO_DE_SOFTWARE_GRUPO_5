@@ -78,7 +78,7 @@ namespace Pantallas_proyecto
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(20, 23);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 32);
             this.button2.TabIndex = 53;
@@ -89,7 +89,7 @@ namespace Pantallas_proyecto
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(211, 230);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.MaxLength = 150;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
@@ -100,7 +100,7 @@ namespace Pantallas_proyecto
             // txtNombreProovedor
             // 
             this.txtNombreProovedor.Location = new System.Drawing.Point(211, 112);
-            this.txtNombreProovedor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreProovedor.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreProovedor.MaxLength = 50;
             this.txtNombreProovedor.Name = "txtNombreProovedor";
             this.txtNombreProovedor.Size = new System.Drawing.Size(384, 22);
@@ -137,7 +137,7 @@ namespace Pantallas_proyecto
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Location = new System.Drawing.Point(724, 58);
-            this.button7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button7.Margin = new System.Windows.Forms.Padding(4);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(149, 32);
             this.button7.TabIndex = 45;
@@ -158,7 +158,7 @@ namespace Pantallas_proyecto
             this.dgvProovedores.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProovedores.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvProovedores.Location = new System.Drawing.Point(121, 343);
-            this.dgvProovedores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvProovedores.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProovedores.Name = "dgvProovedores";
             this.dgvProovedores.ReadOnly = true;
             this.dgvProovedores.RowHeadersWidth = 51;
@@ -170,7 +170,7 @@ namespace Pantallas_proyecto
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(211, 170);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.MaxLength = 8;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(384, 22);
@@ -184,9 +184,9 @@ namespace Pantallas_proyecto
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Location = new System.Drawing.Point(708, 108);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(187, 180);
             this.groupBox1.TabIndex = 56;
             this.groupBox1.TabStop = false;
@@ -198,7 +198,7 @@ namespace Pantallas_proyecto
             this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneliminar.ForeColor = System.Drawing.Color.White;
             this.btneliminar.Location = new System.Drawing.Point(23, 123);
-            this.btneliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btneliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(149, 32);
             this.btneliminar.TabIndex = 55;
@@ -213,7 +213,7 @@ namespace Pantallas_proyecto
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(23, 76);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(149, 32);
             this.button3.TabIndex = 54;
@@ -226,7 +226,7 @@ namespace Pantallas_proyecto
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = global::Pantallas_proyecto.Properties.Resources.Letras1;
             this.pictureBox1.Location = new System.Drawing.Point(233, 28);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(341, 62);
             this.pictureBox1.TabIndex = 55;
@@ -277,7 +277,7 @@ namespace Pantallas_proyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(908, 606);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pictureBox1);
@@ -292,7 +292,7 @@ namespace Pantallas_proyecto
             this.Controls.Add(this.button7);
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(926, 653);
             this.MinimumSize = new System.Drawing.Size(926, 653);
