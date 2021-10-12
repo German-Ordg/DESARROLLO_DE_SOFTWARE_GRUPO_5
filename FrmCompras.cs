@@ -73,6 +73,8 @@ namespace Pantallas_proyecto
         private void FrmCompras_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
+            dateFecha.MaxDate = DateTime.Now.AddDays(0);
+            dateFecha.MinDate = DateTime.Now.AddMonths(-1);
             conect2.abrir();
             // cargarDatosProductos(dgvProductos, "Productos");
             cargarDatosCompras(dgvProveedores, "Compras");

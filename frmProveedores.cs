@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace Pantallas_proyecto
 {
@@ -77,13 +78,18 @@ namespace Pantallas_proyecto
             {
                 letra2 = true;
             }
-            if (validacion.Espacio_Blanco(ErrorProvider, txtTelefono) || validacion.Solo_Numeros(ErrorProvider, txtTelefono))
+            if (validacion.Espacio_Blanco(ErrorProvider, txtTelefono) || validacion.Solo_Numeros(ErrorProvider, txtTelefono) || !Regex.IsMatch(txtTelefono.Text, "^(3|2|8|9){1}[0-9]{7}$"))
             {
                 if (validacion.Espacio_Blanco(ErrorProvider, txtTelefono))
                     ErrorProvider.SetError(txtTelefono, "no se puede dejar en blanco");
                 else
                     if (validacion.Solo_Numeros(ErrorProvider, txtTelefono))
                     ErrorProvider.SetError(txtTelefono, "solo se permite numeros");
+                else
+                    if (!Regex.IsMatch(txtTelefono.Text, "^(3|2|8|9){1}[0-9]{7}$"))
+                {
+                    ErrorProvider.SetError(txtTelefono, "Formato de Numero de Telefono no valido. Debe Comenzar con uno de los numeros: 3, 2, 8, 9.");
+                }
             }
             else
             {
@@ -223,13 +229,18 @@ namespace Pantallas_proyecto
             {
                 letra2 = true;
             }
-            if (validacion.Espacio_Blanco(ErrorProvider, txtTelefono) || validacion.Solo_Numeros(ErrorProvider, txtTelefono))
+            if (validacion.Espacio_Blanco(ErrorProvider, txtTelefono) || validacion.Solo_Numeros(ErrorProvider, txtTelefono) || !Regex.IsMatch(txtTelefono.Text, "^(3|2|8|9){1}[0-9]{7}$"))
             {
                 if (validacion.Espacio_Blanco(ErrorProvider, txtTelefono))
                     ErrorProvider.SetError(txtTelefono, "no se puede dejar en blanco");
                 else
                     if (validacion.Solo_Numeros(ErrorProvider, txtTelefono))
                     ErrorProvider.SetError(txtTelefono, "solo se permite numeros");
+                else
+                    if (!Regex.IsMatch(txtTelefono.Text, "^(3|2|8|9){1}[0-9]{7}$"))
+                {
+                    ErrorProvider.SetError(txtTelefono, "Formato de Numero de Telefono no valido. Debe Comenzar con uno de los numeros: 3, 2, 8, 9.");
+                }
             }
             else
             {

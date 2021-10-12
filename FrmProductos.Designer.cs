@@ -112,7 +112,7 @@ namespace Pantallas_proyecto
             this.btnEndCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEndCompra.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnEndCompra.Location = new System.Drawing.Point(809, 901);
-            this.btnEndCompra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEndCompra.Margin = new System.Windows.Forms.Padding(4);
             this.btnEndCompra.Name = "btnEndCompra";
             this.btnEndCompra.Size = new System.Drawing.Size(204, 53);
             this.btnEndCompra.TabIndex = 12;
@@ -129,7 +129,7 @@ namespace Pantallas_proyecto
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.button2.Location = new System.Drawing.Point(660, 406);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(149, 39);
             this.button2.TabIndex = 11;
@@ -143,7 +143,7 @@ namespace Pantallas_proyecto
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductos.Location = new System.Drawing.Point(4, 19);
-            this.dgvProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvProductos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersWidth = 51;
@@ -168,9 +168,9 @@ namespace Pantallas_proyecto
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.dgvProductos);
             this.groupBox3.Location = new System.Drawing.Point(52, 185);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox3.Size = new System.Drawing.Size(839, 234);
             this.groupBox3.TabIndex = 171;
             this.groupBox3.TabStop = false;
@@ -214,7 +214,7 @@ namespace Pantallas_proyecto
             // codigoProducto
             // 
             this.codigoProducto.Location = new System.Drawing.Point(191, 33);
-            this.codigoProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.codigoProducto.Margin = new System.Windows.Forms.Padding(4);
             this.codigoProducto.MaxLength = 10;
             this.codigoProducto.Name = "codigoProducto";
             this.codigoProducto.Size = new System.Drawing.Size(177, 22);
@@ -225,7 +225,7 @@ namespace Pantallas_proyecto
             // talla
             // 
             this.talla.Location = new System.Drawing.Point(157, 407);
-            this.talla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.talla.Margin = new System.Windows.Forms.Padding(4);
             this.talla.MaxLength = 50;
             this.talla.Name = "talla";
             this.talla.Size = new System.Drawing.Size(211, 22);
@@ -258,7 +258,7 @@ namespace Pantallas_proyecto
             // cantidad
             // 
             this.cantidad.Location = new System.Drawing.Point(597, 183);
-            this.cantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cantidad.Margin = new System.Windows.Forms.Padding(4);
             this.cantidad.MaxLength = 10;
             this.cantidad.Name = "cantidad";
             this.cantidad.Size = new System.Drawing.Size(211, 22);
@@ -269,7 +269,7 @@ namespace Pantallas_proyecto
             // descuento
             // 
             this.descuento.Location = new System.Drawing.Point(597, 245);
-            this.descuento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.descuento.Margin = new System.Windows.Forms.Padding(4);
             this.descuento.MaxLength = 10;
             this.descuento.Name = "descuento";
             this.descuento.Size = new System.Drawing.Size(211, 22);
@@ -291,7 +291,7 @@ namespace Pantallas_proyecto
             // precioActual
             // 
             this.precioActual.Location = new System.Drawing.Point(597, 97);
-            this.precioActual.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.precioActual.Margin = new System.Windows.Forms.Padding(4);
             this.precioActual.MaxLength = 10;
             this.precioActual.Name = "precioActual";
             this.precioActual.Size = new System.Drawing.Size(211, 22);
@@ -313,7 +313,7 @@ namespace Pantallas_proyecto
             // precioCompra
             // 
             this.precioCompra.Location = new System.Drawing.Point(597, 31);
-            this.precioCompra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.precioCompra.Margin = new System.Windows.Forms.Padding(4);
             this.precioCompra.MaxLength = 10;
             this.precioCompra.Name = "precioCompra";
             this.precioCompra.Size = new System.Drawing.Size(211, 22);
@@ -336,7 +336,7 @@ namespace Pantallas_proyecto
             // descripcionProducto
             // 
             this.descripcionProducto.Location = new System.Drawing.Point(157, 80);
-            this.descripcionProducto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.descripcionProducto.Margin = new System.Windows.Forms.Padding(4);
             this.descripcionProducto.MaxLength = 100;
             this.descripcionProducto.Multiline = true;
             this.descripcionProducto.Name = "descripcionProducto";
@@ -366,9 +366,9 @@ namespace Pantallas_proyecto
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Location = new System.Drawing.Point(52, 426);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(839, 468);
             this.groupBox4.TabIndex = 172;
             this.groupBox4.TabStop = false;
@@ -382,7 +382,7 @@ namespace Pantallas_proyecto
             this.btnreseleccionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreseleccionar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnreseleccionar.Location = new System.Drawing.Point(28, 342);
-            this.btnreseleccionar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnreseleccionar.Margin = new System.Windows.Forms.Padding(4);
             this.btnreseleccionar.Name = "btnreseleccionar";
             this.btnreseleccionar.Size = new System.Drawing.Size(132, 33);
             this.btnreseleccionar.TabIndex = 189;
@@ -397,7 +397,7 @@ namespace Pantallas_proyecto
             this.dtgprov.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgprov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgprov.Location = new System.Drawing.Point(28, 222);
-            this.dtgprov.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgprov.Margin = new System.Windows.Forms.Padding(4);
             this.dtgprov.Name = "dtgprov";
             this.dtgprov.ReadOnly = true;
             this.dtgprov.RowHeadersVisible = false;
@@ -410,7 +410,7 @@ namespace Pantallas_proyecto
             // txtcategoria
             // 
             this.txtcategoria.Location = new System.Drawing.Point(157, 183);
-            this.txtcategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtcategoria.Margin = new System.Windows.Forms.Padding(4);
             this.txtcategoria.MaxLength = 50;
             this.txtcategoria.Name = "txtcategoria";
             this.txtcategoria.Size = new System.Drawing.Size(211, 22);
@@ -426,7 +426,7 @@ namespace Pantallas_proyecto
             this.btnquitar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnquitar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnquitar.Location = new System.Drawing.Point(469, 407);
-            this.btnquitar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnquitar.Margin = new System.Windows.Forms.Padding(4);
             this.btnquitar.Name = "btnquitar";
             this.btnquitar.Size = new System.Drawing.Size(183, 39);
             this.btnquitar.TabIndex = 187;
@@ -453,9 +453,9 @@ namespace Pantallas_proyecto
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.dgvProductosCompra);
             this.groupBox1.Location = new System.Drawing.Point(920, 185);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(947, 299);
             this.groupBox1.TabIndex = 173;
             this.groupBox1.TabStop = false;
@@ -489,7 +489,7 @@ namespace Pantallas_proyecto
             this.descuentodgv});
             this.dgvProductosCompra.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductosCompra.Location = new System.Drawing.Point(4, 19);
-            this.dgvProductosCompra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvProductosCompra.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProductosCompra.Name = "dgvProductosCompra";
             this.dgvProductosCompra.ReadOnly = true;
             this.dgvProductosCompra.RowHeadersVisible = false;
@@ -568,7 +568,7 @@ namespace Pantallas_proyecto
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(479, 137);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(151, 22);
             this.txtDescripcion.TabIndex = 177;
@@ -577,7 +577,7 @@ namespace Pantallas_proyecto
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(479, 137);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(151, 22);
             this.txtCodigo.TabIndex = 2;
@@ -604,7 +604,7 @@ namespace Pantallas_proyecto
             "Descripción ",
             "Código"});
             this.comboBox2.Location = new System.Drawing.Point(193, 137);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(160, 24);
             this.comboBox2.TabIndex = 1;
@@ -619,7 +619,7 @@ namespace Pantallas_proyecto
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.button3.Location = new System.Drawing.Point(661, 123);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(149, 39);
             this.button3.TabIndex = 182;
@@ -650,9 +650,9 @@ namespace Pantallas_proyecto
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.label20);
             this.groupBox2.Location = new System.Drawing.Point(920, 512);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox2.Size = new System.Drawing.Size(413, 234);
             this.groupBox2.TabIndex = 183;
             this.groupBox2.TabStop = false;
@@ -771,7 +771,7 @@ namespace Pantallas_proyecto
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.button4.Location = new System.Drawing.Point(1741, 885);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(125, 69);
             this.button4.TabIndex = 13;
@@ -850,7 +850,7 @@ namespace Pantallas_proyecto
             this.Controls.Add(this.btnEndCompra);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1898, 1035);
             this.MinimumSize = new System.Drawing.Size(1898, 1028);
