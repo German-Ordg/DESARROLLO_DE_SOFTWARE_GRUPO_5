@@ -209,5 +209,12 @@ namespace Pantallas_proyecto
         {
 
         }
+
+        private void DgvPuesto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Record_Id = Convert.ToInt32(DgvPuesto.Rows[e.RowIndex].Cells[0].Value.ToString());
+            txtCodigo.Text = (DgvPuesto.Rows[e.RowIndex].Cells[0].Value.ToString());
+            txtPosicion.Text = (DgvPuesto.Rows[e.RowIndex].Cells[1].Value.ToString());
+        }
     }
 }

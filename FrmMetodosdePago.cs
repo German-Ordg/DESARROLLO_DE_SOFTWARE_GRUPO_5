@@ -199,5 +199,12 @@ namespace Pantallas_proyecto
             codigo = dgvMetodosPago[0, poc].Value.ToString();
             txtDescripcion.Text = dgvMetodosPago[1, poc].Value.ToString();
         }
+
+        private void dgvMetodosPago_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            poc = dgvMetodosPago.CurrentRow.Index;
+            codigo = dgvMetodosPago[0, poc].Value.ToString();
+            txtDescripcion.Text = dgvMetodosPago[1, poc].Value.ToString();
+        }
     }
 }

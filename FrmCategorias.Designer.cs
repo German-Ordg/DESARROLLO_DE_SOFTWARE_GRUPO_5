@@ -174,6 +174,7 @@ namespace Pantallas_proyecto
             this.DgvCategoria.RowHeadersWidth = 51;
             this.DgvCategoria.Size = new System.Drawing.Size(492, 215);
             this.DgvCategoria.TabIndex = 28;
+            this.DgvCategoria.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCategoria_CellClick);
             this.DgvCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCategoria_CellContentClick);
             // 
             // toolStripContainer1

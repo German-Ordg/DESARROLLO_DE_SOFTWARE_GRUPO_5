@@ -80,6 +80,7 @@ namespace Pantallas_proyecto
             this.dgvMetodosPago.RowHeadersWidth = 51;
             this.dgvMetodosPago.Size = new System.Drawing.Size(440, 202);
             this.dgvMetodosPago.TabIndex = 5;
+            this.dgvMetodosPago.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMetodosPago_CellClick);
             this.dgvMetodosPago.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMetodosPago_CellContentClick);
             // 
             // button4

@@ -85,6 +85,7 @@ namespace Pantallas_proyecto
             this.DgvPuesto.RowHeadersWidth = 51;
             this.DgvPuesto.Size = new System.Drawing.Size(492, 215);
             this.DgvPuesto.TabIndex = 0;
+            this.DgvPuesto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPuesto_CellClick);
             this.DgvPuesto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPuesto_CellContentClick);
             // 
             // BtnRegresar

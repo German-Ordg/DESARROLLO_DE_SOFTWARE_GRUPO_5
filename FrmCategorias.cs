@@ -270,6 +270,12 @@ namespace Pantallas_proyecto
             toolStripLabel1.Text = DateTime.Now.ToLongDateString();
             toolStripLabel2.Text = DateTime.Now.ToLongTimeString();
         }
-    
+
+        private void DgvCategoria_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Record_Id = Convert.ToInt32(DgvCategoria.Rows[e.RowIndex].Cells[0].Value.ToString());
+            txtCodigo.Text = (DgvCategoria.Rows[e.RowIndex].Cells[0].Value.ToString());
+            txtCategoria.Text = (DgvCategoria.Rows[e.RowIndex].Cells[1].Value.ToString());
+        }
     }
 }
