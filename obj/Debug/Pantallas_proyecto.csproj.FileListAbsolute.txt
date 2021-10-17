@@ -2356,3 +2356,4 @@ C:\Users\WILSON\Desktop\Implementación de Sistemas de Software\Trabajo\obj\Debu
 C:\Users\WILSON\Desktop\Implementación de Sistemas de Software\Trabajo\obj\Debug\Pantallas_proyecto.application
 C:\Users\WILSON\Desktop\Implementación de Sistemas de Software\Trabajo\obj\Debug\Pantallas_proyecto.csproj.CopyComplete
 C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.csproj.AssemblyReference.cache
+C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmDescuentos.resources

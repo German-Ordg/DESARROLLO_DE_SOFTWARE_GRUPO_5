@@ -148,5 +148,12 @@ namespace Pantallas_proyecto
             categorias.Show();
             this.Close();
         }
+
+        private void btnDescuentos_Click(object sender, EventArgs e)
+        {
+            FrmDescuentos descuentos = new FrmDescuentos();
+            descuentos.Show();
+            this.Hide();
+        }
     }
 }

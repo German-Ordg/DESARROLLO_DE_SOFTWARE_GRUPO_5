@@ -106,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Buscar_CodigoFrmProductos.cs" />
+    <Compile Include="FrmDescuentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDescuentos.Designer.cs">
+      <DependentUpon>FrmDescuentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="MetodoBuscarProveedor.cs" />
     <Compile Include="DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -346,6 +352,9 @@
     </Compile>
     <Compile Include="SqlServerDB\UserDao.cs" />
     <Compile Include="validaciones.cs" />
+    <EmbeddedResource Include="FrmDescuentos.resx">
+      <DependentUpon>FrmDescuentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAcceso.resx">
       <DependentUpon>FrmAcceso.cs</DependentUpon>
     </EmbeddedResource>
