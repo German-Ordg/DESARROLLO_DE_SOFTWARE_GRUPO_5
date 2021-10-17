@@ -189,10 +189,13 @@ namespace Pantallas_proyecto
             if (letra && letra2 && letra3 && letra4 && letra5 && letra6&& letra7 )
             {
 
-                if (Convert.ToDouble(precioActual.Text) < Convert.ToDouble(precioCompra.Text))
+                if (Convert.ToDouble(precioActual.Text) < Convert.ToDouble(precioCompra.Text) || Convert.ToDouble(descuento.Text)> Convert.ToDouble(precioActual.Text))
                 {
-                    
+                    if (Convert.ToDouble(precioActual.Text) < Convert.ToDouble(precioCompra.Text))
+                    {
                         errorProvider1.SetError(precioActual, "El precio de Venta es menor que el de Compra");
+                    }
+                    else if (Convert.ToDouble(descuento.Text) > Convert.ToDouble(precioActual.Text)) { errorProvider1.SetError(descuento, "Descuento es mayor que el precio de venta"); }
 
                 }
                 else
