@@ -211,7 +211,7 @@ namespace Pantallas_proyecto
         }
 
 
-        public int buscarProducto(String dgv)
+        public int buscarProducto()
         {
 
             conect2.abrir();

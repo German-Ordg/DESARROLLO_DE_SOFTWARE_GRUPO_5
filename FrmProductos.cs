@@ -29,9 +29,9 @@ namespace Pantallas_proyecto
         FrmCompras compras = new FrmCompras();
         validaciones validacion = new validaciones();
         ClsConexionBD conect = new ClsConexionBD();
-        double total = 0;
+        
 
-        string[,] productosArrays = new string[20, 8];
+        //string[,] productosArrays = new string[20, 8];
 
         int contador = 0;
 
@@ -274,9 +274,10 @@ namespace Pantallas_proyecto
                                 }
                                 conect.cerrar();
 
-                                for (int i = 0; i <= contador; i++)
+                                //for (int i = 0; i <= contador; i++)
+                                foreach (DataGridViewRow row in dgvProductosCompra.Rows)
                                 {
-                                    if (codigoProducto.Text == productosArrays[i, 0])
+                                    if (codigoProducto.Text == Convert.ToString(row.Cells["CodProductodgv"].Value))
                                     {
                                         igual = true;
                                         errorProvider1.SetError(codigoProducto, "Ya agrego este producto anteriormente a la factura");
@@ -285,14 +286,14 @@ namespace Pantallas_proyecto
                                 if (igual == false)
                                 {
                                     
-                                    productosArrays[contador, 0] = codigoProducto.Text;
+                                  /*  productosArrays[contador, 0] = codigoProducto.Text;
                                     productosArrays[contador, 1] = descripcionProducto.Text;
                                     productosArrays[contador, 2] = txtcategoria.Text;
                                     productosArrays[contador, 3] = talla.Text;
                                     productosArrays[contador, 4] = precioCompra.Text;
                                     productosArrays[contador, 5] = precioActual.Text;
                                     productosArrays[contador, 6] = cantidad.Text;
-                                    productosArrays[contador, 7] = descuento.Text;
+                                    productosArrays[contador, 7] = descuento.Text;*/
                                     contador++;
 
                                     producto.Codigo_producto = Convert.ToInt32(codigoProducto.Text);
@@ -308,11 +309,8 @@ namespace Pantallas_proyecto
                                     dgvProductosCompra.Rows[RowsEscribir].Cells[7].Value = descuento.Text;
 
 
-                                    
-                                    double subcompra = Convert.ToDouble(precioCompra.Text);
-                                    double subcantidad= Convert.ToDouble(cantidad.Text);
-                                    total = total + (subcompra*subcantidad);
-                                    lbltotal.Text = "Total de la Compra: Lps." + Convert.ToString(total);
+
+                                    totalCompra();
 
                                     codigoProducto.Clear();
                                     descripcionProducto.Clear();
@@ -328,7 +326,11 @@ namespace Pantallas_proyecto
                                     codigoProducto.Enabled = true;
                                     talla.Enabled = true;
                                     btnquitar.Visible = false;
-                                    
+                                    btnEliminarCompra.Visible = true;
+                                    dtgprov.Enabled = true;
+                                    btnreseleccionar.Visible = false;
+
+
                                 }
                                 // else
                                 // MessageBox.Show("Esta ingresando un producto que ya fue ingresado","Aviso",MessageBoxButtons.OK);
@@ -351,6 +353,19 @@ namespace Pantallas_proyecto
 
         }
 
+        private void totalCompra() {
+            double total = 0;
+            foreach (DataGridViewRow row in dgvProductosCompra.Rows)
+            {
+
+                double subcompra = Convert.ToDouble(row.Cells["PrecioCompradgv"].Value);
+                double subcantidad = Convert.ToDouble(row.Cells["Cantidaddgv"].Value);
+                total = total + (subcompra * subcantidad);
+
+            }
+            lbltotal.Visible = true;
+            lbltotal.Text = "Total de la Compra: Lps." + Convert.ToString(total);
+        }
 
         private void cargarCategorias() {
             try
@@ -371,6 +386,7 @@ namespace Pantallas_proyecto
             txtDescripcion.Enabled = false;
             txtCodigo.Enabled = false;
             timer1.Enabled = true;
+            
 
             cargarDatosProductos(dgvProductos, "Productos");
             cargarCategorias();
@@ -386,7 +402,7 @@ namespace Pantallas_proyecto
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            if (productosArrays[0,0]==null)
+            if (dgvProductosCompra.RowCount<=0)
             {
                 MessageBox.Show("No hay productos en la compra", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -422,21 +438,22 @@ namespace Pantallas_proyecto
                     }
 
 
-                    for (int u = 0; u < contador; u++)
-                    {
+                    //for (int u = 0; u < contador; u++)
+                    foreach (DataGridViewRow row in dgvProductosCompra.Rows)
+                        {
                         try
                         {
-                            producto.Codigo_producto = Convert.ToInt32(productosArrays[u, 0]);
+                            producto.Codigo_producto = Convert.ToInt32(row.Cells["CodProductodgv"].Value);
 
-                            if (producto.buscarProducto(productosArrays[u, 0]) != producto.Codigo_producto)
+                            if (producto.buscarProducto() != producto.Codigo_producto)
                             {
-                                producto.Codigo_producto = Convert.ToInt32(productosArrays[u, 0]);
-                                producto.Descripcion = productosArrays[u, 1];
-                                producto.Cantidad = Convert.ToInt32(productosArrays[u, 6]);
-                                producto.Precio_actual = Convert.ToDouble(productosArrays[u, 5]);
-                                producto.Descuento = Convert.ToDouble(productosArrays[u, 7]);
-                                producto.Talla = productosArrays[u, 3];
-                                producto.Descripcion_Categoria = productosArrays[u, 2];
+                                producto.Codigo_producto = Convert.ToInt32(row.Cells["CodProductodgv"].Value);
+                                producto.Descripcion = Convert.ToString(row.Cells["descripciondgv"].Value);
+                                producto.Cantidad = Convert.ToInt32(row.Cells["Cantidaddgv"].Value);
+                                producto.Precio_actual = Convert.ToDouble(row.Cells["PrecioVentadgv"].Value);
+                                producto.Descuento = Convert.ToDouble(row.Cells["descuentodgv"].Value);
+                                producto.Talla = Convert.ToString(row.Cells["talladgv"].Value);
+                                producto.Descripcion_Categoria = Convert.ToString(row.Cells["descripciondgv"].Value);
                                 producto.Categoria = Convert.ToInt32(producto.buscarCategoria(producto.Descripcion_Categoria));
                                 producto.agregarProducto();
                                 cargarDatosProductos(dgvProductos, "Productos");
@@ -447,18 +464,18 @@ namespace Pantallas_proyecto
                             }
 
                             else
-                                if (producto.buscarProducto(productosArrays[u, 0]) == producto.Codigo_producto)
+                                if (producto.buscarProducto() == producto.Codigo_producto)
                             {
 
 
-                                producto.Codigo_producto = Convert.ToInt32(productosArrays[u, 0]);
+                                producto.Codigo_producto = Convert.ToInt32(row.Cells["CodProductodgv"].Value);
 
 
-                                int cant = producto.buscarProducto2(productosArrays[u, 0]);
+                                int cant = producto.buscarProducto2(Convert.ToString(row.Cells["CodProductodgv"].Value));
 
-                                producto.Cantidad = Convert.ToInt32(productosArrays[u, 6]) + cant;
-                                producto.Precio_actual = Convert.ToDouble(productosArrays[u, 5]);
-                                producto.Descuento = Convert.ToDouble(productosArrays[u, 7]);
+                                producto.Cantidad = Convert.ToInt32(row.Cells["Cantidaddgv"].Value) + cant;
+                                producto.Precio_actual = Convert.ToDouble(row.Cells["PrecioVentadgv"].Value);
+                                producto.Descuento = Convert.ToDouble(row.Cells["descuentodgv"].Value);
 
                                 producto.actualizarProducto();
                                 cargarDatosProductos(dgvProductos, "Productos");
@@ -467,8 +484,8 @@ namespace Pantallas_proyecto
 
                             }
 
-                            producto.Cantidad_compra = Convert.ToInt32(productosArrays[u, 6]);
-                            producto.Precio_compra = Convert.ToDouble(productosArrays[u, 4]);
+                            producto.Cantidad_compra = Convert.ToInt32(row.Cells["Cantidaddgv"].Value);
+                            producto.Precio_compra = Convert.ToDouble(row.Cells["PrecioCompradgv"].Value);
 
                             producto.agregarDetalleCompra();
                         }
@@ -722,6 +739,7 @@ namespace Pantallas_proyecto
             txtcategoria.Text = dtgprov[0, poc1].Value.ToString();
             txtcategoria.Enabled = false;
             btnreseleccionar.Visible = true;
+            dtgprov.Enabled = false;
 
         }
 
@@ -732,6 +750,7 @@ namespace Pantallas_proyecto
             txtcategoria.Text = dtgprov[0, poc1].Value.ToString();
             txtcategoria.Enabled = false;
             btnreseleccionar.Visible = true;
+            dtgprov.Enabled = false;
             
         }
 
@@ -749,6 +768,29 @@ namespace Pantallas_proyecto
         {
             txtcategoria.Enabled = true;
             btnreseleccionar.Visible = false;
+            dtgprov.Enabled = true;
+        }
+
+        private void btnEliminarCompra_Click(object sender, EventArgs e)
+        {
+            if (dgvProductosCompra.SelectedRows.Count != 0)
+            {
+
+                try { 
+                    dgvProductosCompra.Rows.RemoveAt(dgvProductosCompra.CurrentRow.Index);
+                    totalCompra();
+                    if (dgvProductosCompra.RowCount <= 0) { btnEliminarCompra.Visible = false;lbltotal.Visible = false; }
+                }
+                catch
+                {
+                    MessageBox.Show("No se puede eliminar esta fila", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No ha seleccionado un ítem a borrar", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
