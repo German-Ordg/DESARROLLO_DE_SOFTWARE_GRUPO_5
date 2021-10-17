@@ -354,7 +354,9 @@ namespace Pantallas_proyecto
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(720, 602);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(720, 602);
             this.Name = "FrmMenuCRUD";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Heaven Store";
