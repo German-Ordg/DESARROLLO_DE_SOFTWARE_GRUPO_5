@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 
@@ -386,6 +387,8 @@ namespace Pantallas_proyecto
         }
         private void FrmProductos_Load(object sender, EventArgs e)
         {
+            this.Location = new Point(0, 0); //sobra si tienes la posición en el diseño
+            this.Size = new Size(this.Width, Screen.PrimaryScreen.WorkingArea.Size.Height);
             txtDescripcion.Enabled = false;
             txtCodigo.Enabled = false;
             timer1.Enabled = true;
