@@ -81,6 +81,25 @@ namespace Pantallas_proyecto
 
         private void button2_Click(object sender, EventArgs e)
         {
+            errorProvider1.Clear();
+            try
+            {
+                double validar = Convert.ToDouble(precioActual.Text);
+            }
+            catch (Exception)
+            {
+                errorProvider1.SetError(precioActual, "Escriba un Valor Valido");
+                return;
+            }
+            try
+            {
+                double validar = Convert.ToDouble(descuento.Text);
+            }
+            catch (Exception)
+            {
+                errorProvider1.SetError(descuento, "Escriba un Valor Valido");
+                return;
+            }
 
             letra = false;
             letra2 = false;
@@ -220,7 +239,7 @@ namespace Pantallas_proyecto
 
                             if (producto.Codigo_producto == 0 || producto.Codigo_producto <= 0)
                             {
-                                MessageBox.Show("Ingrese un valor mayor a cero", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                errorProvider1.SetError(codigoProducto, "Ingrese un valor mayor a cero");                                
                                 codigoProducto.Clear();
                                 codigoProducto.Focus();
 
@@ -231,7 +250,7 @@ namespace Pantallas_proyecto
 
                             else if (producto.Precio_actual == 0 || producto.Precio_actual <= 0)
                             {
-                                MessageBox.Show("Ingrese un valor mayor a cero", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                errorProvider1.SetError(precioActual, "Ingrese un valor mayor a cero");
                                 precioActual.Clear();
                                 precioActual.Focus();
 
@@ -240,7 +259,7 @@ namespace Pantallas_proyecto
 
                             else if (producto.Precio_compra == 0 || producto.Precio_compra <= 0)
                             {
-                                MessageBox.Show("Ingrese un valor mayor a cero", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                errorProvider1.SetError(precioCompra, "Ingrese un valor mayor a cero");
                                 precioCompra.Clear();
                                 precioCompra.Focus();
 
@@ -248,7 +267,7 @@ namespace Pantallas_proyecto
 
                             else if (producto.Cantidad == 0 || producto.Cantidad <= 0)
                             {
-                                MessageBox.Show("Ingrese un valor mayor a cero", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                errorProvider1.SetError(cantidad, "Ingrese un valor mayor a cero");
                                 cantidad.Clear();
                                 cantidad.Focus();
 
@@ -256,8 +275,8 @@ namespace Pantallas_proyecto
 
                             else if (producto.Descuento < 0)
                             {
-                                MessageBox.Show("Ingrese un valor mayor a cero", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                                
+                                errorProvider1.SetError(descuento, "Ingrese un valor mayor a cero");
                                 descuento.Clear();
                                 descuento.Focus();
 
@@ -278,7 +297,6 @@ namespace Pantallas_proyecto
                                 }
                                 conect.cerrar();
 
-                                //for (int i = 0; i <= contador; i++)
                                 foreach (DataGridViewRow row in dgvProductosCompra.Rows)
                                 {
                                     if (codigoProducto.Text == Convert.ToString(row.Cells["CodProductodgv"].Value))
@@ -289,15 +307,7 @@ namespace Pantallas_proyecto
                                 }
                                 if (igual == false)
                                 {
-                                    
-                                  /*  productosArrays[contador, 0] = codigoProducto.Text;
-                                    productosArrays[contador, 1] = descripcionProducto.Text;
-                                    productosArrays[contador, 2] = txtcategoria.Text;
-                                    productosArrays[contador, 3] = talla.Text;
-                                    productosArrays[contador, 4] = precioCompra.Text;
-                                    productosArrays[contador, 5] = precioActual.Text;
-                                    productosArrays[contador, 6] = cantidad.Text;
-                                    productosArrays[contador, 7] = descuento.Text;*/
+                                 
                                     contador++;
 
                                     producto.Codigo_producto = Convert.ToInt32(codigoProducto.Text);
@@ -333,11 +343,11 @@ namespace Pantallas_proyecto
                                     btnEliminarCompra.Visible = true;
                                     dtgprov.Enabled = true;
                                     btnreseleccionar.Visible = false;
+                                    errorProvider1.Clear();
 
 
                                 }
-                                // else
-                                // MessageBox.Show("Esta ingresando un producto que ya fue ingresado","Aviso",MessageBoxButtons.OK);
+                                
 
                             }
 
@@ -795,7 +805,7 @@ namespace Pantallas_proyecto
             }
             else
             {
-                MessageBox.Show("No ha seleccionado un ítem a borrar", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("No ha seleccionado un FILA a borrar", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
