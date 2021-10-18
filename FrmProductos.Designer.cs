@@ -206,7 +206,7 @@ namespace Pantallas_proyecto
             // codigoProducto
             // 
             this.codigoProducto.Location = new System.Drawing.Point(143, 27);
-            this.codigoProducto.MaxLength = 10;
+            this.codigoProducto.MaxLength = 9;
             this.codigoProducto.Name = "codigoProducto";
             this.codigoProducto.Size = new System.Drawing.Size(134, 20);
             this.codigoProducto.TabIndex = 3;

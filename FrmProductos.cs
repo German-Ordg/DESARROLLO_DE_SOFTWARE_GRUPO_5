@@ -459,8 +459,8 @@ namespace Pantallas_proyecto
                                 producto.Precio_actual = Convert.ToDouble(row.Cells["PrecioVentadgv"].Value);
                                 producto.Descuento = Convert.ToDouble(row.Cells["descuentodgv"].Value);
                                 producto.Talla = Convert.ToString(row.Cells["talladgv"].Value);
-                                producto.Descripcion_Categoria = Convert.ToString(row.Cells["descripciondgv"].Value);
-                                producto.Categoria = Convert.ToInt32(producto.buscarCategoria(producto.Descripcion_Categoria));
+                                producto.Descripcion_Categoria = Convert.ToString(row.Cells["categoriadgv"].Value);
+                                producto.buscarCategoria();
                                 producto.agregarProducto();
                                 cargarDatosProductos(dgvProductos, "Productos");
 

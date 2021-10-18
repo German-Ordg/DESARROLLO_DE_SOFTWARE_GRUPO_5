@@ -84,7 +84,7 @@ namespace Pantallas_proyecto
         {
             conect2.abrir();
             cmd = new SqlCommand(" SET IDENTITY_INSERT Productos ON Insert into Productos (codigo_producto, codigo_categoria, descripcion_producto," +
-                " cantidad_existente, precio_actual, descuento_producto, talla ) values(" + codigo_producto + ", " + categoria + ", '" + descripcion + "'," + cantidad + "," + precio_actual + "," + descuento + ",'" + talla + "') SET IDENTITY_INSERT Productos OFF ", conect2.conexion); //Asignacion de valores en la bd
+                " cantidad_existente, precio_actual, descuento_producto, talla ) values(" + codigo_producto + ", " + Categoria + ", '" + descripcion + "'," + cantidad + "," + precio_actual + "," + descuento + ",'" + talla + "') SET IDENTITY_INSERT Productos OFF ", conect2.conexion); //Asignacion de valores en la bd
             cmd.ExecuteNonQuery();
             conect2.cerrar();
 
@@ -134,22 +134,22 @@ namespace Pantallas_proyecto
 
         }
 
-        public int buscarCategoria(String dgv)
+        public void buscarCategoria()
         {
 
             conect2.abrir();
 
 
-            string query = "Select *from Categoria_Producto where descripcion_categoria =" + "'" + des_categoria + "'";
+            string query = "Select codigo_categoria from Categoria_Producto where descripcion_categoria ='" + des_categoria + "'";
             SqlCommand command = new SqlCommand(query, conect2.conexion);
 
-            int lastId = Convert.ToInt32(command.ExecuteScalar());
+            categoria = Convert.ToInt32(command.ExecuteScalar());
 
 
 
 
             conect2.cerrar();
-            return lastId;
+           
 
 
         }
