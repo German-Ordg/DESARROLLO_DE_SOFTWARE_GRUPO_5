@@ -19,8 +19,7 @@ namespace Pantallas_proyecto
             InitializeComponent();
         }
 
-        // public DateTime Fecha1 { get; set; }
-        //public DateTime Fecha2 { get; set; }
+ 
 
         
         ClsConexionBD conect = new ClsConexionBD();
@@ -28,16 +27,19 @@ namespace Pantallas_proyecto
         private bool letra2 = false;
         private bool letra = false;
 
-        private const int CP_NOCLOSE_BUTTON = 0x200;
+        private const int noClose = 0x200;
+
+        //metodo para que no se pueda cerrar el programa con el boton con la figura "X"
         protected override CreateParams CreateParams
         {
             get
             {
                 CreateParams myCp = base.CreateParams;
-                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                myCp.ClassStyle = myCp.ClassStyle | noClose;
                 return myCp;
             }
         }
+        //boton para regresar al menu principal
         private void button7_Click(object sender, EventArgs e)
         {
             conect.cerrar();
@@ -45,7 +47,8 @@ namespace Pantallas_proyecto
             gerente.Show();
             this.Close();
         }
-        //prueba
+        
+        //se cargan los datos de los reportes y datos que se usan para su propia creacion de los reportes
         private void frmReportes_Load(object sender, EventArgs e)
         {
             txtcodigo.Enabled = false;
@@ -70,37 +73,22 @@ namespace Pantallas_proyecto
             dgvacabarse.ForeColor = Color.Black;
             DateTime fecha1 = dateTimePicker1.Value;
             dateTimePicker2.MinDate = fecha1.Date.AddDays(1);
-            // TODO: esta línea de código carga datos en la tabla 'db_a75e9e_bderickmoncadaDataSetrotacion.ReporteCompras' Puede moverla o quitarla según sea necesario.
-            // this.reporteComprasTableAdapter2.Fill(this.db_a75e9e_bderickmoncadaDataSetrotacion.ReporteCompras);
-            // TODO: esta línea de código carga datos en la tabla 'DataSetCompra_Fecha.Compra_Fecha' Puede moverla o quitarla según sea necesario.
-            //this.Compra_FechaTableAdapter.Fill(this.DataSetCompra_Fecha.Compra_Fecha,Fecha1,Fecha2);
-            // TODO: esta línea de código carga datos en la tabla 'db_a75e9e_bderickmoncadaDataSetINVENTARIO.VCategorias' Puede moverla o quitarla según sea necesario.
             this.vCategoriasTableAdapter3.Fill(this.db_a75e9e_bderickmoncadaDataSetINVENTARIO.VCategorias);
-            // TODO: esta línea de código carga datos en la tabla 'db_a75e9e_bderickmoncadaDataSetFecha_Compra.ReporteCompras' Puede moverla o quitarla según sea necesario.
-           // this.reporteComprasTableAdapter1.Fill(this.db_a75e9e_bderickmoncadaDataSetFecha_Compra.ReporteCompras);
-            // TODO: esta línea de código carga datos en la tabla 'db_a75e9e_bderickmoncadaDataSet11VCategorita.VCategorias' Puede moverla o quitarla según sea necesario.
             this.vCategoriasTableAdapter2.Fill(this.db_a75e9e_bderickmoncadaDataSet11VCategorita.VCategorias);
-            // TODO: esta línea de código carga datos en la tabla 'db_a75e9e_bderickmoncadaDataSet8.ReporteCompras' Puede moverla o quitarla según sea necesario.
-            //this.ReporteComprasTableAdapter.Fill(this.db_a75e9e_bderickmoncadaDataSet8.ReporteCompras);
             timer1.Enabled = true;
-            // TODO: esta línea de código carga datos en la tabla 'db_a75e9e_bderickmoncadaDataSet5.VCategorias' Puede moverla o quitarla según sea necesario.
             this.vCategoriasTableAdapter1.Fill(this.db_a75e9e_bderickmoncadaDataSet5.VCategorias);
-            // TODO: esta línea de código carga datos en la tabla 'db_a75e9e_bderickmoncadaDataSet4.VCategorias' Puede moverla o quitarla según sea necesario.
             this.VCategoriasTableAdapter.Fill(this.db_a75e9e_bderickmoncadaDataSet4.VCategorias);
-            // TODO: esta línea de código carga datos en la tabla 'db_a75e9e_bderickmoncadaDataSet2.Productos' Puede moverla o quitarla según sea necesario.
             this.ProductosTableAdapter.Fill(this.db_a75e9e_bderickmoncadaDataSet2.Productos);
-            // TODO: esta línea de código carga datos en la tabla 'db_a75e9e_bderickmoncadaDataSet.Categoria_Producto' Puede moverla o quitarla según sea necesario.
             this.categoria_ProductoTableAdapter.Fill(this.db_a75e9e_bderickmoncadaDataSet.Categoria_Producto);
             CBcategoria.SelectedIndex = -1;
             CBcategoria.Enabled = false;
             dateTimePicker1.Enabled = false;
             dateTimePicker2.Enabled = false;
-
         }
 
+        //buton para mostrar el reporte que se desea
         private void button2_Click(object sender, EventArgs e)
         {
-
             letra2 = false;
             letra = false;
             if (validacion.Espacio_Blanco_CB(ErrorProvider, CBtipo))
@@ -433,30 +421,26 @@ namespace Pantallas_proyecto
 
         private void label5_Click(object sender, EventArgs e)
         {
-
         }
 
         private void reportViewer6_Load(object sender, EventArgs e)
         {
-
         }
 
 
         private void CBcategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
         }
 
         private void CBtipo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-
         }
 
+        //metodo para mostrar la hora y fecha actual
         private void timer1_Tick(object sender, EventArgs e)
         {
             toolStripLabel1.Text = DateTime.Now.ToLongDateString();
@@ -465,42 +449,33 @@ namespace Pantallas_proyecto
 
         private void VCategoriasBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-
         }
 
         private void dba75e9ebderickmoncadaDataSet2BindingSource1_CurrentChanged(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Click_1(object sender, EventArgs e)
-        {
-
-            
+        {   
         }
 
         private void lblmensaje_Click(object sender, EventArgs e)
         {
-
         }
-
+        //metodo para el correcto funcionamiento de la fecha que se pueden escoger
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            //int  fecha1 = DateTime.Now.Year - dateTimePicker1.Value.Year;
-            //dateTimePicker2.MinDate = DateTime.Now.AddYears(-fecha1+18);
+
             DateTime fecha1 = dateTimePicker1.Value;
             dateTimePicker2.MinDate = fecha1.Date.AddDays(1);
-            //int fecha2 = DateTime.Now.Year - dateTimePicker1.Value.Year;
-            //dateTimePicker2.MinDate = DateTime.Now.AddDays(-fecha2 +fecha2);
-            //int fecha3 = DateTime.Now.Month - dateTimePicker1.Value.Month;
-            //dateTimePicker2.MinDate = DateTime.Now.AddDays(-fecha3 + fecha3);
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-
         }
     }
+    //clase corta hecha para lograr imprimir los datos de los reportes
+    //no se creo la clase aparte por que muy pequeña
     public class impresion1
     {
         public string dato1 { get; set; }
@@ -512,7 +487,8 @@ namespace Pantallas_proyecto
         public string dato7 { get; set; }
         public string dato8 { get; set; }
     }
-
+    //clase corta hecha para lograr imprimir los datos de los reportes
+    //no se creo la clase aparte por que muy pequeña
     public class impresion_ventas
     {
         public string dato1 { get; set; }
@@ -526,7 +502,8 @@ namespace Pantallas_proyecto
         public string dato9 { get; set; }
         public string dato10 { get; set; }
     }
-
+    //clase corta hecha para lograr imprimir los datos del reprote de lo mas vendido
+    //no se creo la clase aparte por que muy pequeña
     class Metodolomasvendido
     {
         ClsConexionBD conect = new ClsConexionBD();

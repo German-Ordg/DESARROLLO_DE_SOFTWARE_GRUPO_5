@@ -34,28 +34,28 @@ namespace Pantallas_proyecto
         private bool letra8 = false;
         private bool letra9 = false;
         private bool letra10 = false;
-
-        private const int CP_NOCLOSE_BUTTON = 0x200;
+        //hace que no se podra cerrar la pantalla
+        private const int noClose = 0x200;
         protected override CreateParams CreateParams
         {
             get
             {
                 CreateParams myCp = base.CreateParams;
-                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                myCp.ClassStyle = myCp.ClassStyle | noClose;
                 return myCp;
             }
         }
 
 
-       
+       //boton para regresar al menu de cruds
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmMenuCRUD cRUD = new FrmMenuCRUD();
-            cRUD.Show();
+            FrmMenuCRUD crud = new FrmMenuCRUD();
+            crud.Show();
             this.Close();
         }
-
+        //metodo para valida el correo
         private Boolean email_bien_escrito(String email)
         {
             String expresion;
@@ -76,6 +76,8 @@ namespace Pantallas_proyecto
                 return false;
             }
         }
+
+        //boton para agregar usuarios
         private void button2_Click_1(object sender, EventArgs e)
         {
             errorProvider2.Clear();
@@ -170,16 +172,15 @@ namespace Pantallas_proyecto
             }
                       
 
-                    conect.abrir();
-                    SqlCommand comando3 = new SqlCommand("select nombre_usuario from Usuarios where  nombre_usuario= '" + txtusuario.Text + "'", conect.conexion);
-                    SqlDataReader registro3 = comando3.ExecuteReader();
-                    if (registro3.Read())
-                    {
-                        letra7 = false;
-                        errorProvider2.SetError(txtusuario, "Nombre de Usuario no disponible");
-
-                    }
-                    conect.cerrar();
+            conect.abrir();
+            SqlCommand comando3 = new SqlCommand("select nombre_usuario from Usuarios where  nombre_usuario= '" + txtusuario.Text + "'", conect.conexion);
+            SqlDataReader registro3 = comando3.ExecuteReader();
+            if (registro3.Read())
+               {
+                  letra7 = false;
+                  errorProvider2.SetError(txtusuario, "Nombre de Usuario no disponible");
+               }
+            conect.cerrar();
 
                     
               
@@ -199,16 +200,16 @@ namespace Pantallas_proyecto
 
 
             conect.abrir();
-                            SqlCommand comando1 = new SqlCommand("select correo_electronico from Usuarios where  correo_electronico= '" + txtcorreo.Text + "'", conect.conexion);
-                            SqlDataReader registro = comando1.ExecuteReader();
-                            if (registro.Read())
-                            {
-                                letra9 = false;
-                                errorProvider2.SetError(txtcorreo, "Correo ya Registrado");
+            SqlCommand comando1 = new SqlCommand("select correo_electronico from Usuarios where  correo_electronico= '" + txtcorreo.Text + "'", conect.conexion);
+            SqlDataReader registro = comando1.ExecuteReader();
+            if (registro.Read())
+            {
+                letra9 = false;
+                errorProvider2.SetError(txtcorreo, "Correo ya Registrado");
                              
-                            }
+            }
 
-                            conect.cerrar();
+            conect.cerrar();
                         
 
 
@@ -241,16 +242,16 @@ namespace Pantallas_proyecto
                         txtcodemp.Clear();
                         txtusuario.Clear();
                         txtcorreo.Clear();
-                    txtcontra.Clear();
-                    txtusuario2.Clear();
-                    txtcorreo2.Clear();
-                    cmbEmpleado.SelectedIndex = -1;
-                    cmbtipousr.SelectedIndex = -1;
+                        txtcontra.Clear();
+                        txtusuario2.Clear();
+                        txtcorreo2.Clear();
+                        cmbEmpleado.SelectedIndex = -1;
+                        cmbtipousr.SelectedIndex = -1;
 
                     
-                    conect.cerrar();
+                        conect.cerrar();
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     MessageBox.Show("Error al ingresar datos", "ERROR", MessageBoxButtons.OK,
                                         MessageBoxIcon.Error);
@@ -259,7 +260,7 @@ namespace Pantallas_proyecto
             }
             
         }
-
+        //boton para modificar datos de los usuarios
         private void btnModificar_Click(object sender, EventArgs e)
         {
             
@@ -282,7 +283,7 @@ namespace Pantallas_proyecto
                     errorProvider1.SetError(txtcodemp, "no se puede dejar en blanco");
                 else
                     if (validacion.Solo_Numeros(errorProvider1, txtcodemp))
-                    errorProvider1.SetError(txtcodemp, "solo se permite numeros");
+                        errorProvider1.SetError(txtcodemp, "solo se permite numeros");
             }
             else
             {
@@ -377,7 +378,6 @@ namespace Pantallas_proyecto
                 {
 
                     cod = dataGridView1[0, indice].Value.ToString();
-                    //dataGridView1[1, indice].Value = textBox5.Text;
                     dataGridView1[1, indice].Value = txtusuario.Text;
                     dataGridView1[3, indice].Value = txtcorreo.Text;
                     //---------------------------encriptar en el data
@@ -446,7 +446,7 @@ namespace Pantallas_proyecto
                     
 
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     MessageBox.Show("Error al modificar datos", "ERROR", MessageBoxButtons.OK,
                                         MessageBoxIcon.Error);
@@ -457,7 +457,7 @@ namespace Pantallas_proyecto
             conect.cerrar();
 
         }
-
+        //se cargaran los datos de los usuarios
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
             btnModificar.Enabled = false;
@@ -473,7 +473,7 @@ namespace Pantallas_proyecto
             dataGridView1.ForeColor = Color.Black;
             conect.cerrar();
         }
-
+        //se carga la hora y fecha actual
         private void timer1_Tick(object sender, EventArgs e)
         {
             toolStripLabel1.Text = DateTime.Now.ToLongDateString();
@@ -483,7 +483,7 @@ namespace Pantallas_proyecto
         private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
         {
         }
-
+        //se selecciona los datos de un usario al seleccionarlo en el datagridview
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             btnModificar.Enabled = true;
@@ -531,7 +531,7 @@ namespace Pantallas_proyecto
         {
 
         }
-
+        //se cargan los empleados directamente de la base de datos
         private void cmbEmpleado_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -555,11 +555,10 @@ namespace Pantallas_proyecto
             catch (Exception)
             {
                 
-                //errorProvider1.SetError(cmbEmpleado, "Codigo no encontrado, Intente de nuevo");
             }
             
         }
-
+        // boton para limpiar los textbox
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
             txtcodemp.Clear();

@@ -23,7 +23,7 @@ namespace Pantallas_proyecto
         private bool numero1 = false;
         private bool numero2 = false;
         private bool numero3 = false;
-        public int EmpleadoEdad;
+        public int empleadoEdad;
         private string identidad;
         private string numero;
 
@@ -34,14 +34,14 @@ namespace Pantallas_proyecto
             InitializeComponent();
         }
 
-       
-        private const int CP_NOCLOSE_BUTTON = 0x200;
+       //metodo para que no sea permito cerrar la pantalla
+        private const int noClose = 0x200;
         protected override CreateParams CreateParams
         {
             get
             {
                 CreateParams myCp = base.CreateParams;
-                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                myCp.ClassStyle = myCp.ClassStyle | noClose;
                 return myCp;
             }
         }
@@ -56,21 +56,19 @@ namespace Pantallas_proyecto
 
         private void label9_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
         }
-
+        //boton de regresar a la pantalla del menu de los crud
         private void button4_Click(object sender, EventArgs e)
         {
             FrmMenuCRUD cRUD = new FrmMenuCRUD();
             cRUD.Show();
             this.Close();
         }
-
+        //se cargan los datos de los limites de las fechas que se pueden ingresar;se cargan los datos de los empleados
         private void FrmEmpleados_Load(object sender, EventArgs e)
         {
             btnAgregar.Enabled = true;
@@ -87,7 +85,7 @@ namespace Pantallas_proyecto
         }
 
         
-
+        //boton para agregar los datos de los empleados
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             
@@ -195,7 +193,6 @@ namespace Pantallas_proyecto
                 if (validacion.Espacio_Blanco_CB(ErrorProvider1, cmbPuesto) )
                 {
                     ErrorProvider1.SetError(cmbPuesto, "no se puede dejar en blanco");
-                    
                 }
                 else
                 {
@@ -209,85 +206,84 @@ namespace Pantallas_proyecto
                 {
 
                     conect.abrir();
-                bool igual = false;
+                    bool igual = false;
 
-                SqlCommand comando = new SqlCommand("select * from Empleados where numero_identidad_empleado = '" + txtIdentidad.Text + "'", conect.conexion);
-                SqlDataReader registro = comando.ExecuteReader();
-                if (registro.Read())
-                {
-                    igual = true;
-                }
-                conect.cerrar();
-                bool igual2 = false;
-                conect.abrir();
-                SqlCommand comando2 = new SqlCommand("select * from Empleados where num_telefono  = '" + txtNumeroTel.Text + "'", conect.conexion);
-                SqlDataReader registro2 = comando2.ExecuteReader();
-                if (registro2.Read())
-                {
-                    igual2 = true;
-                }
-                conect.cerrar();
-                    conect.abrir();
-                    string codigopuesto = "";
-                    SqlCommand comando1 = new SqlCommand("Select codigo_puesto from Empleados_Puestos where descripcion_puesto='" + cmbPuesto.Text + "'", conect.conexion);
-                    SqlDataReader registro1 = comando1.ExecuteReader();
-                    while (registro1.Read())
+                    SqlCommand comando = new SqlCommand("select * from Empleados where numero_identidad_empleado = '" + txtIdentidad.Text + "'", conect.conexion);
+                    SqlDataReader registro = comando.ExecuteReader();
+                    if (registro.Read())
                     {
-                        codigopuesto = registro1["codigo_puesto"].ToString();
+                        igual = true;
                     }
                     conect.cerrar();
-
-                    if (igual == false && igual2 == false)
+                    bool igual2 = false;
+                    conect.abrir();
+                    SqlCommand comando2 = new SqlCommand("select * from Empleados where num_telefono  = '" + txtNumeroTel.Text + "'", conect.conexion);
+                    SqlDataReader registro2 = comando2.ExecuteReader();
+                    if (registro2.Read())
                     {
-
-                        
-
-                        try
-                        {
-                            conect.abrir();
-                            cmd = new SqlCommand("Insert into Empleados(codigo_puesto, nombre_empleado, apellido_empleado, numero_identidad_empleado, fecha_nacimiento, fecha_ingreso, num_telefono, Genero) Values(" + codigopuesto + ",'" + txtNombre.Text + "', '" + txtApellido.Text + "', '" + txtIdentidad.Text + "', '" + dtpFechaNacimiento.Text + "','" + dtpFechaIngreso.Text + "','" + txtNumeroTel.Text + "','" + cmbGenero.Text + "')", conect.conexion);
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Se han ingresado los Datos con Exito ", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            conect.cargarDatosEmpleados(dgvEmpleados);
-                            txtNombre.Clear();
-                            txtApellido.Clear();
-                            txtIdentidad.Clear();
-                            
-                            txtNumeroTel.Clear();
-                            dtpFechaNacimiento.Value = DateTime.Now.AddYears(-19);
-                            dtpFechaIngreso.Text = DateTime.Now.ToShortDateString();
-                            cmbGenero.SelectedIndex = -1;
-                            txtNombre.Focus();
-                            conect.cerrar();
-                            errorProvider2.Clear();
-                            ErrorProvider1.Clear();
-                            errorProvider3.Clear();
+                        igual2 = true;
                     }
-                        catch (Exception ex)
+                    conect.cerrar();
+                        conect.abrir();
+                        string codigoPuesto = "";
+                        SqlCommand comando1 = new SqlCommand("Select codigo_puesto from Empleados_Puestos where descripcion_puesto='" + cmbPuesto.Text + "'", conect.conexion);
+                        SqlDataReader registro1 = comando1.ExecuteReader();
+                        while (registro1.Read())
                         {
-                            //MessageBox.Show(ex.Message.ToString());
-                            MessageBox.Show("ERROR AL INSERTAR LOS DATOS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                            txtNombre.Focus();
+                            codigoPuesto = registro1["codigo_puesto"].ToString();
                         }
+                        conect.cerrar();
+
+                        if (igual == false && igual2 == false)
+                        {
+
+                        
+
+                            try
+                            {
+                                conect.abrir();
+                                cmd = new SqlCommand("Insert into Empleados(codigo_puesto, nombre_empleado, apellido_empleado, numero_identidad_empleado, fecha_nacimiento, fecha_ingreso, num_telefono, Genero) Values(" + codigoPuesto + ",'" + txtNombre.Text + "', '" + txtApellido.Text + "', '" + txtIdentidad.Text + "', '" + dtpFechaNacimiento.Text + "','" + dtpFechaIngreso.Text + "','" + txtNumeroTel.Text + "','" + cmbGenero.Text + "')", conect.conexion);
+                                cmd.ExecuteNonQuery();
+                                MessageBox.Show("Se han ingresado los Datos con Exito ", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                conect.cargarDatosEmpleados(dgvEmpleados);
+                                txtNombre.Clear();
+                                txtApellido.Clear();
+                                txtIdentidad.Clear();
+                            
+                                txtNumeroTel.Clear();
+                                dtpFechaNacimiento.Value = DateTime.Now.AddYears(-19);
+                                dtpFechaIngreso.Text = DateTime.Now.ToShortDateString();
+                                cmbGenero.SelectedIndex = -1;
+                                txtNombre.Focus();
+                                conect.cerrar();
+                                errorProvider2.Clear();
+                                ErrorProvider1.Clear();
+                                errorProvider3.Clear();
+                        }
+                            catch (Exception )
+                            {
+                                MessageBox.Show("ERROR AL INSERTAR LOS DATOS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                                txtNombre.Focus();
+                            }
                         
 
 
 
-                    }
-                    else
-                        MessageBox.Show("Esta ingresando una Identidad o numero de telefono que ya fue registrada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                            MessageBox.Show("Esta ingresando una Identidad o numero de telefono que ya fue registrada", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
 
         }
-
+        //texbox para buscar los empleados
         private void txtBuscarEmpleado_TextChanged(object sender, EventArgs e)
         {
             var aux = new MetodoBuscarEmpleado();
             aux.filtrar(dgvEmpleados, this.txtBuscarEmpleado.Text.Trim());
         }
-
+        //boton para modificar los datos de los empleados
         private void btnModificar_Click(object sender, EventArgs e)
         {
             conect.abrir();
@@ -309,7 +305,6 @@ namespace Pantallas_proyecto
             if (validacion.Espacio_Blanco_CB(ErrorProvider1, cmbPuesto))
             {
                 ErrorProvider1.SetError(cmbPuesto, "no se puede dejar en blanco");
-
             }
             else
             {
@@ -471,29 +466,17 @@ namespace Pantallas_proyecto
                         
 
                         codigo = Convert.ToInt32(dgvEmpleados[0, indice].Value);
-
-                        /*
-                        dgvEmpleados[1, indice].Value = cmbPuesto.Text;
-                        dgvEmpleados[2, indice].Value = txtNombre.Text;
-                        dgvEmpleados[3, indice].Value = txtApellido.Text;
-                        dgvEmpleados[4, indice].Value = txtIdentidad.Text;
-                        dgvEmpleados[5, indice].Value = dtpFechaNacimiento.Text;
-                        dgvEmpleados[6, indice].Value = dtpFechaIngreso.Text;
-                        dgvEmpleados[7, indice].Value = txtNumeroTel.Text;
-                        dgvEmpleados[8, indice].Value = cmbGenero.Text;
-                        */
-
                         conect.abrir();
-                        string codigopuesto = "";
+                        string codigoPuesto = "";
                         SqlCommand comando1 = new SqlCommand("Select codigo_puesto from Empleados_Puestos where descripcion_puesto='" + cmbPuesto.Text + "'", conect.conexion);
                         SqlDataReader registro1 = comando1.ExecuteReader();
                         while (registro1.Read())
                         {
-                            codigopuesto = registro1["codigo_puesto"].ToString();
+                            codigoPuesto = registro1["codigo_puesto"].ToString();
                         }
                         conect.cerrar();
                         conect.abrir();
-                        cmd = new SqlCommand("update Empleados set codigo_puesto = " + codigopuesto+ ", nombre_empleado ='" + txtNombre.Text + "', apellido_empleado = '" + txtApellido.Text + "', numero_identidad_empleado= '" + txtIdentidad.Text + "', fecha_nacimiento = '" + dtpFechaNacimiento.Text + "', fecha_ingreso= '" + dtpFechaIngreso.Text + "', num_telefono = '" + txtNumeroTel.Text + "',Genero='" + cmbGenero.Text + "'  where codigo_empelado = " + codigo, conect.conexion);
+                        cmd = new SqlCommand("update Empleados set codigo_puesto = " + codigoPuesto+ ", nombre_empleado ='" + txtNombre.Text + "', apellido_empleado = '" + txtApellido.Text + "', numero_identidad_empleado= '" + txtIdentidad.Text + "', fecha_nacimiento = '" + dtpFechaNacimiento.Text + "', fecha_ingreso= '" + dtpFechaIngreso.Text + "', num_telefono = '" + txtNumeroTel.Text + "',Genero='" + cmbGenero.Text + "'  where codigo_empelado = " + codigo, conect.conexion);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("El registro fue actualizado exitosamente");
                         conect.cargarDatosEmpleados(dgvEmpleados);
@@ -526,7 +509,7 @@ namespace Pantallas_proyecto
             }
             conect.cerrar();
         }
-
+        //metodo para seleccionar los datos del empleado que se desea del data grid view
         private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             
@@ -536,16 +519,16 @@ namespace Pantallas_proyecto
 
             string puesto = dgvEmpleados[1, poc].Value.ToString();
             conect.abrir();
-            string codigopuesto = "";
+            string codigoPuesto = "";
             SqlCommand comando1 = new SqlCommand("Select descripcion_puesto from Empleados_Puestos where codigo_puesto='" + puesto + "'", conect.conexion);
             SqlDataReader registro1 = comando1.ExecuteReader();
             while (registro1.Read())
             {
-                codigopuesto = registro1["descripcion_puesto"].ToString();
+                codigoPuesto = registro1["descripcion_puesto"].ToString();
             }
             conect.cerrar();
 
-            cmbPuesto.Text = codigopuesto;
+            cmbPuesto.Text = codigoPuesto;
             txtNombre.Text = dgvEmpleados[2, poc].Value.ToString();
             txtApellido.Text = dgvEmpleados[3, poc].Value.ToString();
             txtIdentidad.Text = dgvEmpleados[4, poc].Value.ToString();
@@ -562,7 +545,7 @@ namespace Pantallas_proyecto
             errorProvider3.Clear();
 
         }
-
+        //se carga la fecha y hora actual
         private void timer1_Tick(object sender, EventArgs e)
         {
             toolStripLabel1.Text = DateTime.Now.ToLongDateString();
@@ -573,11 +556,9 @@ namespace Pantallas_proyecto
         {
             
         }
-
+        //hace que no se pueda contratar empleados menos de 18 años
         private void dtpFechaNacimiento_ValueChanged(object sender, EventArgs e)
         {
-            //int fecha1 = DateTime.Now.Year - dtpFechaNacimiento.Value.Year;
-           // dtpFechaIngreso.MinDate = DateTime.Now.AddYears(-fecha1 + 18);
             DateTime fecha1 = dtpFechaNacimiento.Value;
             dtpFechaIngreso.MinDate = fecha1.Date.AddYears(18);
         }
@@ -586,7 +567,7 @@ namespace Pantallas_proyecto
         {
 
         }
-
+        //se le bloquea que los espacios en blanco del numero de telefono
         private void txtNumeroTel_KeyPress(object sender, KeyPressEventArgs e)
         {
             errorProvider2.Clear();
@@ -596,7 +577,7 @@ namespace Pantallas_proyecto
                 e.Handled = true;
             }
         }
-
+        //se le bloquea que los espacios en blanco del numero de identidad
         private void txtIdentidad_KeyPress(object sender, KeyPressEventArgs e)
         {
             errorProvider3.Clear();
@@ -606,7 +587,7 @@ namespace Pantallas_proyecto
                 e.Handled = true;
             }
         }
-
+        //se limpia los datos en pantalla
         private void button1_Click_1(object sender, EventArgs e)
         {
             txtNombre.Clear();
