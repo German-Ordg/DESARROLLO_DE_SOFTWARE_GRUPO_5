@@ -2358,3 +2358,4 @@ C:\Users\WILSON\Desktop\Implementación de Sistemas de Software\Trabajo\obj\Debu
 C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmDescuentos.resources
 C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.FrmDescuentos.resources
 C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.csproj.AssemblyReference.cache
+C:\Users\JULIO\Desktop\PROYECTO HEAVEN STORE\obj\Debug\Pantallas_proyecto.FrmDescuentos.resources
