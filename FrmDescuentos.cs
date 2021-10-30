@@ -17,6 +17,8 @@ namespace Pantallas_proyecto
         {
             InitializeComponent();
         }
+
+        //Deshanilitar el boton X de la ventana
         private const int CP_NOCLOSE_BUTTON = 0x200;
         protected override CreateParams CreateParams
         {
@@ -28,17 +30,20 @@ namespace Pantallas_proyecto
             }
         }
 
+        //Regresar al menu
         private void BtnRegresar_Click(object sender, EventArgs e)
         {
             FrmMenuCRUD CRUD = new FrmMenuCRUD();
             CRUD.Show();
             this.Close();
         }
-        ClsConexionBD connect = new ClsConexionBD();
+        ClsConexionBD connect = new ClsConexionBD(); //Coneccion con la base de datos
         SqlDataAdapter da;
         DataTable dt;
-        int Record_Id=0;
+        int recordID=0;
         double venta = 0; 
+
+        //Cargar datos al datagridview
         public void MostrarDatos(DataGridView dgv, string nombreTabla)
         {
             try
@@ -49,17 +54,20 @@ namespace Pantallas_proyecto
                 da.Fill(dt);
                 dgv.DataSource = dt;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 MessageBox.Show("Error al cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        //Carga del Formulario
         private void FrmDescuentos_Load(object sender, EventArgs e)
         {
             MostrarDatos(dgvProductos, "Productos");
             timer1.Enabled = true;
         }
 
+        //Boton para modificar 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             try
@@ -73,7 +81,7 @@ namespace Pantallas_proyecto
             }
             
             bool letra = false;
-            if (Record_Id==0) {
+            if (recordID==0) {
                 letra = true;
                 errorProvider1.SetError(txtDescuento, "No se selecciono un producto");
             }
@@ -83,7 +91,7 @@ namespace Pantallas_proyecto
             {
                 try
                 {
-                    string query = "Update [Productos] set [descuento_producto]= '" + txtDescuento.Text + "' where [codigo_producto]='" + Record_Id + "'";
+                    string query = "Update [Productos] set [descuento_producto]= '" + txtDescuento.Text + "' where [codigo_producto]='" + recordID + "'";
                     connect.abrir();
                     SqlCommand comando = new SqlCommand(query, connect.conexion);
                     comando.ExecuteNonQuery();
@@ -93,7 +101,7 @@ namespace Pantallas_proyecto
                     errorProvider1.Clear();
                     MostrarDatos(dgvProductos, "Productos");
                     limpio();
-                    textBox1.Text="";
+                    txtFiltro.Text="";
                     
                 }
                 catch (Exception ex)
@@ -103,51 +111,55 @@ namespace Pantallas_proyecto
             }
         }
 
+        //Accion al clikear una celda de la tabla
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                Record_Id = Convert.ToInt32(dgvProductos.Rows[e.RowIndex].Cells[0].Value.ToString());
+                recordID = Convert.ToInt32(dgvProductos.Rows[e.RowIndex].Cells[0].Value.ToString());
                 txtDescuento.Text = (dgvProductos.Rows[e.RowIndex].Cells[5].Value.ToString());
-                //textBox1.Text = (dgvProductos.Rows[e.RowIndex].Cells[0].Value.ToString());
                 venta = Convert.ToDouble(dgvProductos.Rows[e.RowIndex].Cells[4].Value.ToString());
                 lblProducto.Visible = true;
                 lblProducto.Text = (dgvProductos.Rows[e.RowIndex].Cells[2].Value.ToString());
                 errorProvider1.Clear();
                 
             }
-            catch { }
+            catch {/*Espacio en blanco por que no se necesita ninguna accion con el catch*/ }
 
         }
 
+        //Accion al clikear una celda de la tabla
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                Record_Id = Convert.ToInt32(dgvProductos.Rows[e.RowIndex].Cells[0].Value.ToString());
+                recordID = Convert.ToInt32(dgvProductos.Rows[e.RowIndex].Cells[0].Value.ToString());
                 txtDescuento.Text = (dgvProductos.Rows[e.RowIndex].Cells[5].Value.ToString());
-                //textBox1.Text = (dgvProductos.Rows[e.RowIndex].Cells[0].Value.ToString());
                 venta = Convert.ToDouble(dgvProductos.Rows[e.RowIndex].Cells[4].Value.ToString());
                 lblProducto.Visible = true;
                 lblProducto.Text = (dgvProductos.Rows[e.RowIndex].Cells[2].Value.ToString());
                 errorProvider1.Clear();
                 
             }
-            catch { }
+            catch { /*Espacio en blanco por que no se necesita ninguna accion con el catch*/ }
         }
 
+        //accion de buscar producto al momento de escribir en el txtFitro
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             var aux = new MetodoBuscarCodigo();
-            aux.filtrar1(dgvProductos, this.textBox1.Text.Trim());
+            aux.filtrar1(dgvProductos, this.txtFiltro.Text.Trim());
             limpio();
         }
+        
+        //Funcion de limpiar
         void limpio() {
-            Record_Id = 0;
+            recordID = 0;
             txtDescuento.Text = "";
             lblProducto.Text = "";
         }
 
+        //Validar solo numeros y un punto
         private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -162,6 +174,7 @@ namespace Pantallas_proyecto
             }
         }
 
+        //Accion de no permitir el 0 de primer valor en el descuento
         private void txtDescuento_TextChanged(object sender, EventArgs e)
         {
             if (txtDescuento.Text.Substring(0) == "0")
@@ -170,6 +183,7 @@ namespace Pantallas_proyecto
             }
         }
 
+        //Permitir solo numeros en el txtFiltro
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) )
@@ -178,6 +192,7 @@ namespace Pantallas_proyecto
             }
         }
 
+        //Utilizar hora de la PC
         private void timer1_Tick(object sender, EventArgs e)
         {
             toolStripLabel1.Text = DateTime.Now.ToLongDateString();

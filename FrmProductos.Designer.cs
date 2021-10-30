@@ -147,7 +147,6 @@ namespace Pantallas_proyecto
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.Size = new System.Drawing.Size(623, 171);
             this.dgvProductos.TabIndex = 92;
-            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
             // label14
             // 
@@ -250,7 +249,6 @@ namespace Pantallas_proyecto
             this.cantidad.Name = "cantidad";
             this.cantidad.Size = new System.Drawing.Size(159, 20);
             this.cantidad.TabIndex = 9;
-            this.cantidad.TextChanged += new System.EventHandler(this.cantidad_TextChanged);
             this.cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cantidad_KeyPress);
             // 
             // descuento
@@ -300,7 +298,6 @@ namespace Pantallas_proyecto
             this.precioCompra.Name = "precioCompra";
             this.precioCompra.Size = new System.Drawing.Size(159, 20);
             this.precioCompra.TabIndex = 7;
-            this.precioCompra.TextChanged += new System.EventHandler(this.precioCompra_TextChanged);
             this.precioCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precioCompra_KeyPress);
             // 
             // label3
@@ -418,7 +415,6 @@ namespace Pantallas_proyecto
             this.label2.Size = new System.Drawing.Size(358, 90);
             this.label2.TabIndex = 168;
             this.label2.Text = "HEAVEN";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // groupBox1
             // 
@@ -614,7 +610,6 @@ namespace Pantallas_proyecto
             this.groupBox2.Size = new System.Drawing.Size(310, 190);
             this.groupBox2.TabIndex = 183;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label21
             // 
@@ -747,7 +742,6 @@ namespace Pantallas_proyecto
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(86, 22);
             this.toolStripLabel1.Text = "toolStripLabel1";
-            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
             // toolStripLabel2
             // 

@@ -42,7 +42,7 @@ namespace Pantallas_proyecto
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescuento = new System.Windows.Forms.TextBox();
             this.lblProducto = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -56,10 +56,9 @@ namespace Pantallas_proyecto
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Pantallas_proyecto.Properties.Resources.Letras1;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 14);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(377, 85);
+            this.pictureBox1.Size = new System.Drawing.Size(283, 69);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 45;
             this.pictureBox1.TabStop = false;
@@ -71,10 +70,9 @@ namespace Pantallas_proyecto
             this.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnModificar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.BtnModificar.Location = new System.Drawing.Point(460, 135);
-            this.BtnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnModificar.Location = new System.Drawing.Point(345, 110);
             this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(119, 34);
+            this.BtnModificar.Size = new System.Drawing.Size(89, 28);
             this.BtnModificar.TabIndex = 42;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = false;
@@ -87,10 +85,9 @@ namespace Pantallas_proyecto
             this.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegresar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.BtnRegresar.Location = new System.Drawing.Point(807, 33);
-            this.BtnRegresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnRegresar.Location = new System.Drawing.Point(605, 27);
             this.BtnRegresar.Name = "BtnRegresar";
-            this.BtnRegresar.Size = new System.Drawing.Size(119, 34);
+            this.BtnRegresar.Size = new System.Drawing.Size(89, 28);
             this.BtnRegresar.TabIndex = 38;
             this.BtnRegresar.Text = "Regresar";
             this.BtnRegresar.UseVisualStyleBackColor = false;
@@ -107,8 +104,7 @@ namespace Pantallas_proyecto
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProductos.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvProductos.Location = new System.Drawing.Point(16, 266);
-            this.dgvProductos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvProductos.Location = new System.Drawing.Point(12, 216);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -120,7 +116,7 @@ namespace Pantallas_proyecto
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProductos.RowHeadersWidth = 51;
-            this.dgvProductos.Size = new System.Drawing.Size(909, 300);
+            this.dgvProductos.Size = new System.Drawing.Size(682, 244);
             this.dgvProductos.TabIndex = 37;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
@@ -138,19 +134,17 @@ namespace Pantallas_proyecto
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(99, 142);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(74, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 24);
+            this.label1.Size = new System.Drawing.Size(84, 18);
             this.label1.TabIndex = 39;
             this.label1.Text = "Descuento:";
             // 
             // txtDescuento
             // 
-            this.txtDescuento.Location = new System.Drawing.Point(219, 142);
-            this.txtDescuento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescuento.Location = new System.Drawing.Point(164, 115);
             this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(207, 22);
+            this.txtDescuento.Size = new System.Drawing.Size(156, 20);
             this.txtDescuento.TabIndex = 44;
             this.txtDescuento.TextChanged += new System.EventHandler(this.txtDescuento_TextChanged);
             this.txtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescuento_KeyPress);
@@ -160,33 +154,30 @@ namespace Pantallas_proyecto
             this.lblProducto.AutoSize = true;
             this.lblProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProducto.ForeColor = System.Drawing.Color.White;
-            this.lblProducto.Location = new System.Drawing.Point(215, 116);
-            this.lblProducto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblProducto.Location = new System.Drawing.Point(161, 94);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(50, 24);
+            this.lblProducto.Size = new System.Drawing.Size(38, 18);
             this.lblProducto.TabIndex = 47;
             this.lblProducto.Text = "label";
             this.lblProducto.Visible = false;
             // 
-            // textBox1
+            // txtFiltro
             // 
-            this.textBox1.Location = new System.Drawing.Point(189, 230);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(119, 22);
-            this.textBox1.TabIndex = 49;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.txtFiltro.Location = new System.Drawing.Point(142, 187);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(90, 20);
+            this.txtFiltro.TabIndex = 49;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtFiltro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(29, 229);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(22, 186);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 30);
+            this.label2.Size = new System.Drawing.Size(120, 18);
             this.label2.TabIndex = 48;
             this.label2.Text = "Filtro por codigo:";
             // 
@@ -197,32 +188,32 @@ namespace Pantallas_proyecto
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 703);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 463);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1174, 39);
+            this.toolStrip1.Size = new System.Drawing.Size(706, 25);
             this.toolStrip1.TabIndex = 50;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(111, 36);
+            this.toolStripLabel1.Size = new System.Drawing.Size(86, 22);
             this.toolStripLabel1.Text = "toolStripLabel1";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(111, 36);
+            this.toolStripLabel2.Size = new System.Drawing.Size(86, 22);
             this.toolStripLabel2.Text = "toolStripLabel2";
             // 
             // FrmDescuentos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(939, 593);
+            this.ClientSize = new System.Drawing.Size(706, 488);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblProducto);
             this.Controls.Add(this.pictureBox1);
@@ -232,10 +223,9 @@ namespace Pantallas_proyecto
             this.Controls.Add(this.BtnRegresar);
             this.Controls.Add(this.dgvProductos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(957, 640);
-            this.MinimumSize = new System.Drawing.Size(957, 640);
+            this.MaximumSize = new System.Drawing.Size(722, 527);
+            this.MinimumSize = new System.Drawing.Size(722, 527);
             this.Name = "FrmDescuentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Heaven Store -Gestor de Descuentos";
@@ -261,7 +251,7 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.TextBox txtDescuento;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblProducto;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFiltro;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;

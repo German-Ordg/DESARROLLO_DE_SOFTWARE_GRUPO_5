@@ -30,14 +30,13 @@ namespace Pantallas_proyecto
         FrmCompras compras = new FrmCompras();
         validaciones validacion = new validaciones();
         ClsConexionBD conect = new ClsConexionBD();
-        
-
-        //string[,] productosArrays = new string[20, 8];
 
         int contador = 0;
 
         SqlDataAdapter da;
         DataTable dt;
+
+        //Quitar boton X de la ventana
         private const int CP_NOCLOSE_BUTTON = 0x200;
         protected override CreateParams CreateParams
         {
@@ -49,16 +48,7 @@ namespace Pantallas_proyecto
             }
         }
 
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
-
+        //Cargar datos de Productos En el data
         public void cargarDatosProductos(DataGridView dgv, string nombreTabla)//Metodo cargar dato productos
         {
             try
@@ -69,16 +59,14 @@ namespace Pantallas_proyecto
                 da.Fill(dt);
                 dgv.DataSource = dt;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Error al cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
-
-
         }
 
+        //boton de Agregar productos a la compra
         private void button2_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
@@ -112,22 +100,15 @@ namespace Pantallas_proyecto
 
             if (validacion.Espacio_Blanco(errorProvider1, descripcionProducto))
             {
-                
-                    errorProvider1.SetError(descripcionProducto, "no se puede dejar en blanco");
-               
+                    errorProvider1.SetError(descripcionProducto, "no se puede dejar en blanco");             
             }
             else
             {
                 letra = true;
             }
-               
-
             if (validacion.Espacio_Blanco(errorProvider1, txtcategoria))
-            {
-                
+            {             
                     errorProvider1.SetError(txtcategoria, "no se puede dejar en blanco");
-                           
-                
             }
             else
             {
@@ -138,15 +119,12 @@ namespace Pantallas_proyecto
             if (validacion.Espacio_Blanco(errorProvider1, precioCompra) )
             {
                 if (validacion.Espacio_Blanco(errorProvider1, precioCompra))
-                    errorProvider1.SetError(precioCompra, "no se puede dejar en blanco");
-               
+                    errorProvider1.SetError(precioCompra, "no se puede dejar en blanco");             
             }
             else
             {
                 letra3 = true;
             }
-
-
             if (validacion.Espacio_Blanco(errorProvider1, precioActual))
             {
                 if (validacion.Espacio_Blanco(errorProvider1, precioActual))
@@ -171,7 +149,6 @@ namespace Pantallas_proyecto
                 letra5 = true;
             }
 
-
             if (validacion.Espacio_Blanco(errorProvider1, descuento))
             {
                 if (validacion.Espacio_Blanco(errorProvider1, descuento))
@@ -186,7 +163,6 @@ namespace Pantallas_proyecto
             {
                 if (validacion.Espacio_Blanco(errorProvider1, codigoProducto))
                     errorProvider1.SetError(codigoProducto, "no se puede dejar en blanco");
-
             }
             else
             {
@@ -202,9 +178,6 @@ namespace Pantallas_proyecto
             {
                 letra3 = true;
             }
-
-
-
 
             if (letra && letra2 && letra3 && letra4 && letra5 && letra6&& letra7 )
             {
@@ -225,8 +198,6 @@ namespace Pantallas_proyecto
                         if (codigoProducto.Text == string.Empty || descripcionProducto.Text == string.Empty || txtcategoria.Text == string.Empty || precioCompra.Text == string.Empty || precioActual.Text == string.Empty || cantidad.Text == string.Empty || descuento.Text == string.Empty)
                             MessageBox.Show("Porfavor llene todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-
-
                         else
                         {
 
@@ -236,25 +207,17 @@ namespace Pantallas_proyecto
                             producto.Cantidad = Convert.ToInt32(cantidad.Text);
                             producto.Descuento = Convert.ToDouble(descuento.Text);
 
-
                             if (producto.Codigo_producto == 0 || producto.Codigo_producto <= 0)
                             {
                                 errorProvider1.SetError(codigoProducto, "Ingrese un valor mayor a cero");                                
                                 codigoProducto.Clear();
                                 codigoProducto.Focus();
-
-
                             }
-
-
-
                             else if (producto.Precio_actual == 0 || producto.Precio_actual <= 0)
                             {
                                 errorProvider1.SetError(precioActual, "Ingrese un valor mayor a cero");
                                 precioActual.Clear();
                                 precioActual.Focus();
-
-
                             }
 
                             else if (producto.Precio_compra == 0 || producto.Precio_compra <= 0)
@@ -262,7 +225,6 @@ namespace Pantallas_proyecto
                                 errorProvider1.SetError(precioCompra, "Ingrese un valor mayor a cero");
                                 precioCompra.Clear();
                                 precioCompra.Focus();
-
                             }
 
                             else if (producto.Cantidad == 0 || producto.Cantidad <= 0)
@@ -270,16 +232,13 @@ namespace Pantallas_proyecto
                                 errorProvider1.SetError(cantidad, "Ingrese un valor mayor a cero");
                                 cantidad.Clear();
                                 cantidad.Focus();
-
                             }
 
                             else if (producto.Descuento < 0)
-                            {
-                                
+                            {                               
                                 errorProvider1.SetError(descuento, "Ingrese un valor mayor a cero");
                                 descuento.Clear();
                                 descuento.Focus();
-
                             }
 
                             else
@@ -322,8 +281,6 @@ namespace Pantallas_proyecto
                                     dgvProductosCompra.Rows[RowsEscribir].Cells[6].Value = cantidad.Text;
                                     dgvProductosCompra.Rows[RowsEscribir].Cells[7].Value = descuento.Text;
 
-
-
                                     totalCompra();
 
                                     codigoProducto.Clear();
@@ -346,16 +303,11 @@ namespace Pantallas_proyecto
                                     errorProvider1.Clear();
 
 
-                                }
-                                
+                                }                          
 
                             }
-
                         }
-
                     }
-
-
                     catch (Exception ex)
                     {
                         MessageBox.Show("Error al ingresar los datos" + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -363,10 +315,9 @@ namespace Pantallas_proyecto
                     }
                 }
           }
-
-
         }
 
+        //Mostrar suma total de la compra
         private void totalCompra() {
             double total = 0;
             foreach (DataGridViewRow row in dgvProductosCompra.Rows)
@@ -381,6 +332,7 @@ namespace Pantallas_proyecto
             lbltotal.Text = "Total de la Compra: Lps." + Convert.ToString(total);
         }
 
+        //Cargar las descripciones de las categorias en el dtgprov
         private void cargarCategorias() {
             try
             {
@@ -390,11 +342,13 @@ namespace Pantallas_proyecto
                 dtgprov.DataSource = dt;
                 conect2.cerrar();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Error al cargar los datos de los proveedores", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
+        //Carga del Formulario
         private void FrmProductos_Load(object sender, EventArgs e)
         {
             this.Location = new Point(0, 0); //sobra si tienes la posición en el diseño
@@ -406,16 +360,9 @@ namespace Pantallas_proyecto
 
             cargarDatosProductos(dgvProductos, "Productos");
             cargarCategorias();
-
-
-
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
+        //Boton de btnEndCompra terminar la compra      
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             if (dgvProductosCompra.RowCount<=0)
@@ -431,8 +378,6 @@ namespace Pantallas_proyecto
                     try
                     {
 
-
-
                         producto.Codigo_compra = Convert.ToInt32(compra.Text);
                         producto.Descripcion_fecha = fecha.Text;
                         producto.Descripcion_proveedor = proveedor.Text;
@@ -440,10 +385,6 @@ namespace Pantallas_proyecto
                         producto.Descripcion_pago = pago.Text;
                         producto.Codigo_pago = producto.buscarPago(producto.Descripcion_pago);
                         producto.agregarCompra();
-
-
-
-
                     }
 
 
@@ -453,15 +394,13 @@ namespace Pantallas_proyecto
                         MessageBox.Show("Error al ingresar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-
-                    //for (int u = 0; u < contador; u++)
                     foreach (DataGridViewRow row in dgvProductosCompra.Rows)
                         {
                         try
                         {
                             producto.Codigo_producto = Convert.ToInt32(row.Cells["CodProductodgv"].Value);
 
-                            if (producto.buscarProducto() != producto.Codigo_producto)
+                            if (producto.buscarProducto() != producto.Codigo_producto) //Si el producto no existe
                             {
                                 producto.Codigo_producto = Convert.ToInt32(row.Cells["CodProductodgv"].Value);
                                 producto.Descripcion = Convert.ToString(row.Cells["descripciondgv"].Value);
@@ -473,22 +412,15 @@ namespace Pantallas_proyecto
                                 producto.buscarCategoria();
                                 producto.agregarProducto();
                                 cargarDatosProductos(dgvProductos, "Productos");
-
-
-
-
                             }
 
                             else
-                                if (producto.buscarProducto() == producto.Codigo_producto)
+                                if (producto.buscarProducto() == producto.Codigo_producto) //Si el producto ya existe
                             {
 
 
                                 producto.Codigo_producto = Convert.ToInt32(row.Cells["CodProductodgv"].Value);
-
-
                                 int cant = producto.buscarProducto2(Convert.ToString(row.Cells["CodProductodgv"].Value));
-
                                 producto.Cantidad = Convert.ToInt32(row.Cells["Cantidaddgv"].Value) + cant;
                                 producto.Precio_actual = Convert.ToDouble(row.Cells["PrecioVentadgv"].Value);
                                 producto.Descuento = Convert.ToDouble(row.Cells["descuentodgv"].Value);
@@ -496,31 +428,19 @@ namespace Pantallas_proyecto
                                 producto.actualizarProducto();
                                 cargarDatosProductos(dgvProductos, "Productos");
 
-
-
                             }
 
                             producto.Cantidad_compra = Convert.ToInt32(row.Cells["Cantidaddgv"].Value);
                             producto.Precio_compra = Convert.ToDouble(row.Cells["PrecioCompradgv"].Value);
-
                             producto.agregarDetalleCompra();
                         }
-
-
-
 
                         catch (Exception ex)
                         {
                             MessageBox.Show("Error al ingresar los datos" + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                         }
-
-
                     }
-
-
-
-
                     this.Close();
                     FrmCompras fact = new FrmCompras();
                     fact.Show();
@@ -528,6 +448,7 @@ namespace Pantallas_proyecto
             }
         }
 
+        //Accion al clickear el Boton de seleccionar button3
         private void button3_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
@@ -546,17 +467,15 @@ namespace Pantallas_proyecto
             talla.Text = dgvProductos.CurrentRow.Cells[6].Value.ToString();
             dtgprov.Enabled = false;
 
-
         }
 
+        //accion al seleccionar una opcion de la lista desplegable de "Busqueda por"
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             comboBox2_events();
-
-
         }
 
-
+        //Acciones depende el elemento que se selecciono en la lista deplegable
         private void comboBox2_events()
         {
             int selection = comboBox2.SelectedIndex;
@@ -568,7 +487,7 @@ namespace Pantallas_proyecto
             }
             else
             {
-                if (selection == 0)
+                if (selection == 0)//la primera opcion de descripcion
                 {
                     txtDescripcion.Enabled = true;
                     txtDescripcion.Visible = true;
@@ -577,7 +496,7 @@ namespace Pantallas_proyecto
                     txtDescripcion.Clear();
                     txtCodigo.Clear();
                 }
-                else
+                else//la segunda opcion de Codigo
                 {
                     txtDescripcion.Visible = false;
                     txtCodigo.Visible = true;
@@ -590,24 +509,21 @@ namespace Pantallas_proyecto
             }
         }
 
-
+        //Accion de buscar con el filtro
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             var aux = new Buscar_CodigoFrmProductos();
             aux.filtrar1(dgvProductos, this.txtCodigo.Text.Trim());
         }
 
+        //Accion de buscar con el otro filtro
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             var aux = new MetodoBuscarDescripcion();
             aux.filtrar(dgvProductos, this.txtDescripcion.Text.Trim());
         }
 
-        private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        //Accion de cancelar la compra
         private void button4_Click(object sender, EventArgs e)
         {
 
@@ -617,11 +533,7 @@ namespace Pantallas_proyecto
             this.Close();
         }
 
-        private void cantidad_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //Solo permitir numeros en el filtro
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
 
@@ -642,11 +554,7 @@ namespace Pantallas_proyecto
             }
         }
 
-        private void precioCompra_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        //Permitir solo numeros en el precio de compra
         private void precioCompra_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -662,6 +570,7 @@ namespace Pantallas_proyecto
 
         }
 
+        //Permitir solo numeros en el precio actual
         private void precioActual_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -677,9 +586,9 @@ namespace Pantallas_proyecto
 
         }
 
+        //Permitir solo numeros en la cantidad
         private void cantidad_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
@@ -687,6 +596,7 @@ namespace Pantallas_proyecto
 
         }
 
+        //Permitir solo numeros en el descuento
         private void descuento_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
@@ -699,26 +609,23 @@ namespace Pantallas_proyecto
             {
                 e.Handled = true;
             }
-
         }
 
+        //Cargar fecha en el toolStrip
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             toolStripLabel1.Text = DateTime.Now.ToLongDateString();
             toolStripLabel2.Text = DateTime.Now.ToLongTimeString();
         }
 
-        private void toolStripLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //Cargar fecha de la Pc
         private void timer1_Tick(object sender, EventArgs e)
         {
             toolStripLabel1.Text = DateTime.Now.ToLongDateString();
             toolStripLabel2.Text = DateTime.Now.ToLongTimeString();
         }
 
+        //Accion del boton quitar seleccion
         private void button1_Click(object sender, EventArgs e)
         {
             txtcategoria.Enabled = true;
@@ -729,6 +636,7 @@ namespace Pantallas_proyecto
             dtgprov.Enabled = true;
         }
 
+        //No perimitir 0 de primero en el codigo de producto
         private void codigoProducto_TextChanged(object sender, EventArgs e)
         {
             if (codigoProducto.Text.Substring(0) == "0") {
@@ -737,15 +645,16 @@ namespace Pantallas_proyecto
             
         }
 
+        //Solo perimitir numeros en el Codigo de Producto
         private void codigoProducto_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
-
-
         }
+        
+        //Accion de dar doble click en una celda del dtgprov
         int poc1;
         string categoriaSeleccionada;
         private void dtgprov_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -759,6 +668,7 @@ namespace Pantallas_proyecto
 
         }
 
+        //Accion de dar click en una celda del dtgprov
         private void dtgprov_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             poc1 = dtgprov.CurrentRow.Index;
@@ -770,16 +680,15 @@ namespace Pantallas_proyecto
             
         }
 
+        //Accion dek filtro en buscar por categoria
         private void txtcategoria_TextChanged(object sender, EventArgs e)
         {
-            
                 var aux = new MetodoBuscarProveedor();
                 aux.filtrarCategoria(dtgprov, this.txtcategoria.Text.Trim());
                 errorProvider1.Clear();
-            
-            
         }
 
+        //Accion del boton reseleccionar
         private void btnreseleccionar_Click(object sender, EventArgs e)
         {
             txtcategoria.Enabled = true;
@@ -787,6 +696,7 @@ namespace Pantallas_proyecto
             dtgprov.Enabled = true;
         }
 
+        //Boton de eliminar producto de la compra
         private void btnEliminarCompra_Click(object sender, EventArgs e)
         {
             if (dgvProductosCompra.SelectedRows.Count != 0)
