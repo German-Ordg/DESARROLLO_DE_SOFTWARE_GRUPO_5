@@ -16,7 +16,7 @@ namespace Pantallas_proyecto
         {
             InitializeComponent();
         }
-
+        //Variable generada para ingresar los parametros
         private const int CP_NOCLOSE_BUTTON = 0x200;
         protected override CreateParams CreateParams
         {
@@ -29,13 +29,13 @@ namespace Pantallas_proyecto
         }
 
         private void FrmMenuPrincipal_Load(object sender, EventArgs e)
-        {
+        {   //Carga la seguridad del formulario y ademas informacion relevante del user
             security();
             lblnombre.Text = "Bienvenido: " + Cashe.UserCache.FirstName + " " + Cashe.UserCache.LastName;
             timer1.Enabled = true;
         }
         private void security()
-        {
+        {   //Instancia para validar credenciales para el usuario
             var userModel = new Dominio.UserModel();
             if (userModel.securityLogin() == false)
             {
@@ -56,19 +56,19 @@ namespace Pantallas_proyecto
         }
 
         private void button4_Click(object sender, EventArgs e)
-        {
+        {   //Nos abre el formulario de Acceso al hacer click
             FrmAcceso acceso = new FrmAcceso();
             acceso.Show();
             this.Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)
-        {
+        {   //Cierra el formulario
             Application.Exit();
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
+        {   //Nos abre el formulario de facturacion al hacer click
             frmPantallaFacturacion facturacion = new frmPantallaFacturacion();
             facturacion.Show();
             this.Hide();
@@ -80,7 +80,7 @@ namespace Pantallas_proyecto
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        {
+        {   //Muestra la hora actual
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss");
         }
     }

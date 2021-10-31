@@ -10,7 +10,8 @@ namespace Pantallas_proyecto.EmailServices
 {
     public abstract class MasterMailServer
     {
-        //atributos
+        //Se declaran los atributos respectivos de las variables
+        
         private SmtpClient smtpClient;
         protected string senderMail { get; set; }
         protected string password { get; set; }
@@ -30,7 +31,9 @@ namespace Pantallas_proyecto.EmailServices
 
         public void sendMail(string subject, string body, List<string> recipientMail)
         {
+            //Se declara una variable de tipo var para que contenga la nueva instancia
             var mailMessage = new MailMessage();
+            //Abrimos un try catch and finally para iniciar el proceso
             try
             {
                 mailMessage.From = new MailAddress(senderMail);
@@ -43,9 +46,10 @@ namespace Pantallas_proyecto.EmailServices
                 mailMessage.Priority = MailPriority.Normal;
                 smtpClient.Send(mailMessage);//Enviar mensaje
             }
-            catch (Exception ex) { }
+            catch (Exception) { }
             finally
             {
+                //Terminamos el proceso
                 mailMessage.Dispose();
                 smtpClient.Dispose();
             }
