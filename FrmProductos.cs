@@ -612,7 +612,7 @@ namespace Pantallas_proyecto
         {
 
             FrmCompras compras = new FrmCompras();
-            compras.codigoCompra.Text = compra.Text;
+            compras.txtNumeroFactura.Text = compra.Text;
             compras.Show();
             this.Close();
         }
