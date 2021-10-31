@@ -2358,3 +2358,4 @@ C:\Users\WILSON\Desktop\Implementación de Sistemas de Software\Trabajo\obj\Debu
 C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmDescuentos.resources
 C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.FrmDescuentos.resources
 C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.csproj.AssemblyReference.cache
+E:\7 Periodo UNICAH\Implementacion de Sistemas de software\Primer Parcial\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmDescuentos.resources
