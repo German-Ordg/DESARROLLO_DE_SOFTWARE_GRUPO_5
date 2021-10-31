@@ -10,13 +10,14 @@ namespace Pantallas_proyecto
 {
     class ClsPantallaFacturacion
     {
+        //instancias a la clase de la conexión
         ClsConexionBD con = new ClsConexionBD();
 
         SqlCommand cmd;
         SqlDataReader dr;
 
 
-
+        //declaración de variables
         private static String   descripcionProducto;
         private static int      codigoProducto;
         private static int      cantidadProducto;
@@ -25,7 +26,7 @@ namespace Pantallas_proyecto
         private static double   descuentoProducto;
 
         
-
+        //función para cargar el combobox de los tipos de pago
         public void cargarComboboxPago(ComboBox cmb)
         {
 
@@ -49,6 +50,7 @@ namespace Pantallas_proyecto
             con.cerrar();
         }
 
+        //función para cargar el combobox de los vendedores
         public void cargarComboboxVendedor(ComboBox cmb)
         {
             String comboboxVendedor = "SELECT [dbo].[Empleados].nombre_empleado+' '+[dbo].[Empleados].apellido_empleado nombre " +
@@ -74,6 +76,7 @@ namespace Pantallas_proyecto
             con.cerrar();
         }
 
+        //función para validar para la validación de sólo números
         public static void validarSoloNumeros(KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
@@ -91,6 +94,7 @@ namespace Pantallas_proyecto
             }
         }
 
+        //función para validar sólo letras
         public static void validarSoloLetras(KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar))
