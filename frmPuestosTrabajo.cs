@@ -13,7 +13,7 @@ namespace Pantallas_proyecto
             InitializeComponent();
             timer1.Enabled = true;
         }
-
+        //Funcion que evita que se pueda cerrar la pantalla.
         private const int CP_NOCLOSE_BUTTON = 0x200;
         protected override CreateParams CreateParams
         {
@@ -25,12 +25,15 @@ namespace Pantallas_proyecto
             }
         }
 
+        //Creacion de variables de la funcion conexion y validacion.
         ClsConexionBD connect = new ClsConexionBD();
         validaciones validacion = new validaciones();
-        int Record_Id;
+        int recordId;
         private bool letra = false;
         private bool letra2 = false;
 
+
+        //Funcion para mostrar la tabla codigo_puesto en el Datagriewview "DgvPuesto".
         public void MostrarDatos()
         {
             try
@@ -49,6 +52,7 @@ namespace Pantallas_proyecto
             }
         }
 
+        //Funcion para limpiar del codigo de los 3 textbox en la pantalla.
         public void Limpiar()
         {
             txtCodigo.Clear();
@@ -56,18 +60,22 @@ namespace Pantallas_proyecto
             txtPosicion.Select();
         }
 
+        //Llamado a la funcion "MostrarDatos()".
         private void frmPuestosTrabajo_Load(object sender, EventArgs e)
         {
             MostrarDatos();
         }
 
+        //Funcion para llenar los texbox: Codigo y Posicion. Dando doble click en la fila del DataGridView.
         private void DgvPuesto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Record_Id = Convert.ToInt32(DgvPuesto.Rows[e.RowIndex].Cells[0].Value.ToString());
+            recordId = Convert.ToInt32(DgvPuesto.Rows[e.RowIndex].Cells[0].Value.ToString());
             txtCodigo.Text = (DgvPuesto.Rows[e.RowIndex].Cells[0].Value.ToString());
             txtPosicion.Text = (DgvPuesto.Rows[e.RowIndex].Cells[1].Value.ToString());
         }
 
+
+        //Boton para regresar al formulario anterior.
         private void button5_Click(object sender, EventArgs e)
         {
             FrmMenuCRUD cRUD = new FrmMenuCRUD();
@@ -75,6 +83,7 @@ namespace Pantallas_proyecto
             this.Close();
         }
 
+        //Boton para insertar.
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
             ErrorProvider1.Clear();
@@ -134,6 +143,7 @@ namespace Pantallas_proyecto
             }
         }
 
+        //Boton para modificar.
         private void BtnModificar_Click(object sender, EventArgs e)
         {
             ErrorProvider.Clear();
@@ -180,7 +190,7 @@ namespace Pantallas_proyecto
                 {
                     try
                     {
-                        string query = "Update Empleados_Puestos set descripcion_puesto= '" + txtPosicion.Text + "' where codigo_puesto='" + Record_Id + "'";
+                        string query = "Update Empleados_Puestos set descripcion_puesto= '" + txtPosicion.Text + "' where codigo_puesto='" + recordId + "'";
                         connect.abrir();
                         SqlCommand comando = new SqlCommand(query, connect.conexion);
                         comando.ExecuteNonQuery();
@@ -199,6 +209,7 @@ namespace Pantallas_proyecto
             }
         }
 
+        //Funcion para mostrar la hora y la fecha debajo de la pantalla.
         private void timer1_Tick(object sender, EventArgs e)
         {
             tslFecha.Text = DateTime.Now.ToLongDateString();
@@ -210,9 +221,10 @@ namespace Pantallas_proyecto
 
         }
 
+        //Funcion para llenar los campos de texto, dando click en una fila del DataGridView.
         private void DgvPuesto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Record_Id = Convert.ToInt32(DgvPuesto.Rows[e.RowIndex].Cells[0].Value.ToString());
+            recordId = Convert.ToInt32(DgvPuesto.Rows[e.RowIndex].Cells[0].Value.ToString());
             txtCodigo.Text = (DgvPuesto.Rows[e.RowIndex].Cells[0].Value.ToString());
             txtPosicion.Text = (DgvPuesto.Rows[e.RowIndex].Cells[1].Value.ToString());
         }
