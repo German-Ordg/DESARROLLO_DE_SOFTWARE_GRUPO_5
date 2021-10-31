@@ -17,7 +17,7 @@ namespace Pantallas_proyecto
         {
             InitializeComponent();
         }
-
+        //Conexion con la base de datos
         ClsConexionBD conect = new ClsConexionBD();
         SqlCommand cmd;
         validaciones validacion = new validaciones();
@@ -35,7 +35,8 @@ namespace Pantallas_proyecto
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        //Funcion para regresar a la pantalla anterior 
+        private void Regresar(object sender, EventArgs e)
         {
             FrmMenuCRUD cRUD = new FrmMenuCRUD();
             cRUD.Show();
@@ -48,7 +49,8 @@ namespace Pantallas_proyecto
             conect.cargarMetodosPago(dgvMetodosPago);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //funcion para agregar un nuevo metodo de pago 
+        private void Agregar(object sender, EventArgs e)
         {
             letra2 = false;
 
@@ -89,9 +91,9 @@ namespace Pantallas_proyecto
                         conect.cerrar();
                         txtDescripcion.Clear();
                     }
-                    catch (Exception ex)
+                    catch (Exception )
                     {
-                        MessageBox.Show("Error al ingresar los datos" + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error al ingresar los datos" , "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtDescripcion.Clear();
                     }
                 }
@@ -104,8 +106,8 @@ namespace Pantallas_proyecto
         string codigo;
 
         int codigo1;
-
-        private void button3_Click(object sender, EventArgs e)
+        //funcion para modificar un metodo de pago 
+        private void Modificar(object sender, EventArgs e)
         {
             letra2 = false;
 
@@ -156,9 +158,9 @@ namespace Pantallas_proyecto
                             conect.cerrar();
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception )
                     {
-                        MessageBox.Show("No se pudo modificar los datos" + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No se pudo modificar los datos" , "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -166,6 +168,7 @@ namespace Pantallas_proyecto
             }
         }
 
+        //Funcion para cargar los datos en el DataGrip 
         private void dgvMetodosPago_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             poc = dgvMetodosPago.CurrentRow.Index;

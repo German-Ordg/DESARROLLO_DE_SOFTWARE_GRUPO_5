@@ -69,7 +69,7 @@ namespace Pantallas_proyecto
                 da.Fill(dt);
                 dgv.DataSource = dt;
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 MessageBox.Show("Error al cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -390,7 +390,7 @@ namespace Pantallas_proyecto
                 dtgprov.DataSource = dt;
                 conect2.cerrar();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 MessageBox.Show("Error al cargar los datos de los proveedores", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

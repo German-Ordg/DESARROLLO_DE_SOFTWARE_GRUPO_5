@@ -50,7 +50,7 @@ namespace Pantallas_proyecto
             invtGer.Show();
         }
 
-      /*  private void button1_Click(object sender, EventArgs e)
+      /*  private void Agregar(object sender, EventArgs e)
         {
             int poc;
 

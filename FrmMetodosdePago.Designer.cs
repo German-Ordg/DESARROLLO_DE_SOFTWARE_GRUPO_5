@@ -98,7 +98,7 @@ namespace Pantallas_proyecto
             this.button4.TabIndex = 27;
             this.button4.Text = "Regresar";
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Regresar);
             // 
             // button1
             // 
@@ -115,7 +115,7 @@ namespace Pantallas_proyecto
             this.button1.TabIndex = 28;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Agregar);
             // 
             // btnModificar
             // 
@@ -132,7 +132,7 @@ namespace Pantallas_proyecto
             this.btnModificar.TabIndex = 30;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.button3_Click);
+            this.btnModificar.Click += new System.EventHandler(this.Modificar);
             // 
             // toolStrip1
             // 

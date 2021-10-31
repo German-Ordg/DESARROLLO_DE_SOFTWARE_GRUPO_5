@@ -31,7 +31,8 @@ namespace Pantallas_proyecto
         private bool letra = false;
         private bool letra2 = false;
 
-        public void MostrarDatos()
+        //funcion que muestra los datos  en el DataGrip 
+        public void mostrarDatos()
         {
             try
             {
@@ -58,24 +59,25 @@ namespace Pantallas_proyecto
 
         private void frmPuestosTrabajo_Load(object sender, EventArgs e)
         {
-            MostrarDatos();
+            mostrarDatos();
         }
-
-        private void DgvPuesto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //funcion que agrega datos al DataGrip 
+        private void dgvPuesto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Record_Id = Convert.ToInt32(DgvPuesto.Rows[e.RowIndex].Cells[0].Value.ToString());
             txtCodigo.Text = (DgvPuesto.Rows[e.RowIndex].Cells[0].Value.ToString());
             txtPosicion.Text = (DgvPuesto.Rows[e.RowIndex].Cells[1].Value.ToString());
         }
-
-        private void button5_Click(object sender, EventArgs e)
+        //Funcion para regresar a la pantalla anterior
+        private void btnRegresar(object sender, EventArgs e)
         {
             FrmMenuCRUD cRUD = new FrmMenuCRUD();
             cRUD.Show();
             this.Close();
         }
 
-        private void BtnAgregar_Click(object sender, EventArgs e)
+        //Funcion para agregar un nuevo puesto de trabajo
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             ErrorProvider1.Clear();
             letra2 = false;
@@ -121,7 +123,7 @@ namespace Pantallas_proyecto
                         connect.abrir();
                         MessageBox.Show("Nuevo Puesto Insertado");
                         Limpiar();
-                        MostrarDatos();
+                        mostrarDatos();
                     }
                     catch (Exception ex)
                     {
@@ -133,8 +135,8 @@ namespace Pantallas_proyecto
 
             }
         }
-
-        private void BtnModificar_Click(object sender, EventArgs e)
+        //Funcion para modificar el nombre del puesto de trabajo
+        private void btnModificar_Click(object sender, EventArgs e)
         {
             ErrorProvider.Clear();
             letra2 = false;
@@ -187,7 +189,7 @@ namespace Pantallas_proyecto
                         connect.cerrar();
                         MessageBox.Show("Se Modificó Correctamente");
                         Limpiar();
-                        MostrarDatos();
+                        mostrarDatos();
                     }
                     catch (Exception ex)
                     {
