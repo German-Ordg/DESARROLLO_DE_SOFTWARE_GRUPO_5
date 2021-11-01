@@ -36,22 +36,7 @@ namespace Pantallas_proyecto
             
         }
 
-        
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //Programacion para el ingreso del usuario 
         private void btnIngreso_Click(object sender, EventArgs e)
         {
          
@@ -112,16 +97,8 @@ namespace Pantallas_proyecto
             lblError.Visible = true;
             picError.Visible = true;
         }
-        private void lblError_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picError_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
+        //programacion para que muestre la contraseña
         private void chkMostrarContra_CheckedChanged(object sender, EventArgs e)
         {
             string text = txtContrasena.Text;
@@ -143,6 +120,8 @@ namespace Pantallas_proyecto
             lblError.Visible = false;
             picError.Visible = false;
         }
+
+        //Esto es el evento de entrar en la parte usuario
         private void txtUsuario_Enter(object sender, EventArgs e)
         {
             if (txtUsuario.Text == "Usuario")
@@ -152,16 +131,17 @@ namespace Pantallas_proyecto
             }
         }
 
+      
         private void txtUsuario_Leave(object sender, EventArgs e)
         {
             if (txtUsuario.Text == "")
             {
                 txtUsuario.Text = "Usuario";            
-               // txtUsuario.ForeColor = Color.Black;
                 txtUsuario.ForeColor = SystemColors.GrayText;
             }
         }
 
+        //Esto es el evento de entrar en la parte de contraseña
         private void txtContrasena_Enter(object sender, EventArgs e)
         {
             if (txtContrasena.Text == "Contraseña")
@@ -176,12 +156,13 @@ namespace Pantallas_proyecto
         {
             if (txtContrasena.Text == "")
             {
-                txtContrasena.Text = "Contraseña";
-             //   txtContrasena.ForeColor = Color.Black;
+                txtContrasena.Text = "Contraseña";          
                 txtContrasena.ForeColor = SystemColors.GrayText;
                 txtContrasena.UseSystemPasswordChar = false;
             }
         }
+
+        //programacion de cuando se cierra sesion con un usuario 
         private void cerrarSesion(object sender, FormClosedEventArgs e)
         {
             txtUsuario.Clear();
@@ -204,6 +185,7 @@ namespace Pantallas_proyecto
 
         }
 
+        //Esto hace referencia a la programacion para la recuperacion de la contraseña
         private void btnRecuperar_Click(object sender, EventArgs e)
         {
             FrmRecuperaContra recuperacion = new FrmRecuperaContra();
@@ -220,6 +202,7 @@ namespace Pantallas_proyecto
             this.Hide();
         }
 
+        //Esto lo que hacer es mostrar la fecha y hora al momento de ejecucion del programa
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss");
@@ -227,6 +210,8 @@ namespace Pantallas_proyecto
 
         }
 
+        //Este segmento del codigo hace referencia si el usuario esta activo o inactivo o si es usuario vendedor o gerente
+        //el que ingresa al sistema
         private void txtContrasena_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -285,6 +270,7 @@ namespace Pantallas_proyecto
             }
         }
 
+        //Nos dirige a la pantalla facturacion
         private void button2_Click(object sender, EventArgs e)
         {
             frmPantallaFacturacion fact = new frmPantallaFacturacion();
@@ -302,11 +288,6 @@ namespace Pantallas_proyecto
         {
             frmPantallaFacturacion fact = new frmPantallaFacturacion();
             fact.Show();
-        }
-
-        private void lblHora_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click_2(object sender, EventArgs e)
