@@ -5,8 +5,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Pantallas_proyecto
-{
+{ //clase para encriptacion de contraseñas 
     public class Encrypt
     {
         public static string GetSHA256(string str)

@@ -85,7 +85,7 @@ namespace Pantallas_proyecto
             this.DgvPuesto.Size = new System.Drawing.Size(369, 175);
             this.DgvPuesto.TabIndex = 0;
             this.DgvPuesto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPuesto_CellClick);
-            this.DgvPuesto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPuesto_CellContentClick);
+            this.DgvPuesto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPuesto_CellContentClick);
             // 
             // BtnRegresar
             // 
@@ -100,7 +100,7 @@ namespace Pantallas_proyecto
             this.BtnRegresar.TabIndex = 18;
             this.BtnRegresar.Text = "Regresar";
             this.BtnRegresar.UseVisualStyleBackColor = false;
-            this.BtnRegresar.Click += new System.EventHandler(this.button5_Click);
+            this.BtnRegresar.Click += new System.EventHandler(this.btnRegresar);
             // 
             // label1
             // 
@@ -133,7 +133,7 @@ namespace Pantallas_proyecto
             this.BtnAgregar.TabIndex = 22;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = false;
-            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
+            this.BtnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // BtnModificar
             // 
@@ -148,7 +148,7 @@ namespace Pantallas_proyecto
             this.BtnModificar.TabIndex = 24;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = false;
-            this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            this.BtnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // label2
             // 
