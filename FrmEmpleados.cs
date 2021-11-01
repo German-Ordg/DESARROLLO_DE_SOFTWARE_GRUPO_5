@@ -15,18 +15,17 @@ namespace Pantallas_proyecto
     public partial class FrmEmpleados : Form
     {
 
-        private bool letra1 = false;
-        private bool letra2 = false;
-        private bool letra4 = false;
+        private bool ValidarNombre = false;
+        private bool ValidarApellido = false;
+        private bool ValidarCmbGenero = false;
+        private bool ValidarIdentidad = false;
+        private bool ValidarTelefono = false;
+        private bool ValidarPuesto = false;
         private bool letra9 = false;
         private bool letra10 = false;
-        private bool numero1 = false;
-        private bool numero2 = false;
-        private bool numero3 = false;
         public int EmpleadoEdad;
         private string identidad;
         private string numero;
-
 
 
         public FrmEmpleados()
@@ -51,18 +50,6 @@ namespace Pantallas_proyecto
         validaciones validacion = new validaciones();
         SqlCommand comm;
 
-
-
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -92,7 +79,7 @@ namespace Pantallas_proyecto
         {
             
 
-            letra1 = false; letra2 = false; letra4 = false; numero1 = false; numero2 = false;
+            ValidarNombre = false; ValidarApellido = false; ValidarCmbGenero = false; ValidarIdentidad = false; ValidarTelefono = false;
             if (validacion.Espacio_Blanco_CB(ErrorProvider1, cmbGenero) )
             {
                 if (validacion.Espacio_Blanco_CB(ErrorProvider1, cmbGenero))
@@ -100,7 +87,7 @@ namespace Pantallas_proyecto
             }
             else
             {
-                letra4 = true;
+                ValidarCmbGenero = true;
             }
             if (validacion.Espacio_Blanco(ErrorProvider1, txtNombre) || validacion.Solo_Letras(ErrorProvider1, txtNombre) || txtNombre.TextLength < 3)
             {
@@ -117,7 +104,7 @@ namespace Pantallas_proyecto
             }
             else
             {
-                letra1 = true;
+                ValidarNombre = true;
             }
 
             if (validacion.Espacio_Blanco(ErrorProvider1, txtApellido) || validacion.Solo_Letras(ErrorProvider1, txtApellido) || txtApellido.TextLength < 3)
@@ -135,7 +122,7 @@ namespace Pantallas_proyecto
             }
             else
             {
-                letra2 = true;
+                ValidarApellido = true;
             }
 
             if (validacion.Espacio_Blanco(ErrorProvider1, txtIdentidad) || validacion.Solo_Numeros(ErrorProvider1, txtIdentidad) || !Regex.IsMatch(txtIdentidad.Text, "^((010[1-8]|020[1-9]|0210|030[1-9]|031[0-9]|032[0-1]|040[1-9]|041[0-9]|042[0-3]|050[1-9]|051[0-2]|060[1-9]|061[0-6]|070[1-9]|071[0-9]|080[1-9]|081[0-9]|082[0-8]|090[1-6]|100[1-9]|101[0-7]|110[1-4]|120[1-9]|121[0-9]|130[1-9]|131[0-9]|132[0-8]|140[1-9]|141[0-6]|150[1-9]|151[0-9]|152[0-3]|160[1-9]|161[0-9]|162[0-8]|170[1-9]|180[1-9]|181[0-1]))+((19[0-9]{2}|20[0-9]{2})+(([0-9]){5}))$"))
@@ -160,7 +147,7 @@ namespace Pantallas_proyecto
                 }
                 else
                 {
-                    numero1 = true;
+                    ValidarIdentidad = true;
                 }
             }
 
@@ -188,7 +175,7 @@ namespace Pantallas_proyecto
                     }
                     else
                     {
-                        numero2 = true;
+                        ValidarTelefono = true;
                     }
                 }
 
@@ -199,13 +186,10 @@ namespace Pantallas_proyecto
                 }
                 else
                 {
-                    numero3 = true;
+                    ValidarPuesto = true;
                 }
 
-
-
-
-                if (numero1 && letra1 && letra2 && numero2 && numero3 && letra4)
+                if (ValidarIdentidad && ValidarNombre && ValidarApellido && ValidarTelefono && ValidarPuesto && ValidarCmbGenero)
                 {
 
                     conect.abrir();
@@ -265,7 +249,7 @@ namespace Pantallas_proyecto
                     }
                         catch (Exception ex)
                         {
-                            //MessageBox.Show(ex.Message.ToString());
+                            
                             MessageBox.Show("ERROR AL INSERTAR LOS DATOS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                             txtNombre.Focus();
@@ -282,7 +266,8 @@ namespace Pantallas_proyecto
 
         }
 
-        private void txtBuscarEmpleado_TextChanged(object sender, EventArgs e)
+        //programacion para buscar un empleado mediante un textbox
+        private void txtBuscarEmpleado_TextChanged(object sender, EventArgs e) 
         {
             var aux = new MetodoBuscarEmpleado();
             aux.filtrar(dgvEmpleados, this.txtBuscarEmpleado.Text.Trim());
@@ -295,7 +280,7 @@ namespace Pantallas_proyecto
             int codigo;
             indice = dgvEmpleados.CurrentRow.Index;
 
-            letra1 = false; letra2 = false; letra4 = false; numero1 = false; numero2 = false; numero3 = false; letra9 = false; letra10 = false;
+            ValidarNombre = false; ValidarApellido = false; ValidarCmbGenero = false; ValidarIdentidad = false; ValidarTelefono = false; ValidarPuesto = false; letra9 = false; letra10 = false;
 
             if (validacion.Espacio_Blanco_CB(ErrorProvider1, cmbGenero))
             {
@@ -304,7 +289,7 @@ namespace Pantallas_proyecto
             }
             else
             {
-                letra4 = true;
+                ValidarCmbGenero = true;
             }
             if (validacion.Espacio_Blanco_CB(ErrorProvider1, cmbPuesto))
             {
@@ -313,7 +298,7 @@ namespace Pantallas_proyecto
             }
             else
             {
-                numero3 = true;
+                ValidarPuesto = true;
             }
 
             if (validacion.Espacio_Blanco(ErrorProvider1, txtNombre) || validacion.Solo_Letras(ErrorProvider1, txtNombre) || txtNombre.TextLength < 3)
@@ -331,7 +316,7 @@ namespace Pantallas_proyecto
             }
             else
             {
-                letra1 = true;
+                ValidarNombre = true;
             }
 
             if (validacion.Espacio_Blanco(ErrorProvider1, txtApellido) || validacion.Solo_Letras(ErrorProvider1, txtApellido) || txtApellido.TextLength < 3)
@@ -349,7 +334,7 @@ namespace Pantallas_proyecto
             }
             else
             {
-                letra2 = true;
+                ValidarApellido = true;
             }
 
             if (validacion.Espacio_Blanco(ErrorProvider1, txtIdentidad) || validacion.Solo_Numeros(ErrorProvider1, txtIdentidad) || !Regex.IsMatch(txtIdentidad.Text, "^((010[1-8]|020[1-9]|0210|030[1-9]|031[0-9]|032[0-1]|040[1-9]|041[0-9]|042[0-3]|050[1-9]|051[0-2]|060[1-9]|061[0-6]|070[1-9]|071[0-9]|080[1-9]|081[0-9]|082[0-8]|090[1-6]|100[1-9]|101[0-7]|110[1-4]|120[1-9]|121[0-9]|130[1-9]|131[0-9]|132[0-8]|140[1-9]|141[0-6]|150[1-9]|151[0-9]|152[0-3]|160[1-9]|161[0-9]|162[0-8]|170[1-9]|180[1-9]|181[0-1]))+((19[0-9]{2}|20[0-9]{2})+(([0-9]){5}))$"))
@@ -374,7 +359,7 @@ namespace Pantallas_proyecto
                 }
                 else
                 {
-                    numero1 = true;
+                    ValidarIdentidad = true;
                 }
 
 
@@ -401,7 +386,7 @@ namespace Pantallas_proyecto
                 }
                 else
                 {
-                    numero2 = true;
+                    ValidarTelefono = true;
                 }
 
                 conect.cerrar();
@@ -427,7 +412,6 @@ namespace Pantallas_proyecto
 
                 }
 
-
                 conect.cerrar();
 
                 conect.abrir();
@@ -452,18 +436,10 @@ namespace Pantallas_proyecto
 
                 }
 
-
                 conect.cerrar();
-
-
-
-
-
                 conect.abrir();
 
-
-
-                if (numero1 && letra1 && letra2 && letra9 && letra10 && numero2 && numero3 && letra4)
+                if (ValidarIdentidad && ValidarNombre && ValidarApellido && letra9 && letra10 && ValidarTelefono && ValidarPuesto && ValidarCmbGenero)
                 {
 
                     try
@@ -471,18 +447,7 @@ namespace Pantallas_proyecto
                         
 
                         codigo = Convert.ToInt32(dgvEmpleados[0, indice].Value);
-
-                        /*
-                        dgvEmpleados[1, indice].Value = cmbPuesto.Text;
-                        dgvEmpleados[2, indice].Value = txtNombre.Text;
-                        dgvEmpleados[3, indice].Value = txtApellido.Text;
-                        dgvEmpleados[4, indice].Value = txtIdentidad.Text;
-                        dgvEmpleados[5, indice].Value = dtpFechaNacimiento.Text;
-                        dgvEmpleados[6, indice].Value = dtpFechaIngreso.Text;
-                        dgvEmpleados[7, indice].Value = txtNumeroTel.Text;
-                        dgvEmpleados[8, indice].Value = cmbGenero.Text;
-                        */
-
+                 
                         conect.abrir();
                         string codigopuesto = "";
                         SqlCommand comando1 = new SqlCommand("Select codigo_puesto from Empleados_Puestos where descripcion_puesto='" + cmbPuesto.Text + "'", conect.conexion);
@@ -569,22 +534,12 @@ namespace Pantallas_proyecto
             toolStripLabel2.Text = DateTime.Now.ToLongTimeString();
         }
 
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
 
         private void dtpFechaNacimiento_ValueChanged(object sender, EventArgs e)
         {
-            //int fecha1 = DateTime.Now.Year - dtpFechaNacimiento.Value.Year;
-           // dtpFechaIngreso.MinDate = DateTime.Now.AddYears(-fecha1 + 18);
+           
             DateTime fecha1 = dtpFechaNacimiento.Value;
             dtpFechaIngreso.MinDate = fecha1.Date.AddYears(18);
-        }
-
-        private void txtNumeroTel_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txtNumeroTel_KeyPress(object sender, KeyPressEventArgs e)
@@ -623,16 +578,6 @@ namespace Pantallas_proyecto
             identidad = null;
             numero = null;
 
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
     }
