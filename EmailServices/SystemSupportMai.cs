@@ -10,6 +10,7 @@ namespace Pantallas_proyecto.EmailServices
     {
         public SystemSupportMail()
         {
+            //Datos del Servidor de Correo Electronico
             ClsConexionBD conex = new ClsConexionBD();
             senderMail = conex.correo();
             password = conex.contra();
