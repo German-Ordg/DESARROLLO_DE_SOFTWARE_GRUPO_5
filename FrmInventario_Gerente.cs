@@ -22,8 +22,6 @@ namespace Pantallas_proyecto
         }
         //Codigo de la clase conexion a la Base de Datos
         ClsConexionBD conect = new ClsConexionBD();
-        SqlCommand cmd;
-
 
         private const int CP_NOCLOSE_BUTTON = 0x200;
         protected override CreateParams CreateParams

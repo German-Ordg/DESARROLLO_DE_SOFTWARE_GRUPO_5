@@ -19,7 +19,6 @@ namespace Pantallas_proyecto
             InitializeComponent();
         }
         ClsConexionBD conect = new ClsConexionBD();
-        SqlCommand cmd;
 
         private const int CP_NOCLOSE_BUTTON = 0x200;
         protected override CreateParams CreateParams

@@ -49,10 +49,6 @@ namespace Pantallas_proyecto
         ClsConexionBD conect = new ClsConexionBD();
         SqlCommand cmd;
         validaciones validacion = new validaciones();
-        SqlCommand comm;
-
-
-
 
         private void label9_Click(object sender, EventArgs e)
         {

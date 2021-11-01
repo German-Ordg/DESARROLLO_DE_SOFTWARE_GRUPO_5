@@ -21,7 +21,6 @@ namespace Pantallas_proyecto
         ClsConexionBD conect = new ClsConexionBD();
         SqlCommand cmd;
         validaciones validacion = new validaciones();
-        private bool letra = false;
         private bool letra2 = false;
 
         private const int CP_NOCLOSE_BUTTON = 0x200;
