@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Categorias
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,13 +22,13 @@ namespace Pantallas_proyecto
 
         bool letra = false;
         bool letra2 = false;
-        private const int CP_NOCLOSE_BUTTON = 0x200;
+        private const int cpNoCloseButton = 0x200;
         protected override CreateParams CreateParams
         {
             get
             {
                 CreateParams myCp = base.CreateParams;
-                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                myCp.ClassStyle = myCp.ClassStyle | cpNoCloseButton;
                 return myCp;
             }
         }
@@ -37,6 +38,9 @@ namespace Pantallas_proyecto
 
         public void MostrarDatos()
         {
+            /*
+             Se conecta con la base de datos para extraer los datos de las categorias
+            */
             try
             {
                 string consulta = "SELECT codigo_categoria as Código, descripcion_categoria as Categoria FROM Categoria_Producto";
@@ -53,13 +57,20 @@ namespace Pantallas_proyecto
             }
         }
 
-        public void Limpiar() {
+        public void Limpiar()
+        {
+            /*
+             Limpia la pantalla
+            */
             txtCodigo.Clear();
             txtCategoria.Clear();
         }
 
         private void BtnRegresar_Click(object sender, EventArgs e)
         {
+            /*
+             Regresa al menu de CRUDs
+            */
             FrmMenuCRUD CRUD = new FrmMenuCRUD();
             CRUD.Show();
             this.Close();
@@ -67,20 +78,31 @@ namespace Pantallas_proyecto
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            /*
+             Muestra la hora y fecha del dispositivo
+            */
             toolStripLabel1.Text = DateTime.Now.ToLongDateString();
             toolStripLabel2.Text = DateTime.Now.ToLongTimeString();
         }
 
         private void FrmCategorias_Load(object sender, EventArgs e)
         {
+            /*
+             Llama a la función MostrarDatos
+            */
             MostrarDatos();
             timer1.Enabled = true;
         }
 
         validaciones validacion = new validaciones();
 
-        public void validar() {
-            if (validacion.Espacio_Blanco(errorProvider1, txtCategoria) || validacion.Solo_Letras(errorProvider1, txtCategoria)) {
+        public void validar()
+        {
+            /*
+             Verifica que todos los datos que pide se hayan ingresado correctamente
+            */
+            if (validacion.Espacio_Blanco(errorProvider1, txtCategoria) || validacion.Solo_Letras(errorProvider1, txtCategoria))
+            {
 
                 if (validacion.Espacio_Blanco(errorProvider1, txtCategoria))
                 {
@@ -104,6 +126,9 @@ namespace Pantallas_proyecto
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
+            /*
+             Agrega los datos ingresados a categorias
+            */
             errorProvider2.Clear();
             try
             {
@@ -120,10 +145,11 @@ namespace Pantallas_proyecto
                             errorProvider1.SetError(txtCategoria, "Solo es permitido ingresar letras");
                     }
                 }
-                else {
-                    
-                    int cont=0;
-                    bool resp = false;                 
+                else
+                {
+
+                    int cont = 0;
+                    bool resp = false;
                     connect.abrir();
                     SqlCommand comando1 = new SqlCommand("select descripcion_categoria from Categoria_Producto", connect.conexion);
 
@@ -138,7 +164,7 @@ namespace Pantallas_proyecto
 
                     string[] arrayCate = resultado.ToArray();
 
-                    
+
                     connect.cerrar();
                     for (int i = 0; i < cont; i++)
                     {
@@ -161,13 +187,14 @@ namespace Pantallas_proyecto
                     }
                     else
                         MessageBox.Show("La categoria ya esta registrada, intente otra", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    
+
                 }
             }
-            catch (Exception ex){
+            catch (Exception ex)
+            {
 
                 MessageBox.Show(ex.Message);
-            
+
             }
 
 
@@ -177,6 +204,9 @@ namespace Pantallas_proyecto
 
         private void BtnModificar_Click(object sender, EventArgs e)
         {
+            /*
+             Permite modificar datos de categorias 
+            */
             errorProvider1.Clear();
             letra = false;
             letra2 = false;
@@ -211,7 +241,7 @@ namespace Pantallas_proyecto
             {
                 letra2 = true;
                 int cont = 0;
-                
+
                 connect.abrir();
                 SqlCommand comando1 = new SqlCommand("select descripcion_categoria from Categoria_Producto", connect.conexion);
 
@@ -238,12 +268,10 @@ namespace Pantallas_proyecto
                     errorProvider1.SetError(txtCategoria, "No se puede ingresar la misma categoria");
                 }
             }
-            if (letra && letra2 && resp==false)
+            if (letra && letra2 && resp == false)
             {
                 try
                 {
-
-
                     string query = "Update Categoria_Producto set descripcion_categoria= '" + txtCategoria.Text + "' where Codigo_Categoria='" + Record_Id + "'";
                     connect.abrir();
                     SqlCommand comando = new SqlCommand(query, connect.conexion);
@@ -267,6 +295,9 @@ namespace Pantallas_proyecto
 
         private void timer1_Tick_1(object sender, EventArgs e)
         {
+            /*
+             Muestra la hora y fecha del dispositivo
+            */
             toolStripLabel1.Text = DateTime.Now.ToLongDateString();
             toolStripLabel2.Text = DateTime.Now.ToLongTimeString();
         }
@@ -276,6 +307,11 @@ namespace Pantallas_proyecto
             Record_Id = Convert.ToInt32(DgvCategoria.Rows[e.RowIndex].Cells[0].Value.ToString());
             txtCodigo.Text = (DgvCategoria.Rows[e.RowIndex].Cells[0].Value.ToString());
             txtCategoria.Text = (DgvCategoria.Rows[e.RowIndex].Cells[1].Value.ToString());
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Bienvenidos
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,9 @@ namespace Pantallas_proyecto
 
         private void prueba_Load(object sender, EventArgs e)
         {
+            /*
+             Captura el nombre y apellido del usuario
+             */
             lblUsername.Text = Cashe.UserCache.FirstName + ", " + Cashe.UserCache.LastName;
             this.Opacity = 0.0;
 

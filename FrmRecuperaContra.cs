@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Recupera contra
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,13 +20,13 @@ namespace Pantallas_proyecto
             InitializeComponent();
         }
 
-        private const int CP_NOCLOSE_BUTTON = 0x200;
+        private const int cpNoCloseButton = 0x200;
         protected override CreateParams CreateParams
         {
             get
             {
                 CreateParams myCp = base.CreateParams;
-                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                myCp.ClassStyle = myCp.ClassStyle | cpNoCloseButton;
                 return myCp;
             }
         }
@@ -37,22 +38,20 @@ namespace Pantallas_proyecto
         private bool letra5 = false;
         private void button1_Click(object sender, EventArgs e)
         {
-            //FrmAcceso acceso = new FrmAcceso();
-           // acceso.Show();
             this.Close();
         }
 
         private void btnIngreso_Click(object sender, EventArgs e)
         {
-
-            
+            /*
+             Verifica si el usuario ingresado se encuentra en la base de datos
+            */
             conect.abrir();
             cmd = new SqlCommand("select nombre_usuario from Usuarios where nombre_usuario = @Usuario", conect.conexion);
             cmd.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
             SqlDataReader usuario = cmd.ExecuteReader();
             if (usuario.Read())
             {
-                
                 txtresultado.Visible = true;
                 var user = new Dominio.UserModel();
                 var result = user.recoverPassword(txtUsuario.Text);
@@ -61,34 +60,31 @@ namespace Pantallas_proyecto
                 txtcodigo.Visible = true;
                 lblcodigo.Visible = true;
                 btnverificar.Visible = true;
-                
             }
             else
             {
                 MessageBox.Show("Usuario no encontrado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             conect.cerrar();
-
-           
         }
 
         private void FrmRecuperaContra_Load(object sender, EventArgs e)
         {
-            txtresultado.Visible = false;       
+            txtresultado.Visible = false;
             chkMostrarContra.Visible = false;
             conect.abrir();
-            
+
             conect.cerrar();
-            
-
-
         }
 
-        
+
 
         private void btnverificar_Click(object sender, EventArgs e)
         {
-             letra2 = false;
+            /*
+             Verifica si el codigo enviado al correo se ingresó correctamente
+            */
+            letra2 = false;
             if (validacion.Espacio_Blanco(ErrorProvider, txtcodigo) || validacion.Solo_Numeros(ErrorProvider, txtcodigo))
             {
                 if (validacion.Espacio_Blanco(ErrorProvider, txtcodigo))
@@ -113,13 +109,9 @@ namespace Pantallas_proyecto
                     btnverificar.Visible = false;
                     btncambiar.Visible = true;
                     chkMostrarContra.Visible = true;
-
-
-
                 }
                 else
                 {
-
                     MessageBox.Show("Codigo Incorrecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -127,7 +119,9 @@ namespace Pantallas_proyecto
 
         private void btncambiar_Click(object sender, EventArgs e)
         {
-
+            /*
+             Cambia la contraseña de usuario
+            */
             letra5 = false;
             if (validacion.Espacio_Blanco(ErrorProvider, txtContrasena) || txtContrasena.TextLength < 8)
             {
@@ -170,7 +164,6 @@ namespace Pantallas_proyecto
                 {
                     MessageBox.Show("Error al cambiar contraseña", "ERROR", MessageBoxButtons.OK,
                                         MessageBoxIcon.Error);
-
                 }
             }
         }
@@ -182,6 +175,9 @@ namespace Pantallas_proyecto
 
         private void txtContrasena_KeyPress(object sender, KeyPressEventArgs e)
         {
+            /*
+             Se ingres la nueva contraseña
+            */
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 try
@@ -208,7 +204,6 @@ namespace Pantallas_proyecto
                 {
                     MessageBox.Show("Error al cambiar contraseña", "ERROR", MessageBoxButtons.OK,
                                         MessageBoxIcon.Error);
-
                 }
             }
 
@@ -226,6 +221,9 @@ namespace Pantallas_proyecto
 
         private void txtContrasena_Enter(object sender, EventArgs e)
         {
+            /*
+             Limpia el texto del textBox
+            */
             if (txtContrasena.Text == "Contraseña")
             {
                 txtContrasena.Text = "";
@@ -236,6 +234,9 @@ namespace Pantallas_proyecto
 
         private void txtContrasena_Leave(object sender, EventArgs e)
         {
+            /*
+             Rellena el texto en el textBox
+            */
             if (txtContrasena.Text == "")
             {
                 txtContrasena.Text = "Contraseña";
@@ -246,9 +247,11 @@ namespace Pantallas_proyecto
 
         private void txtcodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
+            /*
+             Verifica si el código que se ingresó es correcto
+            */
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-
                 int valor = Convert.ToInt32(txtcodigo.Text);
                 if (Cashe.UserCache.numero == valor)
                 {
@@ -258,22 +261,21 @@ namespace Pantallas_proyecto
                     txtcodigo.Visible = false;
                     btnverificar.Visible = false;
                     btncambiar.Visible = true;
-
-
-
                 }
                 else
                 {
-
                     MessageBox.Show("Codigo Incorrecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
-            
+
         }
 
         private void chkMostrarContra_CheckedChanged(object sender, EventArgs e)
         {
+            /*
+             Permite ver la contraseña ingresada
+            */
             string text = txtContrasena.Text;
             if (chkMostrarContra.Checked)
             {
