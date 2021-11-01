@@ -664,7 +664,6 @@ C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\bin\Debug\zh-CHT\Mi
 C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.csproj.AssemblyReference.cache
 C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmAcceso.resources
 C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.TxtResultBox.resources
-C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmClientes.resources
 C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmCompras.resources
 C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmEmpleados.resources
 C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmImpresionFactura.resources
@@ -2358,3 +2357,10 @@ C:\Users\WILSON\Desktop\Implementación de Sistemas de Software\Trabajo\obj\Debu
 C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmDescuentos.resources
 C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.FrmDescuentos.resources
 C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.csproj.AssemblyReference.cache
+C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\bin\Debug\Pantallas_proyecto.exe.manifest
+C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\bin\Debug\Pantallas_proyecto.application
+C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmDescuentos.resources
+C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmCategorias.resources
+C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmProductos.resources
+C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.exe.manifest
+C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.application
