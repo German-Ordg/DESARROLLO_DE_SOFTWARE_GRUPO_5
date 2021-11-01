@@ -24,6 +24,7 @@ namespace Pantallas_proyecto
             InitializeComponent();
         }
 
+
         private const int CP_NOCLOSE_BUTTON = 0x200;
         protected override CreateParams CreateParams
         {
@@ -35,6 +36,7 @@ namespace Pantallas_proyecto
             }
         }
 
+        //Instancias necesarias para el uso de componentes y también instancas a clases
         SqlCommand cmd;
         SqlDataReader dr;
 
@@ -62,7 +64,7 @@ namespace Pantallas_proyecto
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            //botón de calcular este al tener todos los articulos de la venta actual hace las operaciones y carga los text box de la parte inferior
             btnImprimirFactura.Enabled = true;
             txtImporteAgrabado15.Text = "0";
 
@@ -100,6 +102,7 @@ namespace Pantallas_proyecto
 
         private void button8_Click(object sender, EventArgs e)
         {
+            //validación para regresar a la pantalla anterior en caso que la persona sea vendedor o gerente se le mostrarán diferentes cosa
             if (Cashe.UserCache.Position == "Vendedor")
             {
                 FrmMenuPrincipal menu = new FrmMenuPrincipal();
@@ -117,8 +120,7 @@ namespace Pantallas_proyecto
 
         private void frmPantallaFacturacion_Load(object sender, EventArgs e)
         {
-
-
+            //Al cargar el formulario se ejecuta esto para cargar ciertas herramientas 
                                  
             con.abrir();
             fac.cargarComboboxPago(cmbTipoPago);
@@ -150,7 +152,7 @@ namespace Pantallas_proyecto
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
             val1 = false;
-
+            //validación para los espacios en blanco y sólo numeros del campo de búsqueda de producto
             if (val.Espacio_Blanco(ErrorProvider, txtCodProducto) || val.Solo_Numeros(ErrorProvider, txtCodProducto))
             {
                 if (val.Espacio_Blanco(ErrorProvider, txtCodProducto))
@@ -166,6 +168,7 @@ namespace Pantallas_proyecto
 
             if (val1)
             {
+                //ejecución del query para buscar el producto y también luego para hacer una vista de él en los text box
                 if(val.Solo_Numeros(ErrorProvider,txtCodProducto)==false)
                 {
                     fac.CodigoProducto = Int32.Parse(txtCodProducto.Text);
@@ -240,6 +243,7 @@ namespace Pantallas_proyecto
 
         private void rbConNombre_CheckedChanged(object sender, EventArgs e)
         {
+            //esto hace que se muertren ciertos controladores en caso que la factura sea con nombre 
             lblRTN.Show();
             txtRTN.Show();
             txtNombreCliente.Show();
@@ -248,6 +252,7 @@ namespace Pantallas_proyecto
 
         private void rbSinNombre_CheckedChanged(object sender, EventArgs e)
         {
+            //esto hace que se oculten ciertos controladores cuando la factura es sin nombre
             lblRTN.Hide();
             txtRTN.Hide();
             txtNombreCliente.Hide();
@@ -262,12 +267,12 @@ namespace Pantallas_proyecto
 
             btnImprimirFactura.Enabled = false;
 
-
+            //esto valida que no se ingrese el mismo producto dos veces en la venta actual
             bool validar = lstCompras.Rows.Cast<DataGridViewRow>().Any(row => Convert.ToString(row.Cells["CodProducto"].Value) == txtCodProducto.Text);
 
             if (!validar)
             {
-
+                //esto ingresa los datos del producto en el data grid view
                 if (nudCantidad.Value <= fac.CantidadInventario)
                 {
                     if (nudCantidad.Value > 0)
@@ -324,6 +329,7 @@ namespace Pantallas_proyecto
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            //ae utiliza para los toolStrip que están abajo de la pantalla
             toolStripLabel1.Text = DateTime.Now.ToLongDateString();
             toolStripLabel2.Text = DateTime.Now.ToLongTimeString();
         }
@@ -348,6 +354,7 @@ namespace Pantallas_proyecto
         {
             if (lstCompras.CurrentRow != null)
             {
+                //Esto se ejecuta al editar uno de los productos del datagrid 
                 if (lstCompras.CurrentRow.Index != lstCompras.RowCount - 1)
                 {
                     txtCodProducto.Enabled = false;
@@ -378,6 +385,7 @@ namespace Pantallas_proyecto
                         "WHERE [codigo_producto]=" + fac.CodigoProducto;
 
                     con.abrir();
+                    //´se ejecuta la consulta para saber la cantidad actual que hay en la base de datos de dicho producto
                     try
                     {
 
@@ -406,6 +414,7 @@ namespace Pantallas_proyecto
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            //actualiza los totales de la venta para poder realizarla
             if (nudCantidad.Value <= fac.CantidadInventario)
             {
                 if (nudCantidad.Value >= 1)
@@ -448,6 +457,7 @@ namespace Pantallas_proyecto
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            //eliminar un producto del datagrid hace la validación para saber si hay una fila seleccionada
             if (lstCompras.SelectedRows.Count != 0)
             {
                 btnImprimirFactura.Enabled = false;
@@ -470,6 +480,7 @@ namespace Pantallas_proyecto
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
+            //validación y búsqueda del cliente en la base de datos 
             if(txtRTN.Text.Length!=0)
             {
 
@@ -477,6 +488,7 @@ namespace Pantallas_proyecto
 
 
                 con.abrir();
+                //ejecución del query de la búsqueda del cliente
                 try
                 {
                     cmd = new SqlCommand(consultaRTN, con.conexion);
@@ -510,6 +522,7 @@ namespace Pantallas_proyecto
 
         private void btnEliminarTodo_Click(object sender, EventArgs e)
         {
+            //vuelve a cargar el formulario para borrar la venta actual
             if (lstCompras.DataSource is DataTable)
             {
                 lstCompras.Rows.Clear();
@@ -525,6 +538,8 @@ namespace Pantallas_proyecto
             val2 = false;
             val3 = false;
 
+
+            //validaciones de los campos en caso que la factura sea con nombre 
             if (rbConNombre.Checked)
             {
                 if (val.Solo_Numeros(ErrorProvider, txtRTN))
@@ -554,7 +569,7 @@ namespace Pantallas_proyecto
 
 
 
-
+            //validaciones anidadas para ejecutar el query de la venta
             if (lstCompras.RowCount<2)
             {
                 MessageBox.Show("No hay items en la lista", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -607,6 +622,7 @@ namespace Pantallas_proyecto
                                             }
                                             else
                                             {
+                                                //llamada a las funciones las cuales ejecutan el ingreso de la venta en la base de datos
                                                 ingresar();
                                                 reporte();
                                                 ((Control)this.tabPage1).Enabled = false;
@@ -617,11 +633,11 @@ namespace Pantallas_proyecto
                                         }
                                     }
                                 }
-
+                                //validación para las 
                                 if (rbSinNombre.Checked)
                                 {
 
-
+                                    //llamada a las funciones las cuales ejecutan el ingreso de la venta en la base de datos
                                     ingresar();
 
                                     reporte();
@@ -640,6 +656,7 @@ namespace Pantallas_proyecto
 
         public void ingresar()
         {
+            //codigo para ingresar una nueva venta
             String codigoEmpleado="";
             String codigoPago="";
 
@@ -648,12 +665,14 @@ namespace Pantallas_proyecto
             String tipoPago = cmbTipoPago.SelectedItem.ToString().Trim();
             String vendedor = cmbVendedor.SelectedItem.ToString().Trim();
 
+            //consultas para extraer código del empleado y el código del tipo de pago de la base de datos
             String consultaEmpleado = "select a.codigo_empleado from [dbo].[Usuarios] a join [dbo].[Empleados] b " +
                 "on a.codigo_empleado = b.codigo_empelado where b.[nombre_empleado]+' '+b.[apellido_empleado]= @vendedor";
 
             String consultaPago = "select [dbo].[Metodo_Pago].codigo_pago from [dbo].[Metodo_Pago]  " +
                 "where [dbo].[Metodo_Pago].descripcion_pago = @pago";
 
+            //ejecucuón de la consulta del vendedor
             try
             {
 
@@ -674,6 +693,8 @@ namespace Pantallas_proyecto
                 MessageBox.Show(" codigo empleado    "+ex.ToString());
             }
 
+
+            //ejecución de la consulta del tipo de pago
             try
             {
                 cmd = new SqlCommand(consultaPago, con.conexion);
@@ -692,11 +713,12 @@ namespace Pantallas_proyecto
             {
                 MessageBox.Show("codigo de pago    " + ex.ToString());
             }
-
-            
+                                    
             try
             {
                 con.abrir();
+
+                //ejecución de la consulta para ingresar la venta actual
 
                 String ingresoVenta = "insert into [dbo].[Ventas] " +
                 "([codigo_empleado], [codigo_pago], [nombre_cliente], [rtn_cliente], [fecha_venta], [direccion_envio], [impuesto], [total]) " +
@@ -723,6 +745,7 @@ namespace Pantallas_proyecto
 
                 cmd = new SqlCommand(reducirCantidad, con.conexion);
 
+                //ingreso de los detalles de los productos a la venta 
                 foreach (DataGridViewRow row in lstCompras.Rows)
                 {
                     cmd.Parameters.Clear();
@@ -744,7 +767,7 @@ namespace Pantallas_proyecto
 
                 foreach (DataGridViewRow row in lstCompras.Rows)
                 {
-
+                    //ingresa los daros desglozados de la venta 
                     cmd.Parameters.Clear();
                                      
                     cmd.Parameters.AddWithValue("@codigoProducto", Convert.ToInt32(row.Cells["CodProducto"].Value));
@@ -769,10 +792,11 @@ namespace Pantallas_proyecto
 
         public void reporte()
         {
+            //reporte de la facturación que es como se muestra la factura al hacer la venta
             List<impresion> impresion = new List<impresion>();
             ReportParameter[] parameters = new ReportParameter[10];
 
-
+            //asignación de valor a los atributos del reporte
             string impuesto = txtISV15.Text.Trim();
             string importe = txtImporteAgrabado15.Text.Trim();
             string subtotal = txtSubTotal.Text;
@@ -799,6 +823,7 @@ namespace Pantallas_proyecto
 
             impresion.Clear();
 
+            //datos que se cargan en la tabla del reporte de la venta
             for (int i = 0; i < lstCompras.Rows.Count - 1; i++)
             {
                 impresion imp = new impresion();
@@ -819,7 +844,7 @@ namespace Pantallas_proyecto
             this.reportViewer1.RefreshReport();
         }
 
-
+        //validación rtn
         private void txtRTN_KeyPress(object sender, KeyPressEventArgs e)
         {
             ClsPantallaFacturacion.validarSoloNumeros(e);
@@ -831,6 +856,7 @@ namespace Pantallas_proyecto
 
         }
 
+        //validación nombre del cliente
         private void txtNombreCliente_KeyPress(object sender, KeyPressEventArgs e)
         {
             ClsPantallaFacturacion.validarSoloLetras(e);
@@ -842,6 +868,7 @@ namespace Pantallas_proyecto
 
         }
 
+        //cargar de nuevo el formulario de facturación para realizar otra venta
         private void btnNuevaFactura_Click(object sender, EventArgs e)
         {
             frmPantallaFacturacion ss = new frmPantallaFacturacion();
