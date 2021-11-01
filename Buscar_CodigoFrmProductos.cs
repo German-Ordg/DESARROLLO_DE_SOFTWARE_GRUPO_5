@@ -15,8 +15,8 @@ namespace Pantallas_proyecto
 
         public void filtrar1(DataGridView data, string buscarcodigo1)
         {
-
-
+            /*Este codigo permite buscar en la clase buscar codigo, el codigo de producto en el datagridview el frmProductos
+            a traves de la clase conexion de la base de datos*/
             try
             {
                 conect.cerrar();
@@ -32,12 +32,10 @@ namespace Pantallas_proyecto
                 data.DataSource = dt;
                 conect.cerrar();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                MessageBox.Show("error es: " + ex.ToString());
+                MessageBox.Show("error es: " + ToString());
             }
-
         }
     }
 }

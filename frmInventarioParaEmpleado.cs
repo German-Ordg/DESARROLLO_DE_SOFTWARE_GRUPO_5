@@ -22,7 +22,8 @@ namespace Pantallas_proyecto
         {
             InitializeComponent();
         }
-
+        //Clase De conexion a la base de datos
+        //Validacion de los codigos
         ClsConexionBD conect = new ClsConexionBD();
         SqlCommand cmd;
         validaciones validacion = new validaciones();
@@ -37,31 +38,17 @@ namespace Pantallas_proyecto
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-        }
-
         private void button7_Click(object sender, EventArgs e)
         {
-            //FrmInventario_Gerente menu = new FrmInventario_Gerente();
-         //   menu.Show();
+            //Este codigo regresa a la pantalla Gerente Inventario
             this.Close();
             FrmInventario_Gerente invtGer = new FrmInventario_Gerente();
             invtGer.Show();
         }
 
-      /*  private void button1_Click(object sender, EventArgs e)
-        {
-            int poc;
-
-            poc = dataGridView1.CurrentRow.Index;
-
-            textBox1.Text = dataGridView1[0, poc].Value.ToString();
-            comboBox2.Text = dataGridView1[1, poc].Value.ToString();
-        }*/
-
         private void frmInventarioParaEmpleado_Load(object sender, EventArgs e)
         {
+            //Este codigo permite que el combobox de categoria permanezca bloquado sin aber ingresado un codigo
             cmbcategoria.Enabled = false;
             txtdescripcion.Enabled = false;
             conect.abrir();
@@ -72,6 +59,7 @@ namespace Pantallas_proyecto
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            //Codigo que muestra el Dia, Fecha, mes y la hora en la parte inferior del programa
             toolStripLabel1.Text = DateTime.Now.ToLongDateString();
             toolStripLabel2.Text = DateTime.Now.ToLongTimeString();
         }
@@ -86,6 +74,7 @@ namespace Pantallas_proyecto
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //Esta Parte del codigo valida si en el textbox se encuentra en blanco
             ErrorProvider1.Clear();
             letra1 = false;
 
@@ -95,6 +84,7 @@ namespace Pantallas_proyecto
                     ErrorProvider.SetError(txtdescripcion, "No se puede dejar en blanco");
             }
             else
+            //Este Codigo evalua lo que ingreso en el codigo y se habilita las opciones que aparece en el combobox de esta pantalla
             {
                 letra1 = true;
             }
@@ -124,17 +114,15 @@ namespace Pantallas_proyecto
                     FrmInventario_Gerente invtGer = new FrmInventario_Gerente();
                     invtGer.Show();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Error al buscar producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 }
-            }
-                
+            }     
         }
-
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            //Esta Parte del codigo valida si en el textbox se encuentra en blanco
             if (validacion.Espacio_Blanco(ErrorProvider, txtcodigo) || validacion.Solo_Numeros(ErrorProvider, txtcodigo))
             {
                 if (validacion.Espacio_Blanco(ErrorProvider, txtcodigo))
@@ -144,12 +132,13 @@ namespace Pantallas_proyecto
                     ErrorProvider.SetError(txtcodigo, "Solo se permite numeros");
             }
             else
+            //Este Codigo evalua lo que ingreso en el codigo y se habilita las opciones que aparece en el combobox de esta pantalla
+            //Solo se puede ingresar numeros no letras
             {
                 numero1 = true;
             }
             if (numero1)
             {
-
                 conect.abrir();
                 cmd = new SqlCommand("select * from VistaProductoCatego where codigo_producto = @codigo_producto ", conect.conexion);
                 cmd.Parameters.AddWithValue("@codigo_producto", txtcodigo.Text);
@@ -168,7 +157,6 @@ namespace Pantallas_proyecto
 
                 }
                 conect.cerrar();
-
             }
         }
 

@@ -16,6 +16,8 @@ namespace Pantallas_proyecto.SqlServerDB
         {
             using (var connection = GetSqlConnection())
             {
+                //Este codigo es la parte de recuperacion de conraseña del usuarios 
+                // A traves del correo electronico se le manda un codigo de verificacion
                 connection.Open();
                 using (var command = new SqlCommand())
                 {
@@ -41,6 +43,7 @@ namespace Pantallas_proyecto.SqlServerDB
                           "\n Introduce este codigo en el programa para cambiar de contraseña",
                           recipientMail: new List<string> { userMail }
                           );
+                        //Mensaje que le mostrara una vez que le envie un mensaje a su correo personal
                         return "Hola, " + userName + "\n Solicitaste recuperar tu contraseña.\n" +
                           "Porfavor Revisa tu Correo: " + userMail +
                           "\n Ingresa el codigo que aparece en la parte de abajo";
@@ -53,6 +56,7 @@ namespace Pantallas_proyecto.SqlServerDB
 
         public bool existsUser(int id, string loginName, string pass)
         {
+            //Codigo para verificar si el usuario existe sus datos en sql
             using (var connection = GetSqlConnection())
             {
                 connection.Open();
@@ -74,6 +78,8 @@ namespace Pantallas_proyecto.SqlServerDB
         }
         public bool Login(string user, string pass)
         {
+            //Codigo que permite que uno puede ingresar con su nombre de usuario y su contraña
+            //Solo La Gerente y usuarios tienen acceso en esta pantalla
             using (var connection = GetSqlConnection())
             {
                 connection.Open();

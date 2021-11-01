@@ -16,10 +16,11 @@ namespace Pantallas_proyecto
     {
         public FrmInventario_Gerente()
         {
+            // Este codigo permite estar bloqueado el txtIngreso sin haber seleccionado algo
             InitializeComponent();
-            textBox1.Enabled = false;
-           // textBox2.Enabled = false;
+            txtIngreso.Enabled = false;
         }
+        //Codigo de la clase conexion a la Base de Datos
         ClsConexionBD conect = new ClsConexionBD();
         SqlCommand cmd;
 
@@ -36,13 +37,14 @@ namespace Pantallas_proyecto
         }
         private void button4_Click(object sender, EventArgs e)
         {
+            //Este Codigo permite regresar al menu principal del programa de la Tienda Heaven Store
             FrmMenuPrincipalGerente gerente = new FrmMenuPrincipalGerente();
             gerente.Show();
             this.Close();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
+            //Este cdigo permite Ingresar a la pantalla inventario para empleado 
             this.Hide();
             frmInventarioParaEmpleado fact = new frmInventarioParaEmpleado();
             fact.Show();
@@ -50,27 +52,28 @@ namespace Pantallas_proyecto
 
         private void button1_Click(object sender, EventArgs e)
         {
+            ////Seleccion en el dtgInventarioGerente
             int poc;
 
-            poc = dataGridView1.CurrentRow.Index;
+            poc = dtgInventarioGerente.CurrentRow.Index;
 
-            textBox1.Text = dataGridView1[0, poc].Value.ToString();
-           // textBox2.Text = dataGridView1[1, poc].Value.ToString();
+            txtIngreso.Text = dtgInventarioGerente[0, poc].Value.ToString();
         }
-
         private void FrmInventario_Gerente_Load(object sender, EventArgs e)
         {
+            //permite la carga de datos de productos al dtgInventarioGerente
             conect.abrir();
-            conect.cargarDatosProductos(dataGridView1);
+            conect.cargarDatosProductos(dtgInventarioGerente);
             timer1.Enabled = true;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            //Codigo que muestra el Dia, Fecha, mes y la hora en la parte inferior del programa
             toolStripLabel1.Text = DateTime.Now.ToLongDateString();
             toolStripLabel2.Text = DateTime.Now.ToLongTimeString();
         }
-
+//---------------------------------------Codigo Que no se puede Eliminar--------------------------------------------------------
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
            /* int poc;
@@ -85,60 +88,48 @@ namespace Pantallas_proyecto
            /* var aux = new MetodoBucasrProducto();
             aux.filtrar(dataGridView1, this.textBox2.Text.Trim());*/
         }
-
+//-------------------------------------------------------------------------------------------------------------------
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            int selection = comboBox1.SelectedIndex;
+            ////Este codigo permite el ingreso del codigo o categoria que desea buscar en el dtgInventarioGerente
+            int selection = CBBusqueda.SelectedIndex;
             if (selection == 0)
             {
                 var aux = new MetodoBuscarCodigo();
-                aux.filtrar1(dataGridView1, this.textBox1.Text.Trim());
+                aux.filtrar1(dtgInventarioGerente, this.txtIngreso.Text.Trim());
             }
-            /* var aux = new MetodoBuscarCodigo();
-             aux.filtrar1(dataGridView1, this.textBox1.Text.Trim());*/
             else
             {
                 var aux = new MetodoBucasrProducto();
-                aux.filtrar(dataGridView1, this.textBox1.Text.Trim());
+                aux.filtrar(dtgInventarioGerente, this.txtIngreso.Text.Trim());
             }
         }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Solo premitre mostrar el evento del comobo box busqueda
             comboBox1_events();
-
-
-
          }
         private void comboBox1_events()
         {
-            int selection = comboBox1.SelectedIndex;
+            //Este codigo permite la busqueda por medio combobox de inventario la seleccion de codigo o categoria
+            int selection = CBBusqueda.SelectedIndex;
             if(selection == -1)
             {
-                textBox1.Enabled = false;
-               // textBox2.Enabled = false;
+                txtIngreso.Enabled = false;
             }
             else
             {
                 if(selection == 0)
                 {
-                    textBox1.Enabled = true;
-                  //  textBox2.Enabled = false;
-                    textBox1.Clear() ;
-                  //  textBox2.Clear();
+                    txtIngreso.Enabled = true;
+                    txtIngreso.Clear() ;
                 }
                 else
                 {
-                    textBox1.Enabled = true;
-                 //   textBox2.Enabled = true;
-                    textBox1.Clear();
-                  //  textBox2.Clear();
-
+                    txtIngreso.Enabled = true;
+                    txtIngreso.Clear();
                 }
             }
         }
-
-        
-
     }
 }
