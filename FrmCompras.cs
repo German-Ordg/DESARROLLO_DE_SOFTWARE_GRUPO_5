@@ -17,9 +17,9 @@ namespace Pantallas_proyecto
         }
 
         validaciones validacion = new validaciones();
-        private bool letra = false;
-        private bool letra2 = false;
-        private bool letra3 = false;
+        private bool validacion1 = false;
+        private bool validacion2 = false;
+        private bool validacion3 = false;
 
         private const int CP_NOCLOSE_BUTTON = 0x200;
         protected override CreateParams CreateParams
@@ -32,260 +32,186 @@ namespace Pantallas_proyecto
             }
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
         ClsConexionBD conect2 = new ClsConexionBD();
         Productos producto = new Productos();
-
-
-
-
         SqlDataAdapter da;
         DataTable dt;
-        //------------------------------------------------------------------------------------------------------------------------------------------
-        //------------------------------------------------------------------------------------------------------------------------------------------
 
 
-        public void cargarDatosCompras(DataGridView dgv, string nombreTabla)//Metodo cargar dato compras
+        /*Método creado especialmente para la carga de datos. Por medio de una consulta SQL*/
+        public void cargarDatosCompras(DataGridView dgv, string nombreTabla)
         {
             try
             {
+                /*Asignación de la consulta SQL a la variable da (data adapter) para cargar 
+                los datos de forma adecuada. */
                 da = new SqlDataAdapter("Select  Compras.codigo_compra Codigo, Proveedores.nombre_proveedor Proveedor , fecha_compra Fecha , Metodo_Pago.descripcion_pago Pago From " + nombreTabla +
                     ", Detalle_Compra, Proveedores, Metodo_Pago Where (Compras.codigo_compra= Detalle_Compra.codigo_compra ) and (Detalle_Compra.codigo_proveedor=Proveedores.codigo_proveedor) and" +
                     "(Detalle_Compra.codigo_pago= Metodo_pago.codigo_pago );", conect2.conexion);
+                /*Se le asigna la creación de una nueva tabla interna a la variable dt para
+                 la carga de datos que resulte de la carga de datos.*/
                 dt = new DataTable();
                 da.Fill(dt);
                 dgv.DataSource = dt;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                /*En caso de que no pudiesen cargarse bien los datos a causa de algún mal
+                 funcionamiento tanto de la base de datos o del sistema en general, se 
+                liberará una ventana de error.*/
                 MessageBox.Show("Error al cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        //------------------------------------------------------------------------------------------------------------------------------------------
-        //------------------------------------------------------------------------------------------------------------------------------------------
         private void FrmCompras_Load(object sender, EventArgs e)
         {
             timer1.Enabled = true;
-            dateFecha.MaxDate = DateTime.Now.AddDays(0);
-            dateFecha.MinDate = DateTime.Now.AddMonths(-1);
+            dtpFechaCompra.MaxDate = DateTime.Now.AddDays(0);
+            dtpFechaCompra.MinDate = DateTime.Now.AddMonths(-1);
             conect2.abrir();
-            // cargarDatosProductos(dgvProductos, "Productos");
-            cargarDatosCompras(dgvProveedores, "Compras");
+            cargarDatosCompras(dgvCompras, "Compras");
 
-
+            /*Try-Catch que servirá para la carga de datos de los registros existentes de
+             compras que se hayan realizado con anterioridad*/
             try
             {
                 da = new SqlDataAdapter("SELECT nombre_proveedor as 'Nombre del Proveedor' FROM Proveedores", conect2.conexion);
                 dt = new DataTable();
                 da.Fill(dt);
-                dtgprov.DataSource = dt;
+                dgvProveedor.DataSource = dt;
                 conect2.cerrar();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 MessageBox.Show("Error al cargar los datos de los proveedores", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            /*Try-Catch que servirá para carga de datos de los métodos de pago hacia
+             un combobox para que el usuario pueda tenerlos a su disposición*/
             try
             {
                 SqlCommand comando = new SqlCommand("SELECT descripcion_pago FROM Metodo_Pago", conect2.conexion);
                 conect2.abrir();
                 SqlDataReader registro = comando.ExecuteReader();
+                
+                /*El ciclo no se detendrá hasta que se hayan terminado de leer
+                 todos los registros dentro de la tabla de la base de datos
+                para luego transformarse en String*/
                 while (registro.Read())
                 {
-                    comboPago.Items.Add(registro["descripcion_pago"].ToString());
+                    cmbMetodoPago.Items.Add(registro["descripcion_pago"].ToString());
                 }
                 conect2.cerrar();
-
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Error al cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-                        //metodo para cargar datos en combobox proveedores 
-          /*  try
-            {
-                SqlCommand comando = new SqlCommand("SELECT nombre_proveedor FROM Proveedores", conect2.conexion);
-                conect2.abrir();
-                SqlDataReader registro = comando.ExecuteReader();
-                while (registro.Read())
-                {
-                    comboProveedor.Items.Add(registro["nombre_proveedor"].ToString());
-                }
-                conect2.cerrar();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } */
-
         }
 
-
-        //------------------------------------------------------------------------------------------------------------------------------------------
-        //------------------------------------------------------------------------------------------------------------------------------------------
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FrmMenuPrincipalGerente acceso = new FrmMenuPrincipalGerente();
-            acceso.Show();
-            this.Hide();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-
-
+        /*Validación de espacios en blanco dentro del programa por medio de
+         variables de verificación en booleano*/
         private void button2_Click_2(object sender, EventArgs e)
         {
 
-            letra = false;
-            letra2 = false;
-            letra3 = false;
+            validacion1 = false;
+            validacion2 = false;
+            validacion3 = false;
 
-
-            if (validacion.Espacio_Blanco(errorProvider1, codigoCompra))
+            /*Validación para TextBox del número de facturacción*/
+            if (validacion.Espacio_Blanco(errorProvider1, txtNumeroFactura))
             {
-                if (validacion.Espacio_Blanco(errorProvider1, codigoCompra))
-                    errorProvider1.SetError(codigoCompra, "no se puede dejar en blanco");
+                if (validacion.Espacio_Blanco(errorProvider1, txtNumeroFactura))
+                    errorProvider1.SetError(txtNumeroFactura, "no se puede dejar en blanco");
             }
             else
             {
-                letra = true;
+                validacion1 = true;
             }
 
-
-           if (validacion.Espacio_Blanco(errorProvider1, textProveedor))
+            /*Validación para TextBox del nombre del proveedor*/
+           if (validacion.Espacio_Blanco(errorProvider1, txtProveedor))
             {
-                if (validacion.Espacio_Blanco(errorProvider1, textProveedor))
-                    errorProvider1.SetError(textProveedor, "no se puede dejar en blanco");
+                if (validacion.Espacio_Blanco(errorProvider1, txtProveedor))
+                    errorProvider1.SetError(txtProveedor, "no se puede dejar en blanco");
             }
             else
             {
-                letra2 = true;
+                validacion2 = true;
             }
 
-
-
-            if (validacion.Espacio_Blanco_CB(errorProvider1, comboPago))
+            /*Validación para ComboBox de métodos de pago*/
+            if (validacion.Espacio_Blanco_CB(errorProvider1, cmbMetodoPago))
             {
-                if (validacion.Espacio_Blanco_CB(errorProvider1, comboPago))
-                    errorProvider1.SetError(comboPago, "no se puede dejar en blanco");
+                if (validacion.Espacio_Blanco_CB(errorProvider1, cmbMetodoPago))
+                    errorProvider1.SetError(cmbMetodoPago, "no se puede dejar en blanco");
             }
             else
             {
-                letra3 = true;
+                validacion3 = true;
             }
 
-            if (textProveedor.Enabled==true)
+            /*En caso de que no esté validado el ComboBox de 
+             métodos de pagos*/
+            if (txtProveedor.Enabled==true)
             {
                 
-                    errorProvider1.SetError(textProveedor, "Seleccione una opcion de abajo");
-                    letra3 = false;
+                errorProvider1.SetError(txtProveedor, "Seleccione una opcion de abajo");
+                validacion3 = false;
             }
             else
             {
-                letra3 = true;
+                validacion3 = true;
             }
 
 
-            if (letra && letra2 && letra3)
+            if (validacion1 && validacion2 && validacion3)
             {
-                //---------------------------------------------------------------------------------------------------------------------------------
-                //Compras
+                //Cuando se han logrado aceptar las validaciones de la campos en blanco
                 try
-            {
-                if (codigoCompra.Text == string.Empty || textProveedor.Text==string.Empty||comboPago.Text == string.Empty || dateFecha.Text == string.Empty)
-                    MessageBox.Show("Porfavor llene o seleccione todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
-                else
                 {
-
-
-                    producto.Codigo_compra = Convert.ToInt32(codigoCompra.Text);
-                    if (producto.Codigo_compra == producto.buscarCompra(codigoCompra.Text))
+                    /*En caso de que se de la presencia de campos en blanco
+                     se podrá ejecutar esta sección del código para que el usuario ingrese correctamente
+                    a los datos requeridos*/
+                    if (txtNumeroFactura.Text == string.Empty || txtProveedor.Text==string.Empty||cmbMetodoPago.Text == string.Empty || dtpFechaCompra.Text == string.Empty)
+                        MessageBox.Show("Porfavor llene o seleccione todos los campos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
                     {
-                        MessageBox.Show("Error el codigo de compra ya existe", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                        producto.Codigo_compra = Convert.ToInt32(txtNumeroFactura.Text);
+                        if (producto.Codigo_compra == producto.buscarCompra(txtNumeroFactura.Text))
+                        {
+                            MessageBox.Show("Error el codigo de compra ya existe", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            if (producto.Codigo_compra == 0 || Convert.ToInt32(txtNumeroFactura.Text) <= 0)
+                            {
+                                MessageBox.Show("Ingrese un valor mayor a cero", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                txtNumeroFactura.Clear();
+                                txtNumeroFactura.Focus();
+                            }
+                            else 
+                            {
+                                FrmProductos produc = new FrmProductos();
+                                produc.compra.Text = txtNumeroFactura.Text;
+                                produc.fecha.Text = dtpFechaCompra.Value.ToString("yyyy/MM/dd");
+                                produc.proveedor.Text = proveedorSeleccionado;
+                                produc.pago.Text = cmbMetodoPago.SelectedItem.ToString();
+                                produc.Show();
+                                this.Close();
+                                txtNumeroFactura.Clear();
+                            }
+                        }
                     }
-
-
-                    else if (producto.Codigo_compra == 0 || Convert.ToInt32(codigoCompra.Text) <= 0)
-                    {
-                        MessageBox.Show("Ingrese un valor mayor a cero", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        codigoCompra.Clear();
-                        codigoCompra.Focus();
-
-                    }
-                    else 
-                    {
-                        FrmProductos produc = new FrmProductos();
-                        produc.compra.Text = codigoCompra.Text;
-                        produc.fecha.Text = dateFecha.Value.ToString("yyyy/MM/dd");
-                        produc.proveedor.Text = proveedorSeleccionado;
-                        produc.pago.Text = comboPago.SelectedItem.ToString();
-
-                        produc.Show();
-                        this.Close();
-
-                       codigoCompra.Clear();
-
-                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al ingresar los datos" + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al ingresar los datos" + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-
-            }
         }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -335,52 +261,51 @@ namespace Pantallas_proyecto
 
         }
 
-        private void comboProveedor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         string proveedorSeleccionado;
         int poc1;
 
         private void dtgprov_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //poc1 = -1;
-            poc1 = dtgprov.CurrentRow.Index;
-            proveedorSeleccionado = dtgprov[0, poc1].Value.ToString();
-            textProveedor.Text = dtgprov[0, poc1].Value.ToString();
-            textProveedor.Enabled = false;
+            poc1 = dgvProveedor.CurrentRow.Index;
+            proveedorSeleccionado = dgvProveedor[0, poc1].Value.ToString();
+            txtProveedor.Text = dgvProveedor[0, poc1].Value.ToString();
+            txtProveedor.Enabled = false;
         }
 
         private void dtgprov_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            poc1 = dtgprov.CurrentRow.Index;
-            proveedorSeleccionado = dtgprov[0, poc1].Value.ToString();
-            textProveedor.Text = dtgprov[0, poc1].Value.ToString();
-            textProveedor.Enabled = false;
+            poc1 = dgvProveedor.CurrentRow.Index;
+            proveedorSeleccionado = dgvProveedor[0, poc1].Value.ToString();
+            txtProveedor.Text = dgvProveedor[0, poc1].Value.ToString();
+            txtProveedor.Enabled = false;
         }
 
         private void dtgprov_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            poc1 = dtgprov.CurrentRow.Index;
-            proveedorSeleccionado = dtgprov[0, poc1].Value.ToString();
-            textProveedor.Text = dtgprov[0, poc1].Value.ToString();
-            textProveedor.Enabled = false;
+            poc1 = dgvProveedor.CurrentRow.Index;
+            proveedorSeleccionado = dgvProveedor[0, poc1].Value.ToString();
+            txtProveedor.Text = dgvProveedor[0, poc1].Value.ToString();
+            txtProveedor.Enabled = false;
         }
 
         private void button1_Click_3(object sender, EventArgs e)
         {
-            textProveedor.Text = "";
-            codigoCompra.Text = "";
-            comboPago.SelectedIndex = -1;
-            textProveedor.Enabled = true;
+            txtProveedor.Text = "";
+            txtNumeroFactura.Text = "";
+            cmbMetodoPago.SelectedIndex = -1;
+            txtProveedor.Enabled = true;
         }
 
         private void textProveedor_TextChanged(object sender, EventArgs e)
         {
             var aux = new MetodoBuscarProveedor();
-            aux.filtrar(dtgprov, this.textProveedor.Text.Trim());
+            aux.filtrar(dgvProveedor, this.txtProveedor.Text.Trim());
             errorProvider1.Clear();
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 
