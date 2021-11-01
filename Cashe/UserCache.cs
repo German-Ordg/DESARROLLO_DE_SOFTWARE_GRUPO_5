@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pantallas_proyecto.Cashe
 {
+    //Declaracion de metodos Get y Set, para la pantalla de Usuarios.
     public static class UserCache
     {
         public static int IdUser { get; set; }

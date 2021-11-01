@@ -7,6 +7,7 @@ using Pantallas_proyecto.SqlServerDB;
 
 namespace Pantallas_proyecto.Dominio
 {
+    //Funcion de seguridad de la aplicación, valida que el usuario exista en la base de datos.
     public class UserModel 
     {
         UserDao userDao = new UserDao();

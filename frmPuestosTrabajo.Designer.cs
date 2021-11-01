@@ -70,8 +70,7 @@ namespace Pantallas_proyecto
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DgvPuesto.DefaultCellStyle = dataGridViewCellStyle1;
-            this.DgvPuesto.Location = new System.Drawing.Point(28, 245);
-            this.DgvPuesto.Margin = new System.Windows.Forms.Padding(4);
+            this.DgvPuesto.Location = new System.Drawing.Point(21, 199);
             this.DgvPuesto.Name = "DgvPuesto";
             this.DgvPuesto.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -83,7 +82,7 @@ namespace Pantallas_proyecto
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DgvPuesto.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DgvPuesto.RowHeadersWidth = 51;
-            this.DgvPuesto.Size = new System.Drawing.Size(492, 215);
+            this.DgvPuesto.Size = new System.Drawing.Size(369, 175);
             this.DgvPuesto.TabIndex = 0;
             this.DgvPuesto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPuesto_CellClick);
             this.DgvPuesto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPuesto_CellContentClick);
@@ -95,10 +94,9 @@ namespace Pantallas_proyecto
             this.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegresar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.BtnRegresar.Location = new System.Drawing.Point(401, 39);
-            this.BtnRegresar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnRegresar.Location = new System.Drawing.Point(301, 32);
             this.BtnRegresar.Name = "BtnRegresar";
-            this.BtnRegresar.Size = new System.Drawing.Size(119, 34);
+            this.BtnRegresar.Size = new System.Drawing.Size(89, 28);
             this.BtnRegresar.TabIndex = 18;
             this.BtnRegresar.Text = "Regresar";
             this.BtnRegresar.UseVisualStyleBackColor = false;
@@ -109,19 +107,17 @@ namespace Pantallas_proyecto
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(96, 113);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(72, 92);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 24);
+            this.label1.Size = new System.Drawing.Size(60, 18);
             this.label1.TabIndex = 20;
             this.label1.Text = "Código:";
             // 
             // txtPosicion
             // 
-            this.txtPosicion.Location = new System.Drawing.Point(197, 156);
-            this.txtPosicion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPosicion.Location = new System.Drawing.Point(148, 127);
             this.txtPosicion.Name = "txtPosicion";
-            this.txtPosicion.Size = new System.Drawing.Size(239, 22);
+            this.txtPosicion.Size = new System.Drawing.Size(180, 20);
             this.txtPosicion.TabIndex = 21;
             // 
             // BtnAgregar
@@ -131,10 +127,9 @@ namespace Pantallas_proyecto
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAgregar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.BtnAgregar.Location = new System.Drawing.Point(148, 194);
-            this.BtnAgregar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnAgregar.Location = new System.Drawing.Point(111, 158);
             this.BtnAgregar.Name = "BtnAgregar";
-            this.BtnAgregar.Size = new System.Drawing.Size(119, 34);
+            this.BtnAgregar.Size = new System.Drawing.Size(89, 28);
             this.BtnAgregar.TabIndex = 22;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = false;
@@ -147,10 +142,9 @@ namespace Pantallas_proyecto
             this.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnModificar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.BtnModificar.Location = new System.Drawing.Point(296, 194);
-            this.BtnModificar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnModificar.Location = new System.Drawing.Point(222, 158);
             this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(119, 34);
+            this.BtnModificar.Size = new System.Drawing.Size(89, 28);
             this.BtnModificar.TabIndex = 24;
             this.BtnModificar.Text = "Modificar";
             this.BtnModificar.UseVisualStyleBackColor = false;
@@ -161,29 +155,26 @@ namespace Pantallas_proyecto
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(96, 155);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(72, 126);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 24);
+            this.label2.Size = new System.Drawing.Size(70, 18);
             this.label2.TabIndex = 25;
             this.label2.Text = "Posición:";
             // 
             // txtCodigo
             // 
             this.txtCodigo.Enabled = false;
-            this.txtCodigo.Location = new System.Drawing.Point(197, 113);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodigo.Location = new System.Drawing.Point(148, 92);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(239, 22);
+            this.txtCodigo.Size = new System.Drawing.Size(180, 20);
             this.txtCodigo.TabIndex = 26;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Pantallas_proyecto.Properties.Resources.Letras1;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(377, 85);
+            this.pictureBox1.Size = new System.Drawing.Size(283, 69);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
@@ -208,16 +199,14 @@ namespace Pantallas_proyecto
             this.toolStripContainer1.ContentPanel.Controls.Add(this.label1);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.BtnRegresar);
             this.toolStripContainer1.ContentPanel.Controls.Add(this.DgvPuesto);
-            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(545, 472);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(410, 385);
             this.toolStripContainer1.ContentPanel.Load += new System.EventHandler(this.toolStripContainer1_ContentPanel_Load);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.LeftToolStripPanelVisible = false;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.RightToolStripPanelVisible = false;
-            this.toolStripContainer1.Size = new System.Drawing.Size(545, 497);
+            this.toolStripContainer1.Size = new System.Drawing.Size(410, 410);
             this.toolStripContainer1.TabIndex = 29;
             this.toolStripContainer1.Text = "toolStripContainer1";
             this.toolStripContainer1.TopToolStripPanelVisible = false;
@@ -231,19 +220,19 @@ namespace Pantallas_proyecto
             this.tslHora});
             this.toolStrip1.Location = new System.Drawing.Point(4, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(235, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(184, 25);
             this.toolStrip1.TabIndex = 0;
             // 
             // tslFecha
             // 
             this.tslFecha.Name = "tslFecha";
-            this.tslFecha.Size = new System.Drawing.Size(111, 22);
+            this.tslFecha.Size = new System.Drawing.Size(86, 22);
             this.tslFecha.Text = "toolStripLabel1";
             // 
             // tslHora
             // 
             this.tslHora.Name = "tslHora";
-            this.tslHora.Size = new System.Drawing.Size(111, 22);
+            this.tslHora.Size = new System.Drawing.Size(86, 22);
             this.tslHora.Text = "toolStripLabel2";
             // 
             // timer1
@@ -260,17 +249,16 @@ namespace Pantallas_proyecto
             // 
             // frmPuestosTrabajo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(545, 497);
+            this.ClientSize = new System.Drawing.Size(410, 410);
             this.Controls.Add(this.toolStripContainer1);
             this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(563, 544);
-            this.MinimumSize = new System.Drawing.Size(563, 544);
+            this.MaximumSize = new System.Drawing.Size(426, 449);
+            this.MinimumSize = new System.Drawing.Size(426, 449);
             this.Name = "frmPuestosTrabajo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Heaven Store - Puestos de Trabajo";
