@@ -36,22 +36,6 @@ namespace Pantallas_proyecto
             
         }
 
-        
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnIngreso_Click(object sender, EventArgs e)
         {
          
@@ -112,15 +96,7 @@ namespace Pantallas_proyecto
             lblError.Visible = true;
             picError.Visible = true;
         }
-        private void lblError_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void picError_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void chkMostrarContra_CheckedChanged(object sender, EventArgs e)
         {
@@ -157,7 +133,6 @@ namespace Pantallas_proyecto
             if (txtUsuario.Text == "")
             {
                 txtUsuario.Text = "Usuario";            
-               // txtUsuario.ForeColor = Color.Black;
                 txtUsuario.ForeColor = SystemColors.GrayText;
             }
         }
@@ -176,8 +151,7 @@ namespace Pantallas_proyecto
         {
             if (txtContrasena.Text == "")
             {
-                txtContrasena.Text = "Contraseña";
-             //   txtContrasena.ForeColor = Color.Black;
+                txtContrasena.Text = "Contraseña";          
                 txtContrasena.ForeColor = SystemColors.GrayText;
                 txtContrasena.UseSystemPasswordChar = false;
             }
@@ -302,11 +276,6 @@ namespace Pantallas_proyecto
         {
             frmPantallaFacturacion fact = new frmPantallaFacturacion();
             fact.Show();
-        }
-
-        private void lblHora_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click_2(object sender, EventArgs e)
