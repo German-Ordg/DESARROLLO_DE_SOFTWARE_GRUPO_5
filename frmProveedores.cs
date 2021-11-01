@@ -20,13 +20,14 @@ namespace Pantallas_proyecto
             
         }
 
-        private const int CP_NOCLOSE_BUTTON = 0x200;
+        //hace que no se pueda cerrar la pantalla
+        private const int noClose = 0x200;
         protected override CreateParams CreateParams
         {
             get
             {
                 CreateParams myCp = base.CreateParams;
-                myCp.ClassStyle = myCp.ClassStyle | CP_NOCLOSE_BUTTON;
+                myCp.ClassStyle = myCp.ClassStyle | noClose;
                 return myCp;
             }
         }
@@ -41,14 +42,14 @@ namespace Pantallas_proyecto
         private bool letra10 = false;
         private string proveedor;
         private string numero;
-
+        //regresa al menu de crud
         private void button7_Click(object sender, EventArgs e)
         {
-            FrmMenuCRUD menuCRUD = new FrmMenuCRUD();
-            menuCRUD.Show();
+            FrmMenuCRUD menuCrud = new FrmMenuCRUD();
+            menuCrud.Show();
             this.Close();
         }
-
+        //boton de agregar proveedor
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -148,7 +149,6 @@ namespace Pantallas_proyecto
                     }
                     catch (Exception ex)
                     {
-                        //MessageBox.Show(ex.Message.ToString());
                         MessageBox.Show("ERROR AL INSERTAR LOS DATOS" + ex, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
@@ -164,17 +164,6 @@ namespace Pantallas_proyecto
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            dgvProovedores.ForeColor = Color.Black;
-            SqlDataAdapter da;
-            DataTable dt;
-           
-            da = new SqlDataAdapter("Select * From Proveedores", conect.conexion);
-            dt = new DataTable();
-            da.Fill(dt);
-            dgvProovedores.DataSource = dt;
-        }
 
         private void dgvProovedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -190,13 +179,13 @@ namespace Pantallas_proyecto
         {
 
         }
-
+        //se carga la fecha y hora actual
         private void timer1_Tick(object sender, EventArgs e)
         {
             toolStripLabel1.Text = DateTime.Now.ToLongDateString();
             toolStripLabel2.Text = DateTime.Now.ToLongTimeString();
         }
-
+        //boton para modificar los proveedores
         private void button3_Click_1(object sender, EventArgs e)
         {
             int indice;
@@ -333,15 +322,15 @@ namespace Pantallas_proyecto
                         txtDescripcion.Clear();
                         txtNombreProovedor.Focus();
                         conect.cerrar();
-                    button2.Enabled = true;
-                    button3.Enabled = false;
-                    proveedor = null;
-                    numero = null;
-                    errorProvider2.Clear();
-                    ErrorProvider.Clear();
+                        button2.Enabled = true;
+                        button3.Enabled = false;
+                        proveedor = null;
+                        numero = null;
+                        errorProvider2.Clear();
+                        ErrorProvider.Clear();
 
                 }
-                    catch (Exception ex)
+                    catch (Exception )
                     {
                         MessageBox.Show("El registro no pudo ser actualizado" , "INFO", MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
@@ -350,7 +339,7 @@ namespace Pantallas_proyecto
             }
 
         }
-
+        //cargan los datos de los proveedores
         private void frmProveedores_Load(object sender, EventArgs e)
         {
             conect.abrir();
@@ -371,7 +360,7 @@ namespace Pantallas_proyecto
         {
 
         }
-
+        //validacion del nombre del proveedor
         private void txtNombreProovedor_TextChanged(object sender, EventArgs e)
         {
 
@@ -385,7 +374,7 @@ namespace Pantallas_proyecto
         {
 
         }
-
+        //se selecciona los datos del datagridview
         private void dgvProovedores_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int poc;
@@ -401,7 +390,7 @@ namespace Pantallas_proyecto
             button3.Enabled = true;
 
         }
-
+        // boton que limpia los datos
         private void btneliminar_Click(object sender, EventArgs e)
         {
             txtNombreProovedor.Clear();
@@ -414,7 +403,7 @@ namespace Pantallas_proyecto
             errorProvider2.Clear();
             ErrorProvider.Clear();
         }
-
+        //validacion de descripcion
         private void txtDescripcion_TextChanged(object sender, EventArgs e)
         {
             if (txtDescripcion.Text.Length >= 150)
