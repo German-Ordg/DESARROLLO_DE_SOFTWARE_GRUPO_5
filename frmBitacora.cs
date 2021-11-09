@@ -21,7 +21,17 @@ namespace Pantallas_proyecto
         //se llama a la clase de conexion para tener acceso a la base de datos
         Bitacora bitacora = new Bitacora();
         ClsConexionBD conect = new ClsConexionBD();
-        
+
+        private const int cpNoCloseButton = 0x200;
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams myCp = base.CreateParams;
+                myCp.ClassStyle = myCp.ClassStyle | cpNoCloseButton;
+                return myCp;
+            }
+        }
         //Se cargan los empelados del sistema
         private void frmBitacora_Load(object sender, EventArgs e)
         {
