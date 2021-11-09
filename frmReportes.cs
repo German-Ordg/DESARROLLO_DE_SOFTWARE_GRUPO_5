@@ -473,6 +473,11 @@ namespace Pantallas_proyecto
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
         }
+
+        private void dgvcompra_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
     //clase corta hecha para lograr imprimir los datos de los reportes
     //no se creo la clase aparte por que muy pequeña

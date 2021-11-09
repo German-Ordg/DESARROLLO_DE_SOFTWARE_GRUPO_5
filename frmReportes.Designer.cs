@@ -450,6 +450,7 @@ namespace Pantallas_proyecto
             // reportViewer5
             // 
             this.reportViewer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer5.DocumentMapWidth = 72;
             reportDataSource1.Name = "DataSet1";
             reportDataSource1.Value = this.impresion1BindingSource;
             this.reportViewer5.LocalReport.DataSources.Add(reportDataSource1);
@@ -679,15 +680,14 @@ namespace Pantallas_proyecto
             // 
             // reportViewer8
             // 
-            this.reportViewer8.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource6.Name = "DataSet1";
             reportDataSource6.Value = this.impresion1BindingSource;
             this.reportViewer8.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewer8.LocalReport.ReportEmbeddedResource = "Pantallas_proyecto.Reportcompras.rdlc";
-            this.reportViewer8.Location = new System.Drawing.Point(3, 3);
+            this.reportViewer8.Location = new System.Drawing.Point(3, 298);
             this.reportViewer8.Name = "reportViewer8";
             this.reportViewer8.ServerReport.BearerToken = null;
-            this.reportViewer8.Size = new System.Drawing.Size(836, 455);
+            this.reportViewer8.Size = new System.Drawing.Size(307, 160);
             this.reportViewer8.TabIndex = 2;
             // 
             // dgvcompra
@@ -699,6 +699,7 @@ namespace Pantallas_proyecto
             this.dgvcompra.RowTemplate.Height = 24;
             this.dgvcompra.Size = new System.Drawing.Size(650, 223);
             this.dgvcompra.TabIndex = 1;
+            this.dgvcompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvcompra_CellContentClick);
             // 
             // tab8
             // 
