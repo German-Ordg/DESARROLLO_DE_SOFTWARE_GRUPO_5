@@ -433,6 +433,8 @@ namespace Pantallas_proyecto
                             producto.Cantidad_compra = Convert.ToInt32(row.Cells["Cantidaddgv"].Value);
                             producto.Precio_compra = Convert.ToDouble(row.Cells["PrecioCompradgv"].Value);
                             producto.agregarDetalleCompra();
+                            Bitacora bitacora = new Bitacora();
+                            bitacora.compraRealizada();
                         }
 
                         catch (Exception ex)

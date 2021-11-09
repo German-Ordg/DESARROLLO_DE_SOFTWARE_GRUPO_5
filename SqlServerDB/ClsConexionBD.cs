@@ -309,5 +309,22 @@ namespace Pantallas_proyecto
                 MessageBox.Show("No se pueden cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+        public void cargarBitacora(DataGridView dgv)
+        {
+            //Carga de datos de bitacora a la Base de Datos
+            try
+            {
+                da = new SqlDataAdapter("SELECT * FROM vista_Bitacora", conexion);
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pueden cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

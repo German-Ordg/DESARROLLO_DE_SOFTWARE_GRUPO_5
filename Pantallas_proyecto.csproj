@@ -105,6 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bitacora.cs" />
     <Compile Include="Buscar_CodigoFrmProductos.cs" />
     <Compile Include="frmBitacora.cs">
       <SubType>Form</SubType>
@@ -437,6 +438,7 @@
     <EmbeddedResource Include="FormBienvenido.resx">
       <DependentUpon>FormBienvenido.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="report_bitacora.rdlc" />
     <EmbeddedResource Include="Report_mas_vendido.rdlc" />
     <EmbeddedResource Include="Report_productos_por_acabarse.rdlc" />
     <EmbeddedResource Include="Report_rotacion_inventario.rdlc" />
@@ -661,6 +663,7 @@
     <None Include="Properties\DataSources\impresion.datasource" />
     <None Include="Properties\DataSources\impresion1.datasource" />
     <None Include="Properties\DataSources\impresion2.datasource" />
+    <None Include="Properties\DataSources\impresion_bitacora.datasource" />
     <None Include="Properties\DataSources\impresion_ventas.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

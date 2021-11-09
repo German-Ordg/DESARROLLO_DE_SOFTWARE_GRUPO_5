@@ -639,7 +639,8 @@ namespace Pantallas_proyecto
 
                                     //llamada a las funciones las cuales ejecutan el ingreso de la venta en la base de datos
                                     ingresar();
-
+                                    Bitacora bitacora = new Bitacora();
+                                    bitacora.ventaRealizada();
                                     reporte();
                                     ((Control)this.tabPage1).Enabled = false;
                                 }

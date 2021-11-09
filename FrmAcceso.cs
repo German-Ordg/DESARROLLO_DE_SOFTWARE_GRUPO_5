@@ -54,6 +54,8 @@ namespace Pantallas_proyecto
 
                         if (Cashe.UserCache.estado == "ACTIVO")
                         {
+                            Bitacora bitacora = new Bitacora();
+                            bitacora.inicioSecion();
                             this.Hide();
                             FormBienvenido welcome = new FormBienvenido();
                             welcome.ShowDialog();
@@ -188,7 +190,8 @@ namespace Pantallas_proyecto
         //Esto hace referencia a la programacion para la recuperacion de la contraseña
         private void btnRecuperar_Click(object sender, EventArgs e)
         {
-            FrmRecuperaContra recuperacion = new FrmRecuperaContra();
+            //FrmRecuperaContra recuperacion = new FrmRecuperaContra();
+            frmBitacora recuperacion = new frmBitacora();
             recuperacion.Show();
             recuperacion.FormClosed += cerrarSesion;
             this.Hide();
@@ -228,6 +231,8 @@ namespace Pantallas_proyecto
                         {
                             if (Cashe.UserCache.estado == "ACTIVO")
                             {
+                                Bitacora bitacora = new Bitacora();
+                                bitacora.inicioSecion();
                                 this.Hide();
                                 FormBienvenido welcome = new FormBienvenido();
                                 welcome.ShowDialog();

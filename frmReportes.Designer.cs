@@ -680,14 +680,15 @@ namespace Pantallas_proyecto
             // 
             // reportViewer8
             // 
+            this.reportViewer8.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource6.Name = "DataSet1";
             reportDataSource6.Value = this.impresion1BindingSource;
             this.reportViewer8.LocalReport.DataSources.Add(reportDataSource6);
             this.reportViewer8.LocalReport.ReportEmbeddedResource = "Pantallas_proyecto.Reportcompras.rdlc";
-            this.reportViewer8.Location = new System.Drawing.Point(3, 298);
+            this.reportViewer8.Location = new System.Drawing.Point(3, 3);
             this.reportViewer8.Name = "reportViewer8";
             this.reportViewer8.ServerReport.BearerToken = null;
-            this.reportViewer8.Size = new System.Drawing.Size(307, 160);
+            this.reportViewer8.Size = new System.Drawing.Size(836, 455);
             this.reportViewer8.TabIndex = 2;
             // 
             // dgvcompra
