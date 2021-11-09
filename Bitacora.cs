@@ -58,7 +58,7 @@ namespace Pantallas_proyecto
 
 
             DateTime hoy = DateTime.Now;
-            string fecha = hoy.ToShortDateString() + " " + hoy.Hour + ":" + hoy.Minute + ":" + hoy.Second;
+            string fecha = hoy.Day + "/" + hoy.Month + "/" + hoy.Year + " " + hoy.Hour + ":" + hoy.Minute + ":" + hoy.Second;
 
             conect2.abrir();
             cmd = new SqlCommand("insert into Bitacora values ('" + fecha + "'," + buscarCodigoEmpleado(Cashe.UserCache.LoginName) + ",1 )", conect2.conexion);
