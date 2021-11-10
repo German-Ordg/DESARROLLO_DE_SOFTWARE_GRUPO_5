@@ -32,6 +32,7 @@ namespace Pantallas_proyecto
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBitacora));
+            this.impresion_bitacoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dgvbitacora = new System.Windows.Forms.DataGridView();
@@ -44,21 +45,29 @@ namespace Pantallas_proyecto
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnregresar = new System.Windows.Forms.Button();
             this.mostrar = new System.Windows.Forms.Button();
-            this.impresion_bitacoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.impresion_bitacoraBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbitacora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.impresion_bitacoraBindingSource)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // impresion_bitacoraBindingSource
+            // 
+            this.impresion_bitacoraBindingSource.DataSource = typeof(Pantallas_proyecto.impresion_bitacora);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.reportViewer1);
             this.groupBox1.Controls.Add(this.dgvbitacora);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(2, 187);
+            this.groupBox1.Location = new System.Drawing.Point(0, 170);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1252, 443);
+            this.groupBox1.Size = new System.Drawing.Size(1252, 431);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
@@ -72,7 +81,7 @@ namespace Pantallas_proyecto
             this.reportViewer1.Location = new System.Drawing.Point(3, 18);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1246, 422);
+            this.reportViewer1.Size = new System.Drawing.Size(1246, 410);
             this.reportViewer1.TabIndex = 2;
             // 
             // dgvbitacora
@@ -185,9 +194,37 @@ namespace Pantallas_proyecto
             this.mostrar.UseVisualStyleBackColor = false;
             this.mostrar.Click += new System.EventHandler(this.mostrar_Click);
             // 
-            // impresion_bitacoraBindingSource
+            // toolStrip1
             // 
-            this.impresion_bitacoraBindingSource.DataSource = typeof(Pantallas_proyecto.impresion_bitacora);
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripLabel1,
+            this.toolStripLabel2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 604);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(1255, 25);
+            this.toolStrip1.TabIndex = 79;
+            this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.ForeColor = System.Drawing.Color.Black;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(111, 22);
+            this.toolStripLabel1.Text = "toolStripLabel1";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.ForeColor = System.Drawing.Color.Black;
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(111, 22);
+            this.toolStripLabel2.Text = "toolStripLabel2";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmBitacora
             // 
@@ -195,6 +232,7 @@ namespace Pantallas_proyecto
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1255, 629);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.mostrar);
             this.Controls.Add(this.btnregresar);
             this.Controls.Add(this.pictureBox1);
@@ -210,12 +248,15 @@ namespace Pantallas_proyecto
             this.MaximumSize = new System.Drawing.Size(1273, 676);
             this.MinimumSize = new System.Drawing.Size(1273, 676);
             this.Name = "frmBitacora";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBitacora";
             this.Load += new System.EventHandler(this.frmBitacora_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.impresion_bitacoraBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvbitacora)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.impresion_bitacoraBindingSource)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,5 +276,9 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.Button mostrar;
         private System.Windows.Forms.BindingSource impresion_bitacoraBindingSource;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.Timer timer1;
     }
 }

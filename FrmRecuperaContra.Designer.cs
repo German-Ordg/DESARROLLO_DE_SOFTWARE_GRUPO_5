@@ -226,7 +226,7 @@ namespace Pantallas_proyecto
             // 
             this.txtcodigo.Location = new System.Drawing.Point(635, 394);
             this.txtcodigo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtcodigo.MaxLength = 10;
+            this.txtcodigo.MaxLength = 5;
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(132, 22);
             this.txtcodigo.TabIndex = 3;

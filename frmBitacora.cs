@@ -46,6 +46,7 @@ namespace Pantallas_proyecto
 
             DateTime fecha1 = dateTimePicker1.Value;
             dateTimePicker2.MinDate = fecha1.Date.AddDays(1);
+            timer1.Enabled = true;
         }
         //es la funcion del boton que sirve para regresar al menu principal
         private void btnregresar_Click(object sender, EventArgs e)
@@ -90,6 +91,17 @@ namespace Pantallas_proyecto
         {
             DateTime fecha1 = dateTimePicker1.Value;
             dateTimePicker2.MinDate = fecha1.Date.AddDays(1);
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            toolStripLabel1.Text = DateTime.Now.ToLongDateString();
+            toolStripLabel2.Text = DateTime.Now.ToLongTimeString();
         }
     }
 

@@ -94,5 +94,12 @@ namespace Pantallas_proyecto
         {   //Nos muestra la hora
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss");
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            frmBitacora recuperacion = new frmBitacora();
+            recuperacion.Show();
+            this.Hide();
+        }
     }
 }
