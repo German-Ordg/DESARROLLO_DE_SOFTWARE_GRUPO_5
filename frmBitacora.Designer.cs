@@ -30,9 +30,8 @@ namespace Pantallas_proyecto
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBitacora));
-            this.impresion_bitacoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dgvbitacora = new System.Windows.Forms.DataGridView();
@@ -45,15 +44,12 @@ namespace Pantallas_proyecto
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnregresar = new System.Windows.Forms.Button();
             this.mostrar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.impresion_bitacoraBindingSource)).BeginInit();
+            this.impresion_bitacoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbitacora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.impresion_bitacoraBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // impresion_bitacoraBindingSource
-            // 
-            this.impresion_bitacoraBindingSource.DataSource = typeof(Pantallas_proyecto.impresion_bitacora);
             // 
             // groupBox1
             // 
@@ -69,9 +65,9 @@ namespace Pantallas_proyecto
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.impresion_bitacoraBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.impresion_bitacoraBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Pantallas_proyecto.report_bitacora.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 18);
             this.reportViewer1.Name = "reportViewer1";
@@ -114,6 +110,7 @@ namespace Pantallas_proyecto
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(225, 22);
             this.dateTimePicker1.TabIndex = 67;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label4
             // 
@@ -188,6 +185,10 @@ namespace Pantallas_proyecto
             this.mostrar.UseVisualStyleBackColor = false;
             this.mostrar.Click += new System.EventHandler(this.mostrar_Click);
             // 
+            // impresion_bitacoraBindingSource
+            // 
+            this.impresion_bitacoraBindingSource.DataSource = typeof(Pantallas_proyecto.impresion_bitacora);
+            // 
             // frmBitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -211,10 +212,10 @@ namespace Pantallas_proyecto
             this.Name = "frmBitacora";
             this.Text = "frmBitacora";
             this.Load += new System.EventHandler(this.frmBitacora_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.impresion_bitacoraBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvbitacora)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.impresion_bitacoraBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

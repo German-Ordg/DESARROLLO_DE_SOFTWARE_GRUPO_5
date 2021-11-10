@@ -45,6 +45,7 @@ namespace Pantallas_proyecto
             this.button3 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblHora = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -244,12 +245,29 @@ namespace Pantallas_proyecto
             this.lblHora.TabIndex = 35;
             this.lblHora.Text = "Hora: ";
             // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Maroon;
+            this.button8.BackgroundImage = global::Pantallas_proyecto.Properties.Resources.Boton_inventario_Correcto;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.button8.Location = new System.Drawing.Point(16, 77);
+            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(238, 112);
+            this.button8.TabIndex = 36;
+            this.button8.UseVisualStyleBackColor = false;
+            // 
             // FrmMenuPrincipalGerente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(1454, 597);
+            this.Controls.Add(this.button8);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox1);
@@ -294,5 +312,6 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblHora;
+        private System.Windows.Forms.Button button8;
     }
 }

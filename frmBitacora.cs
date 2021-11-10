@@ -85,6 +85,12 @@ namespace Pantallas_proyecto
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", ImpresionBitacora));
             this.reportViewer1.RefreshReport();
         }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fecha1 = dateTimePicker1.Value;
+            dateTimePicker2.MinDate = fecha1.Date.AddDays(1);
+        }
     }
 
 

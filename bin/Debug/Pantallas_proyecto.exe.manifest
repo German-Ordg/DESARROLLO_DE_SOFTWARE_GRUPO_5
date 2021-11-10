@@ -702,14 +702,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pantallas_proyecto.exe" size="20742120">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pantallas_proyecto.exe" size="21000680">
       <assemblyIdentity name="Pantallas_proyecto" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>R0JiqsmHB/D76EQHHtEvsljpRkGUtB9Qr+qbfFu2jW4=</dsig:DigestValue>
+        <dsig:DigestValue>6+cFYUacN41nYLKfqNE1BsXpJPOOn6t1VZqP5YFW81w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
