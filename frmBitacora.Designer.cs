@@ -32,7 +32,6 @@ namespace Pantallas_proyecto
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBitacora));
-            this.impresion_bitacoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dgvbitacora = new System.Windows.Forms.DataGridView();
@@ -49,16 +48,13 @@ namespace Pantallas_proyecto
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.impresion_bitacoraBindingSource)).BeginInit();
+            this.impresion_bitacoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbitacora)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.impresion_bitacoraBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // impresion_bitacoraBindingSource
-            // 
-            this.impresion_bitacoraBindingSource.DataSource = typeof(Pantallas_proyecto.impresion_bitacora);
             // 
             // groupBox1
             // 
@@ -139,9 +135,9 @@ namespace Pantallas_proyecto
             this.label3.Location = new System.Drawing.Point(467, 102);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 17);
+            this.label3.Size = new System.Drawing.Size(75, 17);
             this.label3.TabIndex = 70;
-            this.label3.Text = "Usuario:";
+            this.label3.Text = "Empleado:";
             // 
             // label2
             // 
@@ -201,9 +197,9 @@ namespace Pantallas_proyecto
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 604);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 598);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1255, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1255, 31);
             this.toolStrip1.TabIndex = 79;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -212,19 +208,23 @@ namespace Pantallas_proyecto
             // 
             this.toolStripLabel1.ForeColor = System.Drawing.Color.Black;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(111, 22);
+            this.toolStripLabel1.Size = new System.Drawing.Size(111, 28);
             this.toolStripLabel1.Text = "toolStripLabel1";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.ForeColor = System.Drawing.Color.Black;
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(111, 22);
+            this.toolStripLabel2.Size = new System.Drawing.Size(111, 28);
             this.toolStripLabel2.Text = "toolStripLabel2";
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // impresion_bitacoraBindingSource
+            // 
+            this.impresion_bitacoraBindingSource.DataSource = typeof(Pantallas_proyecto.impresion_bitacora);
             // 
             // frmBitacora
             // 
@@ -249,14 +249,14 @@ namespace Pantallas_proyecto
             this.MinimumSize = new System.Drawing.Size(1273, 676);
             this.Name = "frmBitacora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmBitacora";
+            this.Text = "Heaven Store - Bitacora";
             this.Load += new System.EventHandler(this.frmBitacora_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.impresion_bitacoraBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvbitacora)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.impresion_bitacoraBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
