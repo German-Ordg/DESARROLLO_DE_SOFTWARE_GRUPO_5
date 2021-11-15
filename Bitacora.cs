@@ -58,7 +58,7 @@ namespace Pantallas_proyecto
 
             conect2.abrir();
             int actividad = 1;
-            SqlCommand cmd = new SqlCommand("bitacora_entrar", conect2.conexion);
+            SqlCommand cmd = new SqlCommand("bitacora_PA", conect2.conexion);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@CodigoUsuario", buscarCodigoEmpleado(Cashe.UserCache.LoginName));
             cmd.Parameters.AddWithValue("@CodigoActividad", actividad);
@@ -72,11 +72,12 @@ namespace Pantallas_proyecto
         {
 
 
-            DateTime hoy = DateTime.Now;
-            string fecha = hoy.Year + "-" + hoy.Month + "-" + hoy.Day + " " + hoy.Hour + ":" + hoy.Minute + ":" + hoy.Second;
-
             conect2.abrir();
-            cmd = new SqlCommand("insert into Bitacora values ('" + fecha + "'," + buscarCodigoEmpleado(Cashe.UserCache.LoginName) + ",2 )", conect2.conexion);
+            int actividad = 2;
+            SqlCommand cmd = new SqlCommand("bitacora_PA", conect2.conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@CodigoUsuario", buscarCodigoEmpleado(Cashe.UserCache.LoginName));
+            cmd.Parameters.AddWithValue("@CodigoActividad", actividad);
             cmd.ExecuteNonQuery();
             conect2.cerrar();
 
@@ -87,11 +88,12 @@ namespace Pantallas_proyecto
         {
 
 
-            DateTime hoy = DateTime.Now;
-            
-            string fecha = hoy.Year + "-" + hoy.Month + "-" + hoy.Day + " " + hoy.Hour + ":" + hoy.Minute + ":" + hoy.Second;
             conect2.abrir();
-            cmd = new SqlCommand("insert into Bitacora values ('" + fecha + "'," + buscarCodigoEmpleado(Cashe.UserCache.LoginName) + ",3 )", conect2.conexion);
+            int actividad = 3;
+            SqlCommand cmd = new SqlCommand("bitacora_PA", conect2.conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@CodigoUsuario", buscarCodigoEmpleado(Cashe.UserCache.LoginName));
+            cmd.Parameters.AddWithValue("@CodigoActividad", actividad);
             cmd.ExecuteNonQuery();
             conect2.cerrar();
 
