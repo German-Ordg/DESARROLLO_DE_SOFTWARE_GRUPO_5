@@ -103,8 +103,8 @@ namespace Pantallas_proyecto
 
             conect2.abrir();
 
-            subTotal = precioCompra * cantidad;
-            cmd = new SqlCommand(" Insert into Detalle_Compra (codigo_compra, codigo_producto,codigo_proveedor, codigo_pago, cantidad, precio_compra, sub_total) values(" + codigoCompra + "," + codigo_producto + "," + codigoProveedor + "," + codigoPago + "," + cantidadCompra + "," + precioCompra + "," + subTotal + ") ", conect2.conexion); //Asignacion de valores en la bd
+            
+            cmd = new SqlCommand(" Insert into Detalle_Compra (codigo_compra, codigo_producto,codigo_proveedor, codigo_pago, cantidad, precio_compra) values(" + codigoCompra + "," + codigo_producto + "," + codigoProveedor + "," + codigoPago + "," + cantidadCompra + "," + precioCompra + ") ", conect2.conexion); //Asignacion de valores en la bd
             cmd.ExecuteNonQuery();
             conect2.cerrar();
 

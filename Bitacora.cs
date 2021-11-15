@@ -56,12 +56,12 @@ namespace Pantallas_proyecto
         public void inicioSecion()
         {
 
-
-            DateTime hoy = DateTime.Now;
-            string fecha = hoy.Day + "/" + hoy.Month + "/" + hoy.Year + " " + hoy.Hour + ":" + hoy.Minute + ":" + hoy.Second;
-
             conect2.abrir();
-            cmd = new SqlCommand("insert into Bitacora values ('" + fecha + "'," + buscarCodigoEmpleado(Cashe.UserCache.LoginName) + ",1 )", conect2.conexion);
+            int actividad = 1;
+            SqlCommand cmd = new SqlCommand("bitacora_entrar", conect2.conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@CodigoUsuario", buscarCodigoEmpleado(Cashe.UserCache.LoginName));
+            cmd.Parameters.AddWithValue("@CodigoActividad", actividad);
             cmd.ExecuteNonQuery();
             conect2.cerrar();
 
@@ -73,7 +73,7 @@ namespace Pantallas_proyecto
 
 
             DateTime hoy = DateTime.Now;
-            string fecha = hoy.Day + "/" + hoy.Month + "/" + hoy.Year + " " + hoy.Hour + ":" + hoy.Minute + ":" + hoy.Second;
+            string fecha = hoy.Year + "-" + hoy.Month + "-" + hoy.Day + " " + hoy.Hour + ":" + hoy.Minute + ":" + hoy.Second;
 
             conect2.abrir();
             cmd = new SqlCommand("insert into Bitacora values ('" + fecha + "'," + buscarCodigoEmpleado(Cashe.UserCache.LoginName) + ",2 )", conect2.conexion);
@@ -88,8 +88,8 @@ namespace Pantallas_proyecto
 
 
             DateTime hoy = DateTime.Now;
-            string fecha = hoy.Day + "/" + hoy.Month + "/" + hoy.Year + " " + hoy.Hour + ":" + hoy.Minute + ":" + hoy.Second;
-
+            
+            string fecha = hoy.Year + "-" + hoy.Month + "-" + hoy.Day + " " + hoy.Hour + ":" + hoy.Minute + ":" + hoy.Second;
             conect2.abrir();
             cmd = new SqlCommand("insert into Bitacora values ('" + fecha + "'," + buscarCodigoEmpleado(Cashe.UserCache.LoginName) + ",3 )", conect2.conexion);
             cmd.ExecuteNonQuery();
