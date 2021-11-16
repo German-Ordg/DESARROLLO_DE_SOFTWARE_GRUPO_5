@@ -4,3 +4,7 @@
 
 /.vs/Proyecto1/v16
 /.vs/Pantallas_proyecto/config/applicationhost.config
+/sqlBakHeaven.bak
+/sqlCertificadoKey.key
+/sqlClaveMaestraBD.key
+/sqlClaveMaestraServicios.key

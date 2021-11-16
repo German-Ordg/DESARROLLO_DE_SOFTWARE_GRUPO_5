@@ -20,7 +20,7 @@ namespace Pantallas_proyecto
         {
             String comboboxVendedor = "SELECT [dbo].[Empleados].nombre_empleado+' '+[dbo].[Empleados].apellido_empleado nombre " +
                 "FROM[dbo].[Empleados] JOIN[dbo].[Usuarios] ON [dbo].[Empleados].codigo_empelado =[dbo].[Usuarios].codigo_empleado " +
-                "WHERE[dbo].[Usuarios].[Estado] = 'ACTIVO'";
+                "WHERE[dbo].[Usuarios].[codigo_estado] = '1'";
 
             conect2.abrir();
             try

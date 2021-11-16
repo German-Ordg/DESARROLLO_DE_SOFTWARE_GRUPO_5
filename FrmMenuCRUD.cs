@@ -157,5 +157,12 @@ namespace Pantallas_proyecto
             descuentos.Show();
             this.Hide();
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        { //Nos abre el formulario de descuentos al hacer click
+            FrmDescuentos descuentos = new FrmDescuentos();
+            descuentos.Show();
+            this.Hide();
+        }
     }
 }

@@ -85,7 +85,7 @@ namespace Pantallas_proyecto
                 letra = true;
                 errorProvider1.SetError(txtDescuento, "No se selecciono un producto");
             }
-            else if (Convert.ToDouble(txtDescuento.Text) > venta) { errorProvider1.SetError(txtDescuento, "Descuento es mayor que el precio de venta");letra = true; }
+            else if (Convert.ToDouble(txtDescuento.Text) >= venta) { errorProvider1.SetError(txtDescuento, "Descuento es mayor o igual que el precio de venta");letra = true; }
 
             if (letra == false)
             {

@@ -34,7 +34,7 @@ namespace Pantallas_proyecto
         }
 
         ClsConexionBD connect = new ClsConexionBD();
-        int Record_Id;
+        int Record_Id=0;
 
         public void MostrarDatos()
         {

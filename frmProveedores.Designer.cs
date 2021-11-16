@@ -147,6 +147,7 @@ namespace Pantallas_proyecto
             // 
             // dgvProovedores
             // 
+            this.dgvProovedores.AllowUserToAddRows = false;
             this.dgvProovedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
