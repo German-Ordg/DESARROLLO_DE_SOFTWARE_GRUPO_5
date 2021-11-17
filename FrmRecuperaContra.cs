@@ -38,8 +38,8 @@ namespace Pantallas_proyecto
         private bool letra5 = false;
         private void button1_Click(object sender, EventArgs e)
         {
-            //FrmAcceso acceso = new FrmAcceso();
-           // acceso.Show();
+            FrmAcceso acceso = new FrmAcceso();
+            acceso.Show();
             this.Close();
         }
 
@@ -62,6 +62,7 @@ namespace Pantallas_proyecto
                 txtcodigo.Visible = true;
                 lblcodigo.Visible = true;
                 btnverificar.Visible = true;
+                txtcodigo.Focus();
             }
             else
             {
