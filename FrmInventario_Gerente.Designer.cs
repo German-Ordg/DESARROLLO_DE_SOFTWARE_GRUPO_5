@@ -54,10 +54,9 @@ namespace Pantallas_proyecto
             this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRegresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnRegresar.Location = new System.Drawing.Point(819, 34);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegresar.Location = new System.Drawing.Point(614, 28);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(123, 36);
+            this.btnRegresar.Size = new System.Drawing.Size(92, 29);
             this.btnRegresar.TabIndex = 33;
             this.btnRegresar.Text = "Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
@@ -67,12 +66,11 @@ namespace Pantallas_proyecto
             // 
             this.dtgInventarioGerente.AllowUserToAddRows = false;
             this.dtgInventarioGerente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgInventarioGerente.Location = new System.Drawing.Point(23, 191);
-            this.dtgInventarioGerente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgInventarioGerente.Location = new System.Drawing.Point(17, 155);
             this.dtgInventarioGerente.Name = "dtgInventarioGerente";
             this.dtgInventarioGerente.ReadOnly = true;
             this.dtgInventarioGerente.RowHeadersWidth = 51;
-            this.dtgInventarioGerente.Size = new System.Drawing.Size(941, 302);
+            this.dtgInventarioGerente.Size = new System.Drawing.Size(706, 245);
             this.dtgInventarioGerente.TabIndex = 30;
             this.dtgInventarioGerente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -81,10 +79,9 @@ namespace Pantallas_proyecto
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 62F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(224, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(168, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(465, 118);
+            this.label2.Size = new System.Drawing.Size(370, 94);
             this.label2.TabIndex = 27;
             this.label2.Text = "HEAVEN";
             // 
@@ -96,10 +93,9 @@ namespace Pantallas_proyecto
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnModificar.Location = new System.Drawing.Point(819, 126);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Location = new System.Drawing.Point(614, 102);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(123, 36);
+            this.btnModificar.Size = new System.Drawing.Size(92, 29);
             this.btnModificar.TabIndex = 35;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -112,22 +108,22 @@ namespace Pantallas_proyecto
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 496);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 405);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(975, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(733, 25);
             this.toolStrip1.TabIndex = 36;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(111, 22);
+            this.toolStripLabel1.Size = new System.Drawing.Size(86, 22);
             this.toolStripLabel1.Text = "toolStripLabel1";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(111, 22);
+            this.toolStripLabel2.Size = new System.Drawing.Size(86, 22);
             this.toolStripLabel2.Text = "toolStripLabel2";
             // 
             // timer1
@@ -139,10 +135,9 @@ namespace Pantallas_proyecto
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(59, 138);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(44, 112);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(156, 26);
+            this.label4.Size = new System.Drawing.Size(120, 20);
             this.label4.TabIndex = 37;
             this.label4.Text = "Búsqueda Por:";
             // 
@@ -151,30 +146,27 @@ namespace Pantallas_proyecto
             this.CBBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBBusqueda.FormattingEnabled = true;
             this.CBBusqueda.Items.AddRange(new object[] {
-            "Codigo",
             "Categoria"});
-            this.CBBusqueda.Location = new System.Drawing.Point(227, 139);
-            this.CBBusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CBBusqueda.Location = new System.Drawing.Point(170, 113);
             this.CBBusqueda.Name = "CBBusqueda";
-            this.CBBusqueda.Size = new System.Drawing.Size(144, 24);
+            this.CBBusqueda.Size = new System.Drawing.Size(109, 21);
             this.CBBusqueda.TabIndex = 38;
             this.CBBusqueda.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txtIngreso
             // 
-            this.txtIngreso.Location = new System.Drawing.Point(401, 142);
-            this.txtIngreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIngreso.Location = new System.Drawing.Point(301, 115);
             this.txtIngreso.Name = "txtIngreso";
-            this.txtIngreso.Size = new System.Drawing.Size(273, 22);
+            this.txtIngreso.Size = new System.Drawing.Size(206, 20);
             this.txtIngreso.TabIndex = 29;
             this.txtIngreso.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // FrmInventario_Gerente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(975, 521);
+            this.ClientSize = new System.Drawing.Size(733, 430);
             this.Controls.Add(this.CBBusqueda);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.toolStrip1);
@@ -184,10 +176,9 @@ namespace Pantallas_proyecto
             this.Controls.Add(this.txtIngreso);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(993, 568);
-            this.MinimumSize = new System.Drawing.Size(993, 568);
+            this.MaximumSize = new System.Drawing.Size(749, 469);
+            this.MinimumSize = new System.Drawing.Size(749, 469);
             this.Name = "FrmInventario_Gerente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Heaven Store - Inventario";

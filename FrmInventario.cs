@@ -69,11 +69,6 @@ namespace Pantallas_proyecto
             int selection = CBSeleccion.SelectedIndex;
             if (selection == 0)
             {
-                var aux = new MetodoBuscarCodigo();
-                aux.filtrar1(dtgInventario, this.txtBusqueda.Text.Trim());
-            }
-            else
-            {
                 var aux = new MetodoBucasrProducto();
                 aux.filtrar(dtgInventario, this.txtBusqueda.Text.Trim());
             }
@@ -89,11 +84,6 @@ namespace Pantallas_proyecto
             else
             {
                 if (selection == 0)
-                {
-                    txtBusqueda.Enabled = true;
-                    txtBusqueda.Clear();
-                }
-                else
                 {
                     txtBusqueda.Enabled = true;
                     txtBusqueda.Clear();

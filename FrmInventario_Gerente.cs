@@ -89,14 +89,9 @@ namespace Pantallas_proyecto
 //-------------------------------------------------------------------------------------------------------------------
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            ////Este codigo permite el ingreso del codigo o categoria que desea buscar en el dtgInventarioGerente
+            ////Este codigo permite el ingreso del categoria que desea buscar en el dtgInventarioGerente
             int selection = CBBusqueda.SelectedIndex;
             if (selection == 0)
-            {
-                var aux = new MetodoBuscarCodigo();
-                aux.filtrar1(dtgInventarioGerente, this.txtIngreso.Text.Trim());
-            }
-            else
             {
                 var aux = new MetodoBucasrProducto();
                 aux.filtrar(dtgInventarioGerente, this.txtIngreso.Text.Trim());
@@ -109,7 +104,7 @@ namespace Pantallas_proyecto
          }
         private void comboBox1_events()
         {
-            //Este codigo permite la busqueda por medio combobox de inventario la seleccion de codigo o categoria
+            //Este codigo permite la busqueda por medio combobox de inventario la seleccion de  categoria
             int selection = CBBusqueda.SelectedIndex;
             if(selection == -1)
             {
@@ -118,11 +113,6 @@ namespace Pantallas_proyecto
             else
             {
                 if(selection == 0)
-                {
-                    txtIngreso.Enabled = true;
-                    txtIngreso.Clear() ;
-                }
-                else
                 {
                     txtIngreso.Enabled = true;
                     txtIngreso.Clear();
