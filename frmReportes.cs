@@ -143,14 +143,14 @@ namespace Pantallas_proyecto
                 
                 break;
                     case "Ventas":
-                        dateTimePicker1.Enabled = false;
-                        dateTimePicker2.Enabled = false;
+                        dateTimePicker1.Enabled = true;
+                        dateTimePicker2.Enabled = true;
                         txtcodigo.Clear();
                         txtcodigo.Enabled = false;
                         CBcategoria.Enabled = false;
                         CBcategoria.SelectedIndex=-1;
                         ErrorProvider.Clear();
-                        lblmensaje.Text = "";
+                        lblmensaje.Text = "Ingrese una 'Fecha desde' y una 'Fecha hasta'";
                         List<impresion_ventas> impresion5 = new List<impresion_ventas>();
 
                         impresion5.Clear();
@@ -170,7 +170,14 @@ namespace Pantallas_proyecto
                             imp.dato10 = this.dgvventas.Rows[i].Cells[9].Value.ToString();
                             impresion5.Add(imp);
                         }
+                        ReportParameter[] parameters2222 = new ReportParameter[2];
                         this.reportes.SelectedTab = reportes.TabPages["tab2"];
+                        string Fecha123 = dateTimePicker1.Value.ToString();
+                        string Fecha234 = dateTimePicker2.Value.ToString();
+                        parameters2222[0] = new ReportParameter("fecha1", Fecha123);
+                        parameters2222[1] = new ReportParameter("fecha2", Fecha234);
+                        reportViewer2.LocalReport.SetParameters(parameters2222);
+                        
                         reportViewer2.LocalReport.DataSources.Clear();
                         reportViewer2.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", impresion5));
                         this.reportViewer2.RefreshReport();
@@ -315,7 +322,7 @@ namespace Pantallas_proyecto
                                 impresion2.Add(imp);
                             }
                             ReportParameter[] parameters1 = new ReportParameter[1];
-                            this.reportes.SelectedTab = reportes.TabPages["tab8"];
+                            this.reportes.SelectedTab = reportes.TabPages["tab7"];
                             string Codigo = txtcodigo.Text;
                             parameters1[0] = new ReportParameter("codigo", Codigo);
                             reportViewer7.LocalReport.SetParameters(parameters1);
@@ -354,7 +361,7 @@ namespace Pantallas_proyecto
                             impresion3.Add(imp);
                         }
                         ReportParameter[] parameters2 = new ReportParameter[2];
-                        this.reportes.SelectedTab = reportes.TabPages["tab8"];
+                        this.reportes.SelectedTab = reportes.TabPages["tab7"];
                         string Fecha11 = dateTimePicker1.Value.ToString();
                         string Fecha22 = dateTimePicker2.Value.ToString();
                         parameters2[0] = new ReportParameter("fecha1", Fecha11);
