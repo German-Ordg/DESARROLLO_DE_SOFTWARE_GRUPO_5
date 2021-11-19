@@ -605,7 +605,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Reporte de Categorias</Value>
+                      <Value>Reporte del Inventario por categorias</Value>
                       <Style>
                         <FontSize>20pt</FontSize>
                         <FontWeight>Bold</FontWeight>
@@ -619,8 +619,8 @@
               </Paragraphs>
               <Top>0.45332cm</Top>
               <Left>3.42547cm</Left>
-              <Height>1.51017cm</Height>
-              <Width>9.158cm</Width>
+              <Height>2.00088cm</Height>
+              <Width>9.285cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
