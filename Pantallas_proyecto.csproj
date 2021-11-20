@@ -768,5 +768,8 @@
   <ItemGroup>
     <None Include="Resources\botonCategorias.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icono descuento.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

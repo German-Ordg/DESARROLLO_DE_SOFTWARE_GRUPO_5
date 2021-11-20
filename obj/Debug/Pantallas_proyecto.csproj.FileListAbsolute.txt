@@ -576,8 +576,6 @@ C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRU
 C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.csproj.AssemblyReference.cache
 C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmAcceso.resources
-C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmCalculadora.resources
-C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmClientes.resources
 C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmCompras.resources
 C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmEmpleados.resources
 C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmImpresionFactura.resources
@@ -2366,3 +2364,12 @@ C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas
 C:\Users\Usuario\Source\Repos\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.application
 C:\Users\david\Desktop\proyecto implementacion\obj\Debug\Pantallas_proyecto.frmBitacora.resources
 C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.frmBitacora.resources
+C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\bin\Debug\Pantallas_proyecto.exe.manifest
+C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\bin\Debug\Pantallas_proyecto.application
+C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.frmBitacora.resources
+C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmDescuentos.resources
+C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.TxtResultBox.resources
+C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmCategorias.resources
+C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.FrmProductos.resources
+C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.exe.manifest
+C:\Users\Administrador\Desktop\Repositorio Desarrollo\DESARROLLO_DE_SOFTWARE_GRUPO_5\obj\Debug\Pantallas_proyecto.application
