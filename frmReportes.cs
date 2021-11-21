@@ -65,6 +65,9 @@ namespace Pantallas_proyecto
             conect.cargarDatosreporte5(dgvcategorias);
             conect.abrir();
             conect.cargarDatosreporte5(dgvinventario);
+            conect.abrir();
+            conect.cargarDatosreporteempleado(dgvempleado);
+            dgvempleado.ForeColor = Color.Black;
             dgvcompra.ForeColor = Color.Black;
             dgvrotacion.ForeColor = Color.Black;
             dgvventas.ForeColor = Color.Black;
@@ -84,6 +87,8 @@ namespace Pantallas_proyecto
             CBcategoria.Enabled = false;
             dateTimePicker1.Enabled = false;
             dateTimePicker2.Enabled = false;
+            this.reportViewer8.RefreshReport();
+            this.reportViewer8.RefreshReport();
         }
 
         //buton para mostrar el reporte que se desea
@@ -107,7 +112,7 @@ namespace Pantallas_proyecto
             {
                 switch (CBtipo.Text)
                 {
-                    case "Categoria":
+                    case "Inventario por Categoria":
                         dateTimePicker1.Enabled = false;
                         dateTimePicker2.Enabled = false;
                         CBcategoria.Enabled = true;
@@ -148,7 +153,7 @@ namespace Pantallas_proyecto
                         txtcodigo.Clear();
                         txtcodigo.Enabled = false;
                         CBcategoria.Enabled = false;
-                        CBcategoria.SelectedIndex=-1;
+                        CBcategoria.SelectedIndex = -1;
                         ErrorProvider.Clear();
                         lblmensaje.Text = "Ingrese una 'Fecha desde' y una 'Fecha hasta'";
                         List<impresion_ventas> impresion5 = new List<impresion_ventas>();
@@ -177,7 +182,7 @@ namespace Pantallas_proyecto
                         parameters2222[0] = new ReportParameter("fecha1", Fecha123);
                         parameters2222[1] = new ReportParameter("fecha2", Fecha234);
                         reportViewer2.LocalReport.SetParameters(parameters2222);
-                        
+
                         reportViewer2.LocalReport.DataSources.Clear();
                         reportViewer2.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", impresion5));
                         this.reportViewer2.RefreshReport();
@@ -330,8 +335,8 @@ namespace Pantallas_proyecto
                             reportViewer7.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", impresion2));
                             this.reportViewer7.RefreshReport();
                         }
-                            break;
-                        
+                        break;
+
                     case "Compras con Fecha":
                         reportViewer9.Visible = true;
                         reportViewer7.Visible = false;
@@ -401,6 +406,33 @@ namespace Pantallas_proyecto
                         reportViewer4.LocalReport.DataSources.Clear();
                         reportViewer4.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", impresion6));
                         this.reportViewer4.RefreshReport();
+                        break;
+                    case "Empleados":
+                        dateTimePicker1.Enabled = false;
+                        dateTimePicker2.Enabled = false;
+                        CBcategoria.Enabled = false;
+                        CBcategoria.SelectedIndex = -1;
+                        txtcodigo.Enabled = false;
+                        lblmensaje.Text = "";
+                        List<impresion1> impresion88 = new List<impresion1>();
+
+                        impresion88.Clear();
+
+                        for (int i = 0; i < dgvempleado.Rows.Count - 1; i++)
+                        {
+                            impresion1 imp = new impresion1();
+                            imp.dato1 = this.dgvempleado.Rows[i].Cells[0].Value.ToString();
+                            imp.dato2 = this.dgvempleado.Rows[i].Cells[1].Value.ToString();
+                            imp.dato3 = this.dgvempleado.Rows[i].Cells[2].Value.ToString();
+                            imp.dato4 = this.dgvempleado.Rows[i].Cells[3].Value.ToString();
+                            imp.dato5 = this.dgvempleado.Rows[i].Cells[4].Value.ToString();
+                            imp.dato6 = this.dgvempleado.Rows[i].Cells[5].Value.ToString();
+                            impresion88.Add(imp);
+                        }
+                        this.reportes.SelectedTab = reportes.TabPages["tab10"];
+                        reportViewer8.LocalReport.DataSources.Clear();
+                        reportViewer8.LocalReport.DataSources.Add(new ReportDataSource("DataSet1", impresion88));
+                        this.reportViewer8.RefreshReport();
                         break;
                 }
             }

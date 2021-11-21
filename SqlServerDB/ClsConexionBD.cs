@@ -190,7 +190,7 @@ namespace Pantallas_proyecto
             //Carga de datos de reporte1 a la Base De Datos
             try
             {
-                da = new SqlDataAdapter("Select * From View_compras", conexion);
+                da = new SqlDataAdapter("Select * From View_compras2", conexion);
                 dt = new DataTable();
                 da.Fill(dt);
                 dgv.DataSource = dt;
@@ -263,6 +263,24 @@ namespace Pantallas_proyecto
                 MessageBox.Show("No se pueden cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public void cargarDatosreporteempleado(DataGridView dgv)
+        {
+            //Carga de datos de reporte4 a la Base De Datos
+            try
+            {
+                da = new SqlDataAdapter("Select * From View_reporte_empleados", conexion);
+                dt = new DataTable();
+                da.Fill(dt);
+                dgv.DataSource = dt;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pueden cargar los datos", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         public void cargarMetodosPago(DataGridView dgv)
         {
             //Carga de metodo de pagos a la Base De Datos
