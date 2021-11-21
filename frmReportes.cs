@@ -109,7 +109,7 @@ namespace Pantallas_proyecto
             
 
             if (letra2)
-            {
+            {//aqui es donde se carga cada dato de los reportes
                 switch (CBtipo.Text)
                 {
                     case "Inventario por Categoria":

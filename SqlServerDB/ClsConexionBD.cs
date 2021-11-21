@@ -266,7 +266,7 @@ namespace Pantallas_proyecto
 
         public void cargarDatosreporteempleado(DataGridView dgv)
         {
-            //Carga de datos de reporte4 a la Base De Datos
+            //Carga de datos de reporte de empleados de la Base De Datos
             try
             {
                 da = new SqlDataAdapter("Select * From View_reporte_empleados", conexion);
