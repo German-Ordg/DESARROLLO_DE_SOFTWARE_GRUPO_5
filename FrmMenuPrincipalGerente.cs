@@ -106,9 +106,9 @@ namespace Pantallas_proyecto
 
         private void button9_Click(object sender, EventArgs e)
         {
-        
-            string ruta = @"file:///C:/Users/david/Desktop/Heaven_Store_proyecto/Manual_Usuario_Heaven/Manual_Usuario_Heaven/index.htm";
-            Process.Start(ruta);
+
+            Ayuda ayuda = new Ayuda();
+            ayuda.Show();
 
         }
     }

@@ -2560,3 +2560,4 @@ C:\Users\david\Desktop\Heaven_Store_proyecto\obj\Debug\Pantallas_proyecto.applic
 C:\Users\david\Desktop\Heaven_Store_proyecto\obj\Debug\Pantallas_proyecto.csproj.CopyComplete
 C:\Users\david\Desktop\Heaven_Store_proyecto\obj\Debug\Pantallas_proyecto.exe
 C:\Users\david\Desktop\Heaven_Store_proyecto\obj\Debug\Pantallas_proyecto.pdb
+C:\Users\david\Desktop\Heaven_Store_proyecto\obj\Debug\Pantallas_proyecto.Ayuda.resources
