@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
+
 
 namespace Pantallas_proyecto
 {
@@ -100,6 +102,14 @@ namespace Pantallas_proyecto
             frmBitacora recuperacion = new frmBitacora();
             recuperacion.Show();
             this.Hide();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+        
+            string ruta = @"file:///C:/Users/david/Desktop/Heaven_Store_proyecto/Manual_Usuario_Heaven/Manual_Usuario_Heaven/index.htm";
+            Process.Start(ruta);
+
         }
     }
 }
