@@ -15,6 +15,7 @@ namespace Pantallas_proyecto
 
             InitializeComponent();
 
+            
         }
         private bool letra = false;
         private bool letra2 = false;
@@ -49,12 +50,14 @@ namespace Pantallas_proyecto
         }
 
         //Cargar datos de Productos En el data
-        public void cargarDatosProductos(DataGridView dgv, string nombreTabla)//Metodo cargar dato productos
+        public void cargarDatosProductos(DataGridView dgv)//Metodo cargar dato productos
         {
             try
             {
-                da = new SqlDataAdapter("Select codigo_producto Codigo,Categoria_Producto.descripcion_categoria Categoria, descripcion_producto Descripción, cantidad_existente Cantidad,precio_actual Precio , descuento_producto Descuento , talla  " +
-                    "From " + nombreTabla + ", Categoria_Producto Where Categoria_Producto.codigo_categoria = Productos.codigo_categoria ", conect2.conexion);
+                SqlCommand cmd = new SqlCommand("Pro_ver_productos", conect2.conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                da = new SqlDataAdapter(cmd);        
                 dt = new DataTable();
                 da.Fill(dt);
                 dgv.DataSource = dt;
@@ -351,14 +354,21 @@ namespace Pantallas_proyecto
         //Carga del Formulario
         private void FrmProductos_Load(object sender, EventArgs e)
         {
-            this.Location = new Point(0, 0); //sobra si tienes la posición en el diseño
-            this.Size = new Size(this.Width, Screen.PrimaryScreen.WorkingArea.Size.Height);
+
             txtDescripcion.Enabled = false;
             txtCodigo.Enabled = false;
             timer1.Enabled = true;
-            
+   
+            //Obtener valores de pantalla para poder centrarlo bien ya que teniamos problemas con el starposicion
+            Screen resPantalla = Screen.PrimaryScreen;
+            int height = resPantalla.Bounds.Height;
+            int width = resPantalla.Bounds.Width;
+            int posY = height -1000; 
+            int posX = width -1650; 
+            this.Location = new Point(posX, posY);
+            //
 
-            cargarDatosProductos(dgvProductos, "Productos");
+            cargarDatosProductos(dgvProductos);
             cargarCategorias();
         }
 
@@ -411,7 +421,7 @@ namespace Pantallas_proyecto
                                 producto.Descripcion_Categoria = Convert.ToString(row.Cells["categoriadgv"].Value);
                                 producto.buscarCategoria();
                                 producto.agregarProducto();
-                                cargarDatosProductos(dgvProductos, "Productos");
+                                cargarDatosProductos(dgvProductos);
                             }
 
                             else
@@ -426,7 +436,7 @@ namespace Pantallas_proyecto
                                 producto.Descuento = Convert.ToDouble(row.Cells["descuentodgv"].Value);
 
                                 producto.actualizarProducto();
-                                cargarDatosProductos(dgvProductos, "Productos");
+                                cargarDatosProductos(dgvProductos);
 
                             }
 
@@ -528,11 +538,13 @@ namespace Pantallas_proyecto
         //Accion de cancelar la compra
         private void button4_Click(object sender, EventArgs e)
         {
-
-            FrmCompras compras = new FrmCompras();
-            compras.txtNumeroFactura.Text = compra.Text;
-            compras.Show();
-            this.Close();
+            if (MessageBox.Show("¿Seguro que desea Cancelar la compra?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FrmCompras compras = new FrmCompras();
+                compras.txtNumeroFactura.Text = compra.Text;
+                compras.Show();
+                this.Close();
+            }
         }
 
         //Solo permitir numeros en el filtro
@@ -718,6 +730,19 @@ namespace Pantallas_proyecto
             else
             {
                 MessageBox.Show("No ha seleccionado un FILA a borrar", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void txtcategoria_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((int)e.KeyChar == (int)Keys.Enter)
+            {
+             poc1 = dtgprov.CurrentRow.Index;
+            categoriaSeleccionada = dtgprov[0, poc1].Value.ToString();
+            txtcategoria.Text = dtgprov[0, poc1].Value.ToString();
+            txtcategoria.Enabled = false;
+            btnreseleccionar.Visible = true;
+            dtgprov.Enabled = false;
             }
         }
     }

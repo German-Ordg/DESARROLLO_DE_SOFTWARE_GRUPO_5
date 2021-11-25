@@ -75,7 +75,7 @@ namespace Pantallas_proyecto
              compras que se hayan realizado con anterioridad*/
             try
             {
-                da = new SqlDataAdapter("SELECT nombre_proveedor as 'Nombre del Proveedor' FROM Proveedores", conect2.conexion);
+                da = new SqlDataAdapter("SELECT nombre_proveedor as 'Nombre del Proveedor' FROM Proveedores where codigo_estado=1", conect2.conexion);
                 dt = new DataTable();
                 da.Fill(dt);
                 dgvProveedor.DataSource = dt;

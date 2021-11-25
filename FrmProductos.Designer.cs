@@ -387,6 +387,7 @@ namespace Pantallas_proyecto
             this.txtcategoria.Size = new System.Drawing.Size(159, 20);
             this.txtcategoria.TabIndex = 5;
             this.txtcategoria.TextChanged += new System.EventHandler(this.txtcategoria_TextChanged);
+            this.txtcategoria.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcategoria_KeyPress);
             // 
             // btnquitar
             // 
@@ -729,7 +730,7 @@ namespace Pantallas_proyecto
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 775);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 784);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1400, 25);
             this.toolStrip1.TabIndex = 186;
@@ -791,7 +792,7 @@ namespace Pantallas_proyecto
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1412, 809);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.btnEliminarCompra);
             this.Controls.Add(this.toolStrip1);

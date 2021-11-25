@@ -60,8 +60,15 @@ namespace Pantallas_proyecto
         public void agregarProducto()
         {
             conect2.abrir();
-            cmd = new SqlCommand(" SET IDENTITY_INSERT Productos ON Insert into Productos (codigo_producto, codigo_categoria, descripcion_producto," +
-                " cantidad_existente, precio_actual, descuento_producto, talla ) values(" + codigo_producto + ", " + Categoria + ", '" + descripcion + "'," + cantidad + "," + precio_actual + "," + descuento + ",'" + talla + "') SET IDENTITY_INSERT Productos OFF ", conect2.conexion); //Asignacion de valores en la bd
+            SqlCommand cmd = new SqlCommand("PA_NewProduct", conect2.conexion);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@codigo_producto", codigo_producto);
+            cmd.Parameters.AddWithValue("@codigo_categoria", Categoria);
+            cmd.Parameters.AddWithValue("@descripcion", descripcion);
+            cmd.Parameters.AddWithValue("@cantidad", cantidad);
+            cmd.Parameters.AddWithValue("@precio_actual", precio_actual);
+            cmd.Parameters.AddWithValue("@descuento", descuento);
+            cmd.Parameters.AddWithValue("@talla", talla);
             cmd.ExecuteNonQuery();
             conect2.cerrar();
 

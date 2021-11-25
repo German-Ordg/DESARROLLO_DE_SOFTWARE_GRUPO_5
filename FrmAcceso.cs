@@ -189,10 +189,9 @@ namespace Pantallas_proyecto
 
         //Esto hace referencia a la programacion para la recuperacion de la contraseña
         private void btnRecuperar_Click(object sender, EventArgs e)
-        {
+        {          
             FrmRecuperaContra recuperacion = new FrmRecuperaContra();
-            recuperacion.Show();
-            recuperacion.FormClosed += cerrarSesion;
+            recuperacion.Show();          
             this.Hide();
         }
 
