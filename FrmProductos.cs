@@ -360,12 +360,12 @@ namespace Pantallas_proyecto
             timer1.Enabled = true;
    
             //Obtener valores de pantalla para poder centrarlo bien ya que teniamos problemas con el starposicion
-            Screen resPantalla = Screen.PrimaryScreen;
+            /*Screen resPantalla = Screen.PrimaryScreen;
             int height = resPantalla.Bounds.Height;
             int width = resPantalla.Bounds.Width;
             int posY = height -1000; 
             int posX = width -1650; 
-            this.Location = new Point(posX, posY);
+            this.Location = new Point(posX, posY);*/
             //
 
             cargarDatosProductos(dgvProductos);
