@@ -449,6 +449,7 @@
     <EmbeddedResource Include="Reportinventario.rdlc" />
     <EmbeddedResource Include="Report_ventas.rdlc" />
     <EmbeddedResource Include="Repote_factura.rdlc" />
+    <EmbeddedResource Include="SqlServerDB\Report_empleado.rdlc" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
