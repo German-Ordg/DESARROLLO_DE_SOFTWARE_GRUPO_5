@@ -77,7 +77,7 @@ namespace Pantallas_proyecto
             //Esta Parte del codigo valida si en el textbox se encuentra en blanco
             ErrorProvider1.Clear();
             letra1 = false;
-
+            
             if (validacion.Espacio_Blanco(ErrorProvider1, txtdescripcion))
             {
                 if (validacion.Espacio_Blanco(ErrorProvider1, txtdescripcion))
@@ -92,7 +92,7 @@ namespace Pantallas_proyecto
             {
                 try
                 {
-                    conect.cerrar();
+                   conect.cerrar();
                     conect.abrir();
                     string codigoCategoria = "";
                     SqlCommand comando = new SqlCommand("Select codigo_categoria from Categoria_Producto where descripcion_categoria='" + cmbcategoria.Text + "'", conect.conexion);
@@ -101,7 +101,7 @@ namespace Pantallas_proyecto
                     {
                         codigoCategoria = registro["codigo_categoria"].ToString();
                     }
-                    conect.cerrar();
+                   conect.cerrar();
                     conect.abrir();
 
                     cmd = new SqlCommand("Update Productos set codigo_categoria = '" + codigoCategoria + "', descripcion_producto = '" + txtdescripcion.Text + "'Where codigo_producto = " + txtcodigo.Text, conect.conexion);
@@ -110,14 +110,23 @@ namespace Pantallas_proyecto
                     MessageBox.Show("Se Ha actualizado Correctamente");
                     conect.cerrar();
 
-                    this.Close();
-                    FrmInventario_Gerente invtGer = new FrmInventario_Gerente();
-                    invtGer.Show();
+                    //this.Close();
+                    // FrmInventario_Gerente invtGer = new FrmInventario_Gerente();
+                    // invtGer.Show();
+
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Error al buscar producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                    txtcodigo.Clear();
+                
+                    cmbcategoria.Items.Clear();
+                    txtdescripcion.Clear();
+                    conect.abrir();
+                    conect.CargaDeCategoria(cmbcategoria);
+                    conect.cerrar();
             }     
         }
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -140,23 +149,28 @@ namespace Pantallas_proyecto
             if (numero1)
             {
                 conect.abrir();
+
                 cmd = new SqlCommand("select * from VistaProductoCatego where codigo_producto = @codigo_producto ", conect.conexion);
                 cmd.Parameters.AddWithValue("@codigo_producto", txtcodigo.Text);
                 SqlDataReader Productos = cmd.ExecuteReader();
                 if (Productos.Read())
                 {
-                    txtcodigo.Enabled = false;
+                    txtcodigo.Enabled = true;
                     txtdescripcion.Enabled = true;
                     cmbcategoria.Enabled = true;
+
                     cmbcategoria.Text = Productos["descripcion_categoria"].ToString();
                     txtdescripcion.Text = Productos["descripcion_producto"].ToString();
+
                 }
                 else
                 {
                     MessageBox.Show("Error al buscar producto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
-                conect.cerrar();
+              
+
+               conect.cerrar();
             }
         }
 

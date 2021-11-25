@@ -729,9 +729,9 @@ namespace Pantallas_proyecto
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 779);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 775);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1412, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1400, 25);
             this.toolStrip1.TabIndex = 186;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -789,8 +789,9 @@ namespace Pantallas_proyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1412, 804);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.lbltotal);
             this.Controls.Add(this.btnEliminarCompra);
             this.Controls.Add(this.toolStrip1);
@@ -811,7 +812,7 @@ namespace Pantallas_proyecto
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1428, 848);
-            this.MinimumSize = new System.Drawing.Size(1428, 843);
+            this.MinimumSize = new System.Drawing.Size(1364, 726);
             this.Name = "FrmProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Heaven Store -Productos de la Factura";
