@@ -42,13 +42,14 @@ namespace Pantallas_proyecto
         private bool letra10 = false;
         private string proveedor;
         private string numero;
+
         //regresa al menu de crud
         private void button7_Click(object sender, EventArgs e)
-        {
-            FrmMenuCRUD menuCrud = new FrmMenuCRUD();
-            menuCrud.Show();
-            this.Close();
-        }
+                {
+                    FrmMenuCRUD menuCrud = new FrmMenuCRUD();
+                    menuCrud.Show();
+                    this.Close();
+                }
         //boton de agregar proveedor
         private void button2_Click(object sender, EventArgs e)
         {
@@ -122,12 +123,23 @@ namespace Pantallas_proyecto
                     igual = true;
                 }
                 conect.cerrar();
+
+                int estado = 0;
+                if (cmbEstado.Text == "ACTIVO")
+                {
+                    estado = 1;
+                }
+                else
+                {
+                    estado = 2;
+                }
+
                 if (igual == false)
                 {
                     try
                     {
                         conect.abrir();
-                        if (txtNombreProovedor.Text == "" || txtTelefono.Text == "" || txtDescripcion.Text == "")
+                        if (txtNombreProovedor.Text == "" || txtTelefono.Text == "" || txtDescripcion.Text == "" || cmbEstado.SelectedItem == null)
                         {
 
                             MessageBox.Show("No se pueden dejar los campos vacios", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -135,7 +147,9 @@ namespace Pantallas_proyecto
 
                         else
                         {
-                            cmd = new SqlCommand("Insert into Proveedores(nombre_proveedor, numero_contacto, direccion_proveedor) values('" + txtNombreProovedor.Text + "','" + txtTelefono.Text + "','" + txtDescripcion.Text + "')", conect.conexion);
+                            
+
+                            cmd = new SqlCommand("Insert into Proveedores(nombre_proveedor, numero_contacto, direccion_proveedor, codigo_estado) values('" + txtNombreProovedor.Text + "','" + txtTelefono.Text + "','" + txtDescripcion.Text + "', '"+ estado +"')", conect.conexion);
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("Se han ingresado los Datos con Exito ", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             conect.cargarProveedores(dgvProovedores);
@@ -145,6 +159,7 @@ namespace Pantallas_proyecto
                             txtTelefono.Text = "";
                             errorProvider2.Clear();
                             ErrorProvider.Clear();
+                            cmbEstado.SelectedItem = null;
                         }
                     }
                     catch (Exception ex)
@@ -310,8 +325,18 @@ namespace Pantallas_proyecto
                         dgvProovedores[2, indice].Value = txtTelefono.Text;
                         dgvProovedores[3, indice].Value = txtDescripcion.Text;
 
+                        int estado = 0;
+                        if (cmbEstado.Text == "ACTIVO")
+                        {
+                            estado = 1;
+                        }
+                        else
+                        {
+                            estado = 2;
+                        }
 
-                        cmd = new SqlCommand("UPDATE Proveedores SET nombre_proveedor = '" + txtNombreProovedor.Text + "',  numero_contacto = '" + txtTelefono.Text + "', direccion_proveedor = '" + txtDescripcion.Text + "'  where codigo_proveedor = " + codigo, conect.conexion);
+
+                    cmd = new SqlCommand("UPDATE Proveedores SET nombre_proveedor = '" + txtNombreProovedor.Text + "',  numero_contacto = '" + txtTelefono.Text + "', direccion_proveedor = '" + txtDescripcion.Text + "', codigo_estado = '"+ estado +"'  where codigo_proveedor = " + codigo, conect.conexion);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("El registro fue actualizado exitosamente","Informacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
                         conect.cargarProveedores(dgvProovedores);
@@ -321,6 +346,7 @@ namespace Pantallas_proyecto
                         txtTelefono.Clear();
                         txtDescripcion.Clear();
                         txtNombreProovedor.Focus();
+                        cmbEstado.SelectedItem = null;
                         conect.cerrar();
                         button2.Enabled = true;
                         button3.Enabled = false;
@@ -386,6 +412,7 @@ namespace Pantallas_proyecto
             txtDescripcion.Text = dgvProovedores[3, poc].Value.ToString();
             proveedor = dgvProovedores[1, poc].Value.ToString();
             numero = dgvProovedores[2, poc].Value.ToString();
+            cmbEstado.SelectedItem = dgvProovedores[4, poc].Value.ToString();
             button2.Enabled = false;
             button3.Enabled = true;
 
@@ -402,6 +429,7 @@ namespace Pantallas_proyecto
             numero = null;
             errorProvider2.Clear();
             ErrorProvider.Clear();
+            cmbEstado.SelectedItem = null;
         }
         //validacion de descripcion
         private void txtDescripcion_TextChanged(object sender, EventArgs e)
