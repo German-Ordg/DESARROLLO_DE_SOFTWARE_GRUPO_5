@@ -275,11 +275,12 @@ namespace Pantallas_proyecto
             // 
             // cmbEstado
             // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
             this.cmbEstado.Items.AddRange(new object[] {
             "ACTIVO",
             "INACTIVO"});
-            this.cmbEstado.Location = new System.Drawing.Point(175, 220);
+            this.cmbEstado.Location = new System.Drawing.Point(175, 223);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(121, 21);
             this.cmbEstado.TabIndex = 59;
