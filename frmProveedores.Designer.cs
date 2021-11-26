@@ -51,6 +51,8 @@ namespace Pantallas_proyecto
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
             label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProovedores)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -64,10 +66,9 @@ namespace Pantallas_proyecto
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(103, 170);
-            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Location = new System.Drawing.Point(94, 117);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(95, 25);
+            label2.Size = new System.Drawing.Size(75, 20);
             label2.TabIndex = 47;
             label2.Text = "Teléfono:";
             // 
@@ -77,10 +78,9 @@ namespace Pantallas_proyecto
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(20, 23);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(15, 19);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 32);
+            this.button2.Size = new System.Drawing.Size(112, 26);
             this.button2.TabIndex = 53;
             this.button2.Text = "Agregar";
             this.button2.UseVisualStyleBackColor = false;
@@ -88,22 +88,20 @@ namespace Pantallas_proyecto
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(211, 230);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescripcion.Location = new System.Drawing.Point(175, 148);
             this.txtDescripcion.MaxLength = 150;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(384, 75);
+            this.txtDescripcion.Size = new System.Drawing.Size(289, 62);
             this.txtDescripcion.TabIndex = 50;
             this.txtDescripcion.TextChanged += new System.EventHandler(this.txtDescripcion_TextChanged);
             // 
             // txtNombreProovedor
             // 
-            this.txtNombreProovedor.Location = new System.Drawing.Point(211, 112);
-            this.txtNombreProovedor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreProovedor.Location = new System.Drawing.Point(175, 90);
             this.txtNombreProovedor.MaxLength = 50;
             this.txtNombreProovedor.Name = "txtNombreProovedor";
-            this.txtNombreProovedor.Size = new System.Drawing.Size(384, 22);
+            this.txtNombreProovedor.Size = new System.Drawing.Size(289, 20);
             this.txtNombreProovedor.TabIndex = 49;
             this.txtNombreProovedor.TextChanged += new System.EventHandler(this.txtNombreProovedor_TextChanged);
             this.txtNombreProovedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreProovedor_KeyPress);
@@ -112,10 +110,9 @@ namespace Pantallas_proyecto
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(103, 230);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(94, 148);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 25);
+            this.label3.Size = new System.Drawing.Size(79, 20);
             this.label3.TabIndex = 48;
             this.label3.Text = "Dirección:";
             // 
@@ -123,10 +120,9 @@ namespace Pantallas_proyecto
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 108);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(24, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 25);
+            this.label1.Size = new System.Drawing.Size(145, 20);
             this.label1.TabIndex = 46;
             this.label1.Text = "Nombre Proveedor:";
             // 
@@ -136,10 +132,9 @@ namespace Pantallas_proyecto
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(724, 58);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Location = new System.Drawing.Point(543, 47);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(149, 32);
+            this.button7.Size = new System.Drawing.Size(112, 26);
             this.button7.TabIndex = 45;
             this.button7.Text = "Regresar";
             this.button7.UseVisualStyleBackColor = false;
@@ -148,6 +143,7 @@ namespace Pantallas_proyecto
             // dgvProovedores
             // 
             this.dgvProovedores.AllowUserToAddRows = false;
+            this.dgvProovedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProovedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -158,23 +154,21 @@ namespace Pantallas_proyecto
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProovedores.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProovedores.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvProovedores.Location = new System.Drawing.Point(121, 343);
-            this.dgvProovedores.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvProovedores.Location = new System.Drawing.Point(67, 259);
             this.dgvProovedores.Name = "dgvProovedores";
             this.dgvProovedores.ReadOnly = true;
             this.dgvProovedores.RowHeadersWidth = 51;
-            this.dgvProovedores.Size = new System.Drawing.Size(581, 214);
+            this.dgvProovedores.Size = new System.Drawing.Size(544, 201);
             this.dgvProovedores.TabIndex = 54;
             this.dgvProovedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProovedores_CellClick);
             this.dgvProovedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProovedores_CellContentClick);
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(211, 170);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTelefono.Location = new System.Drawing.Point(175, 117);
             this.txtTelefono.MaxLength = 8;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(384, 22);
+            this.txtTelefono.Size = new System.Drawing.Size(289, 20);
             this.txtTelefono.TabIndex = 55;
             this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
@@ -184,11 +178,9 @@ namespace Pantallas_proyecto
             this.groupBox1.Controls.Add(this.btneliminar);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Location = new System.Drawing.Point(708, 108);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(531, 88);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(187, 180);
+            this.groupBox1.Size = new System.Drawing.Size(140, 146);
             this.groupBox1.TabIndex = 56;
             this.groupBox1.TabStop = false;
             // 
@@ -198,10 +190,9 @@ namespace Pantallas_proyecto
             this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btneliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btneliminar.ForeColor = System.Drawing.Color.White;
-            this.btneliminar.Location = new System.Drawing.Point(23, 123);
-            this.btneliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btneliminar.Location = new System.Drawing.Point(17, 100);
             this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(149, 32);
+            this.btneliminar.Size = new System.Drawing.Size(112, 26);
             this.btneliminar.TabIndex = 55;
             this.btneliminar.Text = "Limpiar";
             this.btneliminar.UseVisualStyleBackColor = false;
@@ -213,10 +204,9 @@ namespace Pantallas_proyecto
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(23, 76);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(17, 62);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(149, 32);
+            this.button3.Size = new System.Drawing.Size(112, 26);
             this.button3.TabIndex = 54;
             this.button3.Text = "Modificar";
             this.button3.UseVisualStyleBackColor = false;
@@ -226,10 +216,9 @@ namespace Pantallas_proyecto
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Image = global::Pantallas_proyecto.Properties.Resources.Letras1;
-            this.pictureBox1.Location = new System.Drawing.Point(233, 28);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(175, 23);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(341, 62);
+            this.pictureBox1.Size = new System.Drawing.Size(256, 50);
             this.pictureBox1.TabIndex = 55;
             this.pictureBox1.TabStop = false;
             // 
@@ -245,9 +234,9 @@ namespace Pantallas_proyecto
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 581);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 474);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(908, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(682, 25);
             this.toolStrip1.TabIndex = 57;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -255,7 +244,7 @@ namespace Pantallas_proyecto
             // 
             this.toolStripLabel1.ForeColor = System.Drawing.Color.Black;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(47, 22);
+            this.toolStripLabel1.Size = new System.Drawing.Size(38, 22);
             this.toolStripLabel1.Text = "Fecha";
             this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
             // 
@@ -263,7 +252,7 @@ namespace Pantallas_proyecto
             // 
             this.toolStripLabel2.ForeColor = System.Drawing.Color.Black;
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(42, 22);
+            this.toolStripLabel2.Size = new System.Drawing.Size(33, 22);
             this.toolStripLabel2.Text = "Hora";
             // 
             // ErrorProvider
@@ -274,12 +263,35 @@ namespace Pantallas_proyecto
             // 
             this.errorProvider2.ContainerControl = this;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(105, 221);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 20);
+            this.label4.TabIndex = 58;
+            this.label4.Text = "Estado:";
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "ACTIVO",
+            "INACTIVO"});
+            this.cmbEstado.Location = new System.Drawing.Point(175, 220);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstado.TabIndex = 59;
+            // 
             // frmProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(908, 606);
+            this.ClientSize = new System.Drawing.Size(682, 499);
+            this.Controls.Add(this.cmbEstado);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
@@ -293,10 +305,9 @@ namespace Pantallas_proyecto
             this.Controls.Add(this.button7);
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(926, 653);
-            this.MinimumSize = new System.Drawing.Size(926, 653);
+            this.MaximumSize = new System.Drawing.Size(698, 538);
+            this.MinimumSize = new System.Drawing.Size(698, 538);
             this.Name = "frmProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Heaven Store - Proveedores";
@@ -333,5 +344,7 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.ErrorProvider ErrorProvider;
         private System.Windows.Forms.Button btneliminar;
         private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.Label label4;
     }
 }
