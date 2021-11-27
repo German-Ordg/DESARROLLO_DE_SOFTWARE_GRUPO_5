@@ -234,7 +234,7 @@ namespace Pantallas_proyecto
                         contra = Encrypt.GetSHA256(txtcontra.Text);
 
 
-                        scd = new SqlCommand("Insert into Usuarios(codigo_empleado, nombre_usuario, correo_electronico, contrasena, Estado) Values('" + txtcodemp.Text + "','" + txtusuario.Text + "','" + txtcorreo.Text + "','" + contra + "','" + cmbtipousr.Text + "')", conect.conexion);
+                        scd = new SqlCommand("Insert into Usuarios(codigo_empleado, nombre_usuario, correo_electronico, contrasena, Estado) Values('" + txtcodemp.Text + "','" + txtusuario.Text + "','" + txtcorreo.Text + "','" + contra + "','" + estado + "')", conect.conexion);
                         //-------------------------------
                         scd.ExecuteNonQuery();
                         MessageBox.Show("Registro exitoso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -392,7 +392,7 @@ namespace Pantallas_proyecto
                     contra = Encrypt.GetSHA256(txtcontra.Text);
                     if (txtcontra.Text=="")
                     {
-                        scd = new SqlCommand("Update Usuarios set codigo_empleado = " + txtcodemp.Text + ",   correo_electronico = '" + txtcorreo.Text + "',   nombre_usuario= '" + txtusuario2.Text + "', Estado = '" + cmbtipousr.Text + "' where nombre_usuario='" + txtusuario2.Text + "'", conect.conexion);
+                        scd = new SqlCommand("Update Usuarios set codigo_empleado = " + txtcodemp.Text + ",   correo_electronico = '" + txtcorreo.Text + "',   nombre_usuario= '" + txtusuario2.Text + "', Estado = '" + estado + "' where nombre_usuario='" + txtusuario2.Text + "'", conect.conexion);
                         scd.ExecuteNonQuery();
                         MessageBox.Show("Registro Modificado!", "AVISO", MessageBoxButtons.OK);
                         txtcodemp.Clear();
@@ -421,7 +421,7 @@ namespace Pantallas_proyecto
                         }
                         else
                         {
-                            scd = new SqlCommand("Update Usuarios set codigo_empleado = " + txtcodemp.Text + ",   correo_electronico = '" + txtcorreo.Text + "',   nombre_usuario= '" + txtusuario2.Text + "',  contrasena = '" + contra + "', Estado = '" + cmbtipousr.Text + "' where nombre_usuario='" + txtusuario2.Text + "'", conect.conexion);
+                            scd = new SqlCommand("Update Usuarios set codigo_empleado = " + txtcodemp.Text + ",   correo_electronico = '" + txtcorreo.Text + "',   nombre_usuario= '" + txtusuario2.Text + "',  contrasena = '" + contra + "', Estado = '" + estado + "' where nombre_usuario='" + txtusuario2.Text + "'", conect.conexion);
                             scd.ExecuteNonQuery();
                             MessageBox.Show("Registro Modificado!", "AVISO", MessageBoxButtons.OK);
                             txtcodemp.Clear();
@@ -527,9 +527,19 @@ namespace Pantallas_proyecto
             cmbtipousr.Text = dataGridView1[4, poc].Value.ToString();
         }
 
+        int estado;
+
         private void cmbtipousr_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            estado = 0;
+            if(cmbtipousr.Text == "(1) ACTIVO")
+            {
+                estado = 1;
+            }
+            else
+            {
+                estado = 2;
+            }
         }
         //se cargan los empleados directamente de la base de datos
         private void cmbEmpleado_SelectedIndexChanged(object sender, EventArgs e)
