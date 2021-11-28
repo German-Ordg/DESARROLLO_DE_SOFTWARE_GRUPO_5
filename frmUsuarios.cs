@@ -392,7 +392,7 @@ namespace Pantallas_proyecto
                     contra = Encrypt.GetSHA256(txtcontra.Text);
                     if (txtcontra.Text=="")
                     {
-                        scd = new SqlCommand("Update Usuarios set codigo_empleado = " + txtcodemp.Text + ",   correo_electronico = '" + txtcorreo.Text + "',   nombre_usuario= '" + txtusuario2.Text + "', Estado = '" + estado + "' where nombre_usuario='" + txtusuario2.Text + "'", conect.conexion);
+                        scd = new SqlCommand("Update Usuarios set codigo_empleado = " + txtcodemp.Text + ",   correo_electronico = '" + txtcorreo.Text + "',   nombre_usuario= '" + txtusuario2.Text + "', contrasena= '" + txtcontra.Text + "', Estado = '" + estado + "' where nombre_usuario='" + txtusuario2.Text + "'", conect.conexion);
                         scd.ExecuteNonQuery();
                         MessageBox.Show("Registro Modificado!", "AVISO", MessageBoxButtons.OK);
                         txtcodemp.Clear();
