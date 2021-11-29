@@ -238,7 +238,13 @@ namespace Pantallas_proyecto
                             try
                             {
                                 conect.abrir();
-                                cmd = new SqlCommand("Insert into Empleados(codigo_puesto, nombre_empleado, apellido_empleado, numero_identidad_empleado, fecha_nacimiento, fecha_ingreso, num_telefono, Genero) Values(" + codigoPuesto + ",'" + txtNombre.Text + "', '" + txtApellido.Text + "', '" + txtIdentidad.Text + "', '" + dtpFechaNacimiento.Text + "','" + dtpFechaIngreso.Text + "','" + txtNumeroTel.Text + "','" + cmbGenero.Text + "')", conect.conexion);
+                                string genero="m";
+                                if (cmbGenero.Text == "Masculino")
+                                    genero = "M";
+                                else
+                                    genero = "F";
+                                    
+                                cmd = new SqlCommand("Insert into Empleados(codigo_puesto, nombre_empleado, apellido_empleado, numero_identidad_empleado, fecha_nacimiento, fecha_ingreso, num_telefono, genero) Values(" + codigoPuesto + ",'" + txtNombre.Text + "', '" + txtApellido.Text + "', '" + txtIdentidad.Text + "', '" + dtpFechaNacimiento.Text + "','" + dtpFechaIngreso.Text + "','" + txtNumeroTel.Text + "','" + genero + "')", conect.conexion);
                                 cmd.ExecuteNonQuery();
                                 MessageBox.Show("Se han ingresado los Datos con Exito ", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 conect.cargarDatosEmpleados(dgvEmpleados);

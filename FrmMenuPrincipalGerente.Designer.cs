@@ -54,10 +54,9 @@ namespace Pantallas_proyecto
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gold;
-            this.label2.Location = new System.Drawing.Point(482, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(362, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(536, 136);
+            this.label2.Size = new System.Drawing.Size(429, 109);
             this.label2.TabIndex = 18;
             this.label2.Text = "HEAVEN";
             // 
@@ -69,10 +68,9 @@ namespace Pantallas_proyecto
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button4.Location = new System.Drawing.Point(464, 379);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(348, 308);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(248, 71);
+            this.button4.Size = new System.Drawing.Size(186, 58);
             this.button4.TabIndex = 25;
             this.button4.Text = "Regresar";
             this.button4.UseVisualStyleBackColor = false;
@@ -86,10 +84,9 @@ namespace Pantallas_proyecto
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button5.Location = new System.Drawing.Point(824, 379);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Location = new System.Drawing.Point(618, 308);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(248, 71);
+            this.button5.Size = new System.Drawing.Size(186, 58);
             this.button5.TabIndex = 26;
             this.button5.Text = "Salir";
             this.button5.UseVisualStyleBackColor = false;
@@ -100,10 +97,9 @@ namespace Pantallas_proyecto
             this.lblnombre.AutoSize = true;
             this.lblnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnombre.ForeColor = System.Drawing.Color.White;
-            this.lblnombre.Location = new System.Drawing.Point(16, 11);
-            this.lblnombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblnombre.Location = new System.Drawing.Point(12, 9);
             this.lblnombre.Name = "lblnombre";
-            this.lblnombre.Size = new System.Drawing.Size(290, 25);
+            this.lblnombre.Size = new System.Drawing.Size(235, 20);
             this.lblnombre.TabIndex = 30;
             this.lblnombre.Text = "Bienvenido: @Nombre_Gerente";
             this.lblnombre.Click += new System.EventHandler(this.label3_Click);
@@ -113,10 +109,9 @@ namespace Pantallas_proyecto
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(1183, 11);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(887, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 25);
+            this.label4.Size = new System.Drawing.Size(52, 20);
             this.label4.TabIndex = 31;
             this.label4.Text = "Hora: ";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -126,20 +121,18 @@ namespace Pantallas_proyecto
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(99, 555);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(74, 451);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(588, 24);
+            this.label5.Size = new System.Drawing.Size(457, 18);
             this.label5.TabIndex = 34;
             this.label5.Text = "Advertencia: solo el personal autorizado puede acceder a este menu";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Pantallas_proyecto.Properties.Resources.advertencia;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 529);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 430);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(88, 62);
+            this.pictureBox1.Size = new System.Drawing.Size(66, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
@@ -153,10 +146,9 @@ namespace Pantallas_proyecto
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button7.Location = new System.Drawing.Point(1204, 219);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Location = new System.Drawing.Point(903, 178);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(195, 92);
+            this.button7.Size = new System.Drawing.Size(146, 75);
             this.button7.TabIndex = 29;
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -170,10 +162,9 @@ namespace Pantallas_proyecto
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button6.Location = new System.Drawing.Point(969, 219);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
+            this.button6.Location = new System.Drawing.Point(727, 178);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(195, 92);
+            this.button6.Size = new System.Drawing.Size(146, 75);
             this.button6.TabIndex = 28;
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -187,10 +178,9 @@ namespace Pantallas_proyecto
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Location = new System.Drawing.Point(745, 219);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(559, 178);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(195, 92);
+            this.button1.Size = new System.Drawing.Size(146, 75);
             this.button1.TabIndex = 27;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -204,10 +194,9 @@ namespace Pantallas_proyecto
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(505, 219);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(379, 178);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(195, 92);
+            this.button2.Size = new System.Drawing.Size(146, 75);
             this.button2.TabIndex = 21;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -221,10 +210,9 @@ namespace Pantallas_proyecto
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.Location = new System.Drawing.Point(273, 219);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(205, 178);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(195, 92);
+            this.button3.Size = new System.Drawing.Size(146, 75);
             this.button3.TabIndex = 19;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -238,10 +226,9 @@ namespace Pantallas_proyecto
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.White;
-            this.lblHora.Location = new System.Drawing.Point(1264, 11);
-            this.lblHora.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHora.Location = new System.Drawing.Point(948, 9);
             this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(65, 25);
+            this.lblHora.Size = new System.Drawing.Size(52, 20);
             this.lblHora.TabIndex = 35;
             this.lblHora.Text = "Hora: ";
             // 
@@ -254,20 +241,19 @@ namespace Pantallas_proyecto
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button8.Location = new System.Drawing.Point(40, 219);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Location = new System.Drawing.Point(30, 178);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(195, 92);
+            this.button8.Size = new System.Drawing.Size(146, 75);
             this.button8.TabIndex = 36;
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // FrmMenuPrincipalGerente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(1454, 597);
+            this.ClientSize = new System.Drawing.Size(1092, 492);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.label5);
@@ -283,10 +269,9 @@ namespace Pantallas_proyecto
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1472, 644);
-            this.MinimumSize = new System.Drawing.Size(1472, 644);
+            this.MaximumSize = new System.Drawing.Size(1108, 531);
+            this.MinimumSize = new System.Drawing.Size(1108, 531);
             this.Name = "FrmMenuPrincipalGerente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Heaven Store - Menú Principal";

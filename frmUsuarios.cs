@@ -395,14 +395,13 @@ namespace Pantallas_proyecto
 
 
                     contra = Encrypt.GetSHA256(txtcontra.Text);
+                    int estado;
+                    if (cmbtipousr.Text == "ACTIVO")
+                        estado = 1;
+                    else
+                        estado = 2;
                     if (txtcontra.Text=="")
-                    {
-                        int estado;
-                        if (cmbtipousr.Text == "ACTIVO")
-                            estado = 1;
-                        else
-                            estado = 2;
-                            
+                    {  
                         scd = new SqlCommand("Update Usuarios set codigo_empleado = " + txtcodemp.Text + ",   correo_electronico = '" + txtcorreo.Text + "',   nombre_usuario= '" + txtusuario2.Text + "', codigo_estado = '" + estado + "' where nombre_usuario='" + txtusuario2.Text + "'", conect.conexion);
                         scd.ExecuteNonQuery();
                         MessageBox.Show("Registro Modificado!", "AVISO", MessageBoxButtons.OK);
@@ -432,7 +431,7 @@ namespace Pantallas_proyecto
                         }
                         else
                         {
-                            scd = new SqlCommand("Update Usuarios set codigo_empleado = " + txtcodemp.Text + ",   correo_electronico = '" + txtcorreo.Text + "',   nombre_usuario= '" + txtusuario2.Text + "',  contrasena = '" + contra + "', Estado = '" + cmbtipousr.Text + "' where nombre_usuario='" + txtusuario2.Text + "'", conect.conexion);
+                            scd = new SqlCommand("Update Usuarios set codigo_empleado = " + txtcodemp.Text + ",   correo_electronico = '" + txtcorreo.Text + "',   nombre_usuario= '" + txtusuario2.Text + "',  contrasena = '" + contra + "', codigo_estado = '" + estado + "' where nombre_usuario='" + txtusuario2.Text + "'", conect.conexion);
                             scd.ExecuteNonQuery();
                             MessageBox.Show("Registro Modificado!", "AVISO", MessageBoxButtons.OK);
                             txtcodemp.Clear();
