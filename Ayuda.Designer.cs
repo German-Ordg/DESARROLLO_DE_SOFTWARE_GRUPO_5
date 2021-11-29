@@ -29,6 +29,7 @@ namespace Pantallas_proyecto
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ayuda));
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
@@ -36,22 +37,25 @@ namespace Pantallas_proyecto
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Margin = new System.Windows.Forms.Padding(2);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(15, 16);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1133, 615);
+            this.webBrowser1.Size = new System.Drawing.Size(953, 549);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("file:///C:/Users/david/Desktop/Heaven_Store_proyecto/Manual_Usuario_Heaven/Manual" +
-        "_Usuario_Heaven/index.htm", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("http://erickmoncada-001-site1.etempurl.com/manual_usuario_heaven/index.htm", System.UriKind.Absolute);
             // 
             // Ayuda
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1133, 615);
+            this.ClientSize = new System.Drawing.Size(953, 549);
             this.Controls.Add(this.webBrowser1);
-            this.MinimumSize = new System.Drawing.Size(1151, 662);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(867, 545);
             this.Name = "Ayuda";
-            this.Text = "Ayuda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Heaven Store - Ayuda";
             this.ResumeLayout(false);
 
         }

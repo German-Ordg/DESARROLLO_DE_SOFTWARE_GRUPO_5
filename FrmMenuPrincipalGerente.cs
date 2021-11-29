@@ -111,5 +111,11 @@ namespace Pantallas_proyecto
             ayuda.Show();
 
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Ayuda ayuda = new Ayuda();
+            ayuda.Show();
+        }
     }
 }

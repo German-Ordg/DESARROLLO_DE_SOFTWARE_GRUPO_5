@@ -131,7 +131,6 @@ namespace Pantallas_proyecto
             this.picError.TabIndex = 17;
             this.picError.TabStop = false;
             this.picError.Visible = false;
-          
             // 
             // lblError
             // 
