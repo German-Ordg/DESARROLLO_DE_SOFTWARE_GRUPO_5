@@ -1947,7 +1947,6 @@ C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\pt\Mi
 C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.csproj.AssemblyReference.cache
 C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmAcceso.resources
 C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.TxtResultBox.resources
 C:\Users\Sebas\Documents\Clases\Desarrollo de software\Trabajoss\obj\Debug\Pantallas_proyecto.FrmCategorias.resources

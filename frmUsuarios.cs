@@ -233,8 +233,13 @@ namespace Pantallas_proyecto
 
                         contra = Encrypt.GetSHA256(txtcontra.Text);
 
+                        int estado;
+                        if (cmbtipousr.Text == "ACTIVO")
+                            estado = 1;
+                        else
+                            estado = 2;
 
-                        scd = new SqlCommand("Insert into Usuarios(codigo_empleado, nombre_usuario, correo_electronico, contrasena, Estado) Values('" + txtcodemp.Text + "','" + txtusuario.Text + "','" + txtcorreo.Text + "','" + contra + "','" + cmbtipousr.Text + "')", conect.conexion);
+                        scd = new SqlCommand("Insert into Usuarios(codigo_empleado, nombre_usuario, correo_electronico, contrasena, codigo_estado) Values('" + txtcodemp.Text + "','" + txtusuario.Text + "','" + txtcorreo.Text + "','" + contra + "','" + estado + "')", conect.conexion);
                         //-------------------------------
                         scd.ExecuteNonQuery();
                         MessageBox.Show("Registro exitoso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -392,7 +397,13 @@ namespace Pantallas_proyecto
                     contra = Encrypt.GetSHA256(txtcontra.Text);
                     if (txtcontra.Text=="")
                     {
-                        scd = new SqlCommand("Update Usuarios set codigo_empleado = " + txtcodemp.Text + ",   correo_electronico = '" + txtcorreo.Text + "',   nombre_usuario= '" + txtusuario2.Text + "', Estado = '" + cmbtipousr.Text + "' where nombre_usuario='" + txtusuario2.Text + "'", conect.conexion);
+                        int estado;
+                        if (cmbtipousr.Text == "ACTIVO")
+                            estado = 1;
+                        else
+                            estado = 2;
+                            
+                        scd = new SqlCommand("Update Usuarios set codigo_empleado = " + txtcodemp.Text + ",   correo_electronico = '" + txtcorreo.Text + "',   nombre_usuario= '" + txtusuario2.Text + "', codigo_estado = '" + estado + "' where nombre_usuario='" + txtusuario2.Text + "'", conect.conexion);
                         scd.ExecuteNonQuery();
                         MessageBox.Show("Registro Modificado!", "AVISO", MessageBoxButtons.OK);
                         txtcodemp.Clear();
