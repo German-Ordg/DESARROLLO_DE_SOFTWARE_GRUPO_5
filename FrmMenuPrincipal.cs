@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -82,6 +83,12 @@ namespace Pantallas_proyecto
         private void timer1_Tick(object sender, EventArgs e)
         {   //Muestra la hora actual
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss");
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Ayuda ayuda = new Ayuda();
+            ayuda.Show();
         }
     }
 }
