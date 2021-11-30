@@ -177,10 +177,7 @@ namespace Pantallas_proyecto
         //Accion de no permitir el 0 de primer valor en el descuento
         private void txtDescuento_TextChanged(object sender, EventArgs e)
         {
-            if (txtDescuento.Text.Substring(0) == "0")
-            {
-                txtDescuento.Text = "";
-            }
+            
         }
 
         //Permitir solo numeros en el txtFiltro
