@@ -2748,3 +2748,4 @@ C:\Users\Sebas\Documents\Clases\Implementacion de Sofware\HeavenStore\obj\Debug\
 C:\Users\Sebas\Documents\Clases\Implementacion de Sofware\HeavenStore\obj\Debug\Pantallas_proyecto.exe
 C:\Users\Sebas\Documents\Clases\Implementacion de Sofware\HeavenStore\obj\Debug\Pantallas_proyecto.pdb
 C:\Users\Sebas\Documents\Clases\Implementacion de Sofware\HeavenStore\obj\Debug\Pantallas_proyecto.Ayuda.resources
+C:\Users\david\Desktop\Heaven_Store_proyecto\obj\Debug\Pantallas_proyecto.Ayuda.resources

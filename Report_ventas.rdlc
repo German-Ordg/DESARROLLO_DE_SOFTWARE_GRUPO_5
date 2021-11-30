@@ -1124,6 +1124,16 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
+            <Filters>
+              <Filter>
+                <FilterExpression>=CDate(Fields!dato8.Value)</FilterExpression>
+                <Operator>Between</Operator>
+                <FilterValues>
+                  <FilterValue>=CDate(Parameters!fecha1.Value)</FilterValue>
+                  <FilterValue>=CDate(Parameters!fecha2.Value)</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
             <Top>0.98637cm</Top>
             <Left>0.25431cm</Left>
             <Height>2.98683cm</Height>
@@ -1134,73 +1144,6 @@
               </Border>
             </Style>
           </Tablix>
-          <Textbox Name="Textbox18">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Sum(CDbl(Fields!dato10.Value)) / 10000</Value>
-                    <Style>
-                      <FontWeight>Heavy</FontWeight>
-                      <Format>#,0.00;(#,0.00)</Format>
-                      <TextDecoration>Underline</TextDecoration>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox18</rd:DefaultName>
-            <Top>5.51603cm</Top>
-            <Left>14.14929cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.49216cm</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox19">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Total</Value>
-                    <Style>
-                      <FontWeight>Heavy</FontWeight>
-                      <TextDecoration>Underline</TextDecoration>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox19</rd:DefaultName>
-            <Top>5.51603cm</Top>
-            <Left>12.52496cm</Left>
-            <Height>0.6cm</Height>
-            <Width>1.62433cm</Width>
-            <ZIndex>2</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
         </ReportItems>
         <Height>3.21425in</Height>
         <Style />
