@@ -65,33 +65,43 @@ namespace Pantallas_proyecto
         private void button5_Click(object sender, EventArgs e)
         {
             //botón de calcular este al tener todos los articulos de la venta actual hace las operaciones y carga los text box de la parte inferior
-            btnImprimirFactura.Enabled = true;
             txtImporteAgrabado15.Text = "0";
-
-            double sumaTotales=0;
-            double subTotal;
+            double subTotal=0;
             double descuentos=0;
-            double isv;
-            double total;
+            double isv=0;
+            double total=0;
 
-
-            foreach (DataGridViewRow row in lstCompras.Rows)
-            {
-                if (row.Cells[5].Value != null)
-                    sumaTotales += (Double)double.Parse(row.Cells[5].Value.ToString());
-            }
 
             foreach (DataGridViewRow row in lstCompras.Rows)
             {
                 if (row.Cells[4].Value != null)
-                    descuentos += (Double)double.Parse(row.Cells[4].Value.ToString());
+                {
+                    double columnaDescuento = double.Parse(row.Cells[4].Value.ToString());
+                    double columnaCantidad = double.Parse(row.Cells[1].Value.ToString());
+                    descuentos += columnaDescuento * columnaCantidad;
+
+                }
+
+                if (row.Cells[5].Value != null)
+                {
+                    subTotal += double.Parse(row.Cells[5].Value.ToString());
+                    
+                }
+              
             }
-                  
-            subTotal = sumaTotales - descuentos;
 
             isv = (subTotal) * 0.15;
 
             total = subTotal + isv;
+
+            if (total > 0)
+            {
+                btnImprimirFactura.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("No se puede procesar esta venta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             txtDescuentosOtorgados.Text = descuentos.ToString();
             txtTotalPagar.Text = total.ToString();
@@ -124,7 +134,6 @@ namespace Pantallas_proyecto
                                  
             con.abrir();
             fac.cargarComboboxPago(cmbTipoPago);
-            fac.cargarComboboxVendedor(cmbVendedor);
             rbSinNombre.Checked = true;
             btnCalcularFactura.Enabled = false;
             btnImprimirFactura.Enabled = false;
@@ -193,7 +202,6 @@ namespace Pantallas_proyecto
                                 fac.CantidadInventario = Int32.Parse(dr["cantidad"].ToString());
                                 fac.PrecioProducto = Double.Parse(dr["precio"].ToString());
                                 fac.DescuentoProducto = Double.Parse(dr["descuento"].ToString());
-
                             }
                             dr.Close();
 
@@ -286,14 +294,14 @@ namespace Pantallas_proyecto
                         int indiceDataGrid = lstCompras.Rows.Count - 1;
                         lstCompras.Rows.Add(1);
 
-                        double total = (fac.PrecioProducto * fac.CantidadProducto) - fac.DescuentoProducto;
+                        fac.TotalProducto = (fac.PrecioProducto * fac.CantidadProducto) - (fac.DescuentoProducto * fac.CantidadProducto);
 
                         lstCompras.Rows[indiceDataGrid].Cells[0].Value = fac.CodigoProducto.ToString();
-                        lstCompras.Rows[indiceDataGrid].Cells[1].Value = fac.CantidadProducto.ToString();
+                        lstCompras.Rows[indiceDataGrid].Cells[1].Value = nudCantidad.Value.ToString();
                         lstCompras.Rows[indiceDataGrid].Cells[2].Value = fac.DescripcionProducto.ToString();
                         lstCompras.Rows[indiceDataGrid].Cells[3].Value = fac.PrecioProducto.ToString();
                         lstCompras.Rows[indiceDataGrid].Cells[4].Value = fac.DescuentoProducto.ToString();
-                        lstCompras.Rows[indiceDataGrid].Cells[5].Value = total.ToString();
+                        lstCompras.Rows[indiceDataGrid].Cells[5].Value = fac.TotalProducto.ToString();
 
                         txtCodProducto.Clear();
                         txtDescripcion.Clear();
@@ -420,13 +428,16 @@ namespace Pantallas_proyecto
                 if (nudCantidad.Value >= 1)
                 {
                     int n = lstCompras.CurrentRow.Index;
-                    double total = Int32.Parse(nudCantidad.Value.ToString()) * fac.PrecioProducto;
+                    int cantidadActualizar = Int32.Parse(nudCantidad.Value.ToString());
+                    double precio = double.Parse(txtPrecioUnitario.Text.ToString());
+                    double descuento = double.Parse(txtDescuento.Text.ToString());
+                    double total = (cantidadActualizar * precio) - (cantidadActualizar * descuento);
 
-                    lstCompras.Rows[n].Cells[0].Value = fac.CodigoProducto.ToString();
+                    lstCompras.Rows[n].Cells[0].Value = txtCodProducto.Text.ToString();
                     lstCompras.Rows[n].Cells[1].Value = nudCantidad.Value.ToString();
-                    lstCompras.Rows[n].Cells[2].Value = fac.DescripcionProducto.ToString();
-                    lstCompras.Rows[n].Cells[3].Value = fac.PrecioProducto.ToString();
-                    lstCompras.Rows[n].Cells[4].Value = fac.DescuentoProducto.ToString();
+                    lstCompras.Rows[n].Cells[2].Value = txtDescripcion.Text.ToString();
+                    lstCompras.Rows[n].Cells[3].Value = txtPrecioUnitario.Text.ToString();
+                    lstCompras.Rows[n].Cells[4].Value = txtDescuento.Text.ToString();
                     lstCompras.Rows[n].Cells[5].Value = total.ToString();
 
                     lstCompras.Enabled = true;
@@ -570,7 +581,7 @@ namespace Pantallas_proyecto
 
 
             //validaciones anidadas para ejecutar el query de la venta
-            if (lstCompras.RowCount<2)
+            if (lstCompras.RowCount < 2)
             {
                 MessageBox.Show("No hay items en la lista", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 btnImprimirFactura.Enabled = false;
@@ -582,13 +593,7 @@ namespace Pantallas_proyecto
                     MessageBox.Show("Seleccione un tipo de pago", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                {
-                    if (cmbVendedor.SelectedIndex == -1)
-                    {
-                        MessageBox.Show("Seleccione un vendedor", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
+                { 
                         if (lstCompras.RowCount == -1)
                         {
                             MessageBox.Show("Ingrese un producto a comprar", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -647,7 +652,7 @@ namespace Pantallas_proyecto
 
                             }
                         }
-                    }
+                    
                 }
             }
             
@@ -664,7 +669,7 @@ namespace Pantallas_proyecto
             con.abrir();
 
             String tipoPago = cmbTipoPago.SelectedItem.ToString().Trim();
-            String vendedor = cmbVendedor.SelectedItem.ToString().Trim();
+            String vendedor = Cashe.UserCache.FirstName + " " + Cashe.UserCache.LastName;
 
             //consultas para extraer código del empleado y el código del tipo de pago de la base de datos
             String consultaEmpleado = "select a.codigo_empleado from [dbo].[Usuarios] a join [dbo].[Empleados] b " +
@@ -722,19 +727,16 @@ namespace Pantallas_proyecto
                 //ejecución de la consulta para ingresar la venta actual
 
                 String ingresoVenta = "insert into [dbo].[Ventas] " +
-                "([codigo_empleado], [codigo_pago], [nombre_cliente], [rtn_cliente], [fecha_venta], [direccion_envio], [impuesto], [total]) " +
-                "values (@codigoEmpleado, @codigoPago, @nombreCliente, @rtn, " +
-                "@fecha, @direccionEnvio, @isv15, @totalPagar)";
+                "([codigo_empleado], [codigo_pago], [fecha_venta], [direccion_envio], [impuesto]) " +
+                "values (@codigoEmpleado, @codigoPago, " +
+                "@fecha, @direccionEnvio, @isv15)";
 
                 SqlCommand cmd = new SqlCommand(ingresoVenta, con.conexion);
                 cmd.Parameters.Add("@codigoEmpleado", SqlDbType.Int).Value = Int32.Parse(codigoEmpleado) ;
                 cmd.Parameters.Add("@codigoPago", SqlDbType.Int).Value = Int32.Parse(codigoPago);
-                cmd.Parameters.Add("@nombreCliente", SqlDbType.NVarChar).Value = txtNombreCliente.Text;
-                cmd.Parameters.Add("@rtn", SqlDbType.NVarChar).Value = txtRTN.Text;
                 cmd.Parameters.Add("@fecha", SqlDbType.Date).Value = DateTime.Now.ToString();
                 cmd.Parameters.Add("@direccionEnvio", SqlDbType.NVarChar).Value = txtDireccion.Text;
                 cmd.Parameters.Add("@isv15", SqlDbType.Money).Value = txtISV15.Text;
-                cmd.Parameters.Add("@totalPagar", SqlDbType.Money).Value = txtTotalPagar.Text;
 
                 cmd.ExecuteNonQuery();
 
@@ -761,8 +763,8 @@ namespace Pantallas_proyecto
                 con.abrir();
 
                 String ingresoDetalleVenta = "insert into [dbo].[Detalle_Venta] " +
-                "([codigo_venta], [codigo_producto], [cantidad], [precio_venta], [sub_total]) " +
-                "values ((select top 1 Ventas.codigo_venta from Ventas order by Ventas.codigo_venta desc), @codigoProducto , @cantidad, @precioVenta, @subTotal)";
+                "([codigo_venta], [codigo_producto], [cantidad], [precio_venta]) " +
+                "values ((select top 1 Ventas.codigo_venta from Ventas order by Ventas.codigo_venta desc), @codigoProducto , @cantidad, @precioVenta)";
                 cmd = new SqlCommand(ingresoDetalleVenta, con.conexion);
 
 
@@ -774,7 +776,6 @@ namespace Pantallas_proyecto
                     cmd.Parameters.AddWithValue("@codigoProducto", Convert.ToInt32(row.Cells["CodProducto"].Value));
                     cmd.Parameters.AddWithValue("@cantidad", Convert.ToInt32(row.Cells["Cantidad"].Value));
                     cmd.Parameters.AddWithValue("@precioVenta", Convert.ToDouble(row.Cells["PrecioUnitario"].Value));
-                    cmd.Parameters.AddWithValue("@subTotal", Convert.ToDouble(row.Cells["Total"].Value));
 
                     cmd.ExecuteNonQuery();
 
@@ -782,12 +783,12 @@ namespace Pantallas_proyecto
 
                 con.cerrar();
 
-                
+                MessageBox.Show("Ingresado con éxito");
 
             }
             catch (Exception)
             {
-
+             
             }
         }
 
@@ -805,7 +806,7 @@ namespace Pantallas_proyecto
             string fecha = DateTime.Now.ToString();
             string rtn = txtRTN.Text;
             string cliente = txtNombreCliente.Text;
-            string vendedor = cmbVendedor.SelectedItem.ToString();
+            string vendedor = Cashe.UserCache.FirstName + " " + Cashe.UserCache.LastName;
             string direccion = txtDireccion.Text;
             string tipoPago = cmbTipoPago.SelectedItem.ToString();
             parameters[0] = new ReportParameter("impuesto", impuesto);

@@ -24,6 +24,7 @@ namespace Pantallas_proyecto
         private static int      cantidadInventario;
         private static double   precioProducto;
         private static double   descuentoProducto;
+        private static double   totalProducto;
 
         
         //función para cargar el combobox de los tipos de pago
@@ -44,32 +45,6 @@ namespace Pantallas_proyecto
                 dr.Close();
             }
             catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo cargar el combobox " + ex.ToString());
-            }
-            con.cerrar();
-        }
-
-        //función para cargar el combobox de los vendedores
-        public void cargarComboboxVendedor(ComboBox cmb)
-        {
-            String comboboxVendedor = "SELECT [dbo].[Empleados].nombre_empleado+' '+[dbo].[Empleados].apellido_empleado nombre " +
-                "FROM[dbo].[Empleados] JOIN[dbo].[Usuarios] ON [dbo].[Empleados].codigo_empelado =[dbo].[Usuarios].codigo_empleado " +
-                "WHERE[dbo].[Usuarios].[Estado] = 'ACTIVO'";
-
-            con.abrir();
-            try
-            {
-               
-                cmd = new SqlCommand(comboboxVendedor, con.conexion);
-                dr = cmd.ExecuteReader();
-                while(dr.Read())
-                {
-                    cmb.Items.Add(dr["nombre"].ToString());
-                }
-                dr.Close();
-            }
-            catch(Exception ex)
             {
                 MessageBox.Show("No se pudo cargar el combobox " + ex.ToString());
             }
@@ -125,5 +100,6 @@ namespace Pantallas_proyecto
         public double PrecioProducto { get => precioProducto; set => precioProducto = value; }
         public double DescuentoProducto { get => descuentoProducto; set => descuentoProducto = value; }
         public int CantidadInventario { get => cantidadInventario; set => cantidadInventario = value; }
+        public double TotalProducto { get => totalProducto; set => totalProducto = value; }
     }
 }
