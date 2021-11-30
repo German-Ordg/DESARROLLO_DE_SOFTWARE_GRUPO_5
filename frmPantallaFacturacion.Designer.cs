@@ -74,8 +74,6 @@ namespace Pantallas_proyecto
             this.txtRTN = new System.Windows.Forms.TextBox();
             this.lblRTN = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cmbVendedor = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.cmbTipoPago = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -612,8 +610,6 @@ namespace Pantallas_proyecto
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cmbVendedor);
-            this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.cmbTipoPago);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
@@ -626,33 +622,12 @@ namespace Pantallas_proyecto
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Factura";
             // 
-            // cmbVendedor
-            // 
-            this.cmbVendedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmbVendedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbVendedor.FormattingEnabled = true;
-            this.cmbVendedor.Location = new System.Drawing.Point(127, 47);
-            this.cmbVendedor.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbVendedor.Name = "cmbVendedor";
-            this.cmbVendedor.Size = new System.Drawing.Size(209, 24);
-            this.cmbVendedor.TabIndex = 5;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(52, 51);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(74, 17);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "Vendedor:";
-            // 
             // cmbTipoPago
             // 
             this.cmbTipoPago.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTipoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoPago.FormattingEnabled = true;
-            this.cmbTipoPago.Location = new System.Drawing.Point(127, 14);
+            this.cmbTipoPago.Location = new System.Drawing.Point(122, 32);
             this.cmbTipoPago.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoPago.Name = "cmbTipoPago";
             this.cmbTipoPago.Size = new System.Drawing.Size(209, 24);
@@ -661,7 +636,7 @@ namespace Pantallas_proyecto
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(52, 18);
+            this.label12.Location = new System.Drawing.Point(47, 36);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 17);
@@ -1093,8 +1068,6 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.TextBox txtRTN;
         private System.Windows.Forms.Label lblRTN;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox cmbVendedor;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ComboBox cmbTipoPago;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox1;

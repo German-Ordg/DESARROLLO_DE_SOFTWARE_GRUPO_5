@@ -59,5 +59,10 @@ namespace Pantallas_proyecto
                 timer2.Start();
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

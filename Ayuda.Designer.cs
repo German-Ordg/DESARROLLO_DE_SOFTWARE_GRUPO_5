@@ -40,8 +40,9 @@ namespace Pantallas_proyecto
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(1133, 615);
             this.webBrowser1.TabIndex = 0;
-            this.webBrowser1.Url = new System.Uri("file:///C:/Users/david/Desktop/Heaven_Store_proyecto/Manual_Usuario_Heaven/Manual" +
-        "_Usuario_Heaven/index.htm", System.UriKind.Absolute);
+            this.webBrowser1.Url = new System.Uri("file:///C:/Users/WILSON/Desktop/Implementacion/Trabajo/Manual_Usuario_Heaven/Manu" +
+        "al_Usuario_Heaven/index.htm", System.UriKind.Absolute);
+            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // Ayuda
             // 

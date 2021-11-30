@@ -1,0 +1,12 @@
+[
+	{ "s": "FACILIDAD", "p": [16] },
+	{ "s": "FACTURA", "p": [30, 16] },
+	{ "s": "FACTURACCIÓN", "p": [30] },
+	{ "s": "FACTURACIÓN", "p": [29, 7, 6, 16] },
+	{ "s": "FECHA", "p": [34, 22, 20, 16] },
+	{ "s": "FILTRAR", "p": [22] },
+	{ "s": "FINAL", "p": [20] },
+	{ "s": "FINALIZAR", "p": [28] },
+	{ "s": "FORMA", "p": [32, 28, 26, 24, 16] },
+	{ "s": "FUNCIONA", "p": [30] }
+]

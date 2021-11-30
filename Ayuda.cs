@@ -16,5 +16,10 @@ namespace Pantallas_proyecto
         {
             InitializeComponent();
         }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+
+        }
     }
 }
