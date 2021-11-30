@@ -174,11 +174,7 @@ namespace Pantallas_proyecto
             }
         }
 
-        //Accion de no permitir el 0 de primer valor en el descuento
-        private void txtDescuento_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+
 
         //Permitir solo numeros en el txtFiltro
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
