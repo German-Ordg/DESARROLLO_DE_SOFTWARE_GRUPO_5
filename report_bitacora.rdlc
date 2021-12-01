@@ -359,6 +359,7 @@
                               <PaddingBottom>2pt</PaddingBottom>
                             </Style>
                           </Textbox>
+                          <rd:Selected>true</rd:Selected>
                         </CellContents>
                       </TablixHeader>
                       <TablixMembers>
@@ -374,11 +375,11 @@
             <DataSetName>DataSet1</DataSetName>
             <Filters>
               <Filter>
-                <FilterExpression>=CDate(Fields!dato2.Value).ToString("MM/dd/yyyy")</FilterExpression>
+                <FilterExpression>=CDate(Fields!dato2.Value)</FilterExpression>
                 <Operator>Between</Operator>
                 <FilterValues>
-                  <FilterValue>=CDate(Parameters!fecha1.Value).ToString("dd/MM/yyyy")</FilterValue>
-                  <FilterValue>=CDate(Parameters!fecha2.Value).ToString("dd/MM/yyyy")</FilterValue>
+                  <FilterValue>=CDate(Parameters!fecha1.Value)</FilterValue>
+                  <FilterValue>=CDate(Parameters!fecha2.Value)</FilterValue>
                 </FilterValues>
               </Filter>
               <Filter>

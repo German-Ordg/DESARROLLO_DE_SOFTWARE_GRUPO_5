@@ -30,10 +30,8 @@ namespace Pantallas_proyecto
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBitacora));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dgvbitacora = new System.Windows.Forms.DataGridView();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.cmbVendedor = new System.Windows.Forms.ComboBox();
@@ -48,6 +46,7 @@ namespace Pantallas_proyecto
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.impresion_bitacoraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvbitacora)).BeginInit();
@@ -67,27 +66,14 @@ namespace Pantallas_proyecto
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.impresion_bitacoraBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Pantallas_proyecto.report_bitacora.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(3, 18);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1246, 410);
-            this.reportViewer1.TabIndex = 2;
-            // 
             // dgvbitacora
             // 
             this.dgvbitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvbitacora.Location = new System.Drawing.Point(654, 55);
+            this.dgvbitacora.Location = new System.Drawing.Point(118, 55);
             this.dgvbitacora.Name = "dgvbitacora";
             this.dgvbitacora.RowHeadersWidth = 51;
             this.dgvbitacora.RowTemplate.Height = 24;
-            this.dgvbitacora.Size = new System.Drawing.Size(518, 232);
+            this.dgvbitacora.Size = new System.Drawing.Size(1054, 232);
             this.dgvbitacora.TabIndex = 1;
             // 
             // dateTimePicker2
@@ -197,9 +183,9 @@ namespace Pantallas_proyecto
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripLabel2});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 598);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 604);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1255, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1255, 25);
             this.toolStrip1.TabIndex = 79;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -208,19 +194,29 @@ namespace Pantallas_proyecto
             // 
             this.toolStripLabel1.ForeColor = System.Drawing.Color.Black;
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(111, 28);
+            this.toolStripLabel1.Size = new System.Drawing.Size(111, 22);
             this.toolStripLabel1.Text = "toolStripLabel1";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.ForeColor = System.Drawing.Color.Black;
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(111, 28);
+            this.toolStripLabel2.Size = new System.Drawing.Size(111, 22);
             this.toolStripLabel2.Text = "toolStripLabel2";
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Pantallas_proyecto.report_bitacora.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(3, 18);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1246, 410);
+            this.reportViewer1.TabIndex = 2;
             // 
             // impresion_bitacoraBindingSource
             // 
@@ -275,10 +271,10 @@ namespace Pantallas_proyecto
         private System.Windows.Forms.DataGridView dgvbitacora;
         private System.Windows.Forms.Button mostrar;
         private System.Windows.Forms.BindingSource impresion_bitacoraBindingSource;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.Timer timer1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }

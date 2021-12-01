@@ -47,6 +47,7 @@ namespace Pantallas_proyecto
             DateTime fecha1 = dateTimePicker1.Value;
             dateTimePicker2.MinDate = fecha1.Date.AddDays(1);
             timer1.Enabled = true;
+            this.reportViewer1.RefreshReport();
         }
         //es la funcion del boton que sirve para regresar al menu principal
         private void btnregresar_Click(object sender, EventArgs e)
