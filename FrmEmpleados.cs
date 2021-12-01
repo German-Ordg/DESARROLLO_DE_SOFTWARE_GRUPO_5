@@ -470,6 +470,11 @@ namespace Pantallas_proyecto
                         codigo = Convert.ToInt32(dgvEmpleados[0, indice].Value);
                         conect.abrir();
                         string codigoPuesto = "";
+                        string genero = "m";
+                        if (cmbGenero.Text == "Masculino")
+                            genero = "M";
+                        else
+                            genero = "F";
                         SqlCommand comando1 = new SqlCommand("Select codigo_puesto from Empleados_Puestos where descripcion_puesto='" + cmbPuesto.Text + "'", conect.conexion);
                         SqlDataReader registro1 = comando1.ExecuteReader();
                         while (registro1.Read())
@@ -478,7 +483,7 @@ namespace Pantallas_proyecto
                         }
                         conect.cerrar();
                         conect.abrir();
-                        cmd = new SqlCommand("update Empleados set codigo_puesto = " + codigoPuesto+ ", nombre_empleado ='" + txtNombre.Text + "', apellido_empleado = '" + txtApellido.Text + "', numero_identidad_empleado= '" + txtIdentidad.Text + "', fecha_nacimiento = '" + dtpFechaNacimiento.Text + "', fecha_ingreso= '" + dtpFechaIngreso.Text + "', num_telefono = '" + txtNumeroTel.Text + "',Genero='" + cmbGenero.Text + "'  where codigo_empelado = " + codigo, conect.conexion);
+                        cmd = new SqlCommand("update Empleados set codigo_puesto = " + codigoPuesto+ ", nombre_empleado ='" + txtNombre.Text + "', apellido_empleado = '" + txtApellido.Text + "', numero_identidad_empleado= '" + txtIdentidad.Text + "', fecha_nacimiento = '" + dtpFechaNacimiento.Text + "', fecha_ingreso= '" + dtpFechaIngreso.Text + "', num_telefono = '" + txtNumeroTel.Text + "',genero='" + genero + "'  where codigo_empelado = " + codigo, conect.conexion);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("El registro fue actualizado exitosamente");
                         conect.cargarDatosEmpleados(dgvEmpleados);
