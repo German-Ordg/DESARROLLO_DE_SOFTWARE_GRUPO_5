@@ -256,6 +256,7 @@ namespace Pantallas_proyecto
                                 dtpFechaNacimiento.Value = DateTime.Now.AddYears(-19);
                                 dtpFechaIngreso.Text = DateTime.Now.ToShortDateString();
                                 cmbGenero.SelectedIndex = -1;
+                                cmbPuesto.SelectedIndex = -1;
                                 txtNombre.Focus();
                                 conect.cerrar();
                                 errorProvider2.Clear();
