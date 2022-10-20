@@ -702,14 +702,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pantallas_proyecto.exe" size="22432744">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pantallas_proyecto.exe" size="22431744">
       <assemblyIdentity name="Pantallas_proyecto" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Voq+0x747y8EHZhU4FALtNSlRWoxrC+sX4+ogrMgBnI=</dsig:DigestValue>
+        <dsig:DigestValue>KwXcmiU7w/BCLvYc1mOK5Gv+ktK863ZSJSozgDTFK98=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -737,13 +737,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Pantallas_proyecto.exe.config" size="999">
+  <file name="Pantallas_proyecto.exe.config" size="977">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HBISFjq4vjQpKhwC8ArXqx+zQ7PrkEpqt1v0zQBnI88=</dsig:DigestValue>
+      <dsig:DigestValue>0H2uF8PH2kA/0ZvCVqgBR7v7q6KE3ZpIEiG86KvEyA4=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

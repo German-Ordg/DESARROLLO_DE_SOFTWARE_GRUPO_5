@@ -26,8 +26,8 @@ namespace Pantallas_proyecto.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL5053.site4now.net;Initial Catalog=db_a75e9e_bderickmoncada;Persist" +
-            " Security Info=True;User ID=db_a75e9e_bderickmoncada_admin;Password=grp5admin")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL8001.site4now.net;Initial Catalog=db_a8e436_josuezunigaze;User Id=" +
+            "db_a8e436_josuezunigaze_admin;Password=PruebaBasedat0s.")]
         public string db_a75e9e_bderickmoncadaConnectionString {
             get {
                 return ((string)(this["db_a75e9e_bderickmoncadaConnectionString"]));

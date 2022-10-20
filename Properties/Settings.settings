@@ -5,10 +5,10 @@
     <Setting Name="db_a75e9e_bderickmoncadaConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=SQL5053.site4now.net;Initial Catalog=db_a75e9e_bderickmoncada;Persist Security Info=True;User ID=db_a75e9e_bderickmoncada_admin;Password=grp5admin&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=SQL8001.site4now.net;Initial Catalog=db_a8e436_josuezunigaze;User Id=db_a8e436_josuezunigaze_admin;Password=PruebaBasedat0s.&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=SQL5053.site4now.net;Initial Catalog=db_a75e9e_bderickmoncada;Persist Security Info=True;User ID=db_a75e9e_bderickmoncada_admin;Password=grp5admin</Value>
+      <Value Profile="(Default)">Data Source=SQL8001.site4now.net;Initial Catalog=db_a8e436_josuezunigaze;User Id=db_a8e436_josuezunigaze_admin;Password=PruebaBasedat0s.</Value>
     </Setting>
   </Settings>
 </SettingsFile>
